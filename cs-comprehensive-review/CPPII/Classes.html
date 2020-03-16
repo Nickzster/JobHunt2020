@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app23.us.archive.org';v.server_ms=233;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170515141949", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	Classes
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="This is the main page for the C++ Level II class"/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170515141949cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515141949cs_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515141949cs_/http://programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170515141949js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170515141949js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="date" content="2016-06-16"/>
+<link rel="stylesheet" href="/web/20170515141949cs_/http://programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170515141949js_/http://programming.msjc.edu/cppii/prism.js" type="text/javascript"></script>
+
+<link href="https://web.archive.org/web/20170515141949/http://www.programming.msjc.edu/cppii/1Classes.aspx" rel="canonical"/><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515141949cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515141949cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cppii/1Classes.aspx', '20170515141949')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170515141949/http://web.archive.org/screenshot/http://programming.msjc.edu/cppii/1Classes.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170515141949/http://programming.msjc.edu:80/cppii/1Classes.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170515141949/http://programming.msjc.edu:80/cppii/1Classes.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cppii/1Classes.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170515141949" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170224181527/http://www.programming.msjc.edu:80/cppii/1Classes.aspx" title="24 Feb 2017"><strong>Feb</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 14:19:49 May 15, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170721023140/http://programming.msjc.edu:80/cppii/1Classes.aspx" title="21 Jul 2017"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170224181527/http://www.programming.msjc.edu:80/cppii/1Classes.aspx" title="18:15:27 Feb 24, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 14:19:49 May 15, 2017">15</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170721023140/http://programming.msjc.edu:80/cppii/1Classes.aspx" title="02:31:40 Jul 21, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 14:19:49 May 15, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180614202239/http://programming.msjc.edu:80/cppii/1Classes.aspx" title="14 Jun 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170515141949*/http://programming.msjc.edu/cppii/1Classes.aspx" title="See a list of every capture for this URL">25 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 06 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170515141949/http%3A//programming.msjc.edu/cppii/1Classes.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cppii/1Classes.aspx","2017-05-15",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cppii/1Classes.aspx", '20170515141949');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170515141949/http://programming.msjc.edu/cppii/1Classes.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7149_SelectedIndex" id="LiveTabsWrapper7149_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFMFRoaXMgaXMgdGhlIG1haW4gcGFnZSBmb3IgdGhlIEMrKyBMZXZlbCBJSSBjbGFzc2QCCA8WAh8CBR9DKyssIFByb2dyYW1taW5nLERvdE5ldE51a2UsRE5OZAIJDxYCHwIFIUNvcHlyaWdodCAyMDEwIEJ5IEdsZW5uIFN0ZXZlbnNvbmQCCg8WAh8CBQtEb3ROZXROdWtlIGQCCw8WAh8CBRdDKysgUHJvZ3JhbW1pbmcgTGV2ZWwgMmQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYqZg9kFgRmDw8WAh8BaGRkAgIPFgIfAWgWBgIBDxYCHwFoZAIDDxYCHwFoZAIHDxYCHwFoZAIBD2QWBGYPDxYMHghDc3NDbGFzcwUJTG9naW5MaW5rHwAFBUxvZ2luHgdUb29sVGlwBQVMb2dpbh4LTmF2aWdhdGVVcmwFT2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjFDbGFzc2VzLmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZEBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvMUNsYXNzZXMuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg9kFgICAQ8PFgofAwUJTG9naW5MaW5rHwAFBUxvZ2luHwQFBUxvZ2luHwUFT2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjFDbGFzc2VzLmFzcHgfBgICFgIfBwWRAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzFDbGFzc2VzLmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFK2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9Ib21lLmFzcHhkZAIGDxYCHwgFDEROTkVtcHR5UGFuZWQCBw8WAh8IBQxETk5FbXB0eVBhbmVkAggPFgIfCAUMRE5ORW1wdHlQYW5lZAIJDxYCHwgFDEROTkVtcHR5UGFuZWQCCg8WAh8IBQxETk5FbXB0eVBhbmVkAgsPZBYCAgEPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlVGFicyBEbm5Nb2R1bGUtNzE0ORYCAgEPZBYEAgEPZBYCAgIPFgIfAWhkAgMPZBYCAgIPD2QWAh8IBR1ETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUYWJzQxYCAgEPZBYCAgEPFgIeEURpc2FibGVkVGFic0FycmF5ZBYKZg9kFgJmD2QWBmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTI5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTUwFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTUxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg9kFgZmD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE1MhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzE1NBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE1NRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAICD2QWAmYPZBYGZg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNTYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTcxNTcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNTgWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmD2QWBGYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTU5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTYxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgQPZBYCZg9kFgJmD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIxMBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIMDxYCHwgFDEROTkVtcHR5UGFuZWQCDQ8WAh8IBQxETk5FbXB0eVBhbmVkAg4PFgIfCAUMRE5ORW1wdHlQYW5lZAIPDxYCHwgFDEROTkVtcHR5UGFuZWQCEA8WAh8IBQxETk5FbXB0eVBhbmVkAhEPFgIfCAUMRE5ORW1wdHlQYW5lZAISDxYCHwgFDEROTkVtcHR5UGFuZWQCEw8WAh8IBQxETk5FbXB0eVBhbmVkAhQPFgIfCAUMRE5ORW1wdHlQYW5lZAIYDxYCHwgFDEROTkVtcHR5UGFuZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFFmRubiRjdHI3MTQ5JFZpZXckY3RsMDAIDwtqnYTjoYgQEwnCvn1Av0cOwA=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170515141949js_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170515141949js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170515141949js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAPD38g5MKfTOVYGhh+Out1lV8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0AQQ7G4XR6IBRw4NETAxMPVkCFzIA=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170515141949js_/http://programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170515141949js_/http://programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170515141949cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/1Classes.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f1Classes.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170515141949im_/http://programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane">
+                                            <div class="DnnModule DnnModule-LiveTabs DnnModule-7149"><a name="7149"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7149_dnnTITLE_titleLabel" class="title_h2">Classes</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7149_ContentPane">
+    <!-- Start_Module_7149 --><div id="dnn_ctr7149_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7149" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7149" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7149673" class="mtop"><a name="LiveTabsContent7149673" href="#LiveTabsContent7149673">a. Classes</a></li><li id="LiveTabs7149674" class="mtop"><a name="LiveTabsContent7149674" href="#LiveTabsContent7149674">b. Constructors</a></li><li id="LiveTabs7149676" class="mtop"><a name="LiveTabsContent7149676" href="#LiveTabsContent7149676">c. Header Files</a></li><li id="LiveTabs7149677" class="mtop"><a name="LiveTabsContent7149677" href="#LiveTabsContent7149677">d. Debugging</a></li><li id="LiveTabs7149678" class="mtop"><a name="LiveTabsContent7149678" href="#LiveTabsContent7149678">e. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7149673" class="mtop">
+				<div id="dnn_ctr7149_View_ctl00_ctl00_LiveTabsiMod7129"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7129"><a name="7129"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl00_ctr7129_ContentPane">
+		
+    <!-- Start_Module_7129 --><div id="dnn_ctr7149_View_ctl00_ctl00_ctr7129_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl00_ctr7129_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Data and Functions</p>
+<hr/>
+<p>Object Oriented programming (OOP) is a different approach to solving problems than we have seen so far. In the level 1 class we used functional decomposition, where functions were  at the center of program organization. The problem with this approach is that there is no way of bundling data with operations. This is going to be our focus for programming from now on. </p>
+<p>If you read the introduction then you know that an object is the vehicle used to bundle data together with functionality. The question is, what is an object? Put simply, an object is an instance of a class. To refresh your memory you can create an instance of a <strong>primitive </strong>data type simply by creating a variable:</p>
+<pre><code class="language-cpp line-numbers">int myInt;
+double myDouble;
+char myChar;
+</code></pre>
+<p>In the above three <strong>instances </strong>were created. An <strong>int </strong>named <strong>myInt</strong>, a <strong>double </strong>named <strong>myDouble</strong>, and a <strong>char </strong>named <strong>myChar.</strong></p>
+<p>An object is an <strong>instance</strong> of a class. A class is a <strong>blueprint </strong>for an object. This means the compiler uses the class to build what you have defined in memory. In essence you are creating your own data type. We call this a <strong>complex </strong>type because it is not built into the language the way primitive data types are. </p>
+<p>Switching to object oriented programming can be a difficult transition for some people because it is truly a different way of thinking. It was stated earlier, and it is important to keep in mind that classes are <strong>data-centric</strong>. This means that a class will have a data section and a set of functions that operate on that data.</p>
+<p>You may recall that objects have three characteristics:</p>
+<p>
+</p>
+<ol>
+    <li><span>State</span></li>
+    <li><span>Behavior</span></li>
+    <li><span>Identity</span></li>
+</ol>
+<p>
+Before going into great detail on the characteristics of an object it may be best to first look at how a class is defined syntactically.
+</p>
+<p><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Classes/Class1.fw.png"/></p>
+<p>In the level 1 course we studied structures and how they were good for bundling like information. As an example consider the need to store information about a single person. An efficient way to group all of this information would be to place it inside a struct:</p>
+<pre><code class="language-cpp line-numbers">struct Person
+{
+string firstName;
+string lastName;
+string email;
+};
+</code></pre>
+<p>If you look closely you will see that classes look a lot like structs. As a matter of fact C++ really means C with classes. When Bjorn Stroustrup invented the C++ language, he really just made modifications to the C programming language. Notice that a class looks like nothing more than a struct that allows you to put function prototypes within it. Of course that is a very simplistic statement but pretty accurate.
+If you need a review of structures, you may want to review the C++ level I lecture notes which can be <a target="_blank" href="https://web.archive.org/web/20170515141949/http://www.programming.msjc.edu/cpp/9Classesnbsp;nbsp;nbsp;nbsp;nbsp;.aspx">found here</a>.
+</p>
+<a class="learn-more" href="https://web.archive.org/web/20170515141949/http://xoax.net/cpp/crs/console/lessons/Lesson31/" target="_blank">See what <strong>XoaX.net</strong> has to say about <strong>member functions</strong></a>
+<br/>
+<p class="Head">Encapsulation</p>
+<hr/>
+<p>
+One of the big things with object oriented programming is a term called <strong>encapsulation</strong>. The word encapsulation really means bringing together. In object oriented programming we are bundling data and functions that operate on that data together into a class. One of the good things about encapsulation is that it allows you to hide the details of how a class is implemented.  This allows programmers that are using your code to use it without having to worry about the details of it (You don't need to know the details of how your car works to drive it do you?).  By default everything you put in a class is private unless you specifically state that you want it to be public. C++ like most programming languages will always default on the side of good practice.</p>
+<p>This brings us back to the idea of object oriented programming being data-centric. A class is comprised of a data section and functions that operate on that data section.  As a general rule, if you create public functions that do not operate on your class' data section then you are probably doing it wrong. The data section of a class are considered to be the attributes of its class. In most cases the data (attributes) of a class will be located in the private section. This way it is hidden from the outside world. You can then create public functions that operate on the data. In other words, <strong>a public interface to private data</strong>.  In this way you control how the data is accessed and modified.</p>
+<a class="learn-more" href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/84-access-functions-and-encapsulation/" target="_blank">See what <strong>LearnCPP</strong> has to say about <strong>access</strong> and <strong>encapsulation</strong></a>
+<br/>
+<p class="Head">Public &amp; Private</p>
+<hr/>
+<p>Class definitions can be divided into three separate sections. They are</p>
+<ol>
+    <li><span>public</span></li>
+    <li><span>private</span></li>
+    <li><span>protected</span></li>
+</ol>
+<p>These sections are divide by using one of the keywords followed by a colon. Note that it does not matter which order you place the statements. The example here shows private then public but it could just as very well be public followed by private:</p>
+<p><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Classes/Class2.fw.png"/></p>
+<p>The private section is where the data or attributes of the class should be located. Anything that you do not want outside classes or functions to have direct access to should be placed in the private section of the class</p>
+<p>The attributes (data) of the class should be placed in private because you want to be able to control how they are accessed and modified. You will normally create a function in the public section to access the private data section. Again, this is to create a public interface to private data. </p>
+<a class="learn-more" href="https://web.archive.org/web/20170515141949/http://xoax.net/cpp/crs/console/lessons/Lesson34/" target="_blank">See what <strong>XoaX.net</strong> has to say about <strong>public and private</strong> members</a>
+<br/>
+<p class="Head">An Example</p>
+<hr/>
+<p>As an example let's take a look at a class called Rectangle. The first thing we should do is define the attributes (data) of the class. We could get into greater detail with this but simply put a Rectangle consists of a length and a width. This will make up our data section. The last thing we need to consider is the functionality we want our Rectangle to have. We need a function that will set the attributes of the class and another that will compute and return the area. We can say then say that these two functions define the <strong>behavior </strong>of the class.</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.h
+#ifndef Rectangle
+#define Rectangle
+
+class Rectangle
+{
+private:
+   int length, width;
+
+public:
+   void setValues(int len, int wid);
+   int area();
+};
+</code></pre>
+<p>What you see above is the class definition, or blueprint, for a new complex type called Rectangle. It is a complex type because it is a class type that is defined by the programmer. Notice that the private section contains the data (attributes) of the class. Because they are private they can only be changed by members of the same class. In other words only the setValue and area functions can change the length and the width but nothing else</p>
+<p>You couldn't directly modify these variables from another function. The following example depicts this:</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle rect;  // Create an instance of a Rectangle called rect
+    cout &lt;&lt; rect.length &lt;&lt; endl;     // This is an error because length is private and main is not a member of Rectangle
+}
+</code></pre>
+<p>Classes are typically put inside a header file because the compiler needs to see a definition of everything before it compiles it. If you want to use cin or cout for instance, you need to include iostream. The same holds true for the classes you create. </p>
+<p>The compiler treats all files individually, meaning it doesn't know anything about what is going on inside other files of your project. Since all files are treated separately you need to have a mechanism to show it the definitions in each of the files where you intend to use the functionality. This where the header file comes in. You can simply put all of your definitions in a header file then include the header file in any .cpp file where you intend to use the functionality. This is much better than copying and pasting these definitions inside every file where it's not located.</p>
+<p>Creating and using header files will be covered in the next section.</p>
+<a class="learn-more" href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/82-classes-and-class-members/" target="_blank">See what <strong>LearnCPP</strong> has to say about <strong>classes</strong> and <strong>members</strong></a>
+<br/>
+<p class="Head">Note on the Use of the Word Definition</p>
+<hr/>
+<p>OK, some people are probably going to be really infuriated by the fact that I use the word <strong>definition</strong> throughout this material. Technically speaking a function definition is the actual body of the function. This should be distinguished from its prototype which I have been calling a definition. I understand the difference but what I am getting at is that much of this stuff is a way to define what it is to the compiler... in other words, a definition. A function prototype defines what the function is, including its inputs and outputs to the compiler. Please excuse me if you feel I am using the word in error. It just seems to be the word that best fits to me.</p>
+<br/>
+<p class="Head">Just Prototypes!</p>
+<hr/>
+<p>In C++ level 1 you learned to prototype all of your functions before you use them. Nothing has changed at this level. You still need to prototype all of your functions. Now though, you need to put them as part of the class. The Rectangle class then has prototypes for two functions: setValues and area. This means that the body or function defintions need to be written. This is normally done in a .cpp file</p>
+<p>Creating function bodies is very similar to what you did in C++ level 1. You prototype your functions, then you create their body. The same thing has to happen here with a slight difference. Now, you have to tell the compiler what class the functions belong to. Basically, where the prototypes for the functions reside: </p>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+#include &lt;iostream&gt;
+#include "Rectangle.h"
+
+void Rectangle::setValues(int len, int wid)
+{
+   length = len;
+   width = wid;
+}
+
+int Rectangle::area()
+{
+   return length * width;
+}
+</code></pre>
+<br/>
+<p class="Head">The Scope Resolution Operator ::</p>
+<hr/>
+<p>The example above contains the code for the functionality of the Rectangle class. It sits in its own .cpp file. The definition for the class is brought in by including the header file. Notice the function header for the area function:</p>
+<pre><code class="language-cpp line-numbers">int Rectangle::area()</code></pre>
+<p>The scope resolution operator is employed to tell the compiler what class the function area belongs to. The scope resolution operator is nothing more than the double colon:
+<strong>::</strong>
+It tells the compiler the function area is a member of the Rectangle class. In other words it tells the compiler that the prototype for the area function can be found within the Rectangle class. Without it:</p>
+<pre><code class="language-cpp line-numbers">int area();</code></pre>
+<p>The compiler would see this as just another function and your code would not build because you have not created the functions that are defined within the Rectangle class</p>
+<p>When you first start creating classes and writing functions that belong to these classes you may find it easy to forget to use the scope resolution operator to define the function to the class. Keep this in mind as you move along.</p>
+<br/>
+<p class="Head">Classes to Objects</p>
+<hr/>
+<p>Remember, classes are blue prints for objects. This means that a class does not really occupy any space memory. A class is also a definition for a type (a complex type) and gets created just like any other variable. To turn a class into an object you must create an instance of it. This is called instantiation and is very easy to do. Just like creating variables of type int:</p>
+<pre><code class="language-cpp line-numbers">int x,y,z;</code></pre>
+Rectangles can be created in the exact same way:
+<pre><code class="language-cpp line-numbers">Rectangle x,y,z;</code></pre>
+<p>Here three instances of Rectangle have been created. They are called x,y,z. So, it can be said that their identity is x,y,z respectively.</p>
+<p>Here is an example main function that uses the Rectangle class:</p>
+<pre><code class="language-cpp line-numbers">#include <iostream>
+#include "Rectangle.h"
+
+using namespace std;
+int main()
+{
+Rectangle r1, r2;  // Two instances of the Rectangle are created
+
+    cout &lt;&lt; "Enter a length and a width for the first rectangle" &lt;&lt; endl;
+    int l, w;
+    cin &gt;&gt; l &gt;&gt; w;
+    r1.setValues(l, w);
+    cout &lt;&lt; "The area of the first Rectangle is " &lt;&lt; r1.area() &lt;&lt; endl;
+
+    cout &lt;&lt; "Enter a length and a width for the second rectangle" &lt;&lt; endl;
+    cin &gt;&gt; l &gt;&gt; w;
+    r2.setValues(l, w);
+    cout &lt;&lt; "The area of the first Rectangle is " &lt;&lt; r2.area() &lt;&lt; endl;
+
+    return 0;
+}
+</iostream></code></pre>
+<p>The output from the above code would be: </p>
+<dos>Enter a length and a width for the first Rectangle<br/>
+5 6 <br/>
+The area of the first Rectangle is 30 <br/>
+Enter a length and width for the second Rectangle<br/>
+7 8<br/>
+The area for the second Rectangle is 56<br/>
+Press any key to continue . . .<br/>
+</dos>
+<a class="learn-more" href="https://web.archive.org/web/20170515141949/http://xoax.net/cpp/crs/console/lessons/Lesson30/" target="_blank">See what <strong>XoaX.net</strong> has to say about <strong>classes</strong></a>
+<br/>
+<p class="Head">Messages</p>
+<hr/>
+<p>In object oriented programming it is said that you send an object messages. A message is nothing more than a request for an action. The message request is sent to the object by separating the two with the . (dot) operator. You can provide additional information to the object by placing it inside the parentheses:</p>
+<p><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Classes/Messasges.fw.png"/></p>
+<p>The reality here is that this is nothing more than invoking (calling) a function that is a member of an object. You simply need to specify which object you want the function call to go to.</p>
+<p>In the case of the Rectangle the setValues function can be invoked in this way:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect;
+rect.setValues(5, 6);  // Send the rect object the setValues message. 
+</code></pre>
+<p>Some of this type of terminology comes from newer OOP languages like Java. It is important to note that if you are using pointers then you still need to use the arrow operator.
+</p>
+<pre><code class="language-cpp line-numbers">void printArea(Rectangle *rect)
+{
+    cout &lt;&lt; rect-&gt;area() &lt;&lt; endl;
+}
+</code></pre>
+<br/>
+<p class="Head">Accessor and Mutators</p>
+<hr/>
+<p>A class should have public functions to access the data within its private section. In this way the programmer controls how the data gets set. An example might be of a time class that keeps track of the current hour, minutes, and seconds. If someone has direct access to the data they could set the hours minutes and second to whatever they want. It doesn't seem appropriate to allow someone to set the seconds above 60 because there are only 60 seconds in a minute. It would seem logical that if the seconds were set to 61 then 1 would be added to minutes and the seconds would be set to 1 also. This would be difficult to control without a public function to handle this logic. A public function would allow the user to change the private data section while preventing changes that may have adverse effects.</p>
+<p>It is good object oriented programming practice to provide public functions to private data. These types of functions are called <strong>accessor </strong>and <strong>mutator</strong> functions.</p>
+<ul>
+    <li><strong>Accessor </strong>- is a function that accesses or returns data from the private section.</li>
+    <li><strong>Mutator</strong> - is a function that modifies the data in the private section.</li>
+</ul>
+<p class="SubHead">Constant Accessors</p>
+<p>An accessor is meant to simply return private data in one form or another. This means that it should not modify private members of the class in any way. Because of this it is appropriate to make accessors constant. You may be saying to yourself that the area function is an accessor and it has no const declaration. If you were thinking this you would be right. The area function can be improved by using the const keyword:</p>
+<pre><code class="language-cpp line-numbers">int Rectangle::area() const
+{
+   return length * width;
+}
+</code> </pre>
+<p>Don't forget that this declaration must also go with the prototype inside the header file:</p>
+<pre><code class="language-cpp line-numbers">class Rectangle
+{
+private:
+    int length, width;
+
+public:
+   int area() const;
+   void setValues(int len, int wid);
+};
+</code></pre>
+<p>The above const declaration ensures the function will not modify the data section in any way. If  this is not completely clear hang on. We are going to be discussing this when we get to passing parameters.</p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/810-const-class-objects-and-member-functions/" target="_blank">See what LearnCPP has to say about const class objects and member functions</a></p>
+<br/>
+<p class="Head"> Functions &amp; Methods</p>
+<hr/>
+<p>In object oriented programming methods are functions that are part of the class. In C++ the term function has kind of stuck. You may see these two terms used interchangeably. While some C++ purists might object to calling a function a method I personally don't see the harm in it.</p>
+<br/>
+<p class="Head">Video - Creating a Class
+</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7129 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl00_LiveTabsiMod7150"><div class="DnnModule DnnModule-LiveContent DnnModule-7150"><a name="7150"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl00_ctr7150_ContentPane">
+		
+    <!-- Start_Module_7150 --><div id="dnn_ctr7149_View_ctl00_ctl00_ctr7150_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7150"></a> <div id="dnn_ctr7149_View_ctl00_ctl00_ctr7150_View_LC7150"><table id="dnn_ctr7149_View_ctl00_ctl00_ctr7150_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71501Heading">Classes</div><a id="LC71501" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7150/Videos/Classes.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71501eVideo',allowHeightReduction: false,headingId: 'LC71501Heading',headingOverlay: {fade: 1},captionId: 'LC71501Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7150',width: 800,height: 640}, {TabId: '1921',ModuleId: '7150',PortalId: '11',ElementId: '1'}); "> <img title="Classes" alt="Classes" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7150&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71501eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71501Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71501Caption">Creating a class</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7150 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl00_LiveTabsiMod7151"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7151"><a name="7151"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl00_ctr7151_ContentPane">
+		
+    <!-- Start_Module_7151 --><div id="dnn_ctr7149_View_ctl00_ctl00_ctr7151_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl00_ctr7151_HtmlModule_lblContent" class="Normal">
+	<p class="Head">A Brief Recap</p>
+<hr/>
+<p>Classes are <strong>blueprints</strong> for objects. They are the definition to the compiler as to what gets built in memory when you create an <strong>instance</strong> of it. An instance of a class is an <strong>object</strong>.</p>
+<p>Class definitions are typically placed in header files and the corresponding code is placed in a .cpp file. You should never put source code inside a header file because it will be duplicated in each file it is added to. Definitions go inside header files.</p>
+<p>Definitions are things like classes, function prototypes, and const variables.</p>
+<p>A class has a private section which contains the attributes (data) of the class. It also has a public section that contains functions that are used to access and modify the attributes that make up the private section.</p>
+<p>The functions that are part of the public section are nothing more than the function prototypes for functions that need to be created else where.</p>
+<p>The functions that are defined in the class need to be created in a .cpp file. These functions are very similar to any other function except that you use the scope resolution operator to specify that the function belongs to the specific class.</p>
+<p>There are two types of functions - mutators which modify private data, and accessors which return private data.</p>
+<p>When you create instances of classes (objects) you use the dot operator to invoke the functions of the class. </p>
+<br/>
+</div>
+
+				</div><!-- End_Module_7151 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7149674" class="mtop">
+				<div id="dnn_ctr7149_View_ctl00_ctl01_LiveTabsiMod7152"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7152"><a name="7152"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl01_ctr7152_ContentPane">
+		
+    <!-- Start_Module_7152 --><div id="dnn_ctr7149_View_ctl00_ctl01_ctr7152_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl01_ctr7152_HtmlModule_lblContent" class="Normal">
+	<p class="Head">What is <em>this</em>?</p>
+<hr/>
+<p>Before getting into the meat of constructors I want to pause for a second and take a look at the potatoes: accessing members of the current object from within the object. Most OOP languages have a mechanism for accessing other members. In C++ we use the <strong>this</strong> pointer. </p>
+<p><strong>This</strong> is a special type of pointer that refers to members of the class it is contained within. You might say that <strong>this</strong> refers to itself. Here is an example:</p>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+#include "Rectangle.h"
+
+void Rectangle::setValues(int length, int width)
+{
+    this-&gt;length = length;
+    this-&gt;width = width;
+}
+
+int Rectangle::area()
+{
+    return this-&gt;length * this-&gt;width;
+}
+</code> </pre>
+<p>If you look carefully you will notice that the formal parameters to the setValues function have the same name as the data of the class (length and width). Through the use of the <strong>this</strong> pointer you can distinguish between the variables that are part of the class and the formal parameters. Without using the <strong>this</strong> pointer your code would look something like this:</p>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+#include "Rectangle.h"
+
+void Rectangle::setValues(int length, int width)
+{
+    length = length;
+    width = width;
+}
+</code> </pre>
+<p>If you remember the level 1 discussion on scope you know that the example code simply assigns the formal parameters to themselves. This is not very good for setting the attributes of the class.</p>
+<p>Many have the philosophy that any time you access a function or a variable of the class from within the class you should use this as a prefix. It helps distinguish what is a member of the class from what is not. There are many other uses for the <strong>this</strong> pointer. We will see more of it as we move ahead.</p>
+<br/>
+<p class="Head">Constructor Basics</p>
+<hr/>
+<p>It has been said that a class is really a <strong>blueprint</strong> for an object because when you create an instance of that class you get an <strong>object</strong> in memory that has all of the components of that class. The class constructor then is the factory that builds the object because it initializes all of the attributes of the object. We have seen that classes typically have a data section that is defined as private. One problem with what we have seen so far is that when the object is created the value of the variables is garbage. In the case of the Rectangle if we call the area function before calling setValues we are going to get a pretty ugly output. The point here is that we need a mechanism to initialize the variables to some reasonable value when the object gets created. This is the job of the constructor.</p>
+<p>You may think that it is really no big deal to call the setValues function before using the class and in this case I might agree with you. You have to think big picture and the idea of creating more complex classes that may be used by others. A person that uses your class may simply start using some of the accessor functions without calling a function to initialize first. It is always a good idea to create a constructor for your code to guard against things like this.</p>
+<p>If you do not create a constructor the compiler will tack one on to your compiled code. You can't see it or use it but it is there nonetheless.</p>
+<a href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/85-constructors/" class="learn-more">See what <strong>LearnCPP</strong> has to say about <strong>constructors</strong></a>
+<br/>
+<p class="Head">Three Properties</p>
+<hr/>
+<p>Adding a constructor to your class is an easy thing do as long as you can remember the three properties that make up a constructor: </p>
+<ol>
+    <li>*Constructors are always defined as public</li>
+    <li>Constructors have the same name as the class</li>
+    <li>Constructors have no return type not even void</li>
+</ol>
+<p>&nbsp;</p>
+<p style="font-size: 80%;">*It is possible to have a private constructor but when you do this there is no way for you to construct the object publicly. This will be covered in more detail in the sections on composition and inheritance.</p>
+<p>At this point let's take a look at adding a constructor to the Rectangle class:</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.h
+#ifndef RECTANGLE
+#define RECTANGLE
+
+class Rectangle
+{
+    private:
+        int length;
+        int width;
+    public:
+        void setValues(int length, int width);
+        int area(); Rectangle();// Constructor definition
+};
+
+#ifndef
+</code></pre>
+<p>After the prototype for the constructor is added to the class definition it then needs to be add to the .cpp file. This isn't any different than adding any other function to the class. You simply need to make sure you adhere to the three properties of a constructor: </p>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+
+Rectangle::Rectangle()
+{
+    this-&gt;length = 0;
+    this-&gt;width = 0;
+}
+</code></pre>
+<p>Now if the area function is called before setValues the output will be 0 and not garbage.</p>
+<br/>
+<p class="Head">Initialization List</p>
+<hr/>
+<p>In the above example the attributes length and width get set to 0 in the body of the constructor. There is an alternate and preferred way to initialize variables and it is called the <strong>initialization list</strong>. This section is right before the opening curly brace of the constructor and right after the closing parentheses. It has the following syntax:</p>
+<pre><code class="language-cpp line-numbers">ClassName::ConstructorName() : variableNames(value to set) { }</code> </pre>
+<p>The class name and constructor name stay the same. What is different is the colon which designates the start of the initialization list. The list consists of any class variables that you wish to set. Notice that parentheses are used instead of the equal sign to assign the value. If you have multiple values to set they should be separated by a comma: </p>
+<pre><code class="language-cpp line-numbers">Rectangle::Rectangle() : length(0), width(0) { } </code> </pre>
+<a target="_blank" href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/8-5a-constructor-member-initializer-lists/" class="learn-more">See what <strong>LearnCPP</strong> has to say about the <strong>initialization list</strong></a>
+<br/>
+<p class="Head">Initialize Data Within Header</p>
+<hr/>
+<p>While not recommended it is possible to write code and place it in the header file. You should only do this when the function your are writing consists of very small amounts of code. Initializing the attributes of the class in the header file with the constructor is one example of this that you will see quite often:</p>
+<pre><code class="language-cpp line-numbers">//Rectangle.h
+#ifndef Rectangle
+#define Rectangle
+
+class Rectangle
+{
+    private:
+        int length;
+        int width;        
+    public:
+        int area();
+        void setValues(int length, int width);
+        Rectangle() : length() , width(0){} // Initialize attributes with constructor
+};
+</code></pre>
+<p> <strong>NOTE:</strong> A couple of things to note here. First, if you put the code inside the header file it should not also be inside the .cpp file. This will cause a multiple definition error reported by the compiler. Second, since you are actually putting the function inside the header file you also need to make sure the braces are correct. In the above example all of the code is placed on one single line but it is valid function syntax.</p>
+<a target="_blank" href="https://web.archive.org/web/20170515141949/http://xoax.net/cpp/crs/console/lessons/Lesson32/" class="learn-more">See what <strong>XoaX.net</strong> has to say about <strong>constructors</strong></a>
+<br/>
+<p class="Head">Overloaded Constructors</p>
+<hr/>
+<p>Constructors in C++ can be overloaded just like any other function in C++. The power of this is that it allows you to construct your object in many different ways:</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.h
+
+class Rectangle
+{
+    private:
+        int length;
+        int width;
+    public:
+        int area();
+        void setValues(int length, int width);
+        Rectangle(); // Constructor
+        Rectangle(int length, int width); // Overloaded constructor
+};
+</code></pre>
+<br/>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+    
+Rectangle::Rectangle() : length(1), width(1) { }
+Rectangle::Rectangle(int len, int wid) : length(len), width(wid) { }
+</code></pre>
+<br/>
+<p class="Head">Creating Instances</p>
+<hr/>
+<p>Now you can construct the Rectangle objects in two different ways:</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle rectA; // Construct with default constructor
+    Rectangle rectB(5, 6); // Construct Rectangle setting length to 5 and width to 6 return 0;
+} </code></pre>
+<br/>
+<p class="Head">Default &amp; Working Constructors</p>
+<hr/>
+<p>The constructor that has no arguments is called the default constructor. You may also see it called the no argument constructor. It is called the default constructor because if you don't create one the compiler will create one for you. You cannot use it or see it because it is tacked on to the compiled code but believe me it is there.</p>
+<p>The working constructor is the constructor that takes on all of the possible settings at once. Here is another example which takes the Rectangle constructor out one more step:</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.h
+    
+class Rectangle
+{
+    private:
+        int length;
+        int width;
+    public:
+        int area();
+        void setValues(int length, int width);
+        
+        // Constructors
+        Rectangle();
+        Rectangle(int length);
+        Rectangle(int length, int width); // overloaded constructor
+}; </code></pre>
+<p>Can you pick out the working constructor? It is the one that has the most arguments. </p>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+
+Rectangle::Rectangle() : length(1), width(1) { }
+Rectangle::Rectangle(int len) :length(len), width(1) { }
+Rectangle::Rectangle(int len, int wid) : length(len), width(wid) { }
+</code></pre>
+<br/>
+<p class="Head">One Code Path</p>
+<hr/>
+<p>I am one who believes that it is important to remove redundant code whenever possible. In the above examples the initialization of the length and width are repeated several different times. There is already a function written that sets the values. It is probably a real good idea to use it.</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+
+Rectangle::Rectangle()
+{
+    this-&gt;setValues(1, 1);
+}
+
+Rectangle::Rectangle(int len)
+{
+    this-&gt;setValue(len, 1);
+}
+
+Rectangle::Rectangle(int len, int wid)
+{
+    this-&gt;setValues(len, wid);
+}
+</code></pre>
+<p>As you can see this creates one code path. This way any time you need to change the way the object is constructed you only need to change the setValues function. </p>
+<br/>
+<p class="Head">New To Version 11.0</p>
+<hr/>
+<p>Prior to the release of version 11 of the C++ compiler you could not have one constructor call another. In languages like Java the practice is to always have every constructor call the working constructor. I always thought this was a real limitation of the language. It is also very convenient for keeping one code path. This feature has been added in version 11 and is called <strong>delegating constructors</strong>.</p>
+<p>Here is the example above this time using the version 11 convention of <strong>delegating constructors</strong>:</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.cpp
+    
+Rectangle::Rectangle() :Rectangle(1,1) { }
+Rectangle::Rectangle(int len) : Rectangle(len, 1) { }
+Rectangle::Rectangle(int len, int wid) :length(len), width(wid) { }
+</code></pre>
+<br/>
+<p class="SubHead">Initialization Within Class Defintion</p>
+<p>Another feature new to version 11 is the ability to initialize the attributes of the class inside the class definition. Notice that length and width are initialized where they are created:</p>
+<pre><code class="language-cpp line-numbers">// Rectangle.h
+
+#ifndef RECTANGLE
+#define RECTANGLE
+
+class Rectangle
+{
+    private:
+        int length = 1; //Initialize attributes in definition
+        int width = 1;
+    public:
+        Rectangle();
+        Rectangle(int len);
+        Rectangle(int len, int wid);
+        void setValues(int len, int wid);
+        int area();
+};
+
+#endif
+</code></pre>
+<p>Prior to version 11 you could not put any initialization like this is the class definition. You were forced to do it in the constructor. While this is acceptable now you should exercise caution to make sure that your code is always going to be built on a compiler that adheres to the version 11 specification. </p>
+<br/>
+<p class="SubHead">Uniform Initialization</p>
+<p>Uniform initialization allows you to call the constructors using curly braces. You may also see this called brace initialization:</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle r{ 3, 5 };
+    
+    return 0;
+}
+</code></pre>
+<p>The order here is important. The values in the braces should be in the same order as the parameters to the constructor. In the above example the number 3 would set the length and the number 5 would set the width</p>
+<br/>
+<p class="Head">Constructor Notes</p>
+<hr/>
+<p>Initializing the object with the default constructor is a little odd. It seem logical that you could do this:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect(); // This is not correct </code></pre>
+<p>This seems logical because of the way you initialize an object with an overloaded constructor:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect(2, 3); // This is correct</code></pre>
+<p>However, the proper way to initialize an object with the default constructor is without parentheses:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect; // Also correct</code></pre>
+<br/>
+<p class="SubHead">More Calling Constructors</p>
+<p>On the surface it seems that you should be able to recall a constructor like any other function:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect;
+rect.Rectangle(5,6);
+</code></pre>
+<p>This is not allowed because the constructor gets called automatically when the object is created.</p>
+<p>You can reinitialize an object with the constructor if you wish:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect;
+rect = Rectangle(4,5);</code></pre>
+<p>What the above code does is create what is called an anonymous object. It is called anonymous because it is returning an object that has no name or reference. In this example, the object gets assigned back on top of the previously created Rectangle object. </p>
+<p>You do not see this kind of thing used very often. If you think about the way that the Rectangle works you could simply call the setValues function which would reinitialize the object</p>
+<br/>
+<p class="Head">Constructor Finally</p>
+<hr/>
+<p>Before the discussion on <strong>constructors</strong> is concluded it is important to point out one more thing. It was said that if you do not supply a default constructor the compiler will create one for you. This is true except in the case of overloaded constructors. If you have created any overloaded constructors you are then required to create the default constructor. Failure to do so will result in a compiler error.</p>
+<br/>
+<p class="Head">Video - Constructors</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7152 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl01_LiveTabsiMod7154"><div class="DnnModule DnnModule-LiveContent DnnModule-7154"><a name="7154"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl01_ctr7154_ContentPane">
+		
+    <!-- Start_Module_7154 --><div id="dnn_ctr7149_View_ctl00_ctl01_ctr7154_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7154"></a> <div id="dnn_ctr7149_View_ctl00_ctl01_ctr7154_View_LC7154"><table id="dnn_ctr7149_View_ctl00_ctl01_ctr7154_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71541Heading">Constructors</div><a id="LC71541" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7154/Videos/constructor.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71541eVideo',allowHeightReduction: false,headingId: 'LC71541Heading',headingOverlay: {fade: 1},captionId: 'LC71541Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7154',width: 800,height: 640}, {TabId: '1921',ModuleId: '7154',PortalId: '11',ElementId: '1'}); "> <img title="Constructors" alt="Constructors" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7154&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71541eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71541Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71541Caption">Using Constructors</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7154 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl01_LiveTabsiMod7155"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7155"><a name="7155"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl01_ctr7155_ContentPane">
+		
+    <!-- Start_Module_7155 --><div id="dnn_ctr7149_View_ctl00_ctl01_ctr7155_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl01_ctr7155_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Destructors</p>
+<hr/>
+
+<p>A destructor works the exact opposite way of a constructor. Where a constructor is used to <strong>initialize</strong> an object, a destructor is used to <strong>clean up</strong> an object. A constructor is called automatically when an object gets created; a destructor gets called when an object is being removed from memory. An object gets removed from memory when the program exits or when an object that has been created dynamically is deleted from memory using the <strong>delete</strong> operator. The concept of dynamic memory will be covered in a future lecture. The thing to know at this point is that the destructor will get called automatically when an object is being removed from memory.</p>
+
+<p>The constructor has the same properties as the constructor:</p>
+<ol>
+    <li>*It must be declared in public</li>
+    <li>It has the same name as the class</li>
+    <li>It does not have a return type not even void</li>
+</ol>
+
+<p style="font-size: 80%">*It is possible to have a private destructor but when you do this there is no way for you to destruct the object publicly. This will be covered in more detail in the sections on composition and inheritance.</p>
+
+<p>What differentiates the destructor from the constructor is that the destructor is prefixed with a <strong>~</strong> (tilde):</p>
+<pre><code class="language-cpp line-numbers">#ifndef RECTANGLE
+#define RECTANGLE
+class Rectangle
+{
+    private:
+        int length;
+        int width;
+    public:
+        Rectangle();
+        void setValues();
+        int area();
+        // Rectangle destructor
+        ~Rectangle();
+};
+
+#ifndef
+</code></pre>
+
+<p>The body of the destructor then is easy to create:</p>
+<pre><code class="language-cpp line-numbers">Rectangle::~Rectangle()
+{
+    // Clean up object here
+}
+</code></pre>
+
+<p>It is hard to imagine what you would put in a destructor for the Rectangle class. A better analogy might be the idea of an Elevator class. When you are done using the elevator you might want the elevator to return to the ground floor. This code, to return to ground floor, would go inside the destructor.</p>
+
+<a class="learn-more" title="Learn Cpp Destructors" target="_blank" href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/8-7-destructors/">See what <strong>LearnCPP</strong> has to say about <strong>destructors</strong></a>
+</div>
+
+				</div><!-- End_Module_7155 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7149676" class="mtop">
+				<div id="dnn_ctr7149_View_ctl00_ctl02_LiveTabsiMod7156"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7156"><a name="7156"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl02_ctr7156_ContentPane">
+		
+    <!-- Start_Module_7156 --><div id="dnn_ctr7149_View_ctl00_ctl02_ctr7156_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl02_ctr7156_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>To understand the need for a header file you must first have an understanding how the build process works in C++. You write source code in plain text and save it to a file with the extension .cpp. This file is then ran through the preprocessor which handles anything that has # in front of it. For instance #include&lt;iostream&gt; which opens and includes the contents of the iostream header into the source code. It will also handle macros and constants created with #define. &nbsp;From there the .cpp file is ran through the compiler which among many other things checks the source code file for syntax errors. If there are no errors the compiler creates assembly language code for the processor in which it is being compiler for. This assembly language code is output into a file with the extension .obj (object code). &nbsp;At this point the object code is ran through the linker which puts this code together with any other object code along with any of the functions used from the standard library. The output from this linker is an executable file with the extension .exe.</p>
+<p>This process is depicted in the following diagram:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Header/CompileProc.fw.png" style="width: 450px; height: 281px; border: 3px solid #1f497d;"/></p>
+<p>The above process only depicts the compilation of one file. The truth is that most programming projects contain many files. The thing to keep in mind with this is that the compiler treats each one of the files separately. &nbsp;It has no way of knowing that a function you are calling in one file appears in another. The compiler though is good with this as long as it can see a prototype of what the function consists of. It is the linkers job to insure that all of the prototyped functions actually exist. If &nbsp;there is a prototype for a function in the a file but the function body does not exist, the compiler will still pass the file through to the linker. If the linker cannot find the actual body of the function in any of the object files it will create what is called and "unresolved external" error.&nbsp;</p>
+<p>With this in mind then we can say that the compiler needs to see a definition of anything before you can use it. These definitions include prototypes, classes, and structs.&nbsp;</p>
+<p>Now consider you have hundreds of files in your project and in about half of them you need to use a &nbsp;certain class. Knowing that the compiler needs to see this class definition does it make sense to include this definition 50 times or place the class definition in a header file and include the header file 50 times?&nbsp;</p>
+<p>Think of the maintenance here. If the class changes you are going to have make changes in 50 places instead of one.&nbsp;</p>
+<p>When the C++ language was first created all header files had the extension .h. To include the iostream header for instance one would write it like so</p>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream.h&gt;
+int main()
+{
+    return 0;
+}
+</code></pre>
+<p>Since the inception of namespaces and in particular namespace std all of the header files that are part of the standard library have the .h dropped from the end. </p>
+<p class="Head">Creating Your Own Header</p>
+<hr/>
+<p>Now when you write classes you are more than likely going to want to create a header file to put the class definition in. Of course you don't have to do this but remember if you want to use the class definition is several .cpp files you are going to be duplicating the definition many times.</p>
+<p>When your create a header file you will give it the .h extension.  Here is an example of the Rectangle class</p>
+<pre><code class="language-cpp line-numbers">//Rectangle.h
+class Rectangle
+{
+private:
+   int length;
+   int width;
+
+public:
+   void setValues(int length, int width);
+   int area();
+   Rectangle();
+   Rectangle(int length, int width);
+}; </code></pre>
+<p> The only thing new here is that this code would go inside the file Rectangle.h. You would still have to put the code for the functions that are prototyped inside a file named Rectangle.cpp</p>
+<p>
+</p>
+<pre><code class="language-cpp line-numbers">//Rectangle.cpp
+ #include &lt;iostream&gt;
+ #include "Rectangle.h"
+Rectangle::Rectangle()
+{
+	Rectangle(1, 1);
+}
+Rectangle::Rectangle(int length, int width)
+{
+	this-&gt;setValues(length, width);
+}
+void Rectangle::setValues(int length, int width)
+{
+	this-&gt;length = length;
+	this-&gt;width = width;
+}
+int Rectangle::area()
+{
+	return this-&gt;length * this-&gt;width;
+} </code></pre>
+<p class="Head">Quotes or Brackets</p>
+<hr/>
+<p>Looking at the above code you may be asking yourself why are there brackets around iostream but quotes around Rectangle?</p>
+<p>The answer is that most IDE's these days have an include path that gets set when you install the compiler. What is in the include path are the headers that go along with the standard library. Anything that is in this path should have the brackets &lt;&gt; around it and anything that is in the local folder should have the quotes around it "".&nbsp;</p>
+<p>Now it is possible to add your header to the include path or add more folders to the include path. Typically speaking though you want the header files to be in the same location as the code they define. In the case of the Rectangle we want the header in the same location as the project.&nbsp;</p>
+<p>Of course if you code long enough you may develop some functions that you will use across many projects. In cases like this you would create a library and add the header that goes with the code to the include path. This way it can be referenced by any new project created.&nbsp;</p>
+<p>One last thing about including header files and that is that it is possible to specify a complete path in the include string:</p>
+<p> <strong>#include "c:\\myheaders\\myHeader.h"</strong> </p>
+<p>Notice the use of the double backslash \\? Remember the backslash indicates an escape character. Remember "\n"? Without the second backslash the compiler would look at the next character as an escape character.</p>
+<p> </p>
+<p>As a word of caution, if you are going to include the path then you should avoid absolute paths and&nbsp;use a&nbsp;relative path instead:</p>
+<p> </p>
+<p><strong>#include "..\\myheaders\\myheader.h"</strong></p>
+<p class="Head">Including Definitions Once </p>
+<hr/>
+<p>You may think that including a header multiple times in you .cpp file is something that you can easily prevent. The fact is that it is not that easy. Most header files include several other header files. If you think about this then anytime you include more than one header file in your code you are in danger of adding the header twice.&nbsp;</p>
+<p>Fortunately, you can use some statements from the preprocessor to guard against your header being included multiple times. Here is an example:</p>
+<p>&nbsp;</p>
+<pre><code class="language-cpp line-numbers">#ifndef SOMELABEL
+#define SOMELABEL
+
+// Code for header goes here
+
+#endif </code></pre>
+<p>
+</p>
+<ul>
+    <li><span style="line-height: 21.76px;">ifndef statements means "If Not Defined". This checks to see if SOMELABEL has been defined before</span></li>
+    <li><span style="line-height: 21.76px;">define - defines SOMELABEL  to the system</span></li>
+    <li><span style="line-height: 21.76px;">endif - ends the ifndef statement block</span></li>
+</ul>
+<p>When you compile source code that has a header included in it, the preprocessor will open the header to include it's contents into the source file.  If the ifndef statement yields a false result then the next line is executed and SOMELABEL gets defined to the compiler. Then all of the definitions are included into the source.</p>
+<p>If the ifndef yields a true result meaning that SOMELABEL had been defined before (This could only happen if the header was included more than once in a source code file) the definitions are skipped and not inserted into the source code. This mechanism prevents definitions from appearing more than once in your code.</p>
+<p class="Head">#pragma once</p>
+<hr/>
+If you are using a later version of Visual Studio and have included header files into your project then you probably have noticed the statement;
+<pre><code class="language-cpp line-numbers">#pragma once</code></pre>
+<p>at the top of the page. This piece of code will do everything that the header guards will do. The biggest problem with it is that it is not supported by all compilers. Although, it is getting to be more common. I suggest you stick with the old way of doing header guards. This way you are assured that it will work. At least until this become a little more popular.</p>
+<p class="Head">Including Other Headers</p>
+<hr/>
+When you are writing code it is important that you make your files as modular as possible. This means that if you are using something that needs an include, you include it. This seems pretty logical but it is possible to get things included simply by the order in which they are placed inside the .cpp file. Here is an example of the Rectangle class header again. This time the string forExample has been added simply for example purposes:
+<pre><code class="language-cpp line-numbers">#ifndef RECTANGLE
+#define RECTANGLE
+
+class Rectangle
+{
+private:
+	int length;
+	int width;
+	string forExample;
+
+public:
+	void setValues(int length, int width);
+	int area();
+	Rectangle();
+	Rectangle(int length, int width);
+};
+
+#endif
+ </code></pre>
+<p>This all looks fine until you try to compile it. The compiler is going to give an errors saying that it does not understand what a string is. You can fix this error by the order in which you place things in main:
+</p>
+<pre><code class="language-cpp line-numbers">#include &lt;string&gt;<string>
+
+using namespace std;
+
+#include "Rectangle.h" </string></code></pre>
+<p>This works because the compiler includes string and resolves the namespace before opening Rectangle.h. You should NOT rely on this. If your class gets put into another project you cannot guarantee that someone will put things in the proper order.  You must assure that no matter how your header and code is used it will work. The answer is to include the header and resolve the namespace in the header file:</p>
+<pre><code class="language-cpp line-numbers">#include &lt;string&gt;<string>  //prototypes for the string
+
+#ifndef RECTANGLE
+#define RECTANGLE
+
+using std::string;  //Resolve the namespace
+
+class Rectangle
+{
+private:
+	int length;
+	int width;
+	string forExample;
+
+public:
+	void setValues(int length, int width);
+	int area();
+	Rectangle();
+	Rectangle(int length, int width);
+};
+
+#endif </string></code></pre>
+<p>Notice that the include is placed before the header guard? Prior to version 11 of the compiler you would get a warning about nesting your namespaces. While this is not a problem now you may want to follow suit for backward compatibility sake </p>
+<p class="Head">using namespace</p>
+<hr/>
+<p>Inside a header file you should never place using namespace std in it. When you do this you are now forcing any .cpp file that includes your header to the std namespace. This not not good thing if you are using multiple namespace in a project. Instead you want to resolve everything individually. In the case of the string you could do as the above example and place using std::string at the top of the file. Or you could simply prefix every declaration with std::</p>
+<pre><code class="language-cpp line-numbers">#include &lt;string&gt;<string>   //prototypes for the string
+
+#ifndef RECTANGLE
+#define RECTANGLE
+
+
+
+class Rectangle
+{
+private:
+	int length;
+	int width;
+	std::string forExample;  //Resolve the namesapce
+
+public:
+	void setValues(int length, int width);
+	int area();
+	Rectangle();
+	Rectangle(int length, int width);
+};
+
+#endif
+</string></code></pre>
+<p>Whichever method you use  be consistent and remember, you need to do this for any code you are using from the standard library.</p>
+<p class="Head">Video - Header Files</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7156 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl02_LiveTabsiMod7157"><div class="DnnModule DnnModule-LiveContent DnnModule-7157"><a name="7157"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl02_ctr7157_ContentPane">
+		
+    <!-- Start_Module_7157 --><div id="dnn_ctr7149_View_ctl00_ctl02_ctr7157_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7157"></a> <div id="dnn_ctr7149_View_ctl00_ctl02_ctr7157_View_LC7157"><table id="dnn_ctr7149_View_ctl00_ctl02_ctr7157_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71571Heading">Header Files</div><a id="LC71571" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7157/Videos/HeaderFiles3.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71571eVideo',allowHeightReduction: false,headingId: 'LC71571Heading',headingOverlay: {fade: 1},captionId: 'LC71571Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7157',width: 800,height: 640}, {TabId: '1921',ModuleId: '7157',PortalId: '11',ElementId: '1'}); "> <img title="Header Files" alt="Header Files" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7157&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71571eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71571Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71571Caption">How to add and use header files</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7157 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl02_LiveTabsiMod7158"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7158"><a name="7158"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl02_ctr7158_ContentPane">
+		
+    <!-- Start_Module_7158 --><div id="dnn_ctr7149_View_ctl00_ctl02_ctr7158_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl02_ctr7158_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p><a href="https://web.archive.org/web/20170515141949/http://xoax.net/cpp/crs/console/lessons/Lesson51/" target="_blank" title="XoaX and Header Files">See what XoaX.net has to say about header file</a></p>
+<p><a href="https://web.archive.org/web/20170515141949/http://www.learncpp.com/cpp-tutorial/19-header-files/" target="_blank">Also see what LearnCpp has to say about header files</a></p>
+</div>
+
+				</div><!-- End_Module_7158 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7149677" class="mtop">
+				<div id="dnn_ctr7149_View_ctl00_ctl03_LiveTabsiMod7159"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7159"><a name="7159"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl03_ctr7159_ContentPane">
+		
+    <!-- Start_Module_7159 --><div id="dnn_ctr7149_View_ctl00_ctl03_ctr7159_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7149_View_ctl00_ctl03_ctr7159_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>At this point in time it is probably a good idea to talk about debugging and go over your options. First off you should know that the debugger  does not catch compile errors. This of course will be done by the compiler. What the debugger does is to give you the tools needed to find logic errors in your code. As you write more and more complex code the chances of logic errors creeping in grow also. having the ability to walk through your code line by line and see what is going on at any instance is a real benefit</p>
+<p>Most Integrated Development Environments (IDE) these days have a debugger built into them. In the section we are going to be looking the Microsoft debugger because I believe it is one of the most mature tools out there. Don't worry though if you are using a different tool most debuggers work the same way. </p>
+<p class="Head">Debug Or Release?</p>
+<hr/>
+<p>You may not know it but there are actually two ways you can build your project. One is for debug and the other is for release. By default Visual Studio creates a new project for debugging.  This is fine for class work and things of this nature but if you were to build a product that you were selling you would most definitely want to build it for release.</p>
+<p>So what is the difference you may ask? When you build a project for debugging the debug symbols are added to the project. These symbols are found in a file with the extension pdb. Here is a description provided by <a href="https://web.archive.org/web/20170515141949/https://msdn.microsoft.com/en-us/library/ms241613.aspx" target="_blank" title="Debug Symbols">Microsoft</a>:
+</p>
+<p>"A program database (.pdb) file, also called a symbol file, maps the identifiers that you create in source files for classes, methods, and other code to the identifiers that are used in the compiled executables of your project. The .pdb file also maps the statements in the source code to the execution instructions in the executables. The debugger uses this information to determine two key pieces of information: the source file and line number that are displayed in the Visual Studio IDE and the location in the executable to stop at when you set a breakpoint. A symbol file also contains the original location of the source files, and optionally, the location of a source server where the source files can be retrieved from".</p>
+<p>"When you debug a project in the Visual Studio IDE, the debugger knows the default location for the .pdb and source files for your code. If you want to debug code outside your project source code, such as the Windows or third-party code your project calls, you have to specify the location of the .pdb (and optionally, the source files of the external code) and those files need to exactly match the build of the executables".</p>
+<p>"Before Visual Studio 2012, when you debugged managed code on a remote device you needed to put the symbol files on the remote machine. This is no longer the case. All symbol files must be located on the local machine or in a location specified in the Tools / Options / Debugging / Symbols page".</p>
+<p>When you are finished developing your product and are ready to ship it then you should change the build type from debug to release. If you ship with the debug symbols in the code who ever has your product can then go through and see your source code.&nbsp;</p>
+<p class="Head">Basics</p>
+<hr/>
+<p>The best starting place here is to identify the buttons that are part used for debugging. </p>
+<p style="text-align: center;">
+</p>
+<table align="center" style="margin: 10px; width: 90%;">
+    <tbody>
+        <tr>
+            <td style="text-align: center;">&nbsp;<strong>Icon</strong></td>
+            <td><strong>Name&nbsp;</strong></td>
+            <td style="text-align: center;"><strong>Keystroke&nbsp;</strong></td>
+            <td style="text-align: center;"><strong>Description&nbsp;</strong></td>
+        </tr>
+        <tr>
+            <td>&nbsp;<img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/StepInto.fw.png" style="width: 35px; height: 35px;"/></td>
+            <td>&nbsp;Step Into</td>
+            <td style="text-align: left;">F11&nbsp;</td>
+            <td style="text-align: left;">If you are stopped at a function the step int button allows you to step into into.&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;<img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/StepOver.fw.png" style="width: 35px; height: 35px;"/></td>
+            <td>&nbsp;Step Over</td>
+            <td style="text-align: left;">&nbsp;F10</td>
+            <td style="text-align: left;">&nbsp;The step over button allows you to move past a function. The function will still be called.</td>
+        </tr>
+        <tr>
+            <td>&nbsp;<img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/StepOut.fw.png" style="width: 35px; height: 35px;"/></td>
+            <td>&nbsp;Step Out&nbsp;</td>
+            <td style="text-align: left;">&nbsp;Shift F11</td>
+            <td style="text-align: left;">&nbsp;Allows you to immediately step out of a function.&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;<img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/StopDebugging.fw.png" style="width: 35px; height: 35px;"/></td>
+            <td>&nbsp;Stop Debugging</td>
+            <td style="text-align: left;">&nbsp;Shift F5</td>
+            <td>&nbsp;Immediately stops the debugger and exits the code.&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p>It should be noted that the debug toolbar is not displayed until you start the debugger. If after starting the debugger you still do not see the debug toolbar then simply go View / Toolbars / Debug and make sure there is a check next to Debug.&nbsp;</p>
+<p>&nbsp;To start a debug session you are probably going to want to set a <strong>break point</strong>. A break point is any valid line of code where you want the debugger to stop executing at. If you do not set a break point then your code will simply run to completion and exit. A break point can be set in a couple of different ways</p>
+<ol>
+    <li><span style="line-height: 21.76px;">Right click on the line of code where you want the execution to stop at then select &nbsp;Breakpoint / Insert Breakpoint.</span></li>
+    <li><span style="line-height: 21.76px;">Click in the grey bar to the left of the code window on the line of code you want the execution to stop at.</span></li>
+</ol>
+<p>With either of these methods you should see a red dot appear to the left of the line you want to stop at.</p>
+<p>Once you have breakpoint established you can now start the debugger. You can do this a couple of different ways</p>
+<p>
+</p>
+<ol>
+    <li><span style="line-height: 21.76px;">Through the menu by selecting Debug / Start Debugging</span></li>
+    <li><span style="line-height: 21.76px;">By selecting the green arrow head icon</span></li>
+    <li><span style="line-height: 21.76px;">By pressing F5 on your keyboard.&nbsp;</span></li>
+</ol>
+<p>You can set as many breakpoints as necessary. Many times you will find it useful to set a breakpoint before and after a loop. This way you do not have step through every iteration.&nbsp;</p>
+<p class="SubHead">Run To Cursor</p>
+<p>Another method to step over loops or to simply execute to a spot without using a break point is to simply right click on a line and then select &nbsp;"Run To Cursor"</p>
+<p class="SubHead">Viewing Variables</p>
+<p>With the newer debuggers you can view what a variable contains simply by rolling the cursor over the variable at any given spot. The value of the variable will show in a small popup window.&nbsp;</p>
+<p>Another way to view the value of a variable is by creating a <strong>watch. </strong>A watch shows the variable in a window called the watch window. In Visual Studio you can set a watch simply by selecting Debug/QuickWatch from the menu or by pressing shift+F9. Either of these methods will open up the QuickWatch dialog box:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/quickWatch.png"/></p>
+<p>In the expression text field you simply put the variable name you wish to watch and select and select "Add Watch". This will open the watch window typically at the bottom of the screen and show the variable you added along with it's value:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/WatchWindow.png"/></p>
+<p>Anytime the contents of the variable change the Value will be displayed in red. &nbsp;Another feature of the watch window is that you can change what the variable holds simply by double clicking the value in the watch window and typing in the value you want the variable to have.&nbsp;</p>
+<p><strong>NOTE</strong>: In the case of a string you need to expand the variable and change individual characters</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141949im_/http://programming.msjc.edu/portals/11/cpp2/Debug/WatchWindowStrings.png"/></p>
+<p>The following video will walk you through a basic debug session.</p>
+<p class="Head">Video - Debug Walk through</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7159 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7149_View_ctl00_ctl03_LiveTabsiMod7161"><div class="DnnModule DnnModule-LiveContent DnnModule-7161"><a name="7161"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl03_ctr7161_ContentPane">
+		
+    <!-- Start_Module_7161 --><div id="dnn_ctr7149_View_ctl00_ctl03_ctr7161_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7161"></a> <div id="dnn_ctr7149_View_ctl00_ctl03_ctr7161_View_LC7161"><table id="dnn_ctr7149_View_ctl00_ctl03_ctr7161_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71611Heading">Debugging</div><a id="LC71611" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7161/Videos/Debug.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71611eVideo',allowHeightReduction: false,headingId: 'LC71611Heading',headingOverlay: {fade: 1},captionId: 'LC71611Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7161',width: 800,height: 640}, {TabId: '1921',ModuleId: '7161',PortalId: '11',ElementId: '1'}); "> <img title="Debugging" alt="Debugging" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7161&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71611eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71611Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71611Caption">Basics of using the debugger</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7161 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7149678" class="mtop">
+				<div id="dnn_ctr7149_View_ctl00_ctl04_LiveTabsiMod7210"><div class="DnnModule DnnModule-LiveContent DnnModule-7210"><a name="7210"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7149_View_ctl00_ctl04_ctr7210_ContentPane">
+		
+    <!-- Start_Module_7210 --><div id="dnn_ctr7149_View_ctl00_ctl04_ctr7210_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7210"></a> <div id="dnn_ctr7149_View_ctl00_ctl04_ctr7210_View_LC7210"><table id="dnn_ctr7149_View_ctl00_ctl04_ctr7210_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72101Heading">Classes</div><a id="LC72101" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7210/Videos/Lecture 1 Classes.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72101eVideo',allowHeightReduction: false,headingId: 'LC72101Heading',headingOverlay: {fade: 1},captionId: 'LC72101Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7210',width: 800,height: 640}, {TabId: '1921',ModuleId: '7210',PortalId: '11',ElementId: '1'}); "> <img title="Classes" alt="Classes" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7210&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72101eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72101Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC72101Caption">Introduction to classes</div></td><td><a id="LC72102" class="highslide" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/Portals/11/LiveContent/7210/Videos/Lecture 2B Constructors.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72102eVideo',allowHeightReduction: false,headingId: 'LC72102Heading',headingOverlay: {fade: 1},captionId: 'LC72102Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7210',width: 800,height: 640}, {TabId: '1921',ModuleId: '7210',PortalId: '11',ElementId: '2'}); "> <img alt="2" src="/web/20170515141949im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7210&amp;eid=2&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72102eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72102Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7210 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7149 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515141949/http://programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170515141949im_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7150|LC71501Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|Classes|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|Classes_Final_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7154|LC71541Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|constructor|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7157|LC71571Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|HeaderFiles3|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|HeaderFiles_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7161|LC71611Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|Debug|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|Debug_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('n(8(\'m\')!=o){8(\'m\').i({j:\'0://2.4.3/k.u?d=v-w-s-p-q&r;t=a\',g:\'0://2.4.3/7/9/6/5/h/b 1 U.c\',e:f,x:O,P:\'N\',L:M,Q:\'0://2.4.3/7/9//6/5/S/T.R\',K:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}n(8(\'l\')!=o){8(\'l\').i({j:\'0://2.4.3/k.u?d=v-w-s-p-q&r;t=a\',g:\'0://2.4.3/7/9/6/5/h/b W X.c\',e:f,x:O,P:\'N\',L:M,Q:\'0://2.4.3/7/9//6/5/S/V.R\',K:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}',60,60,'http||programming|edu|msjc|7210|LiveContent|Portals|jwplayer|11|634957464340000000|Lecture|mp4||height|600|file|Videos|setup|flashplayer|WebResource|LC72102Html5eVideo|LC72101Html5eVideo|if|null|TBHneb4|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH||axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|width|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|abouttext|autostart|true|video|800|provider|image|png|Images|Lecture_1_Classes_First_Frame|Classes|Lecture_2B_Constructors_First_Frame|2B|Constructors'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7149").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7149').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7149') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7149').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7149').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7149') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7149').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7149").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7149') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 14:19:49 May 15, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:28:01 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 95.047 (3)
+  exclusion.robots: 0.479
+  exclusion.robots.policy: 0.459
+  load_resource: 64.409
+  RedisCDXSource: 1.805
+  PetaboxLoader3.datanode: 78.262 (4)
+  PetaboxLoader3.resolve: 62.678 (2)
+  captures_list: 128.203
+  CDXLines.iter: 25.344 (3)
+  esindex: 0.014
+-->

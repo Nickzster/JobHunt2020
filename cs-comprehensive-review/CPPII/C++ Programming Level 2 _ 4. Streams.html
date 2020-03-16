@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app23.us.archive.org';v.server_ms=219;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170515135734", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	C++ Programming Level 2 &gt; 4. Streams
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="This is the main page for the C++ Level II class"/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170515135734cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515135734cs_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515135734cs_/http://programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170515135734js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170515135734js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="streams" content="file io"/>
+<link rel="stylesheet" href="/web/20170515135734cs_/http://programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170515135734js_/http://programming.msjc.edu/cppii/prism.js" type="text/javascript"></script><link href="https://web.archive.org/web/20170515135734/http://www.programming.msjc.edu/cppii/4Streams.aspx" rel="canonical"/><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515135734cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515135734cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cppii/4Streams.aspx', '20170515135734')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170515135734/http://web.archive.org/screenshot/http://programming.msjc.edu/cppii/4Streams.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170515135734/http://programming.msjc.edu:80/cppii/4Streams.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170515135734/http://programming.msjc.edu:80/cppii/4Streams.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cppii/4Streams.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170515135734" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170313000146/http://programming.msjc.edu:80/cppii/4Streams.aspx" title="13 Mar 2017"><strong>Mar</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 13:57:34 May 15, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170716215932/http://programming.msjc.edu:80/cppii/4Streams.aspx" title="16 Jul 2017"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170512050421/http://programming.msjc.edu:80/cppii/4Streams.aspx" title="05:04:21 May 12, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 13:57:34 May 15, 2017">15</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170529143036/http://programming.msjc.edu:80/cppii/4Streams.aspx" title="14:30:36 May 29, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 13:57:34 May 15, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180720073053/http://programming.msjc.edu:80/cppii/4Streams.aspx" title="20 Jul 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170515135734*/http://programming.msjc.edu/cppii/4Streams.aspx" title="See a list of every capture for this URL">15 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 06 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170515135734/http%3A//programming.msjc.edu/cppii/4Streams.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cppii/4Streams.aspx","2017-05-15",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cppii/4Streams.aspx", '20170515135734');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170515135734/http://programming.msjc.edu/cppii/4Streams.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7181_SelectedIndex" id="LiveTabsWrapper7181_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFMFRoaXMgaXMgdGhlIG1haW4gcGFnZSBmb3IgdGhlIEMrKyBMZXZlbCBJSSBjbGFzc2QCCA8WAh8CBR9DKyssIFByb2dyYW1taW5nLERvdE5ldE51a2UsRE5OZAIJDxYCHwIFIUNvcHlyaWdodCAyMDEwIEJ5IEdsZW5uIFN0ZXZlbnNvbmQCCg8WAh8CBQtEb3ROZXROdWtlIGQCCw8WAh8CBRdDKysgUHJvZ3JhbW1pbmcgTGV2ZWwgMmQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYqZg9kFgRmDw8WAh8BaGRkAgIPFgIfAWgWBgIBDxYCHwFoZAIDDxYCHwFoZAIHDxYCHwFoZAIBD2QWBGYPDxYMHghDc3NDbGFzcwUJTG9naW5MaW5rHwAFBUxvZ2luHgdUb29sVGlwBQVMb2dpbh4LTmF2aWdhdGVVcmwFT2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjRTdHJlYW1zLmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZEBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvNFN0cmVhbXMuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg9kFgICAQ8PFgofAwUJTG9naW5MaW5rHwAFBUxvZ2luHwQFBUxvZ2luHwUFT2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjRTdHJlYW1zLmFzcHgfBgICFgIfBwWRAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzRTdHJlYW1zLmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFK2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9Ib21lLmFzcHhkZAIGDxYCHwgFDEROTkVtcHR5UGFuZWQCBw8WAh8IBQxETk5FbXB0eVBhbmVkAggPFgIfCAUMRE5ORW1wdHlQYW5lZAIJDxYCHwgFDEROTkVtcHR5UGFuZWQCCg8WAh8IBQxETk5FbXB0eVBhbmVkAgsPZBYCAgEPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlVGFicyBEbm5Nb2R1bGUtNzE4MRYCAgEPZBYEAgEPZBYCAgIPFgIfAWhkAgMPZBYCAgIPD2QWAh8IBR1ETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUYWJzQxYCAgEPZBYCAgEPFgIeEURpc2FibGVkVGFic0FycmF5ZBYGZg9kFgJmD2QWCmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTc5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTk1FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTk2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTk3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgQPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTk4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg9kFgZmD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE5ORYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIwMBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzIwMRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAICD2QWAmYPZBYCZg9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTcyMTMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCDA8WAh8IBQxETk5FbXB0eVBhbmVkAg0PFgIfCAUMRE5ORW1wdHlQYW5lZAIODxYCHwgFDEROTkVtcHR5UGFuZWQCDw8WAh8IBQxETk5FbXB0eVBhbmVkAhAPFgIfCAUMRE5ORW1wdHlQYW5lZAIRDxYCHwgFDEROTkVtcHR5UGFuZWQCEg8WAh8IBQxETk5FbXB0eVBhbmVkAhMPFgIfCAUMRE5ORW1wdHlQYW5lZAIUDxYCHwgFDEROTkVtcHR5UGFuZWQCGA8WAh8IBQxETk5FbXB0eVBhbmVkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBRZkbm4kY3RyNzE4MSRWaWV3JGN0bDAwtAGwPtuV4GWnxij+4bvCkqaKjy0="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170515135734js_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170515135734js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170515135734js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAMrbPNm9lfml6lXb8eLKRZvV8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0Bz0Y9pniWpxZ9DSPnvqMlrNZpZHQ=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170515135734js_/http://programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170515135734js_/http://programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170515135734cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/4Streams.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f4Streams.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170515135734im_/http://programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane">
+                                            <div class="DnnModule DnnModule-LiveTabs DnnModule-7181"><a name="7181"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7181_dnnTITLE_titleLabel" class="title_h2">Live Tabs</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7181_ContentPane">
+    <!-- Start_Module_7181 --><div id="dnn_ctr7181_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7181" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7181" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7181688" class="mtop"><a name="LiveTabsContent7181688" href="#LiveTabsContent7181688">a. File IO</a></li><li id="LiveTabs7181689" class="mtop"><a name="LiveTabsContent7181689" href="#LiveTabsContent7181689">b. Namespaces</a></li><li id="LiveTabs7181690" class="mtop"><a name="LiveTabsContent7181690" href="#LiveTabsContent7181690">c. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7181688" class="mtop">
+				<div id="dnn_ctr7181_View_ctl00_ctl00_LiveTabsiMod7179"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7179"><a name="7179"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl00_ctr7179_ContentPane">
+		
+    <!-- Start_Module_7179 --><div id="dnn_ctr7181_View_ctl00_ctl00_ctr7179_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7181_View_ctl00_ctl00_ctr7179_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>We haven't had a chance to cover inheritance yet so this may be a good time to speak a little about it. Inheritance allows you to derive one class from another. Typically you have general class, called the base class that has the basic functionality in it. If you need to create a specialized version of the base class you can simply derive the specialized class from the base. What this allows you to do is use the functionality from the general class and add  the specialized functionality to it.  As you can see inheritance promotes code reuse. </p>
+<p> In C++ reading and writing to files is made quite easy through the use of inheritance. Because all input and output classes are derived from the same parent they all have many things in common. A file stream then is a specialize version of the stream class. Just as console input and output are. You will find then that writing to a file is very similar to writing to the console window and reading from a file is very similar to reading from the keyboard.  </p>
+<p>To understand the base / derived class relationship it may be best to see an inheritance chart.</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515135734im_/http://programming.msjc.edu/portals/11/cpp2/Streams/StreamHierarchy.fw.png" style="font-size: 0.8em; line-height: 21.76px; width: 400px; height: 227px; border: 3px solid #4f81bd;"/></p>
+<p>You have been using streams for a quite a while now primarily in the form of cin and cout. In this section we are going to take the concept even further by investigating ifstream class for reading from files and the ofstream class for writing to files. </p>
+<p class="Head">Sequential Access Files</p>
+<hr/>
+<p>Sequential access file IO is pretty much self explanatory. You open file and read sequentially from the top of the file to the bottom. The process of reading  and writing to a sequential access file is not that much different than reading or writing from the console. There are three things you need to know </p>
+<ol>
+    <li><span style="line-height: 21.76px;">Open the file -  Reading uses an instance of ifstream and writing uses an instance of the ofstream class</span></li>
+    <li><span style="line-height: 21.76px;">Read or Write to the file - Use some of the stream functionality to get or write data to and from the file</span></li>
+    <li><span style="line-height: 21.76px;">Close the file - It is important to close the file as soon as you are finished reading or writing. Files left open can become corrupt.</span></li>
+</ol>
+<p>In order to use file IO classes you need to first include frstream. The fstream header has defintions for ifstream (input file stream) and ofstream (output file stream). If you watn to read from a file you need to create an instance of the ifstream class and if you want to write to a file you want to create an instance of the ofstream class. </p>
+<p class="Head">1. Opening a File</p>
+<hr/>
+<p>There are two ways to open a file for reading or writing. Both methods involve the create of either an ifstream object or an ofstream object. You can pass the name of the file to the constructor or you can use the open function that is part of the object</p>
+<pre><code class="language-cpp line-numbers">ifstream infile("fileName_To_Open");  // Use overloaded constructor to open file
+
+ifstream anotherFile;
+anotherFile.open("FileName_To_Open);  // Call the file open method after the creation of the file object
+</code></pre>
+<p>Files actually have two names. The first is the <strong>actual filename</strong> also called the <strong>physical file name</strong>. In the above example the physical file name is called "fileName-To-Open".  The other name for the file is the <strong>logical filename</strong>.  The logical filename is the name of the object created. In the above example the logical filename is infile. Once the file is open you will almost always use the logical filename when reading and writing. </p>
+<p class="SubHead">Checking For File Open</p>
+<p>When you attempt to open a file you should always check to make sure the file opened properly. The stream classes make this easy by overloading the ! operator. It returns a non zero value if the file could not be opened. This is not something that happens a lot but it is possible that the file does not exist, is opened by another application, and things of this nature. </p>
+<p>There are two ways to check for file open failure. The first is to use the iso_open function:</p>
+<pre><code class="language-cpp line-numbers"> ifstream infile;
+infile.open("somefilename"); 
+if(! infile.is_open())
+{
+       // handle error here
+}
+ </code></pre>
+<p>The other way is to simply use the ! (Not) operator in a decision with the object:</p>
+<pre><code class="language-cpp line-numbers">ifstream infile;
+infile.open("somefilename"); 
+if(! infile)
+{
+       // handle error here
+}
+ </code></pre>
+<p class="Head">File Paths</p>
+<hr/>
+<p>The folder hierarchy on your computer is setup as a tree structure. A file path then is a way to specify where on the tree the file is located. There are basically two types of paths:
+</p>
+<ol>
+    <li><span style="line-height: 21.76px;">Absolute Paths</span></li>
+    <li><span style="line-height: 21.76px;">Relative Paths</span></li>
+</ol>
+<p>An absolute path is simply the complete path to the file. This starts from the root of the tree. An example of an absolute path would be:</p>
+<dos style="margin-top: 10px;">C:\Files\Documents\main.cpp</dos>
+<p>At the root of the tree you have the drive letter (C: in this case). After the drive letter comes a backslash which indicates the root of the tree.  Each folder then is separated by a \ working your way down the tree to the file. </p>
+<p>Using an absolution path is really not a good idea because if you move the app to another computer the odds of the drive tree structure being the same is extremely low. When you have to use a path to specify a file location you should try to use a relative path whenever you can</p>
+<p>A relative path is the location of the file relative to the application. If you move the app you simply need to keep that path of the file relative to the application the same. This is a pretty simple thing to do.</p>
+<p>To start with we need to discuss a couple things that will make working with relative paths much easier. The first is<strong> . (period)</strong> the . means starting from the current folder as in:</p>
+<dos style="margin-top: 10px;">.\files\main.cpp</dos>
+<p>The above says from the current folder go to a folder named files which contains the file main.cpp</p>
+<p>The second is the double period <strong>..</strong> This means go up a folder from the current folder:</p>
+<dos>..\..\files\main.cpp</dos>
+<p>The above says go up two folders then to the folder called files and get main.cpp within the folder named files</p>
+<p class="SubHead">The \ Escape Character</p>
+<p>In many of the popular high level programming languages today the backslash (\) character is an escape character. This tells the compiler to treat the next character as special /n for instance puts a newline in a string. Because of this anytime you want to specify a path you need to use the double backslash //</p>
+<pre><code class="language-cpp line-numbers">char filePath = "..\\..\\files\\main.cpp" </code></pre>
+<p class="SubHead">Visual Studio Paths</p>
+<p>If you do not specify a path and simply put the name of the file you want to operate on the path defaults to the current folder. In other words the folder where the application is running from</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+	//No path defaults to application folder
+	ofstream outfile("test.txt");
+
+	return 0;
+}
+ </code></pre>
+<p>Visual Studio organizes it's project by creating a project folder inside your Documents folder. It is typically <strong>Documents\Visual Studio 2015\Projects\Project Name.</strong> If you are using a different version of Visual Studio then the path changes to the name of the version you are using. When you do not specify a path in Visual Studio the file will be written to the same folder where the source code files like main.cpp have been created. </p>
+<p class="Head">2. Reading and Writing </p>
+<hr/>
+<p class="SubHead">Writing</p>
+<p>The beauty of the C++ method of handling files rests in the simplicity of the actual functions used in basic input and output operations. Because C++ supports overloading operators, it is possible to use &lt;&lt; and &gt;&gt; in front of the instance of the class as if it were cout or cin. In fact, file streams can be used exactly the same as cout and cin after they are opened. </p>
+<pre><code class="language-cpp line-numbers">#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //Create an instance of ofstream and open example.txt 
+    ofstream outfile("example.txt");
+
+    //Make sure the file was opened
+    if(!outfile)
+    {
+        cout &lt;&lt; "Error opening file " &lt;&lt; endl;
+        exit(0);
+    }
+
+    //output text to the file
+    outfile &lt;&lt; "This text will no be inside of example.txt" &lt;&lt; endl;
+  
+    return 0;
+}    </iostream></fstream></code></pre>
+<p class="SubHead">Common ostream Functions Used for Writing</p>
+<p>
+</p>
+<table class="telerik-reTable-1" width="95%" style="margin-left: 25px;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1" style="text-align: left;"><strong>Function</strong></td>
+            <td class="telerik-reTableHeaderLastCol-1"><strong>Description</strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">os.put('a');</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">The put member function provides a simple method of inserting a single character into an output stream.</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">os.write(str, 10);</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">Inserts the first 10 characters from str into os.</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">os.put('a').put('b');
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">Equivalent to<br/>
+            os.put('a'); <br/>
+            os.put('b');</td>
+        </tr>
+    </tbody>
+</table>
+<style type="text/css" id="telerik-reTable-1">
+    .telerik-reTable-1
+    {
+    border-width: 0px;
+    border-style: none;
+    border-collapse: collapse;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-1 tr.telerik-reTableHeaderRow-1
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3F4D6B;
+    background: #D6E8FF;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Tahoma;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-spacing: 10px;
+    line-height: 14pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableOddRow-1
+    {
+    color: #666666;
+    background-color: #F2F3F4;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 tr.telerik-reTableEvenRow-1
+    {
+    color: #666666;
+    background-color: #E7EBF7;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableFooterRow-1
+    {
+    background-color: #D6E8FF;
+    color: #4A5A80;
+    font-weight: 500;
+    font-size: 10pt;
+    font-family: Tahoma;
+    line-height: 11pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+</style>
+<p style="margin-top: 15px;" class="SubHead">Reading </p>
+<p>Reading from a sequential access file is no different than reading input from the keyboard. You can use the stream extraction operator (&gt;&gt;) with the file object to read data from the file.</p>
+<pre><code class="language-cpp line-numbers">int main()
+{	
+	ifstream infile("test.txt");
+	if (!infile)
+	{
+		cout &lt;&lt; "Error opening file for reading" &lt;&lt; endl;
+		exit(-1);
+	}
+	char input[100];
+	infile &gt;&gt; input;
+	cout &lt;&lt; input &lt;&lt; endl;
+
+	return 0;
+}
+ </code></pre>
+<p>As with cin, using the stream extraction operator will only get you the first word in the file because the stream extraction operator terminates reading at a white space. If you want to read all of the words using this method you would have to use a loop:</p>
+<pre><code class="language-cpp line-numbers">int main()
+{	
+	ifstream infile("test.txt");
+	if (!infile)
+	{
+		cout &lt;&lt; "Error opening file for reading" &lt;&lt; endl;
+		exit(-1);
+	}
+	char input[100];
+	while(infile &gt;&gt; input)
+		cout &lt;&lt; input &lt;&lt; endl;
+
+        infile.close();
+	return 0;
+}
+ </code></pre>
+<p>Of course if you want to read an entire line from the file you could always use the getline function that is part of the ifstream object</p>
+<pre><code class="language-cpp line-numbers">char input[100];
+infile.getline(input, 100);
+cout &lt;&lt; input &lt;&lt; endl; </code></pre>
+<p>To read every line you could use a loop along with the getlline function.</p>
+<pre><code class="language-cpp line-numbers">char input[100];
+while(infile.getline(input, 100))
+	cout &lt;&lt; input &lt;&lt; endl;
+ </code></pre>
+<p>The file funcitonality was built into C++ before the string class was added to the language. This is why the above examples use CStrings and not the string class. If you want to use the string class to get a line of text from the file then you need to use the getline function:</p>
+<pre><code class="language-cpp line-numbers">string input;
+while(getline(infile, input))
+	cout &lt;&lt; input &lt;&lt; endl;
+
+infile.close(); </code></pre>
+<p class="SubHead">Common istream Functions Used For Reading</p>
+<table class="telerik-reTable-1" width="95%" style="margin-left: 25px;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1" style="text-align: left;"><strong>Function</strong></td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;"><strong>Description</strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">int ch = is.get();</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">The get member function provides a simple method of extracting a single character from an input stream.</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">
+            int c = is.peek ();
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">A variation of get, does the same but does not advance the get pointer. In other words, it allows you to examine the next input character without extracting it.</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">
+            is.putback(ch);
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">The effect of a call to get can be canceled by calling putback which deposits the extracted character back into the stream</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">
+            char buf[64]; <br/>
+            is.read(buf, 64);
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">A variation of read, called getline, allows extraction of characters until a user-specified delimiter is encountered. The delimiter, although extracted if encountered within the specified number of characters, is not deposited into buf</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">is.getline(buf, 64, '\t'); </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">A variation of read, called getline, allows extraction of characters until a user-specified delimiter is encountered. The delimiter, although extracted if encountered within the specified number of characters, is not deposited into buf</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">is.ignore(10, '\n');</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">Extracts and discards up to 10 characters but stops if a newline character is encountered. The delimiters itself is also extracted and discarded</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">
+            is.get(ch1).get(ch2);
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">Get two characters from the input</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">
+            is.get(ch1); <br/>
+            is.get(ch2);
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">Equivalent to the above</td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Video - Sequential Access Files</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7179 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl00_LiveTabsiMod7195"><div class="DnnModule DnnModule-LiveContent DnnModule-7195"><a name="7195"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl00_ctr7195_ContentPane">
+		
+    <!-- Start_Module_7195 --><div id="dnn_ctr7181_View_ctl00_ctl00_ctr7195_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7195"></a> <div id="dnn_ctr7181_View_ctl00_ctl00_ctr7195_View_LC7195"><table id="dnn_ctr7181_View_ctl00_ctl00_ctr7195_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71951Heading">Sequential Access Files</div><a id="LC71951" class="highslide" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/Portals/11/LiveContent/7195/Videos/SequentialAccess1.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71951eVideo',allowHeightReduction: false,headingId: 'LC71951Heading',headingOverlay: {fade: 1},captionId: 'LC71951Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7195',width: 800,height: 640}, {TabId: '1930',ModuleId: '7195',PortalId: '11',ElementId: '1'}); "> <img title="Sequential Access Files" alt="Sequential Access Files" src="/web/20170515135734im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7195&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71951eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71951Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71951Caption">Reading and writing to sequential access files</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7195 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl00_LiveTabsiMod7196"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7196"><a name="7196"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl00_ctr7196_ContentPane">
+		
+    <!-- Start_Module_7196 --><div id="dnn_ctr7181_View_ctl00_ctl00_ctr7196_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7181_View_ctl00_ctl00_ctr7196_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<a class="learn-more" href="https://web.archive.org/web/20170515135734/http://www.learncpp.com/cpp-tutorial/136-basic-file-io/" target="_blank">See what LearnCPP has to say about file IO</a>
+<p class="Head">Random Access Files</p>
+<hr/>
+<p>Random access file allows you to write records to a file sort of in the way databases did it before the advent of the relational database.<span style="font-size: 0.8em; line-height: 21.76px;">&nbsp;</span>The problem with random access files is that the records need to be a fixed length so that you know where one record ends and the other record begins.  You can create a record out of a structure but again you must make sure that it is of a fixed length. This means no vectors or classes can be included as part of your structure. In other words, you must use primitive types.&nbsp;</p>
+<p class="Head">seekp and seekg</p>
+<hr/>
+<p>When you open a file for reading or writing a file pointer is created that points to the current position in the file. If you have done any file IO in C you probably already understand this. When you read a byte from a file the file pointer moves to the next byte to be read. What you are reading then is the data located at the place the file pointer references. This whole notion of the file pointer is encapsulated in the stream classes and in most cases you don't need to be aware of it. If you need to move around the file in a byte-wise fashion you can use the seekp and seekg functions. Both of these move the file pointer around. </p>
+<p>seekp and seekg basically work the same way except that seekp is part of the ostream class (used for writing) and seekg is part of the istream class (used for reading). Both of these functions allow you to move the file pointer to any position within the file. seekp and seekg are overloaded functions with the following formats: </p>
+<ul>
+    <li><strong><span style="line-height: 21.76px;">ostream &amp;seekp(streampos pos);</span><br/>
+    </strong></li>
+    <li><strong><span style="line-height: 21.76px;">ostream &amp;seekp(streampos off, ios_base::seekdir dir);</span><br/>
+    </strong></li>
+</ul>
+<p>The first function moves the file pointer to a specific offset from where it is currently located. The second function allows you to specify a starting location to offset from:</p>
+<table class="telerik-reTable-1" style="margin-left: 25px; width: 95%;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1"><strong>Type of Seek</strong></td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;"><strong>Argument to seekp</strong>
+            </td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Seek relative to beginning of file</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;"><samp></samp>ios_base::beg<br/>
+            </td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Seek relative to the end of file<br/>
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">ios_base::end <br/>
+            </td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Seek relative to current position<br/>
+            </td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">ios_base::cur </td>
+        </tr>
+    </tbody>
+</table>
+<style type="text/css" id="telerik-reTable-1">
+    .telerik-reTable-1
+    {
+    border-width: 0px;
+    border-style: none;
+    border-collapse: collapse;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-1 tr.telerik-reTableHeaderRow-1
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3F4D6B;
+    background: #D6E8FF;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Tahoma;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-spacing: 10px;
+    line-height: 14pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableOddRow-1
+    {
+    color: #666666;
+    background-color: #F2F3F4;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 tr.telerik-reTableEvenRow-1
+    {
+    color: #666666;
+    background-color: #E7EBF7;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableFooterRow-1
+    {
+    background-color: #D6E8FF;
+    color: #4A5A80;
+    font-weight: 500;
+    font-size: 10pt;
+    font-family: Tahoma;
+    line-height: 11pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+</style>
+<p>The funtion seekg works the exact same way except you use it when you are reading files with an ifstream object</p>
+<p class="Head">tellp and tellg</p>
+<hr/>
+<p>Like seekp and seekg, tellp is part of the ostream class and tellg is part of the istream class. Both return the current position in bytes from the beginning of the file to the current position of the file pointer. The prototype for the function is:</p>
+<pre><code class="language-cpp line-numbers">streampos tellg();   </code></pre>
+<p>If you are wondering what streampos is you can find it in the iostream header. It is defined as follows:</p>
+<pre><code class="language-cpp line-numbers">typedef long streampos;  </code></pre>
+<p>As you can see, streampos has been defined as a long data type. </p>
+<p>To understand how seekp, seekg,tellp, tellg work let's look at an example that will determine the size of a file in bytes. The idea here is that the seek pointer will be moved from the beginning of the file to the end. Then tellg will be used to return the position of the pointer which happens to be in bytes:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">
+
+#include<iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+bool writeFile(string fName);
+int fileSize(string fName);
+
+int main()
+{
+
+   writeFile("example.txt");
+   int size = fileSize("example.txt");
+   cout &lt;&lt; "The size of the file in bytes is " &lt;&lt; size &lt;&lt; endl;
+   return 0;
+}
+
+int fileSize(string fName)
+{
+   ifstream infile(fName);
+   if(!infile)
+      return 0;
+
+   infile.seekg(0, ios_base::end);
+   int bytes = infile.tellg();
+   infile.close();
+  
+   return bytes;
+}
+bool writeFile(string fName)
+{
+   ofstream outfile(fName);
+   if(!outfile)
+      return false;
+
+   outfile &lt;&lt; "Now is the time for all good men to come" &lt;&lt; endl;
+   outfile &lt;&lt; "To the aid of their country" &lt;&lt; endl;
+   outfile &lt;&lt; "The quick brown fox jumped " &lt;&lt; endl;
+   outfile &lt;&lt; "over the lazy old dog" &lt;&lt; endl;
+   outfile.close();
+}
+
+ 
+ 
+ 
+           </string></fstream></iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">The size of the file in bytes is 123<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Writing Records</p>
+<hr/>
+<p>In order to write a record to a file it needs to be of fixed length. This way we can use seekp or seekg to move to the file pointer to the appropriate number of bytes for the beginning of each record. This allows us to access records randomly simply by computing the byte offset to the starting point of the record we want to read or write from. </p>
+<p>Here is an example of a fixed length record that is 100 bytes in size:</p>
+<pre><code class="language-cpp line-numbers">struct guest
+{
+   char firstName[50];
+   char lastName[50];
+}; </code></pre>
+<p>Writing fixed length records in many ways is similar to writing sequential access files.</p>
+<pre><code class="language-cpp line-numbers">#include<fstream>
+#include <iostream>
+
+using namespace std;
+
+struct Guest
+{
+   char firsName[50];
+   char lastName[50];
+};
+
+int main()
+{
+Guest g;
+
+   strcpy(g.firsName,"Glenn");
+   strcpy(g.lastName,"Stevenson");
+   ofstream outData("guests.dat", ios::binary);
+
+   if(!outData)
+   {
+      cout &lt;&lt; "Unable to open the file for writing " &lt;&lt; endl;
+      exit(0);
+   }
+   outData.write(reinterpret_cast<const> (&amp;g), sizeof(Guest));
+
+}
+
+ </const></iostream></fstream></code></pre>
+<p>Notice that the file is opened for binary writing. Binary files are more efficient than text files and are perfect for dealing with records. In the above example, only c_strings are being written but the structure could very well contain numbers. Writing everything in binary takes care of any conversions from numbers to strings. </p>
+<p>Like arrays, all members of structures sit next to each other in memory. We want to write them to the file just like they were an array that is why the reinterpret cast is used so that the data can be written like one big chunk of contiguous byte wise piece of memory. </p>
+<p>Also note that the sizeof operator is being used. This will tell the write function how many bytes we want written. </p>
+<p class="Head">Reading a Record</p>
+<hr/>
+<p>Records are read in the same manner as they were written, like one big chunk of byte wise data. Here is a some code that shows how to read a record:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include<fstream>
+#include <iostream>
+
+using namespace std; 
+
+struct Guest
+{
+char firsName[50];
+char lastName[50];
+};
+
+int main()
+{
+Guest g;
+
+   ifstream inData("guests.dat");
+   if(!inData)
+   {
+      cout &lt;&lt; "Unable to open the file for reading " &lt;&lt; endl;
+      exit(0);
+   }
+  
+   inData.read(reinterpret_cast<char>(&amp;g), sizeof(Guest));
+   cout &lt;&lt; g.firsName &lt;&lt; " " &lt;&lt; g.lastName &lt;&lt; endl;
+}
+           </char></iostream></fstream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Glenn Stevenson<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Reading a Specific Record</p>
+<hr/>
+<p>The above functionality can be modified to read a particular record. All that needs to be done is to add a seekp statement to move the file pointer to the beginning of the particular record to read. In this example, the record number is passed to the function and used along with seekp to compute the location of the beginning of the record specified:
+</p>
+<pre><code class="language-cpp line-numbers">void showRecord(int recNumber)
+{
+Guest g;
+
+   ifstream inData("guests.dat");
+   if(!inData)
+   {
+      cout &lt;&lt; "Unable to open the file for reading " &lt;&lt; endl; 
+      exit(0);
+   }
+   inData.seekg(recNumber * sizeof(Guest)); 
+
+   inData.read(reinterpret_cast<char>(&amp;g), sizeof(Guest)); 
+   cout &lt;&lt; g.firsName &lt;&lt; " " &lt;&lt; g.lastName &lt;&lt; endl;  
+
+}
+
+  </char></code></pre>
+<p class="Head">Video - Random Access Files</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7196 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl00_LiveTabsiMod7197"><div class="DnnModule DnnModule-LiveContent DnnModule-7197"><a name="7197"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl00_ctr7197_ContentPane">
+		
+    <!-- Start_Module_7197 --><div id="dnn_ctr7181_View_ctl00_ctl00_ctr7197_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7197"></a> <div id="dnn_ctr7181_View_ctl00_ctl00_ctr7197_View_LC7197"><table id="dnn_ctr7181_View_ctl00_ctl00_ctr7197_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71971Heading">Random Access Files</div><a id="LC71971" class="highslide" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/Portals/11/LiveContent/7197/Videos/RandomAccess.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71971eVideo',allowHeightReduction: false,headingId: 'LC71971Heading',headingOverlay: {fade: 1},captionId: 'LC71971Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7197',width: 800,height: 640}, {TabId: '1930',ModuleId: '7197',PortalId: '11',ElementId: '1'}); "> <img title="Random Access Files" alt="Random Access Files" src="/web/20170515135734im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7197&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71971eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71971Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71971Caption">Reading and Writing Records</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7197 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl00_LiveTabsiMod7198"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7198"><a name="7198"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl00_ctr7198_ContentPane">
+		
+    <!-- Start_Module_7198 --><div id="dnn_ctr7181_View_ctl00_ctl00_ctr7198_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7181_View_ctl00_ctl00_ctr7198_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<a class="learn-more" href="https://web.archive.org/web/20170515135734/http://www.learncpp.com/cpp-tutorial/137-random-file-io/" target="_blank">Check out the LearnCPP tutorial on Random Access files</a>
+</div>
+
+				</div><!-- End_Module_7198 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7181689" class="mtop">
+				<div id="dnn_ctr7181_View_ctl00_ctl01_LiveTabsiMod7199"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7199"><a name="7199"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl01_ctr7199_ContentPane">
+		
+    <!-- Start_Module_7199 --><div id="dnn_ctr7181_View_ctl00_ctl01_ctr7199_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7181_View_ctl00_ctl01_ctr7199_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Namespaces allow you to group a set of global classes, objects and/or functions under a name. To say it another way, they serve to split the global scope in sub-scopes known as namespaces which use the following form: </p>
+<pre><code class="language-cpp line-numbers">namespace identifier
+{
+    namespace-body 
+} 
+ </code></pre>
+<p>Where identifier is any valid identifier and namespace-body is the set of classes, objects and functions that are included within the namespace . For example:</p>
+<pre><code class="language-cpp line-numbers">namespace general
+{ 
+     int a, b;
+} 
+ </code></pre>
+<p>In this example a and b are normal variables integrated within the general namespace. In order to access these variables from outside the namespace you have to use the scope operator ::.</p>
+<pre><code class="language-cpp line-numbers">general::a
+general::b</code></pre>
+<p>The functionality of namespaces is specially useful in case there is a possibility that a global object or function has the same name as another one, causing a redefinition error. For example:</p>
+<pre><code class="language-cpp line-numbers">#include <iostream> 
+using namespace std;
+
+namespace first
+{
+   int var = 5;
+}
+
+namespace second
+{
+   double var = 3.1416;
+} 
+
+
+int main ()
+{
+   cout &lt;&lt; first::var &lt;&lt; endl;
+   cout &lt;&lt; second::var &lt;&lt; endl;
+   return 0;
+} 
+ </iostream></code></pre>
+<p class="Head">using namespace</p>
+<hr/>
+<p>The using directive followed by namespace serves to associate the present nesting level with a certain namespace so that the objects and functions of that namespace can be accessible directly as if they were defined in the global scope. Its utilization follows this prototype: </p>
+<pre><code class="language-cpp line-numbers">using namespace identifier ; </code></pre>
+<p>Lets take the above example and modify it so to use the using keyword</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+using namespace std;
+namespace first
+{
+   int var = 5;
+}
+namespace second
+{
+   double var = 3.1416;
+}
+int main ()
+{
+   using namespace second;
+   cout &lt;&lt; var &lt;&lt; endl;
+   cout &lt;&lt; (var*2) &lt;&lt; endl;
+   return 0;
+}
+</code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">3.1416<br/>
+            6.2832<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In the above example we have been able to use var without having to precede it with the scope resolution operator. </p>
+<p>The clause<strong> using namespace</strong> has validity only in the block in which it is declared (A block is a group of statements within brackets {} ) or in all code if it is used in the global scope. For example, if we had intended to first use the code of a particular namespace and then the code of another namespace within a function we could break sections into blocks:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+using namespace std;
+
+namespace first
+{
+   int var = 5;
+}
+
+namespace second
+{
+   double var = 3.1416;
+}
+
+int main ()
+{
+   {
+      using namespace first;
+      cout &lt;&lt; var &lt;&lt; endl;
+   }
+
+   {
+      using namespace second;
+      cout &lt;&lt; var &lt;&lt; endl;
+   }
+   return 0;
+}
+
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">5<br/>
+            3.1416<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>One common mistake people make with namespaces is that they believe everything needs to be in one file in order to wrap the code in the namespace. This is not the case. YOu simply need to wrap your code inside a namespace declaration in each file. The following shows Rectangle.cpp and Rectangle.h with a namespace</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 50%;">
+            <pre><code class="language-cpp line-numbers">namespace glenn  //Namespace declaration
+{
+	class Rectangle
+	{
+	private:
+		int length;
+		int width;
+
+	public:
+		
+		Rectangle(int length, int width);
+		Rectangle();
+		~Rectangle();
+		int area();
+
+		void setValues(int length, int width);  //Mutator
+		int getLength();   //Accessor
+		int getWidth();    //Accessor
+
+		Rectangle add(const Rectangle &amp;r);
+		Rectangle operator +(const Rectangle &amp;r);		
+	};
+}// end namespace block </code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">namespace glenn  //namespace declaration
+{
+	Rectangle::Rectangle()
+	{
+		Rectangle(1, 1);
+	}
+	Rectangle::Rectangle(int length, int width)
+	{
+		this-&gt;setValues(length, width);
+	}	
+	Rectangle::~Rectangle()
+	{		
+	}
+	void Rectangle::setValues(int length, int width)
+	{
+		this-&gt;length = length;
+		this-&gt;width = width;
+	}
+	int Rectangle::getLength()
+	{
+		return this-&gt;length;
+	}
+	int Rectangle::getWidth()
+	{
+		return this-&gt;width;
+	}
+	Rectangle Rectangle::add(const Rectangle &amp;r)
+	{
+		Rectangle tmp(this-&gt;getLength() + this-&gt;getLength(),
+			this-&gt;getWidth() + this-&gt;getWidth());
+		return tmp;
+	}
+	Rectangle Rectangle::operator +(const Rectangle &amp;r)
+	{
+		return this-&gt;add(r);
+	}
+	int Rectangle::area()
+	{
+		return this-&gt;getLength() * this-&gt;getWidth();
+	}
+} // End namespace block</code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="SubHead">NOTE:</p>
+<p>While it is an easy thing to do, &nbsp;putting the using namespace declaration inside a header file should be avoided. When you do this you are now forcing every file that includes your header to that particular namespace. If you want to use a using statement you should do it this way:</p>
+<pre><code class="language-cpp line-numbers">using std::string;
+using std::endl;
+using glenn::rectangle </code></pre>
+<p class="Head">Alias Definition</p>
+<hr/>
+<p>You can define an alias for a namespace if you wish. An alias is nothing more than allowing you to specify a namespace by a different name. The syntax for this is</p>
+<pre><code class="language-cpp line-numbers">namespace new_name = current_name; </code></pre>
+<p>The following example creates an alias called glenn for the std namespace</p>
+<pre><code class="language-cpp line-numbers"> #include <iostream>
+
+//Give std an alias
+namespace glenn = std;
+
+int main ()
+{
+   glenn::cout &lt;&lt; "Hello from Glenn" &lt;&lt; glenn::endl;
+   return 0;
+}  </iostream></code></pre>
+<p class="Head">Namespace std</p>
+<hr/>
+<p>One of the best examples that we can find about namespaces is the standard C++ library itself. As defined in the ANSI C++ standard, all the classes, objects and functions of the standard C++ library are defined within namespace std . </p>
+<p>Namespace std is nothing new, you have been using it since the beginning of C++ Level 1. But you should know that the use of std is a recent addition to the language. As a matter of fact, it is almost as recent as the ANSI standard itself (1997) and many older compilers do not comply with this rule. </p>
+<p>Almost all compilers, even those complying with ANSI standard, allow the use of the traditional header files (like iostream.h , stdlib.h , etc), and you can use them just as you would namespaces. The ANSI standard has completely redesigned these libraries taking advantage of the templates feature and following the rule to declare all the functions and variables under the namespace std . </p>
+<p>The standard has specified new names for these "header" files. Basically using the same name for C++ specific files but without the ending .h . For example, iostream.h becomes iostream . </p>
+<p>If we use the ANSI-C++ compliant include files we have to bear in mind that all the functions, classes and objects will be declared under the std namespace. For example:  </p>
+<pre><code class="language-cpp line-numbers">// ANSI-C++ compliant hello world
+#include &lt;iostream&gt;
+
+int main ()
+{
+   std::cout &lt;&lt; "Hello world in ANSI-C++\n";
+   return 0;
+} </code></pre>
+<p>Or</p>
+<pre><code class="language-cpp line-numbers">// ANSI-C++ compliant hello world (II)
+#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+   cout &lt;&lt; "Hello world in ANSI-C++\n";
+   return 0;
+}</code></pre>
+<p class="Head">Video - Namespaces</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7199 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl01_LiveTabsiMod7200"><div class="DnnModule DnnModule-LiveContent DnnModule-7200"><a name="7200"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl01_ctr7200_ContentPane">
+		
+    <!-- Start_Module_7200 --><div id="dnn_ctr7181_View_ctl00_ctl01_ctr7200_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7200"></a> <div id="dnn_ctr7181_View_ctl00_ctl01_ctr7200_View_LC7200"><table id="dnn_ctr7181_View_ctl00_ctl01_ctr7200_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC72001" class="highslide" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/Portals/11/LiveContent/7200/Videos/NameSpaces captioned1.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72001eVideo',allowHeightReduction: false,headingId: 'LC72001Heading',headingOverlay: {fade: 1},captionId: 'LC72001Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7200',width: 800,height: 640}, {TabId: '1930',ModuleId: '7200',PortalId: '11',ElementId: '1'}); "> <img alt="1" src="/web/20170515135734im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7200&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72001eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72001Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7200 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7181_View_ctl00_ctl01_LiveTabsiMod7201"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7201"><a name="7201"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl01_ctr7201_ContentPane">
+		
+    <!-- Start_Module_7201 --><div id="dnn_ctr7181_View_ctl00_ctl01_ctr7201_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7181_View_ctl00_ctl01_ctr7201_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<a class="learn-more" href="https://web.archive.org/web/20170515135734/http://xoax.net/cpp/crs/console/lessons/Lesson15/" target="_blank">See what XoaX.net says about namespaces</a>
+</div>
+
+				</div><!-- End_Module_7201 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7181690" class="mtop">
+				<div id="dnn_ctr7181_View_ctl00_ctl02_LiveTabsiMod7213"><div class="DnnModule DnnModule-LiveContent DnnModule-7213"><a name="7213"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7181_View_ctl00_ctl02_ctr7213_ContentPane">
+		
+    <!-- Start_Module_7213 --><div id="dnn_ctr7181_View_ctl00_ctl02_ctr7213_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7213"></a> <div id="dnn_ctr7181_View_ctl00_ctl02_ctr7213_View_LC7213"><table id="dnn_ctr7181_View_ctl00_ctl02_ctr7213_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72131Heading">Streams &amp; Namespaces</div><a id="LC72131" class="highslide" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/Portals/11/LiveContent/7213/Videos/Lecture 4 Streams.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72131eVideo',allowHeightReduction: false,headingId: 'LC72131Heading',headingOverlay: {fade: 1},captionId: 'LC72131Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7213',width: 800,height: 640}, {TabId: '1930',ModuleId: '7213',PortalId: '11',ElementId: '1'}); "> <img title="Streams &amp; Namespaces" alt="Streams &amp; Namespaces" src="/web/20170515135734im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7213&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72131eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72131Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7213 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7181 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515135734/http://programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170515135734im_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7195|LC71951Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|SequentialAccess1|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7197|LC71971Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|RandomAccess|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g e.b\',c:a,w:M,N:\'O\',J:K,L:\'0://1.3.2/4/8//9/5/R/S.Q\',P:\'I A\',B:\'0://z.x.y/C/G-H/F-D.E\'})}',55,55,'http|programming|edu|msjc|Portals|7200|LC72001Html5eVideo|jwplayer|11|LiveContent|600|mp4|height||captioned1|Videos|NameSpaces|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame21'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(8(\'7\')!=n){8(\'7\').o({j:\'0://1.3.2/k.l?d=p-u-v-w-q&r;t=s\',i:\'0://1.3.2/5/9/a/6/g/h 4 f.c\',e:b,x:N,O:\'P\',K:L,M:\'0://1.3.2/5/9//a/6/T/Q.R\',S:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}',56,56,'http|programming|edu|msjc||Portals|7213|LC72131Html5eVideo|jwplayer|11|LiveContent|600|mp4||height|Streams|Videos|Lecture|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000||ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|autostart|true|image|800|provider|video|Lecture_4_Streams_First_Frame|png|abouttext|Images'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7181").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7181').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7181') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7181').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7181').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7181') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7181').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7181").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7181') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 13:57:34 May 15, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:29:00 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 71.849 (3)
+  exclusion.robots: 0.254
+  exclusion.robots.policy: 0.242
+  load_resource: 83.907
+  RedisCDXSource: 16.599
+  PetaboxLoader3.datanode: 96.702 (4)
+  PetaboxLoader3.resolve: 28.408
+  captures_list: 109.131
+  CDXLines.iter: 16.906 (3)
+  esindex: 0.022
+-->

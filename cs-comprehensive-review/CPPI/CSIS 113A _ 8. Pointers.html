@@ -1,0 +1,1246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app13.us.archive.org';v.server_ms=372;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20150219203120", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+<title>
+	CSIS 113A &gt; 8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="C++ Programming Level 1"/><meta id="MetaCopyright" name="COPYRIGHT" content="2010 By Glenn Stevenson"/><meta id="MetaAuthor" name="AUTHOR" content="CSIS 113A"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20150219203120cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219203120cs_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/skin.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219203120cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/container.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219203120cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/Title_Grey.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219203120cs_/http://programming.msjc.edu/Portals/16/portal.css?cdv=109" type="text/css" rel="stylesheet"/><script src="/web/20150219203120js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=109" type="text/javascript"></script><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219203120cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Media Gallery/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219203120cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=znp6pkQZlpF_uSIya7FVqe1UQ6L4C0ftAfFqUpnMNrQpFK3o1z4ime0972wo3BFCMqG6WREqZ1U5AmYsQIiM4K0zzdchMno4mSrX0oaPB3Zg83PPvSZ2TthgZkK-kaEz-Vb5yrPYsk9P9yq5ByNojo2WBSt3u82qqXGLrA2&amp;t=634969582000000000" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=TKrWBk8fd5-ZZfMoIxmbvxbBGySHUGOMgqdi4DCaWlpORE2l2vA4yWHnlA5rZuf-zEITssELItRMUo-Jf2MwTuqhN-5-4wNnnV1X88iDdt5x63EeC0DwwxiepVYcXJStQDxLaZc-OdUSz2pTrd4ymENTAR5nGuLuWoJ7jY8bf9w7SXw00&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx', '20150219203120')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20150219203120/http://web.archive.org/screenshot/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20150219203120/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20150219203120/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20150219203120" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141214191725/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="14 Dec 2014"><strong>Dec</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 20:31:20 Feb 19, 2015">FEB</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150406100635/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="06 Apr 2015"><strong>Apr</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141214191725/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="19:17:25 Dec 14, 2014"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 20:31:20 Feb 19, 2015">19</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150306034803/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="03:48:03 Mar 06, 2015"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20130930080603/http://www.programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="30 Sep 2013"><strong>2013</strong></a></td>
+		  <td class="c" id="displayYearEl" title="You are here: 20:31:20 Feb 19, 2015">2015</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20160307215726/http://programming.msjc.edu:80/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="07 Mar 2016"><strong>2016</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20150219203120*/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="See a list of every capture for this URL">24 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">29 Jul 2013 - 27 Jun 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20150219203120/http%3A//programming.msjc.edu/cpp/8Pointersnbsp%253Bnbsp%253Bnbsp%253Bnbsp%253B.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx","2015-02-19",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx", '20150219203120');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    
+    <form method="post" action="/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper2836_SelectedIndex" id="LiveTabsWrapper2836_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMwNzQ0NDU3D2QWCGYPFgIeBFRleHQFeTwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4wIFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1sMS10cmFuc2l0aW9uYWwuZHRkIj5kAgIPFgIfAAVDIHhtbDpsYW5nPSJlbi1VUyIgbGFuZz0iZW4tVVMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAxZAIIDxYEHwJkHwFoZAIJDxYCHwIFFzIwMTAgQnkgR2xlbm4gU3RldmVuc29uZAIKDxYEHwJkHwFoZAILDxYCHwIFCUNTSVMgMTEzQWQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYWZg9kFgJmDw8WBB4HVG9vbFRpcAUJQ1NJUyAxMTNBHgtOYXZpZ2F0ZVVybAUpaHR0cDovL3Byb2dyYW1taW5nLm1zamMuZWR1L2NwcC9Ib21lLmFzcHhkZAIBDxYCHgVjbGFzcwUXaGVhZGVycGFuZSBETk5FbXB0eVBhbmVkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDD2QWBGYPZBYGAgEPEA8WCB4IQ3NzQ2xhc3MFBlNlYXJjaB8ABQNXZWIfAwURR29vZ2xlIFdlYiBTZWFyY2geBF8hU0ICAmRkZGQCAw8QDxYIHwYFBlNlYXJjaB8ABQRTaXRlHwMFC1NpdGUgU2VhcmNoHwcCAmRkZGQCBw8PFgYfBgUGU2VhcmNoHwAFYzxpbWcgc3JjPSIvUG9ydGFscy9fZGVmYXVsdC9Ta2lucy9QaW9uZWVyLUJsdWUvaW1hZ2VzL0JsdWVTZWFyY2guanBnIiBhbGlnbj0iYWJzTWlkZGxlIiBib3JkZXI9IjAiPh8HAgJkZAICD2QWAgICDw8WBh8GBQZTZWFyY2gfAAVjPGltZyBzcmM9Ii9Qb3J0YWxzL19kZWZhdWx0L1NraW5zL1Bpb25lZXItQmx1ZS9pbWFnZXMvQmx1ZVNlYXJjaC5qcGciIGFsaWduPSJhYnNNaWRkbGUiIGJvcmRlcj0iMCI+HwcCAmRkAgYPZBYEZg8PFgYfBgUEVXNlch8HAgIfAWhkZAICDxYCHwFoFggCAQ8WAh8BaGQCAw8WAh8BaGQCBQ8PFgQfBgUEVXNlch8HAgJkZAIHDxYCHwFoZAIHD2QWBGYPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFaGh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmOFBvaW50ZXJzbmJzcCUzYm5ic3AlM2JuYnNwJTNibmJzcCUzYi5hc3B4HwcCAhYCHgdvbmNsaWNrBaIBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcC84UG9pbnRlcnNuYnNwO25ic3A7bmJzcDtuYnNwOy5hc3B4JnBvcFVwPXRydWUnLC8qc2hvd1JldHVybiovdHJ1ZSwzMDAsNjUwLHRydWUsJycpZAICDxYCHwFoFgICAQ8PFgofBgUFTG9naW4fAAUFTG9naW4fAwUFTG9naW4fBAVoaHR0cDovL3Byb2dyYW1taW5nLm1zamMuZWR1L2NwcC9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHAlMmY4UG9pbnRlcnNuYnNwJTNibmJzcCUzYm5ic3AlM2JuYnNwJTNiLmFzcHgfBwICFgIfCAWiAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPS9jcHAvOFBvaW50ZXJzbmJzcDtuYnNwO25ic3A7bmJzcDsuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCCQ8WAh8FBRR0b3BwYW5lIEROTkVtcHR5UGFuZWQCCg8WAh8FBRVsZWZ0cGFuZSBETk5FbXB0eVBhbmVkAgsPFgIfAWcWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlVGFicyBEbm5Nb2R1bGUtMjgzNhYCAgEPZBYQAgMPDxYCHwFoZGQCBQ9kFgICAg8WAh8BaGQCBw9kFgJmDw8WAh8BaGRkAgkPZBYCZg8PFgIfAwUITWluaW1pemVkFgJmDw8WBh4ISW1hZ2VVcmwFQC9Qb3J0YWxzL19kZWZhdWx0L0NvbnRhaW5lcnMvTWluaW1hbEV4dHJvcHkvaW1hZ2VzL0ROTi1taW51cy5naWYeDUFsdGVybmF0ZVRleHQFCE1pbmltaXplHwMFCE1pbmltaXplZGQCCw9kFgICAg8PZBYCHwUFHUROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZVRhYnNDFgICAQ9kFgICAQ8WAh4RRGlzYWJsZWRUYWJzQXJyYXlkFgZmD2QWAmYPZBYYZg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4MzcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNjEWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCAg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4NDAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNTQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCBA9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNTYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCBQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4NDQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNTcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCBw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4NDYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCCA9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNTgWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCCQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4NDgWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCCg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUyNjAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50Q2QCCw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4NTAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmD2QWCGYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yODUxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MjYyFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudENkAgIPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yODUzFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MjYzFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudENkAgIPZBYCZg9kFgJmD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNTI2NBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDZAIND2QWAmYPDxYCHwFoZGQCDw9kFgJmDw8WAh8BaGRkAhEPZBYCZg8PFgIfAWhkZAIMDxYCHwUFFnJpZ2h0cGFuZSBETk5FbXB0eVBhbmVkAg0PFgIfBQUXYm90dG9tcGFuZSBETk5FbXB0eVBhbmVkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYEBRZkbm4kY3RyMjgzNiRWaWV3JGN0bDAwBRxkbm4kZG5uU0VBUkNIJFdlYlJhZGlvQnV0dG9uBR1kbm4kZG5uU0VBUkNIJFNpdGVSYWRpb0J1dHRvbgUUZG5uJGRubk5BViRjdGxkbm5OQVbD5HoLam6+dcFCTTWVfv+tE395Lw=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            <script type="text/javascript" src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.f="/g/e/c/d/";0.1.k=\'l...\';0.1.j=\'3 2 h 2 i\';0.1.5=\'6 2 a b\';0.1.9=\'7\';0.1.8=\'x\';0.1.y=\'v\';0.1.w=\'B\';0.1.C=\'3 2 z A, u 4 o 2 p. m n s t q 4 r.\';',39,39,'hs|lang|to|Click|and|fullExpandTitle|Expand|Prev|nextText|previousText|actual|size|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|bring|front|focusTitle|loadingText|Loading|Use|arrow|drag|move|next|previous|keys|for|click|Move|closeText|Next|moveText|close|image|Close|restoreTitle'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+
+<script src="/web/20150219203120js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3af319b152-218f-4c14-829d-050a68bb1a61%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/web/20150219203120js_/http://programming.msjc.edu/js/dnn.js" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20150219203120js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAjAfypKYLkYJYlsZHvBw4u8//c7PsqmuTnEFQI7odDR3WwwN58EmkZeYVfe5uNDEljiNx9aiHsyVt43JPA19HY69g7WIPfzT65Doh/GL2XrALNVPnNrN2Wc10RJPae8qzlXyfNnC2LjR4Gt1Zo90L2sIJWE4Jsg+tfguQrQbLlbQPN1E6j5MOh/Jnft/tLKlEJLcCAA"/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20150219203120js_/http://programming.msjc.edu/js/Debug/dnn.modalpopup.js?cdv=109" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/Resources/Shared/Scripts/dnn.jquery.js?cdv=109" type="text/javascript"></script><script src="/web/20150219203120js_/http://programming.msjc.edu/js/Debug/dnncore.js?cdv=109" type="text/javascript"></script>
+        
+        
+
+<table border="0" cellspacing="0" cellpadding="0" class="menu_bgcolor skin-1024">
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="page_top_bgcolor"><table class="page_top_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td rowspan="2" class="logo_style"><a id="dnn_dnnLOGO_hypLogo" title="CSIS 113A" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Home.aspx"><img id="dnn_dnnLOGO_imgLogo" src="/web/20150219203120im_/http://programming.msjc.edu/Portals/16/cpplogo2.png" alt="CSIS 113A" style="border-width:0px;"/></a></td>
+              
+              <td class="language_style" nowrap="nowrap"><div class="language-object">
+
+
+</div></td>
+              <td align="right" class="page_top_right"><img src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+            <tr>
+              <td class="search_style" nowrap="nowrap"><span id="dnn_dnnSEARCH_ClassicSearch">
+    <span class="Search" title="Google Web Search"><input id="dnn_dnnSEARCH_WebRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="WebRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_WebRadioButton">Web</label></span>
+    <span class="Search" title="Site Search"><input id="dnn_dnnSEARCH_SiteRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="SiteRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_SiteRadioButton">Site</label></span>
+    <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" onkeydown="return __dnn_KeyDown('13', 'javascript:__doPostBack(%27dnn$dnnSEARCH$cmdSearch%27,%27%27)', event);"/>
+	<a id="dnn_dnnSEARCH_cmdSearch" class="Search" href="javascript:__doPostBack('dnn$dnnSEARCH$cmdSearch','')"><img src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/BlueSearch.jpg" align="absMiddle" border="0"></a>
+</span>
+
+
+</td>
+              <td align="right" class="page_top_right02"></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="user_left_bg" nowrap="nowrap"><table width="244" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" class="date_style"><span id="dnn_dnnCURRENTDATE_lblDate" class="CurrentDate">Thursday, February 19, 2015</span>
+</td>
+                </tr>
+              </table></td>
+              <td class="user_bg" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left">
+                      <span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" class="Breadcrumb">8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;</a></span>
+</td>
+                    <td align="right">
+<!--close registerGroup--><a id="dnn_dnnLOGIN_loginLink" title="Login" class="Login" onclick="return dnnModal.show('https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=%2fcpp%2f8Pointersnbsp%3bnbsp%3bnbsp%3bnbsp%3b.aspx">Login</a>
+<!--close loginGroup--></td>
+                  </tr>
+              </table></td>
+              <td align="right" class="user_right_bg"><img src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><table class="menu_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" height="10"><img src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="190" height="10"/></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><div>
+	<ul class="" id="dnn_dnnNAV_ctldnnNAV">
+		<li id="dnn_dnnNAV_ctldnnNAVctr354"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Home.aspx"><span>Home</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr527"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/1Introduction.aspx"><span>1.    Introduction</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr528"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/2DataTypesnbsp;nbsp;.aspx"><span>2. Data Types &nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr529"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/3Decisionsnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>3. Decisions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr530"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx"><span>4. Repetition &nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr531"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx"><span>5. Functions &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr532"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/6Parameters.aspx"><span>6. Parameters</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr534"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/7Arraysnbsp;nbsp;nbsp;nbsp;nbsp;nbsp;nbsp.aspx"><span>7. Arrays&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr535"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx"><span>8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr536"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/9Classesnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>9. Classes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr606"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus.aspx"><span>Syllabus</span></a><ul id="dnn_dnnNAV_ctldnnNAVsub606">
+			<li id="dnn_dnnNAV_ctldnnNAVctr1698"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus/4046.aspx"><span>4046</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1673"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus/3482.aspx"><span>3482</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr842"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus/4623.aspx"><span>4623</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1571"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus/4626.aspx"><span>4626</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr607"><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/Syllabus/4589.aspx"><span>4589</span></a></li>
+		</ul></li>
+	</ul>
+</div></td>
+                  </tr>
+              </table></td>
+              <td width="100%" class="content_style" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                  <tr>
+                    
+                  </tr>
+                  <tr>
+                    
+                    <td id="dnn_ContentPane" valign="top" class="contentpane"><div class="DnnModule DnnModule-LiveTabs DnnModule-2836"><a name="2836"></a>
+<div class="c_container c_head_grey">
+    <div class="head_title">
+        <div class="c_actions">
+			
+        </div>
+        <div class="c_icon">			
+			
+			<h2 class="c_title">
+				<span id="dnn_ctr2836_dnnTITLE_titleLabel" class="TitleHead">Pointers</span>
+
+
+				
+			</h2>
+            </div>
+        <div class="title_vis">
+        
+            <a id="dnn_ctr2836_dnnVISIBILITY_cmdVisibility" title="Minimize" href="javascript:__doPostBack('dnn$ctr2836$dnnVISIBILITY$cmdVisibility','')"><img id="dnn_ctr2836_dnnVISIBILITY_imgVisibility" title="Minimize" src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/images/DNN-minus.gif" alt="Minimize"/></a>
+        </div>
+        <div class="clear_float">
+        </div>
+    </div>
+    <div class="c_content">
+        <div id="dnn_ctr2836_ContentPane" class="Normal c_contentpane">
+        <!-- Start_Module_2836 --><div id="dnn_ctr2836_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper2836" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper2836" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs2836144" class="mtop"><a name="LiveTabsContent2836144" href="#LiveTabsContent2836144">A. Pointer Basics</a></li><li id="LiveTabs2836145" class="mtop"><a name="LiveTabsContent2836145" href="#LiveTabsContent2836145">B. Pointers As Arguments</a></li><li id="LiveTabs2836146" class="mtop"><a name="LiveTabsContent2836146" href="#LiveTabsContent2836146">C. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent2836144" class="mtop">
+				<div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2837"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2837"><a name="2837"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2837_ContentPane">
+		
+    <!-- Start_Module_2837 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2837_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2837_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">What is a pointer</span><hr/>
+</p>
+A pointer is a special type of variable. What is so special about a pointer you might ask? Well, a pointer is a variable that holds the address of another variable. Through the use of pointers, we can indirectly manipulate values at another memory location.<br/>
+<br/>
+<p>There are two symbols that you should know about right off the bat they are:</p>
+<p><strong>&amp;</strong> - addressof operator (Yes it is the same symbol that is used for references)<br/>
+<strong>*</strong> - de-reference operator (It may be easier to think of it as the contents of operator).</p>
+<p>The &amp; symbol will get you the memory location of where a variable is stored. Look at the following code:</p>
+</div>
+
+				</div><!-- End_Module_2837 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5261"><div class="DnnModule DnnModule-LiveContent DnnModule-5261"><a name="5261"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5261_ContentPane">
+		
+    <!-- Start_Module_5261 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5261_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5261/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5261/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5261/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5261_View_LCSearchToolbar5261" class="LCSearchToolbar5261 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5261', '#LCSearchResult5261', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5261&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5261" style="display: none">
+    </div>
+    <a name="LiveContent5261"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5261_View_LC5261"><div id="LCElementsWrapper5261" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52611Heading"></div><a id="LC52611" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5261/Images/Pointer1.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5261&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52611Heading',headingOverlay: {fade: 1},captionId: 'LC52611Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5261'}, {TabId: '535',ModuleId: '5261',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5261&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52611Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52611').click(); return false;">Comment</a> 125 views
+    </p>
+     </li>
+<li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52612Heading"></div><a id="LC52612" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5261/Images/pointer1Output.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5261&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52612Heading',headingOverlay: {fade: 1},captionId: 'LC52612Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5261'}, {TabId: '535',ModuleId: '5261',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5261&amp;eid=2&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52612Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52612').click(); return false;">Comment</a> 284 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5261 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2840"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2840"><a name="2840"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2840_ContentPane">
+		
+    <!-- Start_Module_2840 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2840_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2840_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span></p>
+<hr/>
+<p>&nbsp;</p>
+<p>In the above code, an integer variable called x is declared and initialized with the value of 3. The cout function simply prints the memory address of where x is located in memory. This is done by preceding the variable with the addressof operator &amp;. <br/>
+<br/>
+<span class="Head">Declaring A Pointer</span></p>
+<hr/>
+You declare a pointer using the * dereference operator. You should note that you use this operator in two places. The first is when you want to declare a pointer. The second is when you want to get the value the pointer is referring to (pointing at). <br/>
+<br/>
+<img width="475" height="225" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/pointer2.png"/><br/>
+<br/>
+In the above code what variable does the pointer ptr hold the address of? The answer that it hasn't been initialized so we don't know. It does hold the address of a memory location. It just happens to be whatever memory the compiler picked. To us it is nothing more than garbage.<br/>
+<br/>
+<span class="Head">Initializing A Pointer</span><br/>
+<hr/>
+Remember, a pointer holds an address so when you initialize a pointer you must store the address of another variable. Here is an example:<br/>
+<br/>
+<img width="475" height="225" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/pointer3.png"/><br/>
+<br/>
+<p style="text-align: left;">Now ptr holds the address of x and can print or change the value of x indirectly using the pointer. This is accomplished using the de reference operator</p>
+<br/>
+<img width="475" height="225" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/pointer4.png"/><br/>
+<br/>
+<p style="text-align: left;">The above says take the memory location that the ptr holds (address of x ) and get the value that is located there. This is done with the asterisk *. What prints out is 3.<br/>
+<br/>
+<span class="Head">Still Confused?</span></p>
+<hr/>
+<p>&nbsp;</p>
+<p style="text-align: left;">Lets look at it this way,&nbsp;a pointer is just like any other variable. It sits in memory just like any other variable. The difference is it holds the address of another variable. To get at the value of the variable the pointer is referencing, you use the * operator:<br/>
+<br/>
+<img width="475" height="225" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/pointer5a.png"/><br/>
+<br/>
+<br/>
+</p>
+<p style="text-align: left;">In the above example you will notice that the variable x sits at address 0x500 and that the pointer sits at 0x900. The assignment statement says take the address of the variable x and store it at the location of the pointer ptr (0x900). So an address is stored at 0x900. It is the address of x in this example. The cout statement uses the * before the ptr which means get the contents of the variable it is pointing at. In this case it says get the value that is stored at memory location 0x500 which is 3.</p>
+<p style="text-align: left;">Taking the above as an example what prints if I do this:<br/>
+<br/>
+<img width="372" height="304" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/Pointer6.png"/><br/>
+<br/>
+<strong>cout &lt;&lt; ptr;&nbsp;&nbsp; would print 0x500 because this is the address stored in the pointer variable.<br/>
+cout &lt;&lt; *ptr; would print out 3 because this is what the pointer is referring to (what is stored in x).<br/>
+cout &lt;&lt; &amp;ptr; woud print out 0x900 because this is the address where the pointer sits in memory.<br/>
+<br/>
+</strong>Of course you need to realize that these memory locations are for example only. The real addresses would be a big hex number.<br/>
+<br/>
+<span class="Head">Pointer Math</span></p>
+<hr/>
+<p>&nbsp;</p>
+<p style="text-align: left;">One of the nice things about pointers is that you can move them to point at other memory locations. For instance:</p>
+<p style="text-align: left;"><strong>ptr++;</strong>&nbsp;&nbsp;&nbsp; //move the pointer ahead by one<br/>
+<strong>ptr+=5</strong>; // Add 5 to the address of the pointer.</p>
+<p style="text-align: left;">This comes in handy when dealing with arrays. The following code will illustrate the use of a pointer to print out an array:&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2840 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5254"><div class="DnnModule DnnModule-LiveContent DnnModule-5254"><a name="5254"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5254_ContentPane">
+		
+    <!-- Start_Module_5254 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5254_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5254/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5254/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5254/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5254_View_LCSearchToolbar5254" class="LCSearchToolbar5254 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5254', '#LCSearchResult5254', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5254&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5254" style="display: none">
+    </div>
+    <a name="LiveContent5254"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5254_View_LC5254"><div id="LCElementsWrapper5254" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52541Heading"></div><a id="LC52541" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5254/Images/pointer7.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5254&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52541Heading',headingOverlay: {fade: 1},captionId: 'LC52541Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5254'}, {TabId: '535',ModuleId: '5254',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5254&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52541Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52541').click(); return false;">Comment</a> 240 views
+    </p>
+     </li>
+<li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52542Heading"></div><a id="LC52542" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5254/Images/pointer7Output1.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5254&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52542Heading',headingOverlay: {fade: 1},captionId: 'LC52542Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5254'}, {TabId: '535',ModuleId: '5254',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5254&amp;eid=2&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52542Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52542').click(); return false;">Comment</a> 292 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5254 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5256"><div class="DnnModule DnnModule-LiveContent DnnModule-5256"><a name="5256"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5256_ContentPane">
+		
+    <!-- Start_Module_5256 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5256_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5256/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5256/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5256/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5256_View_LCSearchToolbar5256" class="LCSearchToolbar5256 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5256', '#LCSearchResult5256', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5256&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5256" style="display: none">
+    </div>
+    <a name="LiveContent5256"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5256_View_LC5256"><div id="LCElementsWrapper5256" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52561Heading"></div><a id="LC52561" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5256/Images/Pointer8.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5256&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52561Heading',headingOverlay: {fade: 1},captionId: 'LC52561Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5256'}, {TabId: '535',ModuleId: '5256',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5256&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52561Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52561').click(); return false;">Comment</a> 208 views
+    </p>
+     </li>
+<li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52562Heading"></div><a id="LC52562" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5256/Images/pointer8Output.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5256&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52562Heading',headingOverlay: {fade: 1},captionId: 'LC52562Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5256'}, {TabId: '535',ModuleId: '5256',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5256&amp;eid=2&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52562Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52562').click(); return false;">Comment</a> 287 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5256 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2844"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2844"><a name="2844"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2844_ContentPane">
+		
+    <!-- Start_Module_2844 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2844_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2844_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span><hr/>
+</p>
+<p style="text-align: left;">In the above example, the pointer is set to the address of the the 3rd element of the array (ar[2]) the loop will proceed to print out the array but this time is starts at the third value of the array (ar[2])</p>
+<br/>
+<span class="Head">Pointers And Strings<br/>
+</span><hr/>
+<p style="text-align: left;">Pointers are real nice for manipulating strings. Lets look at the count vowel program again. This time with the use of a pointer</p>
+<br/>
+</div>
+
+				</div><!-- End_Module_2844 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5257"><div class="DnnModule DnnModule-LiveContent DnnModule-5257"><a name="5257"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5257_ContentPane">
+		
+    <!-- Start_Module_5257 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5257_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5257/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5257/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5257/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5257_View_LCSearchToolbar5257" class="LCSearchToolbar5257 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5257', '#LCSearchResult5257', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5257&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5257" style="display: none">
+    </div>
+    <a name="LiveContent5257"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5257_View_LC5257"><div id="LCElementsWrapper5257" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52571Heading"></div><a id="LC52571" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5257/Images/countVowelPtr.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5257&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52571Heading',headingOverlay: {fade: 1},captionId: 'LC52571Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5257'}, {TabId: '535',ModuleId: '5257',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5257&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52571Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52571').click(); return false;">Comment</a> 720 views
+    </p>
+     </li>
+<li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52572Heading"></div><a id="LC52572" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5257/Images/CountVowelPtrOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5257&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC52572Heading',headingOverlay: {fade: 1},captionId: 'LC52572Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5257'}, {TabId: '535',ModuleId: '5257',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5257&amp;eid=2&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC52572Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52572').click(); return false;">Comment</a> 174 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5257 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2846"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2846"><a name="2846"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2846_ContentPane">
+		
+    <!-- Start_Module_2846 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2846_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2846_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span></p>
+<hr/>
+<p>&nbsp;</p>
+<p style="text-align: left;">In the function countVowels, a char pointer is created and set to the beginning of the string. The while loop will continue while the pointer is pointing at anything but 0. The while loop could have been written</p>
+<p style="text-align: left;">while(*p != 0) or while(*p != '\0')</p>
+<p style="text-align: left;">but </p>
+<p style="text-align: left;">while(*p) actually means the same thing. Remember what the statement inside the parentheses is being evaluated for truth. The loops ends when the statement is false. In computers false is represented by the value 0 so true then is anything that is not false.</p>
+<p style="text-align: left;">In the switch statement, the character that the pointer is pointing at gets converted to upper case and sent into the switch statement. Because a post increment is used, the first character is checked without a problem. You should also note that the ++ operator allows us to move the loop towards its goal.</p>
+<p style="text-align: left;"><strong>An array is a pointer!</strong></p>
+<p style="text-align: left;">You have been using pointers since you learned about arrays and probably didn't even realize it. So, what is the difference between </p>
+<p style="text-align: left;">[] and * </p>
+<p style="text-align: left;">Well practically nothing. Lets modify the countVowels code one more time</p>
+<br/>
+<img width="736" height="562" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/countVowelPtr_001.png"/><br/>
+<br/>
+<span class="Head">Storing Values</span><br/>
+<hr/>
+<p style="text-align: left;">So far all we have done is us a pointer to display things. It can also be used to store values in a memory location<br/>
+<br/>
+<img width="475" height="225" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/pointer10.png"/><br/>
+<br/>
+<span class="Head">Some Final Thoughts</span></p>
+<hr/>
+<p style="text-align: left;">Pointers were around long before references were invented. It almost seems like references were created to make the job of passing data by reference much easier. Also, some people think that pointers are dangerous and, they are. You could setup a pointer to point at just about any memory location and then modify that location. Of course on a Windows machine a lot of the memory is protected now. In the world of embedded systems where you don't have those restrictions, pointers come in handy. Lets say for instance that you need a way to write characters a display screen. All you would have to do is set a pointer equal to that location in video memory and start writing to it.</p>
+<p style="text-align: left;">One of the knocks on references is that when you call the function you don't necessarily know that values are being passed by reference. Pointers get around this because you almost always have to pass the address of something.</p>
+<p style="text-align: left;">Finally, I am going stress the use of pointer more than many other instructors probably would. This is because I feel it is one of the more powerful features of the language. You will probably find that you could write just about any program in C++ without the use of pointers but on occasion, the use of a pointer just might make your life easier. <br/>
+<br/>
+<span class="Head">Video Pointers</span></p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2846 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5258"><div class="DnnModule DnnModule-LiveContent DnnModule-5258"><a name="5258"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5258_ContentPane">
+		
+    <!-- Start_Module_5258 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5258_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5258/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5258/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5258/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5258_View_LCSearchToolbar5258" class="LCSearchToolbar5258 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5258', '#LCSearchResult5258', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5258&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5258" style="display: none">
+    </div>
+    <a name="LiveContent5258"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5258_View_LC5258"><div id="LCElementsWrapper5258" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52581Heading">Pointer Video</div><a id="LC52581" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5258/Videos/Pointers1.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC52581eVideo',allowHeightReduction: false,headingId: 'LC52581Heading',headingOverlay: {fade: 1},captionId: 'LC52581Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5258',width: 800,height: 640}, {TabId: '535',ModuleId: '5258',PortalId: '16',ElementId: '1'}); "> <img title="Pointer Video" alt="Pointer Video" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5258&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-html-content" id="LC52581eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC52581Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC52581Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        Pointer Video
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52581').click(); return false;">Comment</a> 199 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5258 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2848"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2848"><a name="2848"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2848_ContentPane">
+		
+    <!-- Start_Module_2848 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2848_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2848_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Practice Problem</span></p>
+<hr/>
+<p>&nbsp;</p>
+<p>
+Can you write function that will swap two integers using pointers?&nbsp;Compare your solution to the video below.&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2848 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod5260"><div class="DnnModule DnnModule-LiveContent DnnModule-5260"><a name="5260"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr5260_ContentPane">
+		
+    <!-- Start_Module_5260 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5260_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5260/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5260/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5260/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl00_ctr5260_View_LCSearchToolbar5260" class="LCSearchToolbar5260 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5260', '#LCSearchResult5260', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5260&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5260" style="display: none">
+    </div>
+    <a name="LiveContent5260"></a> <div id="dnn_ctr2836_View_ctl00_ctl00_ctr5260_View_LC5260"><div id="LCElementsWrapper5260" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52601Heading">Practice Problem</div><a id="LC52601" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5260/Videos/pointerSwap.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC52601eVideo',allowHeightReduction: false,headingId: 'LC52601Heading',headingOverlay: {fade: 1},captionId: 'LC52601Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5260',width: 800,height: 640}, {TabId: '535',ModuleId: '5260',PortalId: '16',ElementId: '1'}); "> <img title="Practice Problem" alt="Practice Problem" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5260&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-html-content" id="LC52601eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC52601Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC52601Caption">Solution to the practice problem to swap values using a pointer
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        Practice Problem
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52601').click(); return false;">Comment</a> 179 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5260 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl00_LiveTabsiMod2850"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2850"><a name="2850"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl00_ctr2850_ContentPane">
+		
+    <!-- Start_Module_2850 --><div id="dnn_ctr2836_View_ctl00_ctl00_ctr2850_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl00_ctr2850_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Still Not Sure?</span></p>
+<hr/>
+<span style="font-size: 22px;"><a href="https://web.archive.org/web/20150219203120/http://xoax.net/cpp/crs/console/lessons/Lesson17/" target="_blank">See what XoaX.net has to say about references and pointers</a><a href="https://web.archive.org/web/20150219203120/http://xoax.net/comp/cpp/console/Lesson17.php" target="_blank"><br/>
+</a></span>
+</div>
+
+				</div><!-- End_Module_2850 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2836145" class="mtop">
+				<div id="dnn_ctr2836_View_ctl00_ctl01_LiveTabsiMod2851"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2851"><a name="2851"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl01_ctr2851_ContentPane">
+		
+    <!-- Start_Module_2851 --><div id="dnn_ctr2836_View_ctl00_ctl01_ctr2851_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl01_ctr2851_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Passing Arguments To Functions By Pointer</span><hr/>
+</p>
+<p>By now you have seen how to pass arguments to functions in C++ by using references. You have probably also realized that it is a nice way to return multiple values from functions. What you may not know that before there were references, there were pointers. I tend to believe that references came about because pointers are difficult for most people to understand. In this section we are going to look at passing arguments to functions by using a pointer. </p>
+<p>Our first example will show a simple function that takes as an argument a pointer to int value. We are going to call this function getAValue. It is a simple function for demonstration only and something you would probably not do. Well, actually some of you probably would but it is not advised:</p>
+<img width="535" height="185" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/getAValue.png"/><br/>
+<span class="Head">Code Review</span><br/>
+<hr/>
+<p>Notice that the formal parameter indicates that this function takes a pointer to an int variable. The other thing to notice is that in the cin statement to store the information in the variable val we have to use the * dereference operator. Remember this is a pointer and a pointer is a variable that holds the address of another variable. So what we are saying is store the value from cin in the variable that val is referencing. Since the example doesn't show how to call this function we really don't know what variable it is referencing. That is ok though, we will have to assume that the compiler will catch the error if someone doesn't pass a pointer. </p>
+<p>Now lets look at how we would call the function:</p>
+<img width="728" height="268" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/callGetAValue.png"/><br/>
+<span class="Head">Code Review</span><br/>
+<hr/>
+<p>The thing to notice here is the actual parameter being passed to the function getAValue. Here, we had to pass the &amp; (addressOf) the variable aNumber. Why do you suppose this needs to be done? The reason is that the function expects a pointer as a parameter. By passing the address the pointer variable in the formal parameter of getAValue can now reference the memory address of aNumber declared in main. Look at the following depiction:</p>
+<img width="400" height="216" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/ByPointer.png"/><br/>
+<p style="text-align: left;">What you should gather from the above depiction is that by using the * (dereference) operator you are really referring to another variables location in memory so when you store something at *val you are really putting the value in aNumber. </p>
+<span class="Head">Passing Arrays By Pointer</span><br/>
+<hr/>
+<p style="text-align: left;">You probably recall from the previous lesson that passing an array to a function is really nothing more than passing a pointer. This section will reiterate that point. Lets take a look at an example that you have seen before but this time we are going to pass it by pointer:</p>
+<img width="445" height="177" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/fillArrayPointer.png"/><br/>
+<br/>
+<span class="Head">Code Review</span><br/>
+<hr/>
+<br/>
+<p style="text-align: left;">Ok, the only thing new here is that in the formal paramater we pass it by pointer not by using the empty array bracket. Notice though that there is really not much difference but if you really want to look cool and show people you know all about pointers then you may want to use the *. </p>
+<p style="text-align: left;">A Reiteration</p>
+<p style="text-align: left;">This has already been covered but I think it worth re-addressing. When you pass an array to a function you are really passing the address of the first value. If you have the address of the first value, you can get the second and third value simply by using an index. So when you pass an array to function in the actual parameter, you simply pass the name of the array:</p>
+<br/>
+<img width="520" height="282" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/fillArrayMain.png"/><br/>
+<p style="text-align: left;">What you could say is that passing the name of the array is passing the address of the first element. Or, you could do this:</p>
+<p style="text-align: left;" class="NormalRed"><strong>fillArray(&amp;anArray[0], size);</strong></p>
+<p style="text-align: left;">But this is a little clumsy looking don't you think?</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">So, take a look at the following depiction:</p>
+<img width="500" height="216" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/ArrayPointer.png"/><br/>
+<p style="text-align: left;">Notice that the addresses in the array go up by 4 and not 1. This is because we are assuming the standard pc which is a 32 to bit system. That means the standard int is 4 bytes long. You normally don't have to worry about this because if you increment a pointer by one, the compiler will make sure it increments the amount needed for the type. </p>
+<span class="Head">A Common Error</span><br/>
+<hr/>
+<br/>
+Given what you have seen so far, take a look at the following code:<br/>
+<br/>
+<img width="548" height="187" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/fillArrayPointer2.png"/><br/>
+<span class="Head">Using const With Pointers</span><br/>
+<hr/>
+<p style="text-align: left;">When used in the formal parameters, the const keyword makes a variable read only. On the surface you may think that this kind of defeats the purpose of using a pointer but remember, by default arrays are passed by pointer. If your function only uses the information in the array and doesn't modify it then you should make it const. Take a look at the following code:<br/>
+<br/>
+<img width="509" height="183" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/printArrayPointer.png"/><br/>
+<br/>
+<span class="Head">The sizeof Operator</span><hr/>
+</p>
+<p style="text-align: left;">The sizeof operator will return the size of a data type in number of bytes. Used with an array you can determine how many bytes the array is. You could then divide by the data type to get the number of elements in the array:</p>
+<p style="text-align: left;"><img width="926" height="209" alt="" src="/web/20150219203120im_/http://programming.msjc.edu/portals/16/Images/sizeofArray.png"/><br/>
+<br/>
+<span class="Head">Video Pointers As Arguments</span><hr/>
+</p>
+<p style="text-align: left;">&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2851 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl01_LiveTabsiMod5262"><div class="DnnModule DnnModule-LiveContent DnnModule-5262"><a name="5262"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl01_ctr5262_ContentPane">
+		
+    <!-- Start_Module_5262 --><div id="dnn_ctr2836_View_ctl00_ctl01_ctr5262_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5262/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5262/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5262/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl01_ctr5262_View_LCSearchToolbar5262" class="LCSearchToolbar5262 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5262', '#LCSearchResult5262', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5262&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5262" style="display: none">
+    </div>
+    <a name="LiveContent5262"></a> <div id="dnn_ctr2836_View_ctl00_ctl01_ctr5262_View_LC5262"><div id="LCElementsWrapper5262" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52621Heading">Pointers As Arguments</div><a id="LC52621" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5262/Videos/Pointers2.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC52621eVideo',allowHeightReduction: false,headingId: 'LC52621Heading',headingOverlay: {fade: 1},captionId: 'LC52621Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5262',width: 800,height: 640}, {TabId: '535',ModuleId: '5262',PortalId: '16',ElementId: '1'}); "> <img title="Pointers As Arguments" alt="Pointers As Arguments" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5262&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-html-content" id="LC52621eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC52621Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC52621Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        Pointers As Arguments
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52621').click(); return false;">Comment</a> 238 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5262 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl01_LiveTabsiMod2853"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2853"><a name="2853"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl01_ctr2853_ContentPane">
+		
+    <!-- Start_Module_2853 --><div id="dnn_ctr2836_View_ctl00_ctl01_ctr2853_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2836_View_ctl00_ctl01_ctr2853_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Practice Problem</span><hr/>
+</p>
+Can you write a function that uses pointers to print a CString in reverse? Compare your solution to the video.
+</div>
+
+				</div><!-- End_Module_2853 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2836_View_ctl00_ctl01_LiveTabsiMod5263"><div class="DnnModule DnnModule-LiveContent DnnModule-5263"><a name="5263"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl01_ctr5263_ContentPane">
+		
+    <!-- Start_Module_5263 --><div id="dnn_ctr2836_View_ctl00_ctl01_ctr5263_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5263/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5263/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5263/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl01_ctr5263_View_LCSearchToolbar5263" class="LCSearchToolbar5263 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5263', '#LCSearchResult5263', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5263&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5263" style="display: none">
+    </div>
+    <a name="LiveContent5263"></a> <div id="dnn_ctr2836_View_ctl00_ctl01_ctr5263_View_LC5263"><div id="LCElementsWrapper5263" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52631Heading">Solution To Practice Problem</div><a id="LC52631" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5263/Videos/strReverse.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC52631eVideo',allowHeightReduction: false,headingId: 'LC52631Heading',headingOverlay: {fade: 1},captionId: 'LC52631Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5263',width: 800,height: 640}, {TabId: '535',ModuleId: '5263',PortalId: '16',ElementId: '1'}); "> <img title="Solution To Practice Problem" alt="Solution To Practice Problem" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5263&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-html-content" id="LC52631eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC52631Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC52631Caption">Print a string in reverse.
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        Solution To Practice Problem
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52631').click(); return false;">Comment</a> 288 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5263 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2836146" class="mtop">
+				<div id="dnn_ctr2836_View_ctl00_ctl02_LiveTabsiMod5264"><div class="DnnModule DnnModule-LiveContent DnnModule-5264"><a name="5264"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2836_View_ctl00_ctl02_ctr5264_ContentPane">
+		
+    <!-- Start_Module_5264 --><div id="dnn_ctr2836_View_ctl00_ctl02_ctr5264_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5264/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5264/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;/tabid/535/LCmid/5264/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2836_View_ctl00_ctl02_ctr5264_View_LCSearchToolbar5264" class="LCSearchToolbar5264 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5264', '#LCSearchResult5264', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5264&amp;TabId=535', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5264" style="display: none">
+    </div>
+    <a name="LiveContent5264"></a> <div id="dnn_ctr2836_View_ctl00_ctl02_ctr5264_View_LC5264"><div id="LCElementsWrapper5264" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC52641Heading">Video Lecture 12</div><a id="LC52641" class="highslide" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/Portals/16/LiveContent/5264/Videos/Lecture12.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC52641eVideo',allowHeightReduction: false,headingId: 'LC52641Heading',headingOverlay: {fade: 1},captionId: 'LC52641Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5264',width: 800,height: 640}, {TabId: '535',ModuleId: '5264',PortalId: '16',ElementId: '1'}); "> <img title="Video Lecture 12" alt="Video Lecture 12" src="/web/20150219203120im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5264&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-html-content" id="LC52641eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC52641Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC52641Caption">Pointers
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div>
+    </div>
+    <p class="title">
+        Video Lecture 12
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC52641').click(); return false;">Comment</a> 193 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5264 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_2836 --></div>
+    </div>
+    <div class="c_footer">
+        
+        
+        
+    </div>
+</div>
+</div></td>
+
+                    
+                  </tr>
+                  <tr>
+                    
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="page_bottom" height="79" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" width="100%"><span id="dnn_dnnCOPYRIGHT_lblCopyright" class="Footer">2010 By Glenn Stevenson</span>
+
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnPRIVACY_hypPrivacy" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/privacy.aspx">Privacy Statement</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnTERMS_hypTerms" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/cpp/terms.aspx">Terms Of Use</a></td>
+        <td align="center" class="page_bottom_right" valign="top"><table width="323" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+             <td align="center" style="padding-top:14px"><a style="color:#4771D1;font-weight:bold;" href="https://web.archive.org/web/20150219203120/http://programming.msjc.edu/">MSJC Programming</a></td>
+            </tr>
+        </table></td>
+        <td align="right"><img src="/web/20150219203120im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="42" height="79"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`}"/>
+        
+    
+<script type="text/javascript" src="/web/20150219203120js_/http://programming.msjc.edu/Resources/Shared/scripts/initWidgets.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=16'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5258|LC52581Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|Pointers1|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5260|LC52601Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|pointerSwap|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5262|LC52621Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|Pointers2|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5263|LC52631Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|strReverse|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5264|LC52641Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|Lecture12|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|pointerVideo1'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper2836").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper2836').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2836') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2836').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper2836').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2836') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2836').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper2836").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper2836') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});var LCSearchResult5261 = new mJSToolkit.Initialize('.LCSearchToolbar5261','#LCSearchResult5261','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5261&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5254 = new mJSToolkit.Initialize('.LCSearchToolbar5254','#LCSearchResult5254','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5254&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5256 = new mJSToolkit.Initialize('.LCSearchToolbar5256','#LCSearchResult5256','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5256&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5257 = new mJSToolkit.Initialize('.LCSearchToolbar5257','#LCSearchResult5257','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5257&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5258 = new mJSToolkit.Initialize('.LCSearchToolbar5258','#LCSearchResult5258','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5258&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5260 = new mJSToolkit.Initialize('.LCSearchToolbar5260','#LCSearchResult5260','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5260&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5262 = new mJSToolkit.Initialize('.LCSearchToolbar5262','#LCSearchResult5262','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5262&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5263 = new mJSToolkit.Initialize('.LCSearchToolbar5263','#LCSearchResult5263','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5263&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);var LCSearchResult5264 = new mJSToolkit.Initialize('.LCSearchToolbar5264','#LCSearchResult5264','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5264&TabId=535','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);//]]>
+</script>
+</form>
+    
+    
+</body>
+</html><!--
+     FILE ARCHIVED ON 20:31:20 Feb 19, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:25:24 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 52.777 (3)
+  load_resource: 271.62
+  PetaboxLoader3.datanode: 60.417 (4)
+  exclusion.robots.policy: 0.403
+  CDXLines.iter: 19.739 (3)
+  RedisCDXSource: 0.878
+  exclusion.robots: 0.427
+  PetaboxLoader3.resolve: 65.147
+  esindex: 0.017
+  captures_list: 77.854
+-->

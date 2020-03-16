@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app102.us.archive.org';v.server_ms=285;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170515141953", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	C++ Programming Level 2 &gt; 2. Operator Overloading
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="This is the main page for the C++ Level II class"/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170515141953cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515141953cs_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515141953cs_/http://programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170515141953js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170515141953js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="Operator Overloading" content="Overloading Operators"/>
+<link rel="stylesheet" href="/web/20170515141953cs_/http://programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170515141953js_/http://programming.msjc.edu/cppii/prism.js" type="text/javascript"></script><link href="https://web.archive.org/web/20170515141953/http://www.programming.msjc.edu/cppii/2OperatorOverloading.aspx" rel="canonical"/><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515141953cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515141953cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cppii/2OperatorOverloading.aspx', '20170515141953')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170515141953/http://web.archive.org/screenshot/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170515141953/http://programming.msjc.edu:80/cppii/2OperatorOverloading.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170515141953/http://programming.msjc.edu:80/cppii/2OperatorOverloading.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cppii/2OperatorOverloading.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170515141953" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170322050248/http://programming.msjc.edu:80/cppii/2OperatorOverloading.aspx" title="22 Mar 2017"><strong>Mar</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 14:19:53 May 15, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170625162528/http://www.programming.msjc.edu:80/cppii/2OperatorOverloading.aspx" title="25 Jun 2017"><strong>Jun</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170424064951/http://www.programming.msjc.edu:80/cppii/2OperatorOverloading.aspx" title="06:49:51 Apr 24, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 14:19:53 May 15, 2017">15</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170525081915/http://www.programming.msjc.edu:80/cppii/2OperatorOverloading.aspx" title="08:19:15 May 25, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 14:19:53 May 15, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180720072026/http://programming.msjc.edu:80/cppii/2OperatorOverloading.aspx" title="20 Jul 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170515141953*/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx" title="See a list of every capture for this URL">29 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 24 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170515141953/http%3A//programming.msjc.edu/cppii/2OperatorOverloading.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cppii/2OperatorOverloading.aspx","2017-05-15",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cppii/2OperatorOverloading.aspx", '20170515141953');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170515141953/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7160_SelectedIndex" id="LiveTabsWrapper7160_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFMFRoaXMgaXMgdGhlIG1haW4gcGFnZSBmb3IgdGhlIEMrKyBMZXZlbCBJSSBjbGFzc2QCCA8WAh8CBR9DKyssIFByb2dyYW1taW5nLERvdE5ldE51a2UsRE5OZAIJDxYCHwIFIUNvcHlyaWdodCAyMDEwIEJ5IEdsZW5uIFN0ZXZlbnNvbmQCCg8WAh8CBQtEb3ROZXROdWtlIGQCCw8WAh8CBRdDKysgUHJvZ3JhbW1pbmcgTGV2ZWwgMmQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYqZg9kFgRmDw8WAh8BaGRkAgIPFgIfAWgWBgIBDxYCHwFoZAIDDxYCHwFoZAIHDxYCHwFoZAIBD2QWBGYPDxYMHghDc3NDbGFzcwUJTG9naW5MaW5rHwAFBUxvZ2luHgdUb29sVGlwBQVMb2dpbh4LTmF2aWdhdGVVcmwFW2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjJPcGVyYXRvck92ZXJsb2FkaW5nLmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZ0BcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvMk9wZXJhdG9yT3ZlcmxvYWRpbmcuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg9kFgICAQ8PFgofAwUJTG9naW5MaW5rHwAFBUxvZ2luHwQFBUxvZ2luHwUFW2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjJPcGVyYXRvck92ZXJsb2FkaW5nLmFzcHgfBgICFgIfBwWdAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzJPcGVyYXRvck92ZXJsb2FkaW5nLmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFK2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9Ib21lLmFzcHhkZAIGD2QWAgIBDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZVRhYnMgRG5uTW9kdWxlLTcxNjAWAgIBD2QWBAIBD2QWAgICDxYCHwFoZAIDD2QWAgICDw9kFgIfCAUdRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlVGFic0MWAgIBD2QWAgIBDxYCHhFEaXNhYmxlZFRhYnNBcnJheWQWCGYPZBYCZg9kFgZmD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzEzMBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzE2MxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE2MhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPZBYGZg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNjQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTcxNjUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNjYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAg9kFgJmD2QWBGYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTY3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTY4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgMPZBYCZg9kFgJmD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIxMRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIHDxYCHwgFDEROTkVtcHR5UGFuZWQCCA8WAh8IBQxETk5FbXB0eVBhbmVkAgkPFgIfCAUMRE5ORW1wdHlQYW5lZAIKDxYCHwgFDEROTkVtcHR5UGFuZWQCCw8WAh8IBQxETk5FbXB0eVBhbmVkAgwPFgIfCAUMRE5ORW1wdHlQYW5lZAINDxYCHwgFDEROTkVtcHR5UGFuZWQCDg8WAh8IBQxETk5FbXB0eVBhbmVkAg8PFgIfCAUMRE5ORW1wdHlQYW5lZAIQDxYCHwgFDEROTkVtcHR5UGFuZWQCEQ8WAh8IBQxETk5FbXB0eVBhbmVkAhIPFgIfCAUMRE5ORW1wdHlQYW5lZAITDxYCHwgFDEROTkVtcHR5UGFuZWQCFA8WAh8IBQxETk5FbXB0eVBhbmVkAhgPFgIfCAUMRE5ORW1wdHlQYW5lZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUWZG5uJGN0cjcxNjAkVmlldyRjdGwwMHxQv4oZNbSpLaVkEMPa7OsnEHyo"/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170515141953js_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170515141953js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170515141953js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAANxoYQ+NsJYFDYB4mdFlLfrV8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0AAgf75unvh6dutT3jlmVQJVqqBiw=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170515141953js_/http://programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170515141953js_/http://programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170515141953cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/2OperatorOverloading.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f2OperatorOverloading.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170515141953im_/http://programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane">
+                                        <div class="DnnModule DnnModule-LiveTabs DnnModule-7160"><a name="7160"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7160_dnnTITLE_titleLabel" class="title_h2">Live Tabs</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7160_ContentPane">
+    <!-- Start_Module_7160 --><div id="dnn_ctr7160_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7160" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7160" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7160679" class="mtop"><a name="LiveTabsContent7160679" href="#LiveTabsContent7160679">a. Operator Overloading</a></li><li id="LiveTabs7160680" class="mtop"><a name="LiveTabsContent7160680" href="#LiveTabsContent7160680">b. Friend Functions</a></li><li id="LiveTabs7160681" class="mtop"><a name="LiveTabsContent7160681" href="#LiveTabsContent7160681">c. Lambda Expressions</a></li><li id="LiveTabs7160682" class="mtop"><a name="LiveTabsContent7160682" href="#LiveTabsContent7160682">d. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7160679" class="mtop">
+				<div id="dnn_ctr7160_View_ctl00_ctl00_LiveTabsiMod7130"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7130"><a name="7130"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl00_ctr7130_ContentPane">
+		
+    <!-- Start_Module_7130 --><div id="dnn_ctr7160_View_ctl00_ctl00_ctr7130_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7160_View_ctl00_ctl00_ctr7130_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>In level 1 you learned about how you could overload function to allow them to perform same operations on different data types. The C++ language also allows you to overload most of the operators so that they can be made to operate on data types that you create.
+</p>
+<p>Imagine for instance that you had created a Fraction class and you want to be able to add two Fractions together. You would probably then create an add function:</p>
+<pre><code class="language-cpp line-numbers">Fraction F1, F2, F3;
+Fraction F3 = F1.add(F2);</code></pre>
+<p>This certainly works but using an operator overload would make this code much more readable:</p>
+<pre><code class="language-cpp line-numbers">Fraction F1, F2, F3;
+Fraction F3 = F1 + F2;</code></pre>
+<p>As you can see this makes the code more intuitive and readable.</p>
+<p>By default the + operator will not work on the Fraction class. Just as it will not work on any complex type that you create. In order to make this work you need to overload the operator so that it works with your data type and performs the functionality that you specify. </p>
+<p class="Head">Operator Overloading Syntax</p>
+<hr/>
+<p>Operator overloading has the following syntax:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141953im_/http://programming.msjc.edu/portals/11/cpp2/OperatorOverloading/operator.png" style="border: 3px solid #4f81bd;"/></p>
+<p>For many people operator overloading can be a confusing topic. It is actually an easy thing to do. When starting out the easiest thing t to do is to simply write the function the way you normally would. Once you have done this place the keyword operator after the scope resolution operator and replace the function name with the operator you want to overload. &nbsp;</p>
+<p>Let's start with a simple example of overloading the + operator in the Rectangle class. First we want to create the function called add that returns a Rectangle and takes a Rectangle as an argument:</p>
+<pre><code class="language-cpp line-numbers">Rectangle Rectangle::add(const Rectangle &amp;r)
+{
+}
+ </code></pre>
+<p>
+To change this so that we overload the + operator we need to add the keyword operator and then replace the name of the function with the actual operator we are overloading (+ in this example):
+</p>
+<pre><code class="language-cpp line-numbers">Rectangle Rectangle::operator +(const Rectangle &amp;r)
+{
+}</code></pre>
+<p class="Head">About Passing Parameters</p>
+<hr/>
+<p>&nbsp;</p>
+<p>In the above example a Rectangle class is being passed as one of the arguments. When you pass complex types (classes, etc.) it is best to pass them by <strong>reference</strong>. The reason for this is that by default C++ passes everything by value. This means a copy of the object gets put on the stack. You really have to ask yourself what is more efficient passing one 32-bit address on the stack or an entire object? </p>
+<p>Also note that we do not want the mutator method to be able to change the values of the Rectangle class. To remedy this we pass the Rectangle class by reference as a <strong>const </strong>parameter. Let's look at the Rectangle class again:</p>
+<table>
+    <tbody>
+        <tr>
+            <td valign="bottom" style="text-align: center;"><strong>Header&nbsp;</strong></td>
+            <td valign="bottom" style="text-align: center;"><strong>Functions&nbsp;</strong></td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">class Rectangle
+{
+private:
+	int length;
+	int width;
+
+public:
+	Rectangle(int length, int width);
+	Rectangle() :length(0), width(0) {}
+	int area();
+
+	void setValues(int length, int width);  //Mutator
+	int getLength();   //Accessor
+	int getWidth();    //Accessor
+
+	Rectangle add(const Rectangle &amp;r);
+	Rectangle operator +(const Rectangle &amp;r);
+};
+
+          </code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers"> void Rectangle::setValues(int length, int width)
+{
+	this-&gt;length = length;
+	this-&gt;width = width;
+}
+int Rectangle::getLength()
+{
+	return this-&gt;length;
+}
+int Rectangle::getWidth()
+{
+	return this-&gt;width;
+}
+Rectangle Rectangle::add(const Rectangle &amp;r)
+{
+	Rectangle tmp(this-&gt;getLength() + this-&gt;getLength(), 
+		this-&gt;getWidth() + this-&gt;getWidth());
+	return tmp;
+}
+Rectangle Rectangle::operator +(const Rectangle &amp;r)
+{
+	return this-&gt;add(r);
+}
+int Rectangle::area()
+{
+	return this-&gt;getLength() * this-&gt;getWidth();
+}</code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>If you were to compile this what you might find is that the add function might show an error that says: "Object has type qualifiers that are not compatible with the member function".</p>
+<p>This is a little cryptic but what it means is that you are trying use an instance of the Rectangle as const but the function you are calling is not a const function.  This can be easily fixed by making the functions const as well:</p>
+<pre><code class="language-cpp line-numbers">int Rectangle::getLength() const
+{
+	return this-&gt;length;
+}
+int Rectangle::getWidth() const
+{
+	return this-&gt;width;
+} </code></pre>
+<p>This const declaration needs to be added to definition in the header file also:</p>
+<pre><code class="language-cpp line-numbers">int getLength() const;
+int getWidth() const; </code></pre>
+<p>The add function and the overloaded operator may seem a little bit strange to you. Remember, when you overload an operator you want it to act like it would with a primitive type. Take for instance the following example</p>
+<pre><code class="language-cpp line-numbers">int x = 3, y = 2;
+int z = x + y</code></pre>
+<p>Here the value that is in x is added to the value that is in y and the result is stored in z. Note that neither x or y has changed. The same holds true for the operator overload. The value of one Rectangle is added to another and the result is assigned.  Examine the code one more time </p>
+<pre><code class="language-cpp line-numbers">Rectangle Rectangle::add(const Rectangle &amp;r)
+{
+	Rectangle tmp(this-&gt;getLength() + this-&gt;getLength(), 
+		this-&gt;getWidth() + this-&gt;getWidth());
+	return tmp;
+}
+Rectangle Rectangle::operator +(const Rectangle &amp;r)
+{
+	return this-&gt;add(r);
+} </code></pre>
+<p>In the example a tmp Rectangle is created to store the sum of the current object with the Rectangle parameter. This would be the sum of the length and the sum of the width. The result is stored in tmp then returned.  When a call is made:</p>
+<pre><code class="language-cpp line-numbers">Rectangle r1(2,3), r2(3,4), r3;
+r3 = r1 + r2;</code></pre>
+<p>r2 would be the parameter to r1 and the sum of the two would then be returned from r1 and stored in r3. What is being stored is the tmp Rectangle that was created to hold the sum of the two.</p>
+<p class="Head">Overloading the assignment  operator</p>
+<hr/>
+<p>Overloading the = operator is not much different than overloading any other operator.  As with all operators you want to make sure it operates the way the assignment operator should.  There is one caveat  you need to be aware of and we will look at it. First let's look at code to overload the = operator. </p>
+<pre><code class="language-cpp line-numbers">Rectangle&amp; Rectangle::operator = (const Rectangle &amp;r)
+{
+   return this-&gt;equal(r);
+}
+Rectangle &amp;Rectangle::equal(const Rectangle &amp;r)
+{
+     this-&gt;setValue(r.getLength(), r.getWidth());
+    return *this;
+}</code></pre>
+<p>As it should, the = operator calls the equals method which simply sets the length and width of the current object. The caveat is that *this is being returned.  The return type says that we are returning a reference to a Rectangle. Since we want to return the current object as a reference the current object pointer needs to be dereferenced (return *this).  The reason the current object needs to be returned with an assignment operator is because of the problem with chaining</p>
+<p class="SubHead">Chaining</p>
+<p>It may be best to describe chaining with an example:</p>
+<pre><code class="language-cpp line-numbers">Rectangle r1, r2, r3(2,4);
+r1 = r2 = r3; </code></pre>
+<p>Assignment in C++  goes from right left so here r3 is assigned to r2 and r2 is then assigned to r1.  In the expression r2 = r3 causes r3 to be assigned to r2 then the value of r3 is returned. The return value is then stored in r1.   Without returning the dreferenced this pointer the chain gets broken. This means that r2 will never get assigned to r1.
+Think of it this way: r3 gets assigned to r2 through the overloaded operator the new value assigned to r2 would then need to be returned in order for r2 to be assigned to r1. </p>
+<p class="Head">A Couple of More Examples</p>
+<hr/>
+<p>Let's start wit the += operator. The += operator increases a value by a specified amount. In the case of the Rectangle we would want to add to the length and the width of the current object:</p>
+<pre><code class="language-cpp line-numbers">Rectangle &amp;Rectangle::operator+=(const Rectangle &amp;r)
+{
+   this-&gt;length+=r.getLength();
+   this-&gt;width+= r.getWidth();
+  return *this;
+}
+</code></pre>
+<p>Notice that the += operator also returns the current object by dereferencing this.  The reason this is done is to allow code like the following to work:</p>
+<pre><code class="language-cpp line-numbers">Rectangle r1(2, 3), r2(1, 1), r3;
+r3 = r1+= r2;
+</code></pre>
+<p class="SubHead">Overload the equality operator</p>
+<p>The == operator produced a Boolean result so it is natural for an overloaded operator to return the same:</p>
+<pre><code class="language-cpp line-numbers">bool Rectangle::operator==(const Rectangle &amp;r)
+{
+   return (this-&gt;getLength() == r.getLength()) &amp;&amp; (this-&gt;getWidth() == this-&gt;getWidth()); 
+}
+</code></pre>
+<p>This will allow you to compare Rectangle objects</p>
+<pre><code class="language-cpp line-numbers">if(r1 == r2) </code></pre>
+<p class="Head">Overloading an Overloaded Operator</p>
+<hr/>
+<p>This may seem strange to you but there may be times when you want an operator to work on different data types. Take the Rectangle for instance. The overloaded == takes a class as an argument. The function then checks to see if the length and the width are the same in both classes. If they are the function returns true. Otherwise the function returns false.
+What if you wanted the ability to also check to see if the areas were the same. You could simply overload the == operator to take an int also.
+Remember the rules for operator overloading are the same as for normal function overloading. This means the parameters have to be different in some way. Here is an example of overloading the overloaded == operator:</p>
+<pre><code class="language-cpp line-numbers">bool Rectangle::operator == (int theArea)
+{
+      return this-&gt;area() == theArea;
+} </code></pre>
+<p class="Head">Operators That Can Be Overloaded</p>
+<hr/>
+Not all operators in C++ can be overloaded. Still, there is a great amount that can be overloaded. The following is a list of the operators that can be overloaded:
+<br/>
+<p> </p>
+<table class="telerik-reTable-3" align="center" cellpadding="5" cellspacing="0" style="width: 50%;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-3">
+            <td class="telerik-reTableHeaderFirstCol-3" style="width: 19%; text-align: left;">Operator</td>
+            <td class="telerik-reTableHeaderOddCol-3" style="width: 56%;">Name</td>
+            <td class="telerik-reTableHeaderLastCol-3" style="width: 25%; text-align: left;">Type</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>, </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Comma </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>! </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Logical NOT </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>!= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Inequality </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>% </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Modulus </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>%= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Modulus/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&amp; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Bitwise AND </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&amp; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Address-of </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&amp;&amp; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Logical AND </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&amp;= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Bitwise AND/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>( ) </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Function call </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>* </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Multiplication </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>* </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Pointer dereference </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>*= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Multiplication/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>+ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Addition </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>+ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Unary Plus </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>++ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Increment 1 </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>+= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Addition/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;">-</td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Subtraction </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;">-</td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Unary negation </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;">--</td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Decrement 1 </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Subtraction/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Member selection </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt;* </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Pointer-to-member selection </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>/ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; border: #000000; text-align: left;"><strong>Division </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>/= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Division/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bordercolor="#000000" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&lt; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Less than </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&lt;&lt; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Left shift </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&lt;&lt;= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Left shift/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&lt;= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Less than or equal to </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>== </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Equality </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Greater than </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt;= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Greater than or equal to </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt;&gt; </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Right shift </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>&gt;&gt;= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Right shift/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>[ ] </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Array subscript </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>^ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Exclusive OR </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>^= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Exclusive OR/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>| </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Bitwise inclusive OR </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>|= </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Bitwise inclusive OR/assignment </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>|| </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Logical OR </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Binary </strong></td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-3" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>~ </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>Ones complement </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"><strong>Unary </strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-3" bgcolor="#ffffcc">
+            <td class="telerik-reTableFirstCol-3" style="width: 19%; text-align: left;"><strong>delete </strong></td>
+            <td class="telerik-reTableOddCol-3" style="width: 56%; text-align: left;"><strong>delete </strong></td>
+            <td class="telerik-reTableLastCol-3" style="width: 25%; text-align: left;"></td>
+        </tr>
+        <tr class="telerik-reTableFooterRow-3">
+            <td class="telerik-reTableFooterFirstCol-3" style="text-align: left;"><strong>new </strong></td>
+            <td class="telerik-reTableFooterLastCol-3" style="text-align: left;"><strong>new </strong></td>
+        </tr>
+    </tbody>
+</table>
+<p>
+</p>
+<style type="text/css" id="telerik-reTable-3">
+    .telerik-reTable-3
+    {
+    border-collapse: collapse;
+    border: solid 0px;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-3 tr.telerik-reTableHeaderRow-3
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3a4663;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Verdana;
+    text-transform: capitalize;
+    font-weight: normal;
+    border-spacing: 10px;
+    vertical-align: top;
+    background-color: #C4D1E3;
+    }
+    .telerik-reTable-3 td.telerik-reTableHeaderFirstCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-3 td.telerik-reTableHeaderLastCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-3 td.telerik-reTableHeaderOddCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-3 td.telerik-reTableHeaderEvenCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-3 tr.telerik-reTableOddRow-3
+    {
+    color: #666666;
+    vertical-align: top;
+    font-size: 10pt;
+    }
+    .telerik-reTable-3 tr.telerik-reTableEvenRow-3
+    {
+    color: #666666;
+    vertical-align: top;
+    font-size: 10pt;
+    }
+    .telerik-reTable-3 td.telerik-reTableFirstCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    background-color: #E7EBF7;
+    }
+    .telerik-reTable-3 td.telerik-reTableLastCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    background-color: #E7EBF7;
+    }
+    .telerik-reTable-3 td.telerik-reTableOddCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    background-color: #F7F3F7;
+    }
+    .telerik-reTable-3 td.telerik-reTableEvenCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    background-color: #E7EBF7;
+    }
+    .telerik-reTable-3 tr.telerik-reTableFooterRow-3
+    {
+    background-color: #C4D1E3;
+    color: #3a4663;
+    font-weight: normal;
+    font-size: 10pt;
+    font-family: Verdana;
+    line-height: 11pt;
+    }
+    .telerik-reTable-3 td.telerik-reTableFooterFirstCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    }
+    .telerik-reTable-3 td.telerik-reTableFooterLastCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    }
+    .telerik-reTable-3 td.telerik-reTableFooterOddCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    }
+    .telerik-reTable-3 td.telerik-reTableFooterEvenCol-3
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    }
+</style>
+<p>&nbsp;</p>
+<p class="Head"> Video - Operator Overloading</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7130 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7160_View_ctl00_ctl00_LiveTabsiMod7163"><div class="DnnModule DnnModule-LiveContent DnnModule-7163"><a name="7163"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl00_ctr7163_ContentPane">
+		
+    <!-- Start_Module_7163 --><div id="dnn_ctr7160_View_ctl00_ctl00_ctr7163_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7163"></a> <div id="dnn_ctr7160_View_ctl00_ctl00_ctr7163_View_LC7163"><table id="dnn_ctr7160_View_ctl00_ctl00_ctr7163_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71631Heading">Operator Overloading</div><a id="LC71631" class="highslide" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/Portals/11/LiveContent/7163/Videos/OperatorOverload captioned.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71631eVideo',allowHeightReduction: false,headingId: 'LC71631Heading',headingOverlay: {fade: 1},captionId: 'LC71631Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7163',width: 800,height: 640}, {TabId: '1922',ModuleId: '7163',PortalId: '11',ElementId: '1'}); "> <img title="Operator Overloading" alt="Operator Overloading" src="/web/20170515141953im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7163&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71631eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71631Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7163 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7160_View_ctl00_ctl00_LiveTabsiMod7162"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7162"><a name="7162"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl00_ctr7162_ContentPane">
+		
+    <!-- Start_Module_7162 --><div id="dnn_ctr7160_View_ctl00_ctl00_ctr7162_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7160_View_ctl00_ctl00_ctr7162_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p>See what LearnCPP has to say about:</p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/91-introduction-to-operator-overloading/" target="_blank">Introduction to operator overloading</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/92-overloading-the-arithmetic-operators/">Overloading arithmetic operators</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/94-overloading-the-comparison-operators/" target="_blank">Overloading comparison operators</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/95-overloading-unary-operators/" target="_blank">Overloading unary operators</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/96-overloading-operators-using-member-functions/" target="_blank">Overloading operators using member functions</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/97-overloading-the-increment-and-decrement-operators/" target="_blank">Overloading the increment and decrement operators</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/98-overloading-the-subscript-operator/" target="_blank">Overloading the subscript operator</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/99-overloading-the-parenthesis-operator/" target="_blank">Overloading the parenthesis operator</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/910-overloading-typecasts/" target="_blank">Overloading typecasts</a></p>
+</div>
+
+				</div><!-- End_Module_7162 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7160680" class="mtop">
+				<div id="dnn_ctr7160_View_ctl00_ctl01_LiveTabsiMod7164"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7164"><a name="7164"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl01_ctr7164_ContentPane">
+		
+    <!-- Start_Module_7164 --><div id="dnn_ctr7160_View_ctl00_ctl01_ctr7164_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7160_View_ctl00_ctl01_ctr7164_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Friend functions go against the fundamental principles of Object Oriented programming because they allow a function that is outside of a class to have access of the private data of the class simply by declaring it a friend of the class. You will find that most Object Oriented philosophy is against friend functions. I am one that says that while it does violate object oriented principles in certain circumstances it can be OK. &nbsp;</p>
+<p>One very good reason to use friend functions is to add stream functionality to your class. Currently with  the Rectangle class you can not use cin or cout to get input and output for your class:</p>
+<pre><code class="language-cpp line-numbers">Rectangle rect
+cin &gt;&gt; rect;
+cout &lt;&lt; rect &lt;&lt; endl;
+ </code></pre>
+<p>The problem is that cin and cout have no idea how to deal with a Rectangle.  This is the same case for any complex type created after cin and cout were added to the language. Fortunately C++ allows you relate cin and cout to your class by making the stream extraction  <span style="text-align: left; letter-spacing: normal; color: #000000; background-color: #ffffff;">(&gt;&gt;)</span> and stream insertion  <span style="text-align: left; letter-spacing: normal; color: #000000; background-color: #ffffff;">(&lt;&lt; )</span> &nbsp;operators friends of your class.  In addition to making the operators friends of your class you are also overloading the stream insertion &nbsp;and stream extraction &nbsp;operators.</p>
+<p class="Head">Overloading The Stream Operators</p>
+<hr/>
+<p>Overloading the stream extraction and stream insertion operators is a simple thing to do.  Since they are not members of a class it a little different but not much:</p>
+<pre><code class="language-cpp line-numbers">istream &amp;operator&gt;&gt;(istream &amp;input, Rectangle &amp;rect)
+{
+   cout &lt;&lt; "Enter the length of the Rectangle" &lt;&lt; endl;
+   input &gt;&gt; rect.length;
+   cout &lt;&lt; "Enter the width of the Rectangle" &lt;&lt; endl;
+   input &gt;&gt; rect.width;
+   return input;
+}
+ostream &amp;operator&lt;&lt;(ostream &amp;output, Rectangle &amp;rect)
+{
+    output &lt;&lt; "The area of the Rectangle is " &lt;&lt; rect.area() &lt;&lt; endl;
+    return output;
+}
+ </code></pre>
+<p>Before you run off and try this I need to tell you that it will not work the way that it is. This is because the overloaded operator is trying to access the private members of the Rectangle class. Remember, the operator would have to be part of the class in order for it to have access to the private data. Before we discuss fixing this I think a little discussion on what the code is attempting to do is warranted. </p>
+<p>notice the stream extraction operator has two parameters. This graphic shows how you should think of the overload:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515141953im_/http://programming.msjc.edu/portals/11/cpp2/OperatorOverloading/ExtractionOper.png" style="font-size: 0.8em; line-height: 21.76px; vertical-align: middle; border: 3px solid #4f81bd;"/></p>
+<p>This is very much like passing cin to the overloaded &gt;&gt; operator function. In the example of using an instance of the Rectangle, input becomes an alias for cin. Of course this is a variable name and could be called anything but input seemed appropriate enough. What should deduced here is that cin is an instance of the istream class. It should also be deduced that that cout is an instance of the ostream class.  </p>
+<p class="Head">Friends</p>
+<hr/>
+<p>It may seem logical that the way to fix the problem above is to simply add the stream extraction operator to the class. This can't be done because of the way the function for the operator is defined. It needs values to the left and right of it. Essentially two parameters, the input stream and the data to operate on. </p>
+<p>The solution to fixing this is to declare the overloaded operator to be a friend of the class. This is done simply by putting the keyword friend in front of the prototype inside the class. When you declare a function to be a friend of the class it now has direct access to private variables. Almost as if it were a part of the class. </p>
+<table>
+    <tbody>
+        <tr>
+            <td valign="bottom" style="text-align: center;"><strong>Header&nbsp;</strong></td>
+            <td valign="bottom" style="text-align: center;"><strong>Functions&nbsp;</strong></td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">class Rectangle
+{
+private:
+	int length;
+	int width;
+
+public:
+	Rectangle(int length, int width);
+	Rectangle() :length(0), width(0) {}
+	int area();
+
+	void setValues(int length, int width);  //Mutator
+	int getLength() const;   //Accessor
+	int getWidth() const;    //Accessor
+
+	Rectangle equal(const Rectangle &amp;r);
+
+	Rectangle add(const Rectangle &amp;r);
+	Rectangle operator +(const Rectangle &amp;r);
+	Rectangle &amp;operator += (const Rectangle &amp;r);
+	Rectangle &amp;operator = (const Rectangle &amp;r);
+	bool operator == (const Rectangle &amp;r);
+	bool operator == (int theArea);
+
+	//Friend Functions
+	friend istream &amp;operator &gt;&gt; (istream &amp;input, Rectangle &amp;rect);
+	friend ostream &amp;operator &lt;&lt; (ostream &amp;output, const Rectangle &amp;rect);
+};
+</code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers"> Rectangle::Rectangle(int length, int width)
+{
+	this-&gt;setValues(length, width);
+}
+int Rectangle::area()
+{
+	int x = this-&gt;getLength();
+	return this-&gt;getLength() * this-&gt;getWidth();
+}
+void Rectangle::setValues(int length, int width)
+{
+	this-&gt;length = length;
+	this-&gt;width = width;
+}
+int Rectangle::getLength() const
+{
+	return this-&gt;length;
+}
+int Rectangle::getWidth() const
+{
+	return this-&gt;width;
+}
+Rectangle &amp;Rectangle::operator=(const Rectangle &amp;r)
+{
+	this-&gt;setValues(r.width, r.length);
+	return *this;
+}
+Rectangle &amp;Rectangle::equal(const Rectangle &amp;r)
+{
+	this-&gt;setValues(r.getLength(), r.getWidth());
+	return *this;
+	
+}
+Rectangle Rectangle::add(const Rectangle &amp;r)
+{
+	Rectangle tmp(this-&gt;getLength() + this-&gt;getLength(), 
+		this-&gt;getWidth() + this-&gt;getWidth());
+	return tmp;
+}
+Rectangle Rectangle::operator +(const Rectangle &amp;r)
+{
+	return this-&gt;add(r);
+}
+Rectangle &amp;Rectangle::operator+=(const Rectangle &amp;r)
+{
+	this-&gt;length += r.length;
+	this-&gt;width += r.width;
+	return *this;
+}
+bool Rectangle::operator==(const Rectangle &amp;r)
+{
+	return this-&gt;getLength() == r.getLength() &amp;&amp; 
+		this-&gt;getWidth() == r.getWidth();
+}
+bool Rectangle::operator == (int theArea)
+{
+	return this-&gt;area() == theArea;
+}
+istream &amp;operator &gt;&gt; (istream &amp;input, Rectangle &amp;rect)
+{
+	cout &lt;&lt; "Enter the length" &lt;&lt; endl;
+	input &gt;&gt; rect.length;
+	cout &lt;&lt; "Enter the width " &lt;&lt; endl;
+	input &gt;&gt; rect.width;
+	return input;
+}
+ostream &amp;operator &lt;&lt; (ostream &amp;output, Rectangle &amp;rect)
+{
+	output &lt;&lt; "Length: " &lt;&lt; rect.getLength() &lt;&lt; endl;
+	output &lt;&lt; "Width: " &lt;&lt; rect.getWidth() &lt;&lt; endl;
+	output &lt;&lt; "Area: " &lt;&lt; rect.area() &lt;&lt; endl;
+	return output;
+}</code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="SubHead">Output</p>
+<hr/>
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td valign="bottom" style="text-align: center;"><strong>main</strong></td>
+            <td valign="bottom" style="text-align: center;"><strong>ouput</strong></td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle r1, r2, r3;
+    
+    cin &gt;&gt; r1 &gt;&gt; r2;
+    r3 = r1 + r2;
+    cout &lt;&lt; r3 &lt;&lt; endl;
+   
+    return 0;
+} 
+</code></pre>
+            </td>
+            <td valign="top">
+            <dos>
+            Enter the length<br/>
+            2<br/>
+            Enter the width<br/>
+            3<br/>
+            Enter the length<br/>
+            4<br/>
+            Enter the width<br/>
+            5<br/>
+            Length: 6<br/>
+            Width: 4<br/>
+            Area: 24<br/>
+            <br/>
+            Press any key to continue .  .  .<br/>
+            <br/>
+            </dos>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">More Friends </p>
+<hr/>
+<p>Friend functions go against object oriented principals because they allow a function to have access of classes private data simply by declaring it a friend of the class. You will find that most Object Oriented philosophy is against friend functions. I am one that says that while it does violate object oriented principles in certain circumstances it can be OK.  If you are going to use friend functions make sure you understand the risk. </p>
+<p>The following is an example of a friend that modifies private data of the class. I should point out that this is probably a bad example as far as practicality is concerned but it does show how to create and use a friend function</p>
+<pre><code class="language-cpp line-numbers">#include <iostream>
+#include "Rectangle.h"
+
+using  namespace std;
+
+int main()
+{
+Rectangle r;
+
+    setLengthWidth(r);
+    cout &lt;&lt; r;
+
+   return 0;
+}
+void setLengthWidth(Rectangle &amp;r)
+{
+    cout &lt;&lt; "Enter a length for the Rectangle " &lt;&lt; endl;
+    cin &gt;&gt; r.length;
+   
+    cout &lt;&lt; "Enter a width for the Rectangle " &lt;&lt; endl;
+    cin &gt;&gt; r.width;
+}
+
+ </iostream></code></pre>
+<p class="Head">Video - Friend Functions</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7164 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7160_View_ctl00_ctl01_LiveTabsiMod7165"><div class="DnnModule DnnModule-LiveContent DnnModule-7165"><a name="7165"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl01_ctr7165_ContentPane">
+		
+    <!-- Start_Module_7165 --><div id="dnn_ctr7160_View_ctl00_ctl01_ctr7165_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7165"></a> <div id="dnn_ctr7160_View_ctl00_ctl01_ctr7165_View_LC7165"><table id="dnn_ctr7160_View_ctl00_ctl01_ctr7165_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71651Heading">Friend Functions</div><a id="LC71651" class="highslide" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/Portals/11/LiveContent/7165/Videos/friends.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71651eVideo',allowHeightReduction: false,headingId: 'LC71651Heading',headingOverlay: {fade: 1},captionId: 'LC71651Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7165',width: 800,height: 640}, {TabId: '1922',ModuleId: '7165',PortalId: '11',ElementId: '1'}); "> <img title="Friend Functions" alt="Friend Functions" src="/web/20170515141953im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7165&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71651eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71651Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71651Caption">How to use friend functions</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7165 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7160_View_ctl00_ctl01_LiveTabsiMod7166"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7166"><a name="7166"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl01_ctr7166_ContentPane">
+		
+    <!-- Start_Module_7166 --><div id="dnn_ctr7160_View_ctl00_ctl01_ctr7166_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7160_View_ctl00_ctl01_ctr7166_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<a class="learn-more" href="https://web.archive.org/web/20170515141953/http://www.learncpp.com/cpp-tutorial/813-friend-functions-and-classes/" target="_blank">See what LearnCPP has to say about friend functions</a>
+</div>
+
+				</div><!-- End_Module_7166 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7160681" class="mtop">
+				<div id="dnn_ctr7160_View_ctl00_ctl02_LiveTabsiMod7167"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7167"><a name="7167"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl02_ctr7167_ContentPane">
+		
+    <!-- Start_Module_7167 --><div id="dnn_ctr7160_View_ctl00_ctl02_ctr7167_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7160_View_ctl00_ctl02_ctr7167_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Lambda expressions have become very popular in recent years. Most of the popular high level languages like Java have support for Lambdas. This concept was added to the C++ language as of version 11 of the C++ standard. A Lambda expression in my opinion is like a local inline function.  When the compiler sees an inline function it takes the machine language for the function and places it everywhere the inline function is called. This means that inline functions are very efficient because there is no overhead incurred for calling the function like there is with a regular function. A normal function has to store context, push values onto the stack, and branch to the location in memory where the function being called is located.  This is very inefficient. Of course inline functions will make your compiled code larger because the code is being substituted at each location the inline function is being called</p>
+<p>Lambda expression work much the same way. They are declared locally which reduces the overhead. If you are going to use lambda expressions it is probably a good idea to make them small functions that can be created in a few lines of code</p>
+<p class="Head"> Lambda Basics</p>
+<hr/>
+<p>To start with it is probably a good idea to see the syntax of Lambda expression so that each item can be understood</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img alt="" src="/web/20170515141953im_/http://programming.msjc.edu/portals/11/cpp2/OperatorOverloading/Lambda.fw.png" style="font-size: 0.8em; line-height: 21.76px; vertical-align: middle; border: 3px solid #4f81bd;"/></div>
+<p>&nbsp;</p>
+<table class="telerik-reTable-1">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1">Number</td>
+            <td class="telerik-reTableHeaderOddCol-1">Name &nbsp;</td>
+            <td class="telerik-reTableHeaderLastCol-1">Description&nbsp;</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;1</td>
+            <td class="telerik-reTableOddCol-1">Capture Clause</td>
+            <td class="telerik-reTableLastCol-1">&nbsp;All Lambda expressions start with the capture clause. The values for the capture clause are covered later.</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;2</td>
+            <td class="telerik-reTableOddCol-1">Parameters</td>
+            <td class="telerik-reTableLastCol-1">The optional parameters to the Lambda are provided within the parentheses. If no parameters are specified the parentheses are left empty</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;3</td>
+            <td class="telerik-reTableOddCol-1">Arrow Operator</td>
+            <td class="telerik-reTableLastCol-1">The arrow operator indicate the beginning of the return type. If the expression does not return a value the arrow operator must be omitted.</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;4</td>
+            <td class="telerik-reTableOddCol-1">Return Type</td>
+            <td class="telerik-reTableLastCol-1">The return type is like the return data type for any function. If the expression does not return a value this should be left blank</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;5</td>
+            <td class="telerik-reTableOddCol-1">Body</td>
+            <td class="telerik-reTableLastCol-1">This is the body of the Lambda expression. This is equivalent to a function body.&nbsp;</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1">&nbsp;6</td>
+            <td class="telerik-reTableOddCol-1">Parameter Value</td>
+            <td class="telerik-reTableLastCol-1">&nbsp;If the expression takes parameters you specify the value(s) for the parameters here.&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<p>
+</p>
+<style type="text/css" id="telerik-reTable-1">
+    .telerik-reTable-1
+    {
+    border-width: 0px;
+    border-style: none;
+    border-collapse: collapse;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-1 tr.telerik-reTableHeaderRow-1
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3F4D6B;
+    background: #D6E8FF;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Tahoma;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-spacing: 10px;
+    line-height: 14pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableOddRow-1
+    {
+    color: #666666;
+    background-color: #F2F3F4;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 tr.telerik-reTableEvenRow-1
+    {
+    color: #666666;
+    background-color: #E7EBF7;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableFooterRow-1
+    {
+    background-color: #D6E8FF;
+    color: #4A5A80;
+    font-weight: 500;
+    font-size: 10pt;
+    font-family: Tahoma;
+    line-height: 11pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+</style>
+<p>At this point it is probably best to look at an example. In most programming languages we start be looking at a hello world application. In this case we are going to look at a hello world Lambda expression</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    [](){cout &lt;&lt; "Hello World" &lt;&lt; endl; }();
+    return 0;
+}
+ </code></pre>
+<p>
+</p>
+<ol>
+    <li><span style="line-height: 21.76px;">All Lambda Expression start with the capture clause. In this simple example the capture clause is left empty</span></li>
+    <li><span style="line-height: 21.76px;">There are no parameters for the expression so the parentheses are left empty.</span></li>
+    <li><span style="line-height: 21.76px;">There is no return type for the expression so the arrow operator is left out.</span></li>
+    <li><span style="line-height: 21.76px;">Since there is no return type the value after the arrow is left out</span></li>
+    <li><span style="line-height: 21.76px;">The body of the expression simply outputs hello world to the console window</span></li>
+    <li><span style="line-height: 21.76px;">There are no parameters so no value is supplied for parameters. The parentheses are left empty</span></li>
+</ol>
+<p class="Head">Supplying Parameters</p>
+<hr/>
+<p>Supplying parameters to the expression is a simple thing to do. The following shows a Lambda expression that will square and return a value passed to it. </p>
+<pre><code class="language-cpp line-numbers">
+int main()
+{
+	int valToSquare = 4;
+	
+	int result = [](int num) -&gt; int {return num * num; }(valToSquare);
+	cout &lt;&lt; result &lt;&lt; endl;
+	 
+	return 0;
+}
+
+ </code></pre>
+<p>What has changed here is that a parameter is added inside the parentheses, the arrow operator is inserted followed by the data type to be returned, and  the value to be operated on is supplied in the last set of parentheses </p>
+<p class="Head">Calling a Lambda Multiple Times</p>
+<hr/>
+<p>Using the above syntax will make it difficult if you need to use the expression multiple times. On the surface it looks as though you would have to duplicate the code each time that you wanted to use it.  This is where the <strong>auto </strong>keyword comes in. The auto keyword allows you to create a pointer to the Lambda Expression</p>
+<pre><code class="language-cpp line-numbers">int main()
+{		
+	auto sq = [](int num) -&gt; int {return num * num; };
+
+	cout &lt;&lt; sq(4) &lt;&lt; endl;	
+	cout &lt;&lt; sq(6) &lt;&lt; endl;
+	 
+	return 0;
+}
+ </code></pre>
+<p>Here a pointer called sq is created so that the Lambda can be called many times. Notice the last set of parentheses are left off of the expression. This allows you to supply the value through the pointer like you would with a function call.&nbsp;</p>
+<p class="Head">Capture Lists</p>
+<hr/>
+<p>A capture list allows you to specify a means by which you can access variables that are a part of the surrounding scope.  Surrounding scope means the braces that surround the Lambda expression. In the examples above the surrounding scope is main.  Some of you are going to like this because it allows you to create a function where you don't have to pass parameters.  To use a capture list you simply put the method you want to capture the variables by in the opening brackets []</p>
+<p>As with functions there are two ways you can capture surrounding scope variables</p>
+<ol>
+    <li><span style="line-height: 21.76px;">Capture by value [=]</span></li>
+    <li><span style="line-height: 21.76px;">Capture by reference [&amp;]</span></li>
+</ol>
+<p class="SubHead">Capture by Value</p>
+<p>Using capture by by value works the exact same way passing parameters does. A copy of what is in the variable gets passed to the Lambda expression. Since it is a copy the Lambda expression cannot change it's value to the surrounding scope.</p>
+<p class="SubHead">Capture by Reference</p>
+<p>Using capture by reference allows you to pass the address of a variable to the Lambda expression. As you have probably guessed, this works the exact same way that passing a parameter by reference does. If you change the variables value within the Lambda expression it is changed in the surrounding scope</p>
+<p>It may be best to see how this works. The following example uses a Lambda expression to fill a vector. This is done by using capture by reference. The second Lambda expression simply prints out the vector. This time using capture by value. One thing that I should point out and that is the default method used is capture by value. Since it is the default method you may get an error by placing the = inside the bracket </p>
+<pre><code class="language-cpp line-numbers">
+int main()
+{		
+	vector <int> v;
+
+	//Capture by reference
+	[&amp;v](int size) { for (int i = 0; i &lt; size; i++) v.push_back(rand() % 100); }(25);
+
+	//Capture by value = is default so not used. 
+	[v]() {for (int i = 0; i &lt; v.size(); i++) cout &lt;&lt; v[i] &lt;&lt; endl; }();
+	 
+	return 0;
+}
+
+ </int></code></pre>
+<p>Of course if you wanted to be able to use the Lambda many times and fill the vector with different sizes you may opt to create a pointer:</p>
+<pre><code class="language-cpp line-numbers">
+int main()
+{		
+	vector <int> v;
+
+	//Capture by reference
+	 auto fill = [&amp;v](int size) { for (int i = 0; i &lt; size; i++) v.push_back(rand() % 100); };
+
+	 fill(25);
+
+	//Capture by value = is default so not used. 
+	[v]() {for (int i = 0; i &lt; v.size(); i++) cout &lt;&lt; v[i] &lt;&lt; endl; }();
+	 
+	return 0;
+}
+
+ </int></code></pre>
+<p>There is one last capture list type and that is this which allows you to capture variables from the surrounding class. </p>
+<p class="Head">Video - Lambda Expressions</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7167 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7160_View_ctl00_ctl02_LiveTabsiMod7168"><div class="DnnModule DnnModule-LiveContent DnnModule-7168"><a name="7168"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl02_ctr7168_ContentPane">
+		
+    <!-- Start_Module_7168 --><div id="dnn_ctr7160_View_ctl00_ctl02_ctr7168_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7168"></a> <div id="dnn_ctr7160_View_ctl00_ctl02_ctr7168_View_LC7168"><table id="dnn_ctr7160_View_ctl00_ctl02_ctr7168_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71681Heading">Lambda Expressions</div><a id="LC71681" class="highslide" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/Portals/11/LiveContent/7168/Videos/LambdaCaptioned.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71681eVideo',allowHeightReduction: false,headingId: 'LC71681Heading',headingOverlay: {fade: 1},captionId: 'LC71681Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7168',width: 800,height: 640}, {TabId: '1922',ModuleId: '7168',PortalId: '11',ElementId: '1'}); "> <img title="Lambda Expressions" alt="Lambda Expressions" src="/web/20170515141953im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7168&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71681eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71681Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71681Caption">An introduction to Lambda expressions</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7168 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7160682" class="mtop">
+				<div id="dnn_ctr7160_View_ctl00_ctl03_LiveTabsiMod7211"><div class="DnnModule DnnModule-LiveContent DnnModule-7211"><a name="7211"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7160_View_ctl00_ctl03_ctr7211_ContentPane">
+		
+    <!-- Start_Module_7211 --><div id="dnn_ctr7160_View_ctl00_ctl03_ctr7211_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7211"></a> <div id="dnn_ctr7160_View_ctl00_ctl03_ctr7211_View_LC7211"><table id="dnn_ctr7160_View_ctl00_ctl03_ctr7211_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72111Heading">Operator Overloading</div><a id="LC72111" class="highslide" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/Portals/11/LiveContent/7211/Videos/Lecture 2 Operator Overloading.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72111eVideo',allowHeightReduction: false,headingId: 'LC72111Heading',headingOverlay: {fade: 1},captionId: 'LC72111Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7211',width: 800,height: 640}, {TabId: '1922',ModuleId: '7211',PortalId: '11',ElementId: '1'}); "> <img title="Operator Overloading" alt="Operator Overloading" src="/web/20170515141953im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7211&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72111eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72111Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC72111Caption">Operator Overloading &amp; friend functions</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7211 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7160 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515141953/http://programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170515141953im_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g e.b\',c:a,w:M,N:\'O\',J:K,L:\'0://1.3.2/4/8//9/5/R/S.Q\',P:\'I A\',B:\'0://z.x.y/C/G-H/F-D.E\'})}',55,55,'http|programming|edu|msjc|Portals|7163|LC71631Html5eVideo|jwplayer|11|LiveContent|600|mp4|height||captioned|Videos|OperatorOverload|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame2'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7165|LC71651Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|friends|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7168|LC71681Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|LambdaCaptioned|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|LambdaCaptioned_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('n(8(\'7\')!=o){8(\'7\').p({m:\'0://4.1.3/j.k?d=l-v-w-x-u&q;t=r\',s:\'0://4.1.3/5/9/a/6/g/h 2 i c.e\',f:b,O:P,Q:\'L\',M:N,U:\'0://4.1.3/5/9//a/6/R/S.T\',K:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}',57,57,'http|msjc||edu|programming|Portals|7211|LC72111Html5eVideo|jwplayer|11|LiveContent|600|Overloading||mp4|height|Videos|Lecture|Operator|WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|flashplayer|if|null|setup|amp|634957464340000000|file||ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|abouttext|video|autostart|true|width|800|provider|Images|Lecture_2_Operator_Overloading_First_Frame|png|image'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7160").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7160').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7160') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7160').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7160').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7160') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7160').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7160").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7160') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 14:19:53 May 15, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:28:34 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.292
+  PetaboxLoader3.resolve: 153.459 (2)
+  load_resource: 105.603
+  captures_list: 156.848
+  LoadShardBlock: 133.309 (3)
+  CDXLines.iter: 13.694 (3)
+  PetaboxLoader3.datanode: 65.556 (4)
+  RedisCDXSource: 6.266
+  esindex: 0.011
+  exclusion.robots.policy: 0.28
+-->

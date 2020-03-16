@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app29.us.archive.org';v.server_ms=299;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170515135431", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	C++ Programming Level 2 &gt; 3. Dynamic Memory
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="This is the main page for the C++ Level II class"/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170515135431cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515135431cs_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170515135431cs_/http://programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170515135431js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170515135431js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="dynamic memory" content="dynamic memory and pointers"/>
+<link rel="stylesheet" href="/web/20170515135431cs_/http://programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170515135431js_/http://programming.msjc.edu/cppii/prism.js" type="text/javascript"></script>
+<link href="https://web.archive.org/web/20170515135431/http://www.programming.msjc.edu/cppii/3DynamicMemory.aspx" rel="canonical"/><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515135431cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170515135431cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cppii/3DynamicMemory.aspx', '20170515135431')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170515135431/http://web.archive.org/screenshot/http://programming.msjc.edu/cppii/3DynamicMemory.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170515135431/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170515135431/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cppii/3DynamicMemory.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170515135431" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170311224208/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx" title="11 Mar 2017"><strong>Mar</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 13:54:31 May 15, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170710181616/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx" title="10 Jul 2017"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170512050402/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx" title="05:04:02 May 12, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 13:54:31 May 15, 2017">15</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170608091716/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx" title="09:17:16 Jun 08, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 13:54:31 May 15, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180720073048/http://programming.msjc.edu:80/cppii/3DynamicMemory.aspx" title="20 Jul 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170515135431*/http://programming.msjc.edu/cppii/3DynamicMemory.aspx" title="See a list of every capture for this URL">19 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 06 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170515135431/http%3A//programming.msjc.edu/cppii/3DynamicMemory.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cppii/3DynamicMemory.aspx","2017-05-15",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cppii/3DynamicMemory.aspx", '20170515135431');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170515135431/http://programming.msjc.edu/cppii/3DynamicMemory.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7169_SelectedIndex" id="LiveTabsWrapper7169_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFMFRoaXMgaXMgdGhlIG1haW4gcGFnZSBmb3IgdGhlIEMrKyBMZXZlbCBJSSBjbGFzc2QCCA8WAh8CBR9DKyssIFByb2dyYW1taW5nLERvdE5ldE51a2UsRE5OZAIJDxYCHwIFIUNvcHlyaWdodCAyMDEwIEJ5IEdsZW5uIFN0ZXZlbnNvbmQCCg8WAh8CBQtEb3ROZXROdWtlIGQCCw8WAh8CBRdDKysgUHJvZ3JhbW1pbmcgTGV2ZWwgMmQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYqZg9kFgRmDw8WAh8BaGRkAgIPFgIfAWgWBgIBDxYCHwFoZAIDDxYCHwFoZAIHDxYCHwFoZAIBD2QWBGYPDxYMHghDc3NDbGFzcwUJTG9naW5MaW5rHwAFBUxvZ2luHgdUb29sVGlwBQVMb2dpbh4LTmF2aWdhdGVVcmwFVWh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjNEeW5hbWljTWVtb3J5LmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZcBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvM0R5bmFtaWNNZW1vcnkuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg9kFgICAQ8PFgofAwUJTG9naW5MaW5rHwAFBUxvZ2luHwQFBUxvZ2luHwUFVWh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjNEeW5hbWljTWVtb3J5LmFzcHgfBgICFgIfBwWXAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzNEeW5hbWljTWVtb3J5LmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFK2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9Ib21lLmFzcHhkZAIGDxYCHwgFDEROTkVtcHR5UGFuZWQCBw8WAh8IBQxETk5FbXB0eVBhbmVkAggPFgIfCAUMRE5ORW1wdHlQYW5lZAIJDxYCHwgFDEROTkVtcHR5UGFuZWQCCg8WAh8IBQxETk5FbXB0eVBhbmVkAgsPZBYCAgEPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlVGFicyBEbm5Nb2R1bGUtNzE2ORYCAgEPZBYEAgEPZBYCAgIPFgIfAWhkAgMPZBYCAgIPD2QWAh8IBR1ETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUYWJzQxYCAgEPZBYCAgEPFgIeEURpc2FibGVkVGFic0FycmF5ZBYKZg9kFgJmD2QWBmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTMxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTcwFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTcxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg9kFgZmD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE3MhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzE3MxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzE3NBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAICD2QWAmYPZBYCZg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcxNzUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmD2QWBmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTc2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MTc3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MTc4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgQPZBYCZg9kFgJmD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIxMhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIMDxYCHwgFDEROTkVtcHR5UGFuZWQCDQ8WAh8IBQxETk5FbXB0eVBhbmVkAg4PFgIfCAUMRE5ORW1wdHlQYW5lZAIPDxYCHwgFDEROTkVtcHR5UGFuZWQCEA8WAh8IBQxETk5FbXB0eVBhbmVkAhEPFgIfCAUMRE5ORW1wdHlQYW5lZAISDxYCHwgFDEROTkVtcHR5UGFuZWQCEw8WAh8IBQxETk5FbXB0eVBhbmVkAhQPFgIfCAUMRE5ORW1wdHlQYW5lZAIYDxYCHwgFDEROTkVtcHR5UGFuZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFFmRubiRjdHI3MTY5JFZpZXckY3RsMDDvo26RbyowyNrZqGgen/O+Kf3nBQ=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170515135431js_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170515135431js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170515135431js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAOTYnij6qG7+jKuz/QBl0ktV8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0B/DGAvYzv+EILzEC+3O9GrX+Ymfg=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170515135431js_/http://programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170515135431js_/http://programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170515135431cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/3DynamicMemory.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f3DynamicMemory.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170515135431im_/http://programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane">
+                                            <div class="DnnModule DnnModule-LiveTabs DnnModule-7169"><a name="7169"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7169_dnnTITLE_titleLabel" class="title_h2">Live Tabs</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7169_ContentPane">
+    <!-- Start_Module_7169 --><div id="dnn_ctr7169_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7169" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7169" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7169683" class="mtop"><a name="LiveTabsContent7169683" href="#LiveTabsContent7169683">a. Pointer Review</a></li><li id="LiveTabs7169684" class="mtop"><a name="LiveTabsContent7169684" href="#LiveTabsContent7169684">b. Memory Allocation</a></li><li id="LiveTabs7169685" class="mtop"><a name="LiveTabsContent7169685" href="#LiveTabsContent7169685">c. Static Variables</a></li><li id="LiveTabs7169686" class="mtop"><a name="LiveTabsContent7169686" href="#LiveTabsContent7169686">d. Design Patterns</a></li><li id="LiveTabs7169687" class="mtop"><a name="LiveTabsContent7169687" href="#LiveTabsContent7169687">e. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7169683" class="mtop">
+				<div id="dnn_ctr7169_View_ctl00_ctl00_LiveTabsiMod7131"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7131"><a name="7131"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl00_ctr7131_ContentPane">
+		
+    <!-- Start_Module_7131 --><div id="dnn_ctr7169_View_ctl00_ctl00_ctr7131_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl00_ctr7131_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction </p>
+<hr/>
+<p>Before looking at dynamic memory allocation, we should probably have a review of pointers. Pointers tend to be a difficult topic for most people but without a good understanding there is no way we are going to be able to understand how to dynamically create variables. </p>
+<p>A pointer is a special type of variable. What is so special about a pointer you might ask? Well, a pointer is a variable that holds the address of another variable. Through the use of pointers, we can indirectly manipulate values at another memory location.</p>
+<p>There are two symbols that you should know about right off the bat they are:</p>
+<ul>
+    <li><span style="line-height: 21.76px;"><strong>&amp; </strong>- addressof operator (Yes it is the same symbol that is used for references)</span></li>
+    <li><span><strong>* </strong>- de-reference operator (It may be easier to think of it as the contents of operator).</span></li>
+</ul>
+<p class="Head">Review</p>
+<hr/>
+<p>When you create variables like the following:</p>
+<pre><code class="language-cpp line-numbers">double myDouble;
+char myChar = 'A';
+int myInt = 2468
+ </code></pre>
+<p>The compiler allocates enough memory to hold the specified type, creates an association between the name of the variable and the allocated memory location, and if needed initializes the memory with the specified value. </p>
+<p>It should also noted that the compiler will allocate space on the stack starting at the next memory location:
+</p>
+<p style="text-align: center;"><img alt="" src="/web/20170515135431im_/http://programming.msjc.edu/portals/11/cpp2/DynamicMemory/MemVar.png" style="font-size: 0.8em; line-height: 21.76px; width: 200px; height: 298px; border: 3px solid #4f81bd;"/></p>
+<p>In the above example myDouble was created on the stack at memory address 0x1505. A double is 8 bytes long so it will take up 8 consecutive memory locations. Next myChar was created and is one byte long. It resides at 0x1504. Finally myInt is created and is locatated at 0x1500. An int is 4 bytes long so it takes up locations 0x1500 to 0x1503</p>
+<p>As was stated in the introduction there are two operators that you need to know about to use pointers</p>
+<ul>
+    <li><strong>&amp;</strong> - address of operator. It is the same operator that is used with references</li>
+    <li><strong>*</strong> - de-reference operator (It may be easier to think of it as the contents of operator). You can use the &amp; operator to get the address of each of the variables. So the following code will output the addresses of where the variables are located in memory:</li>
+</ul>
+<pre><code class="language-cpp line-numbers">//output the address of myInt which is 0x1500
+cout &lt;&lt; &amp;myInt &lt;&lt; endl;
+
+//output the address of myChar which is 0x1504
+cout &lt;&lt; &amp;myChar &lt;&lt; endl;
+
+// output the address of myDouble which is 0x1505
+cout &lt;&lt; &amp;myDouble &lt;&lt; endl
+
+ </code></pre>
+<p>C++ has a pointer variable that makes the use of addresses useful.  Remember, a pointer is nothing more than a variable that holds the address of another variable. </p>
+<p class="Head">Initializing a Pointer</p>
+<hr/>
+<p>You declare a pointer using the * dereference operator. This operator is used two ways. The first is when you want to declare a pointer. The second is when you want to get the value the pointer is referring to (pointing at).
+</p>
+<pre><code class="language-cpp line-numbers">in *p;  // Asterisk is used to indicate variable is a pointer</code></pre>
+<p>Here a pointer is declared but it has not been initialized. This means that it does not hold a valid address of another variable. As with all variables in C++ an uninitialized pointer contains garbage. </p>
+<p>There are basically two ways to initialize a pointer. One is that you use the new operator to allocate memory for the pointer. This will be covered later on. The second is to assign the address of another variable to the pointer</p>
+<pre><code class="language-cpp line-numbers">int *ptr;
+int x = 3;
+ptr = &amp;x </code></pre>
+<p>Now ptr holds the address of x and can print or change the value of x indirectly using the dereference operator: </p>
+<pre><code class="language-cpp line-numbers">int *ptr;
+int x = 3;
+ptr = &amp;x;
+    cout &lt;&lt; *ptr &lt;&lt; endl;
+</code></pre>
+<p>The above says take the memory location that the ptr holds (address of x ) and get the value that is located there. This is done with the dereference operator (*). What prints out is 3.</p>
+<p>Lets look at it this way, a pointer is just like any other variable. It sits in memory just like any other variable. The difference is it holds the address of another variable. To get at the value of the variable the pointer is referencing, you use the * operator:</p>
+<div style="text-align: center;"><img alt="" src="/web/20170515135431im_/http://programming.msjc.edu/portals/11/cpp2/DynamicMemory/ptr4.fw.png" style="font-size: 0.8em; line-height: 21.76px; width: 400px; height: 267px; border: 3px solid #4f81bd;"/></div>
+<p>In the above example you will notice that the variable x sits at address 0x500 and that the pointer sits at 0x900. The assignment statement says take the address of the variable x and store it at the location of the pointer ptr (0x900). So an address is stored at 0x900. It is the address of x in this example. The cout statement uses the * before the ptr which means get the contents of the variable it is pointing at. In this case it says get the value that is stored at memory location 0x500 which is 3. </p>
+<p class="SubHead">What Prints?</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+int x = 3;
+int *ptr = &amp; x;
+    cout &lt;&lt; ptr &lt;&lt; endl;     // prints  0x500 because this is the address stored in the pointer variable.   
+    cout &lt;&lt; *ptr &lt;&lt; endl;   // prints out 3 because this is what the pointer is referring to (what is stored in x).
+    cout &lt;&lt; &amp;ptr &lt;&lt; endl;  // prints out 0x900 because this is the address where the pointer sits in memory.
+ </code></pre>
+<p>These memory locations are used for example purposes only. The real addresses would be much larger hex values. </p>
+<p class="Head">Pointer Math</p>
+<hr/>
+<p>A benefit of using pointers is that you can use arithmetic operators on them to move the pointer to other memory locaitons:</p>
+<pre><code class="language-cpp line-numbers">ptr++;  // move the pointer ahead by one
+ptr+=5;  // add 5 to the address of the pointer</code></pre>
+<p>It is important to note that using math on a pointer changes the memory address the pointer holds by the number to move by multiplied by the number of bytes data type is</p>
+<pre><code class="language-cpp line-numbers">int *ptr;
+ptr++;  // Moves the pointer 4 bytes because the int data type is 4 bytes wide </code></pre>
+<p>You don't need to worry about this detail because it is handled for you by the C++ compiler. Of course you could always fool the compiler by using a pointer to different data type:</p>
+<pre><code class="language-cpp line-numbers">
+int main()
+{	
+	int x = 30;
+	char *ptr = (char *) &amp;x;
+	ptr++;    //Moves the pointer ahead by one byte not 4
+
+	cout &lt;&lt; *ptr &lt;&lt; endl;
+	
+	return 0;
+}
+
+ </code></pre>
+<p>Here a char pointer is created an then casted so that it will refer to an int.  Incrementing the pointer by one only moves it by one byte which means it will be referring to the second byte of the int.  While you can do this you will find that there is very rarely an occasion where this is needed. </p>
+<p class="Head">Pointers and Arrays</p>
+<hr/>
+<p>You can use a pointer to traverse or examine elements of an array. You simply create the pointer, and set it equal to the first element of the array:</p>
+<pre><code class="language-cpp line-numbers">int[] ar = {2,3,5,6,2,7,8,9,0,12,14,15};
+int *ptr = ar;         // equivalent to ptr = &amp;ar[0];
+for(int i = 0; i &lt; size; i++)
+    cout &lt;&lt; *ptr++ &lt;&lt; endl;
+ </code></pre>
+<p>You don't have to start at the beginning of the array. You can start anywhere simply by specifying the address </p>
+<pre><code class="language-cpp line-numbers">int[] ar = {2,3,5,6,2,7,8,9,0,12,14,15};
+int *ptr = &amp;ar[2];    // set pointer to the third element of the array
+</code></pre>
+<p class="Head">Pointers and Complex Types</p>
+<hr/>
+<p>There are times when you are going to want to create a pointer to class or a struct type. This is easily done. Just remember that when you want to access members of the class you need to use the -&gt; arrow operator</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle rect(5, 6);
+    Rectangle *r = &amp;rect;
+
+    cout &lt;&lt; "The area of the Rectangle is " &lt;&lt; r-&gt;area() &lt;&lt; endl;
+    
+    return 0;
+}
+
+ </code></pre>
+<p class="Head">Example Program</p>
+<hr/>
+<p>The following function counts the number of vowels within a CString</p>
+<pre><code class="language-cpp line-numbers">int countVowels(char *str)
+{
+int count = 0;
+char *p;
+
+       p = str; // Set the pointer to the beginning of the string
+       
+       while(*p)
+       {
+            switch(toupper(*p++))
+            {
+                 case 'A':
+                 case 'E':
+                 case 'I':
+                 case 'O':
+                 case 'U':
+                      count++;
+            }
+       }
+       return count;
+}
+
+ </code></pre>
+<p>You may wonder what the difference between [] and * is.  The truth is practically nothing because an array is a pointer. When you use the name of the array as in:
+</p>
+<pre><code class="language-cpp line-numbers">int ar[] = {1,2,3,4,5,6};
+       int *p;
+        p = ar; 
+ </code></pre>
+<p>You are assigning the address of the first element of the array to the pointer. So the name ar is equivalent to </p>
+<pre><code class="language-cpp line-numbers">p = &amp;ar[0] </code></pre>
+<p class="Head">Video - Pointers </p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7131 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl00_LiveTabsiMod7170"><div class="DnnModule DnnModule-LiveContent DnnModule-7170"><a name="7170"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl00_ctr7170_ContentPane">
+		
+    <!-- Start_Module_7170 --><div id="dnn_ctr7169_View_ctl00_ctl00_ctr7170_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7170"></a> <div id="dnn_ctr7169_View_ctl00_ctl00_ctr7170_View_LC7170"><table id="dnn_ctr7169_View_ctl00_ctl00_ctr7170_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71701Heading">Pointers</div><a id="LC71701" class="highslide" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/Portals/11/LiveContent/7170/Videos/Pointers1.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71701eVideo',allowHeightReduction: false,headingId: 'LC71701Heading',headingOverlay: {fade: 1},captionId: 'LC71701Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7170',width: 800,height: 640}, {TabId: '1923',ModuleId: '7170',PortalId: '11',ElementId: '1'}); "> <img title="Pointers" alt="Pointers" src="/web/20170515135431im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7170&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71701eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71701Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71701Caption">A review of pointers</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7170 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl00_LiveTabsiMod7171"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7171"><a name="7171"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl00_ctr7171_ContentPane">
+		
+    <!-- Start_Module_7171 --><div id="dnn_ctr7169_View_ctl00_ctl00_ctr7171_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl00_ctr7171_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx" title="Level One Pointers">Review the level I Lecture on pointers</a></p>
+<p> <a class="learn-more" href="https://web.archive.org/web/20170515135431/http://xoax.net/cpp/crs/console/lessons/Lesson17/" target="_blank">See what XoaX.net has to say about references and pointers</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.learncpp.com/cpp-tutorial/67-introduction-to-pointers/" target="_blank">Also see LearnCPP's introduction to pointers</a></p>
+<p> </p>
+</div>
+
+				</div><!-- End_Module_7171 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7169684" class="mtop">
+				<div id="dnn_ctr7169_View_ctl00_ctl01_LiveTabsiMod7172"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7172"><a name="7172"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl01_ctr7172_ContentPane">
+		
+    <!-- Start_Module_7172 --><div id="dnn_ctr7169_View_ctl00_ctl01_ctr7172_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl01_ctr7172_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Up to this point all programs created have been able to access only the amount of memory that has been created when the variables were instantiated. This means that variables, arrays and other objects have a fixed size that is determined before the program begins to execute.  This type of memory allocation is called <strong>static memory</strong> <strong>allocation</strong> because it is fixed in size. But, what if you need a varying amount of memory that can only be determined during the program execution (runtime)?  For example, suppose you are logging temperatures to an array and initially you believe you will never need to add any more values than let's say 20. Later on you discover that you need to actually log 30. So now you need to go back, change the program, and rebuild it before using it. If this number later grows to 35 you have to repeat the process.
+</p>
+<p>The solution to this problem is dynamic memory allocation which is very easily accomplished in C++ with two operators.</p>
+<p class="Head">The new operator</p>
+<hr/>
+<p>To allocate memory you use the new operator. This operator returns an address to the memory that was requested . The address returned is called an anonymous pointer because it does not have a variable to reference it.  It is up to you to supply that reference. </p>
+<p>The new operator is easy to use. You simply create a pointer and set it equal to new whatever you need to allocate.</p>
+<pre><code class="language-cpp line-numbers">int *p = new int; // allocate memory for a new int and assign the memory to p </code></pre>
+<p>Because the new operator returns a memory address you need a pointer to able to access it. You access the memory through the pointer just like you would with any other pointer reference:</p>
+<pre><code class="language-cpp line-numbers">*p = 30;
+cout &lt;&lt; *p &lt;&lt; endl; </code></pre>
+<p>This may not seem all that exciting to you. You may be thinking that it would be easier to simply declare an int. You would be right about that and it should be noted that there is overhead involved with using dynamic memory allocation. You should use it sparingly.</p>
+<p>A very good use for using new to declare memory is with arrays.  Using this method you can create an array of any size. Something you can't do with static memory allocation</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+   int size;
+
+   cout &lt;&lt; "How many numbers do you want to create?" &lt;&lt; endl;
+   cin &gt;&gt; size;
+
+   int *myArray = new int[size];    // Allocate an array of the requested size
+
+   for(int i = 0; i &lt; size; i++)
+      myArray[i] = rand() % 101;
+
+   return 0;
+}
+ </code></pre>
+<p>he compiler in this case reserves a memory block size long and returns an address to the beginning of that block which is assigned to the pointer myArray. Remember when we pass arrays to functions they are passed by pointer. In other words the address of the first element. If you have this address you can easily access the other elements by using pointer math on the array</p>
+<div style="text-align: center;"><img alt="" src="/web/20170515135431im_/http://programming.msjc.edu/portals/11/cpp2/DynamicMemory/imgdyna1.png" style="font-size: 0.8em; line-height: 21.76px; border: 3px solid #4f81bd;"/></div>
+<p>You may wonder what the difference is between declaring a normal array and assigning memory to a pointer as we have just done. The most important difference is that the size of an array must be a constant value which limits the number of items if can hold at runtime. Dynamic memory allocation on the other hand, allows for the creation of the necessary memory needed while the program is executing. If the memory requirements change then the program can be written to handle this while it is executing.&nbsp;</p>
+<p class="Head">Using new With Complex Types</p>
+<hr/>
+<p>You can use the new operator with just about any type. Many times it is simply more efficient to dynamically create large objects and delete their memory when you are finished with them. </p>
+<p>In this example the new operator is used to create instances of the Rectangle class. Each instance is added to a vector:</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+	vector<rectangle> vRect;
+
+	int length, width;
+	int times = 0;
+
+	cout &lt;&lt; "How many Rectangles do you want to create?" &lt;&lt; endl;
+	cin &gt;&gt; times;
+	for (int i = 0; i &lt; times; i++)
+	{
+		cout &lt;&lt; "Enter a length and width " &lt;&lt; endl;
+		cin &gt;&gt; length &gt;&gt; width;
+		vRect.push_back(new Rectangle(length, width));
+	}
+
+	return 0;
+}
+
+ </rectangle></code></pre>
+<p>Of course if you want to print out the area for each Rectangle that was created you would have to use the arrow -&gt; operator</p>
+<pre><code class="language-cpp line-numbers">for (vector&lt;Rectangle *&gt;<rectangle>::iterator p = vRect.begin(); p &lt; vRect.end(); p++)
+{
+	Rectangle *r = *p;
+	cout &lt;&lt; r-&gt;area() &lt;&lt; endl;
+}
+ </rectangle></code></pre>
+<p class="Head">Checking For Allocation Failure</p>
+<hr/>
+<p>On rare occasion something may go wrong in your system that will prevent dynamic memory from being created. If the memory cannot be allocated the new operator will return null. It is important for you to check for the null pointer after attempting to allocate memory. Attempting to add data to memory that was not allocated could cause your program to crash. </p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    int *myArray;
+  
+    myArray = new int[5];
+    if(myArray == NULL)
+    {
+          //Error creating memory. Take appropriate measures. 
+    }
+
+ </code></pre>
+<p>When dynamic memory cannot be allocated a bad_alloc exception can be thrown. This will be covered in more detail in the unit on exceptions and exception handling.</p>
+<p class="Head">Cleaning Up Memory With delete</p>
+<hr/>
+<p>It is important to note that memory created with <strong>new </strong>is allocated on the heap so it stays with the program through it's lifetime. By default when your program exits all of the dynamic memory that has been allocated gets freed up. Many programs being used today run non-stop so the memory never gets freed. When you are finished using an object that has been dynamically created it is a very good idea to free the memory up. This is accomplished with the delete operator. The following example shows different data types be allocated and deleted:</p>
+<pre><code class="language-cpp line-numbers">int *myInt = new int;
+myInt = 25;
+delete myInt; // Finished with memory, free it up
+
+Rectangle *rect = new Rectangle(5,3);
+int theArea = rect-&gt;area();
+delete theArea;   // Delete the memory allocated for the complex type
+
+int *myArray = new int[10];
+for(int i = 0; i &lt; 10; i++)
+    myArray[i] = rand() % 100;
+delete[] myArray;   // When deleting memory allocated for an array you have to use [] </code></pre>
+<p>Failure to clean up after memory allocation can lead to memory leaks getting into your code. I have seen poorly written code that simply crashes because of memory leaks.</p>
+<p class="Head">Memory Leaks</p>
+<hr/>
+<p>Memory leaks happen when the pointer that refers to dynamic memory is either reassigned or is deleted improperly. Remember new returns an anonymous pointer that you need to create a reference to. If you do not maintain this reference properly you can end up with a memory block that has no reference. This means it cannot be accessed or deleted any more. Without the ability to delete memory it simply eats up the space used for your program. If this behavior is repetitive then your program can eventually crash.  To understand what a memory leak is it is best to look some examples.</p>
+<pre><code class="language-cpp line-numbers">// Leak 1
+char *str;
+str = new char[20];
+str = new char[30;
+
+delete[] str; </code></pre>
+<p>In this example a pointer to a character array is created. It is first assigned to the new memory created by the new char[20] statement. Next the pointer is reassigned to a new block of memory. When the pointer is reassigned the existing memory exists in the system without a pointer to reference it. At the end delete is called but it will only delete what string is currently referring to (char[30]).</p>
+<p><strong>Solution:</strong>&lt; br/&gt;
+Call delete to free up the memory before reassigning the pointer to a new block of memory.</p>
+<pre><code class="language-cpp line-numbers">//Leak2
+char *first_string = new char[20];
+char *second_string = new char[20];
+strcpy(first_string, "leak");
+second_string = first_string;
+strcpy(second_string, first_string);
+delete [] second_string;</code></pre>
+<p>The address of the dynamically created variable associated with second_string (as a side-effect of the pointer assignment) is lost so it can no longer be deleted from the heap. Thus the last line of code only frees the dynamic variable associated with first_string, which is not what is intended.</p>
+<p><strong>Solution</strong><br/>
+delete the memory associated with second_string before the pointer reassignment: second_string = first_string;
+</p>
+<pre><code class="language-cpp line-numbers">//Leak 3
+void leak()
+ {&nbsp;
+&nbsp;&nbsp; int k;
+&nbsp;&nbsp;&nbsp; char *cp = new char('E');&nbsp;&nbsp;&nbsp; 
+} </code></pre>
+<p>In this example a local pointer is created on the stack that refers to memory allocated on the heap. When the function exits the local pointer is wiped off the stack leaving the memory allocated on the heap without a reference. It is important to understand the scope of variables.</p>
+<p><strong>Solution </strong><br/>
+Pass the pointer through the argument list.  If this is part of a class make the pointer a field variable of the class.
+</p>
+<p class="Head">Video - Memory Allocation</p>
+</div>
+
+				</div><!-- End_Module_7172 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl01_LiveTabsiMod7173"><div class="DnnModule DnnModule-LiveContent DnnModule-7173"><a name="7173"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl01_ctr7173_ContentPane">
+		
+    <!-- Start_Module_7173 --><div id="dnn_ctr7169_View_ctl00_ctl01_ctr7173_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7173"></a> <div id="dnn_ctr7169_View_ctl00_ctl01_ctr7173_View_LC7173"><table id="dnn_ctr7169_View_ctl00_ctl01_ctr7173_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC71731" class="highslide" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/Portals/11/LiveContent/7173/Videos/memAlloc.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71731eVideo',allowHeightReduction: false,headingId: 'LC71731Heading',headingOverlay: {fade: 1},captionId: 'LC71731Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7173',width: 800,height: 640}, {TabId: '1923',ModuleId: '7173',PortalId: '11',ElementId: '1'}); "> <img alt="1" src="/web/20170515135431im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7173&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71731eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71731Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7173 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl01_LiveTabsiMod7174"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7174"><a name="7174"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl01_ctr7174_ContentPane">
+		
+    <!-- Start_Module_7174 --><div id="dnn_ctr7169_View_ctl00_ctl01_ctr7174_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl01_ctr7174_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://xoax.net/cpp/crs/console/lessons/Lesson36/" target="_blank">See what XoaX.net says about dynamic memory allocation.</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.learncpp.com/cpp-tutorial/69-dynamic-memory-allocation-with-new-and-delete/" target="_blank">Also check out the tutorial on dynamic memory by LearnCPP</a></p>
+<p class="Head">Smart Pointers - New to Version 11</p>
+<hr/>
+<p>Memory leaks are a real problem in C++ because they are easily put into code by mistake. Of course a lot of this can be because there are programmers who do not understand the proper usage of pointers and memory allocation. Because of the problems associated with memory leaks smart pointers were added to the language</p>
+<p>A smart pointer is a class type that acts like a built-in pointer. Because a smart pointer is a complex type it was designed with the ability  to handle it's own memory cleanup. This means that when you use a smart pointer you do not need to worry about using delete to free the memory.  The smart pointer will free up the memory for you.  The smart pointer was implemented in such a way that they can be used anywhere you would use a C++ primitive pointer. </p>
+<p class="Head">Types of Smart Pointers</p>
+<hr/>
+<p>Before going any further I should correct some terminology. I use the word primitive pointer because it is built into the C++ language. The correct terminology when dealing with smart pointers is to call them raw pointers. In any event, a raw pointer is a primitive pointer in my mind</p>
+<p>There are three different smart pointers that are available for you to use</p>
+<p>
+</p>
+<ol>
+    <li><span style="line-height: 21.76px;"><strong>unique_ptr</strong> - Allows exactly one owner for the underlying pointer. The pointer can me moved to a new owner but it cannot be copied or shared.</span></li>
+    <li><span style="line-height: 21.76px;"><strong>shared_ptr</strong> - This is a reference counted pointer. Which means it contains a reference counter that gets increased each time you assign it.  Shared pointers are handy when dealing with container types like the vector. You can wrap elements from the vector in a shared_ptr and then copy it to other containers. The underlying memory is maintained as long as it is needed.</span></li>
+    <li><span style="line-height: 21.76px;"><strong>weak_ptr</strong> - Used in conjunction with a shared_ptr. A weak_ptr gives access to an that object that is owned by a shared_ptr. It does not increment the reference  counter. You can use this pointer when you simply want to examine an object but not modify the reference count.</span></li>
+</ol>
+<p>Using Smart Pointers</p>
+<hr/>
+<p>In Order to use a smart pointer you must first include <memory>. This is part of the std namesapce</memory></p>
+<p>Let's start with a simple example that shows how to create smart pointer to create a new instance of a Rectangle:</p>
+<pre><code class="language-cpp line-numbers">#include <iostream>
+#include <memory>
+#include "Rectangle.h"
+
+using namespace std;
+
+int main()
+{
+	int length, width;
+
+	cout &lt;&lt; "Enter the length and width for the Rectangle" &lt;&lt; endl;
+	cin &gt;&gt; length &gt;&gt; width;
+
+	unique_ptr<rectangle> r1(new Rectangle(length, width));
+
+	cout &lt;&lt; r1-&gt;area() &lt;&lt; endl;
+        return 0;
+} </rectangle></memory></iostream></code></pre>
+<p>Take note of the syntax. An instance of a unique_ptr is being created called r1. An instance of a new Rectangle is being created in it's constructor.</p>
+<p>Here is a more complex example. The following code is a modification of the code in a previous section. The code fills a vector with dynamically allocated Rectangles using a smart pointer.  After this code executes a loop prints out all of the Rectangles added to the vector. Again this is done using a smart pointer</p>
+<pre><code class="language-cpp line-numbers">int main()
+{	
+	vector&lt;unique_ptr<rectangle>&gt; vRect;
+
+	int length, width;
+	int times = 0;
+
+	cout &lt;&lt; "How many Rectangles do you want to create?" &lt;&lt; endl;
+	cin &gt;&gt; times;
+	for (int i = 0; i &lt; times; i++)
+	{
+		cout &lt;&lt; "Enter a length and width " &lt;&lt; endl;
+		cin &gt;&gt; length &gt;&gt; width;
+		vRect.push_back(unique_ptr<rectangle>(new Rectangle(length, width)));
+	}
+		
+	//Print out the vector
+	for (vector&lt;unique_ptr<rectangle>&gt;::iterator p = vRect.begin(); p &lt; vRect.end(); p++)
+	{
+		unique_ptr<rectangle> r = move(*p);  //Use move to transfer the contents of the object to the pointer
+		cout &lt;&lt; r-&gt;area() &lt;&lt; endl;
+	}
+	
+	return 0;
+}
+</rectangle></rectangle></rectangle></rectangle></code></pre>
+</div>
+
+				</div><!-- End_Module_7174 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7169685" class="mtop">
+				<div id="dnn_ctr7169_View_ctl00_ctl02_LiveTabsiMod7175"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7175"><a name="7175"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl02_ctr7175_ContentPane">
+		
+    <!-- Start_Module_7175 --><div id="dnn_ctr7169_View_ctl00_ctl02_ctr7175_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl02_ctr7175_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Static variables were covered in C++ level 1 but that was a while back so it is a good idea to review them before moving on to static class variables. </p>
+<p>Local variables are created on the stack and within the body of a function or block. Global on the other hand, variables are created on the heap. Static variables are like a blending of both in that you can create them in local scope but they actually live on the heap. I should also point out that you can create static global variables but the point for doing this is lost on me. Because they are created on the heap they do not get destroyed the way local variables do when a function exits. Here is an example of how a local variable gets destroyed when the function exits:
+</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream> &lt;iostream&gt;
+
+using namespace std;
+
+void toggle(void);
+
+int main ()
+{
+   for(int i = 0; i &lt; 5; i++)
+      toggle();
+
+   return 0;
+}
+void toggle(void)
+{
+   bool flag = false;
+  
+   flag = !flag;
+  
+   if(flag == true)
+      cout &lt;&lt; "ON" &lt;&lt; endl;
+   else
+      cout &lt;&lt; "OFF" &lt;&lt; endl;
+} 
+ 
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">ON<br/>
+            ON<br/>
+            ON<br/>
+            ON<br/>
+            ON<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Here the variable flag is a local variable that gets created on the stack. Each time the function exits the variable gets destroyed and each time the function is called the variable gets redeclared, initialized to false, then immediately changed to true. Each time the function is called then the output is going to be "ON". </p>
+<p>In order to have the variable maintain it's value throughout all of the calls to the function the variable needs to be made static. As a static variable it gets created on the heap and initialized one time.  Each time the function is called the variable maintains the value it had at the previous function call.  The following example shows this:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream> &lt;iostream&gt;
+
+using namespace std;
+
+void toggle(void);
+
+int main ()
+{
+   for(int i = 0; i &lt; 5; i++)
+      toggle();
+
+   return 0;
+}
+void toggle(void)
+{
+   static bool flag = false;
+  
+   flag = !flag;
+  
+   if(flag == true)
+      cout &lt;&lt; "ON" &lt;&lt; endl;
+   else
+      cout &lt;&lt; "OFF" &lt;&lt; endl;
+} 
+ 
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">ON<br/>
+            OFF<br/>
+            ON<br/>
+            OFF<br/>
+            ON<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Static Class Variables</p>
+<hr/>
+<p>When you create an instance of a class it becomes an object. All objects have their own instances of class variables. There is an exception to this and that is the static class variable. A static class variable is shared among instances of the class. You declare it like any other variable of a class except that you put the static keyword in front of it. </p>
+<p>As an example suppose you want to know how many instances of a class have been created. You could put a static variable in the class and increment it in the constructor. Then each time an instance of the class is created the counter gets incremented. This will allow you to keep count of how many instances of the class have been created. </p>
+<p>Here is the class definition for the Rectangle again </p>
+<pre><code class="language-cpp line-numbers">class Rectangle
+{
+private:	
+	int length;
+	int width;
+
+public:
+        static int count;    // Create the static count variable. Keeps track of instances. 
+	Rectangle(int length, int width);
+	Rectangle() :length(0), width(0) {}
+        ~Rectangle(); // Destructor
+	int area();
+
+	void setValues(int length, int width);  //Mutator
+	int getLength();   //Accessor
+	int getWidth();    //Accessor
+
+	Rectangle add(const Rectangle &amp;r);
+	Rectangle operator +(const Rectangle &amp;r);
+};
+
+ </code></pre>
+<p>Once you define a static data member, it exists even though no objects of it's class exist. In the above example, no objects of class Rectangle exist even though the static data member Rectangle::count has been defined.</p>
+<p>Static member variables of a class in namespace scope have external linkage. The initializer for a static data member is in the scope of the class declaring the member. Because of this you need to initialize the variable in global scope. This is typically done inside the .cpp file where the functions for the classes are created. </p>
+<pre><code class="language-cpp line-numbers">int Rectangle::count = 0;   //Initialize the static variable
+
+Rectangle::Rectangle(int length, int width)
+{
+	this-&gt;setValues(length, width);
+	Rectangle::count++;  //Incrment the counter
+}
+Rectangle::~Rectangle()
+{
+	Rectangle::count--; // Decrement the counter
+}
+
+ </code></pre>
+<p>Because the static variable has external linkage the scope resolution operator is used to specify what class the variable belongs to. Also notice that the data type of the variable needs to be specified.</p>
+<p>To access the variable you use the scope resolution operator. In the above code each time an instance of a Rectangle is created the count variable is incremented. Each time an instance is removed from memory the destructor is called which decrements the count. This provides a simple method for keeping track of the number of instances that have been created.</p>
+<p>The following shows two instances of the rectangle class being created. After the objects have been created the count variable is printed to the screen. Notice again that because the count variable is static and has external linkage the scope resolution operator is used to specify which class the variable belongs to. When delete is used on one of the Rectangle pointers the destructor is called which decrements the count variable:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">int main()
+{	
+	
+	Rectangle *r1 = new Rectangle(4, 5);
+	Rectangle *r2 = new Rectangle(6, 7);
+
+	cout &lt;&lt; "There are " &lt;&lt; Rectangle::count &lt;&lt; " Rectangles" &lt;&lt; endl;
+	delete r1;
+	cout &lt;&lt; "There are " &lt;&lt; Rectangle::count &lt;&lt;  " Rectangles" &lt;&lt; endl;
+	
+	return 0;
+}
+ 
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 280px;">There are 2 Rectangles<br/>
+            There are 1 Rectangles<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p> <a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.learncpp.com/cpp-tutorial/811-static-member-variables/" target="_blank">See what LearnCPP has to say about static member variables</a> </p>
+<p class="Head">Static Member Functions</p>
+<hr/>
+<p>Static member functions work pretty much the same way static variables do. Since they do not belong to any particular instance of the class you cannot use the <strong>this</strong> pointer within them. Like using a static variable you need to use the scope resolution operator when you call them.</p>
+<p>In the next example the static count variables is moved to the &nbsp;private section of the class where it belongs. It is still initialized the same way except there is no public access to it. To provide an interface to the private data a static member function is added which simply prints out the value of count. A bad example I know but one that serves a purpose:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">
+ class Rectangle
+{
+private:
+	static int count;  // static count variable
+	int length;
+	int width;
+
+public:
+	static void printCount();  // Accessor for static count
+
+	Rectangle(int length, int width);
+	Rectangle() :length(0), width(0) {}
+	~Rectangle();
+	int area();
+
+	void setValues(int length, int width);  //Mutator
+	int getLength();   //Accessor
+	int getWidth();    //Accessor
+
+	Rectangle add(const Rectangle &amp;r);
+	Rectangle operator +(const Rectangle &amp;r);
+};
+ 
+ 
+           </code></pre>
+            </td>
+            <td valign="top">
+            </td>
+            <td valign="top" style="width: 50%;">
+            <pre><code class="language-cpp line-numbers">
+ 
+ int Rectangle::count = 0;   //Initialize the static variable
+
+Rectangle::Rectangle(int length, int width)
+{
+	this-&gt;setValues(length, width);
+	Rectangle::count++;  //Incrment the counter
+}
+Rectangle::~Rectangle()
+{
+	Rectangle::count--; // Decrement the counter
+}
+// Static accessor function for static variable
+void Rectangle::printCount()
+{
+	cout &lt;&lt; "There are " &lt;&lt; Rectangle::count &lt;&lt; " Instances" &lt;&lt; endl;
+}
+ 
+           </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In main now a modification can be made to simply call the printCount member function to show the number of instances</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers"> int main()
+{	
+	
+	Rectangle *r1 = new Rectangle(4, 5);
+	Rectangle *r2 = new Rectangle(6, 7);
+
+	Rectangle::printCount();
+	delete r1;
+	Rectangle::printCount();
+	
+	return 0;
+}
+ 
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 280px;">There are 2 Instances<br/>
+            There are 1 Instances<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Need More?</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.learncpp.com/cpp-tutorial/811-static-member-variables/" target="_blank">See what LearnCPP has to say about static member variables</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170515135431/http://www.learncpp.com/cpp-tutorial/812-static-member-functions/" target="_blank">See what LearnCpp has to say about static member funcitons</a></p>
+</div>
+
+				</div><!-- End_Module_7175 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7169686" class="mtop">
+				<div id="dnn_ctr7169_View_ctl00_ctl03_LiveTabsiMod7176"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7176"><a name="7176"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl03_ctr7176_ContentPane">
+		
+    <!-- Start_Module_7176 --><div id="dnn_ctr7169_View_ctl00_ctl03_ctr7176_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl03_ctr7176_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction </p>
+<hr/>
+<p>Design patterns have been around for a long time in programming. They first gained traction in 1994 when the book Design Patterns: Elements of Reusable Object Oriented Software was published.  A design pattern is way or an approach to solving common software design problems. The book introduced 23 patterns that can be used to solve several generic problems.  </p>
+<p>Design patters can be classified in one of the following three categories:</p>
+<p>
+<ol>
+    <li>Creational Patterns</li>
+    <li>Structural Patterns</li>
+    <li>Behavioral Patterns</li>
+</ol>
+</p>
+<p>The breadth and scope of design patterns make it difficult to cover as a section in one class. For this reason this section simply serves as an introduction to design patters. We will look at a couple of different ones</p>
+<p class="Head">The Singleton Design Pattern</p>
+<hr/>
+<p>Many times in programming you want to have the ability to use an instance of an object without having to place it in global scope. This is where the Singleton design pattern shines. As an example imagine a menu class that has functionality in it that you would like to have access to from many different functions. One solution is that you could pass the instance of the menu to the function as a parameter. Many times though this is not possible. Let's take a look at the menu class which you may already be familiar with. </p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 50%;">
+            <pre><code class="language-cpp line-numbers">
+ struct menuItem
+	{
+		string descript;
+		void(*func)();
+	};
+	class Menu
+	{
+	private:
+		vector<menuitem> mi;
+		int count;
+		void runSelection();
+		static Menu *pInstance;
+	public:
+		Menu();
+		void addMenu(string Descript, void(*f)());
+		void runMenu();
+		void waitKey();
+		static Menu *Instance();
+	};
+ 
+ 
+          </menuitem></code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">Menu m; // In global scope so functions can have access
+int main()
+{
+   m.addMenu("1. Function 1", func1);
+   m.addMenu("2. Function 2", func2);
+   m.addMenu("4. Exit", Exit);
+   m.runMenu();
+   return 0;
+ }
+ void func1()
+ {
+    cout &lt;&lt; "Hello from function 1" &lt;&lt; endl;
+    m.waitKey();
+ }
+void func2()
+{
+    cout &lt;&lt; "Hello from function 2 " &lt;&lt; endl;
+    m.waitKey();
+}
+void Exit()
+{
+    cout &lt;&lt; "Goodbye" &lt;&lt; endl;
+    exit(0);
+}</code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>The way the functions are setup there is no way to easily pass the menu to them through the parameter list. The solution here is to create the instance of the menu in global scope. Of course we know that this is real bad coding practice. To recap, we want to have the ability to create one instance of the menu and also have the ability to access the instance in multiple functions without using global variables and without passing it through the parameter list. </p>
+<p>The best solution to solve the problem is to use the Singleton design pattern. The Singleton design pattern uses a private static pointer to the class that it is contained within:</p>
+<pre><code class="language-cpp line-numbers">class Menu
+	{
+	private:
+		vector<menuitem> mi;
+		int count;
+		void runSelection();
+		static Menu *pInstance;   // The static instance pointer
+	public:
+		Menu();
+		void addMenu(string Descript, void(*f)());
+		void runMenu();
+		void waitKey();
+		static Menu *Instance();
+	}; </menuitem></code></pre>
+<p>This pointer can then be initialized and returned from a function. In this way a pointer to the current instance of the menu can be gotten through a call to an accessor function. Because the pointer is static it must be initialized outside of the class:</p>
+<pre><code class="language-cpp line-numbers">//Initialize the static instance pointer
+Menu *Menu::pInstance = NULL; 
+//Create the accessor function which will return the instance 
+Menu *Menu::Instance()
+{
+    if(pInstance == NULL)
+       pInstance = new Menu;
+
+    return pInstance;
+}
+ </code></pre>
+<p>The first time the Instance function is called pInstance will be NULL and the pointer will be initialized by calling new. For each successive call to the Instance function the pointer will NOT be NULL and the instance will simply be returned. </p>
+<p>This allows us to improve the code by removing the global variable. The following shows how the Instance function is called and used.</p>
+<pre><code class="language-cpp line-numbers">//Menu removed from global scope
+{
+   Menu *m = Menu::Instance();   // First time called new will create a new instance of the class
+   m.addMenu("1. Function 1", func1);
+   m.addMenu("2. Function 2", func2);
+   m.addMenu("4. Exit", Exit);
+   m.runMenu();
+   return 0;
+ }
+ void func1()
+ {
+    cout &lt;&lt; "Hello from function 1" &lt;&lt; endl;
+     Menu *m = Menu::Instance(); // Instance pointer is returned
+    m.waitKey();
+ }
+void func2()
+{
+    cout &lt;&lt; "Hello from function 2 " &lt;&lt; endl;
+    Menu *m = Menu::Instance(); // Instance pointer is returned
+    m.waitKey();
+}
+void Exit()
+{
+    cout &lt;&lt; "Goodbye" &lt;&lt; endl;
+     Menu *m = Menu::Instance(); // Instance pointer is returned 
+    exit(0);
+}</code></pre>
+<p class="Head">Video - Singleton Design Pattern</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7176 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl03_LiveTabsiMod7177"><div class="DnnModule DnnModule-LiveContent DnnModule-7177"><a name="7177"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl03_ctr7177_ContentPane">
+		
+    <!-- Start_Module_7177 --><div id="dnn_ctr7169_View_ctl00_ctl03_ctr7177_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7177"></a> <div id="dnn_ctr7169_View_ctl00_ctl03_ctr7177_View_LC7177"><table id="dnn_ctr7169_View_ctl00_ctl03_ctr7177_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC71771Heading">Singleton Design Pattern</div><a id="LC71771" class="highslide" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/Portals/11/LiveContent/7177/Videos/Singleton.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC71771eVideo',allowHeightReduction: false,headingId: 'LC71771Heading',headingOverlay: {fade: 1},captionId: 'LC71771Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7177',width: 800,height: 640}, {TabId: '1923',ModuleId: '7177',PortalId: '11',ElementId: '1'}); "> <img title="Singleton Design Pattern" alt="Singleton Design Pattern" src="/web/20170515135431im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7177&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC71771eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC71771Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC71771Caption">The Singleton design pattern and static variables.</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7177 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7169_View_ctl00_ctl03_LiveTabsiMod7178"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7178"><a name="7178"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl03_ctr7178_ContentPane">
+		
+    <!-- Start_Module_7178 --><div id="dnn_ctr7169_View_ctl00_ctl03_ctr7178_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7169_View_ctl00_ctl03_ctr7178_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Factory Design Pattern</p>
+<hr/>
+<p>The factory design pattern consists of a static member function  that is used to create an instance of the object. This will localize the creation of the object and prevent disturbance of the system when a new type is introduced.</p>
+<p>The following example shows a simplistic view of the factory design pattern</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers"> class Rectangle
+{
+private:
+	static int count;  // static count variable
+	int length;
+	int width;
+
+public:
+	static void printCount();  // Accessor for static count
+
+	Rectangle(int length, int width);
+	Rectangle() :length(0), width(0) {}
+	~Rectangle();
+	int area();
+
+	void setValues(int length, int width);  //Mutator
+	int getLength();   //Accessor
+	int getWidth();    //Accessor
+
+	Rectangle add(const Rectangle &amp;r);
+	Rectangle operator +(const Rectangle &amp;r);
+
+	// Factory method to create a Rectangle
+	static Rectangle *create(int length, int width);
+};   </code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers">//Factory method creates a Rectangle
+Rectangle *Rectangle::create(int length, int width)
+{
+	return new Rectangle(length, width);
+}
+ 
+         </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Now the static function can be called to create an instance of the object</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">int main()
+{	
+	
+	Rectangle *r1 = Rectangle::create(4, 5);
+	Rectangle *r2 = Rectangle::create(6, 7);
+
+	Rectangle::printCount();
+	delete r1;
+	Rectangle::printCount();
+	
+	return 0;
+}
+ 
+ 
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">There are 2 Instances<br/>
+            There are 1 Instances<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Of course the Factory design pattern works best in a situation where inheritance is used and you want to specify from the base class which type of object you want to create. This will be revisited in the section on inheritance</p>
+<p class="Head">Other Popular Design Patterns</p>
+<hr/>
+<p>As was stated this section was not meant to be a complete guide to design patterns. It was simply meant to introduce design patterns to you. If this topic interests you then you should investigate these other popular design patterns:</p>
+<ul>
+    <li><span>Observer</span></li>
+    <li><span>Template</span></li>
+    <li><span>Chain of Responsibility</span></li>
+    <li><span>Command</span></li>
+    <li><span>Adapter</span></li>
+    <li><span>Visitor</span></li>
+    <li><span>Facade</span></li>
+    <li><span>Builder</span></li>
+    <li><span>Composite</span></li>
+    <li><span>Decorator</span></li>
+</ul>
+</div>
+
+				</div><!-- End_Module_7178 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7169687" class="mtop">
+				<div id="dnn_ctr7169_View_ctl00_ctl04_LiveTabsiMod7212"><div class="DnnModule DnnModule-LiveContent DnnModule-7212"><a name="7212"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7169_View_ctl00_ctl04_ctr7212_ContentPane">
+		
+    <!-- Start_Module_7212 --><div id="dnn_ctr7169_View_ctl00_ctl04_ctr7212_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7212"></a> <div id="dnn_ctr7169_View_ctl00_ctl04_ctr7212_View_LC7212"><table id="dnn_ctr7169_View_ctl00_ctl04_ctr7212_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72121Heading">Dynamic Memory</div><a id="LC72121" class="highslide" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/Portals/11/LiveContent/7212/Videos/Lecture 3 Dynamic Memory.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72121eVideo',allowHeightReduction: false,headingId: 'LC72121Heading',headingOverlay: {fade: 1},captionId: 'LC72121Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7212',width: 800,height: 640}, {TabId: '1923',ModuleId: '7212',PortalId: '11',ElementId: '1'}); "> <img title="Dynamic Memory" alt="Dynamic Memory" src="/web/20170515135431im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7212&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72121eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72121Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC72121Caption">Dynamic Memory &amp; Static Variables</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7212 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7169 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170515135431/http://programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170515135431im_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7170|LC71701Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|Pointers1|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7173|LC71731Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|memAlloc|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame21'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7177|LC71771Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|Singleton|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('n(8(\'7\')!=o){8(\'7\').p({m:\'0://4.1.2/j.k?d=l-v-w-x-u&q;t=r\',s:\'0://4.1.2/5/9/a/6/g/h 3 i c.e\',f:b,O:P,Q:\'L\',M:N,U:\'0://4.1.2/5/9//a/6/R/S.T\',K:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}',57,57,'http|msjc|edu||programming|Portals|7212|LC72121Html5eVideo|jwplayer|11|LiveContent|600|Memory||mp4|height|Videos|Lecture|Dynamic|WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|flashplayer|if|null|setup|amp|634957464340000000|file||ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|abouttext|video|autostart|true|width|800|provider|Images|Lecture_3_Dynamic_Memory_First_Frame|png|image'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7169").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7169').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7169') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7169').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7169').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7169') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7169').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7169").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7169') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 13:54:31 May 15, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:28:43 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 128.522
+  PetaboxLoader3.datanode: 86.279 (4)
+  exclusion.robots.policy: 0.857
+  RedisCDXSource: 0.798
+  CDXLines.iter: 19.864 (3)
+  esindex: 0.02
+  LoadShardBlock: 102.392 (3)
+  PetaboxLoader3.resolve: 140.509 (2)
+  exclusion.robots: 0.881
+  load_resource: 141.792
+-->

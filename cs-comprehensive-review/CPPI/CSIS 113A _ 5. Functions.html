@@ -1,0 +1,1624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app102.us.archive.org';v.server_ms=177;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20150219202908", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+<title>
+	CSIS 113A &gt; 5. Functions &nbsp;&nbsp;&nbsp;&nbsp;
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="C++ Programming Level 1"/><meta id="MetaCopyright" name="COPYRIGHT" content="2010 By Glenn Stevenson"/><meta id="MetaAuthor" name="AUTHOR" content="CSIS 113A"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20150219202908cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219202908cs_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/skin.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219202908cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/container.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219202908cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/Title_Grey.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219202908cs_/http://programming.msjc.edu/Portals/16/portal.css?cdv=109" type="text/css" rel="stylesheet"/><script src="/web/20150219202908js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219202908js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=109" type="text/javascript"></script><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219202908cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219202908cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20150219202908js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx', '20150219202908')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20150219202908/http://web.archive.org/screenshot/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20150219202908/http://programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20150219202908/http://programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20150219202908" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20130618010355/http://www.programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="18 Jun 2013"><strong>Jun</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 20:29:08 Feb 19, 2015">FEB</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150422020406/http://programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="22 Apr 2015"><strong>Apr</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20130618010355/http://www.programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="01:03:55 Jun 18, 2013"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 20:29:08 Feb 19, 2015">19</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150422020406/http://programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="02:04:06 Apr 22, 2015"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20130618010355/http://www.programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="18 Jun 2013"><strong>2013</strong></a></td>
+		  <td class="c" id="displayYearEl" title="You are here: 20:29:08 Feb 19, 2015">2015</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20160221170119/http://programming.msjc.edu:80/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="21 Feb 2016"><strong>2016</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20150219202908*/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" title="See a list of every capture for this URL">41 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">18 Jun 2013 - 25 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20150219202908/http%3A//programming.msjc.edu/cpp/5Functionsnbsp%253Bnbsp%253Bnbsp%253Bnbsp%253B.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx","2015-02-19",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx", '20150219202908');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    
+    <form method="post" action="/web/20150219202908/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper2753_SelectedIndex" id="LiveTabsWrapper2753_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMwNzQ0NDU3D2QWCGYPFgIeBFRleHQFeTwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4wIFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1sMS10cmFuc2l0aW9uYWwuZHRkIj5kAgIPFgIfAAVDIHhtbDpsYW5nPSJlbi1VUyIgbGFuZz0iZW4tVVMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAxZAIIDxYEHwJkHwFoZAIJDxYCHwIFFzIwMTAgQnkgR2xlbm4gU3RldmVuc29uZAIKDxYEHwJkHwFoZAILDxYCHwIFCUNTSVMgMTEzQWQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYWZg9kFgJmDw8WBB4HVG9vbFRpcAUJQ1NJUyAxMTNBHgtOYXZpZ2F0ZVVybAUpaHR0cDovL3Byb2dyYW1taW5nLm1zamMuZWR1L2NwcC9Ib21lLmFzcHhkZAIBDxYCHgVjbGFzcwUXaGVhZGVycGFuZSBETk5FbXB0eVBhbmVkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDD2QWBGYPZBYGAgEPEA8WCB4IQ3NzQ2xhc3MFBlNlYXJjaB8ABQNXZWIfAwURR29vZ2xlIFdlYiBTZWFyY2geBF8hU0ICAmRkZGQCAw8QDxYIHwYFBlNlYXJjaB8ABQRTaXRlHwMFC1NpdGUgU2VhcmNoHwcCAmRkZGQCBw8PFgYfBgUGU2VhcmNoHwAFYzxpbWcgc3JjPSIvUG9ydGFscy9fZGVmYXVsdC9Ta2lucy9QaW9uZWVyLUJsdWUvaW1hZ2VzL0JsdWVTZWFyY2guanBnIiBhbGlnbj0iYWJzTWlkZGxlIiBib3JkZXI9IjAiPh8HAgJkZAICD2QWAgICDw8WBh8GBQZTZWFyY2gfAAVjPGltZyBzcmM9Ii9Qb3J0YWxzL19kZWZhdWx0L1NraW5zL1Bpb25lZXItQmx1ZS9pbWFnZXMvQmx1ZVNlYXJjaC5qcGciIGFsaWduPSJhYnNNaWRkbGUiIGJvcmRlcj0iMCI+HwcCAmRkAgYPZBYEZg8PFgYfBgUEVXNlch8HAgIfAWhkZAICDxYCHwFoFggCAQ8WAh8BaGQCAw8WAh8BaGQCBQ8PFgQfBgUEVXNlch8HAgJkZAIHDxYCHwFoZAIHD2QWBGYPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFaWh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmNUZ1bmN0aW9uc25ic3AlM2JuYnNwJTNibmJzcCUzYm5ic3AlM2IuYXNweB8HAgIWAh4Hb25jbGljawWjAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPS9jcHAvNUZ1bmN0aW9uc25ic3A7bmJzcDtuYnNwO25ic3A7LmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPFgIfAWgWAgIBDw8WCh8GBQVMb2dpbh8ABQVMb2dpbh8DBQVMb2dpbh8EBWlodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPSUyZmNwcCUyZjVGdW5jdGlvbnNuYnNwJTNibmJzcCUzYm5ic3AlM2JuYnNwJTNiLmFzcHgfBwICFgIfCAWjAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPS9jcHAvNUZ1bmN0aW9uc25ic3A7bmJzcDtuYnNwO25ic3A7LmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgkPFgIfBQUUdG9wcGFuZSBETk5FbXB0eVBhbmVkAgoPFgIfBQUVbGVmdHBhbmUgRE5ORW1wdHlQYW5lZAILDxYCHwFnFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZVRhYnMgRG5uTW9kdWxlLTI3NTMWAgIBD2QWEAIDDw8WAh8BaGRkAgUPZBYCAgIPFgIfAWhkAgcPZBYCZg8PFgIfAWhkZAIJD2QWAmYPDxYCHwMFCE1pbmltaXplZBYCZg8PFgYeCEltYWdlVXJsBUAvUG9ydGFscy9fZGVmYXVsdC9Db250YWluZXJzL01pbmltYWxFeHRyb3B5L2ltYWdlcy9ETk4tbWludXMuZ2lmHg1BbHRlcm5hdGVUZXh0BQhNaW5pbWl6ZR8DBQhNaW5pbWl6ZWRkAgsPZBYCAgIPD2QWAh8FBR1ETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUYWJzQxYCAgEPZBYCAgEPFgIeEURpc2FibGVkVGFic0FycmF5ZBYKZg9kFgJmD2QWCmYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzU0FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS0yNzU1FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzU2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS0yNzU3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgQPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzU4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg9kFg5mD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjc1ORYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtMjc2MBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjc2MRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIDD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtMjc2MhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIED2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNjM4NRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIFD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNjM4OBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIGD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNjM4ORYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAICD2QWAmYPZBYoZg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTYzODYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NjQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NjUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NjcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBA9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NjgWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NjkWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTYzODcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBw9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTYzOTAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCCA9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTYzOTEWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCCQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NzAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCCg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NzEWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCCw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NzIWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCDA9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTYzOTIWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCDQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTYzOTMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCDg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NzMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCDw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NzQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCEA9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NzUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCEQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3NzYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCEg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI3NzcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCEw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTQ2MTAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmD2QWBmYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzc4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS0yNzgxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS00NjExFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgQPZBYCZg9kFgJmD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtMjg5NRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIND2QWAmYPDxYCHwFoZGQCDw9kFgJmDw8WAh8BaGRkAhEPZBYCZg8PFgIfAWhkZAIMDxYCHwUFFnJpZ2h0cGFuZSBETk5FbXB0eVBhbmVkAg0PFgIfBQUXYm90dG9tcGFuZSBETk5FbXB0eVBhbmVkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYEBRZkbm4kY3RyMjc1MyRWaWV3JGN0bDAwBRxkbm4kZG5uU0VBUkNIJFdlYlJhZGlvQnV0dG9uBR1kbm4kZG5uU0VBUkNIJFNpdGVSYWRpb0J1dHRvbgUUZG5uJGRubk5BViRjdGxkbm5OQVbRdiqbCAfETASeVJOcGh5BxIUwFA=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            <script type="text/javascript" src="/web/20150219202908js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219202908js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219202908js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.f="/g/e/c/d/";0.1.k=\'l...\';0.1.j=\'3 2 h 2 i\';0.1.5=\'6 2 a b\';0.1.9=\'7\';0.1.8=\'x\';0.1.y=\'v\';0.1.w=\'B\';0.1.C=\'3 2 z A, u 4 o 2 p. m n s t q 4 r.\';',39,39,'hs|lang|to|Click|and|fullExpandTitle|Expand|Prev|nextText|previousText|actual|size|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|bring|front|focusTitle|loadingText|Loading|Use|arrow|drag|move|next|previous|keys|for|click|Move|closeText|Next|moveText|close|image|Close|restoreTitle'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+
+<script src="/web/20150219202908js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3af319b152-218f-4c14-829d-050a68bb1a61%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/web/20150219202908js_/http://programming.msjc.edu/js/dnn.js" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20150219202908js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAj7KAB+MUAYIkJBLwm2QttM//c7PsqmuTnEFQI7odDR3WwwN58EmkZeYVfe5uNDEljiNx9aiHsyVt43JPA19HY69g7WIPfzT65Doh/GL2XrAKPasfOPszddLES7Y2UntNNXyfNnC2LjR4Gt1Zo90L2sIJWE4Jsg+tfguQrQbLlbQL+P5U1Q7WSnquntGYAeGplICRTA"/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20150219202908js_/http://programming.msjc.edu/js/Debug/dnn.modalpopup.js?cdv=109" type="text/javascript"></script><script src="/web/20150219202908js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219202908js_/http://programming.msjc.edu/Resources/Shared/Scripts/dnn.jquery.js?cdv=109" type="text/javascript"></script><script src="/web/20150219202908js_/http://programming.msjc.edu/js/Debug/dnncore.js?cdv=109" type="text/javascript"></script>
+        
+        
+
+<table border="0" cellspacing="0" cellpadding="0" class="menu_bgcolor skin-1024">
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="page_top_bgcolor"><table class="page_top_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td rowspan="2" class="logo_style"><a id="dnn_dnnLOGO_hypLogo" title="CSIS 113A" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Home.aspx"><img id="dnn_dnnLOGO_imgLogo" src="/web/20150219202908im_/http://programming.msjc.edu/Portals/16/cpplogo2.png" alt="CSIS 113A" style="border-width:0px;"/></a></td>
+              
+              <td class="language_style" nowrap="nowrap"><div class="language-object">
+
+
+</div></td>
+              <td align="right" class="page_top_right"><img src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+            <tr>
+              <td class="search_style" nowrap="nowrap"><span id="dnn_dnnSEARCH_ClassicSearch">
+    <span class="Search" title="Google Web Search"><input id="dnn_dnnSEARCH_WebRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="WebRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_WebRadioButton">Web</label></span>
+    <span class="Search" title="Site Search"><input id="dnn_dnnSEARCH_SiteRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="SiteRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_SiteRadioButton">Site</label></span>
+    <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" onkeydown="return __dnn_KeyDown('13', 'javascript:__doPostBack(%27dnn$dnnSEARCH$cmdSearch%27,%27%27)', event);"/>
+	<a id="dnn_dnnSEARCH_cmdSearch" class="Search" href="javascript:__doPostBack('dnn$dnnSEARCH$cmdSearch','')"><img src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/BlueSearch.jpg" align="absMiddle" border="0"></a>
+</span>
+
+
+</td>
+              <td align="right" class="page_top_right02"></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="user_left_bg" nowrap="nowrap"><table width="244" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" class="date_style"><span id="dnn_dnnCURRENTDATE_lblDate" class="CurrentDate">Thursday, February 19, 2015</span>
+</td>
+                </tr>
+              </table></td>
+              <td class="user_bg" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left">
+                      <span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx" class="Breadcrumb">5. Functions &nbsp;&nbsp;&nbsp;&nbsp;</a></span>
+</td>
+                    <td align="right">
+<!--close registerGroup--><a id="dnn_dnnLOGIN_loginLink" title="Login" class="Login" onclick="return dnnModal.show('https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=%2fcpp%2f5Functionsnbsp%3bnbsp%3bnbsp%3bnbsp%3b.aspx">Login</a>
+<!--close loginGroup--></td>
+                  </tr>
+              </table></td>
+              <td align="right" class="user_right_bg"><img src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><table class="menu_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" height="10"><img src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="190" height="10"/></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><div>
+	<ul class="" id="dnn_dnnNAV_ctldnnNAV">
+		<li id="dnn_dnnNAV_ctldnnNAVctr354"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Home.aspx"><span>Home</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr527"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/1Introduction.aspx"><span>1.    Introduction</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr528"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/2DataTypesnbsp;nbsp;.aspx"><span>2. Data Types &nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr529"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/3Decisionsnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>3. Decisions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr530"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx"><span>4. Repetition &nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr531"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx"><span>5. Functions &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr532"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/6Parameters.aspx"><span>6. Parameters</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr534"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/7Arraysnbsp;nbsp;nbsp;nbsp;nbsp;nbsp;nbsp.aspx"><span>7. Arrays&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr535"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx"><span>8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr536"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/9Classesnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>9. Classes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr606"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus.aspx"><span>Syllabus</span></a><ul id="dnn_dnnNAV_ctldnnNAVsub606">
+			<li id="dnn_dnnNAV_ctldnnNAVctr1698"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus/4046.aspx"><span>4046</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1673"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus/3482.aspx"><span>3482</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr842"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus/4623.aspx"><span>4623</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1571"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus/4626.aspx"><span>4626</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr607"><a href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/Syllabus/4589.aspx"><span>4589</span></a></li>
+		</ul></li>
+	</ul>
+</div></td>
+                  </tr>
+              </table></td>
+              <td width="100%" class="content_style" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                  <tr>
+                    
+                  </tr>
+                  <tr>
+                    
+                    <td id="dnn_ContentPane" valign="top" class="contentpane"><div class="DnnModule DnnModule-LiveTabs DnnModule-2753"><a name="2753"></a>
+<div class="c_container c_head_grey">
+    <div class="head_title">
+        <div class="c_actions">
+			
+        </div>
+        <div class="c_icon">			
+			
+			<h2 class="c_title">
+				<span id="dnn_ctr2753_dnnTITLE_titleLabel" class="TitleHead">Functions</span>
+
+
+				
+			</h2>
+            </div>
+        <div class="title_vis">
+        
+            <a id="dnn_ctr2753_dnnVISIBILITY_cmdVisibility" title="Minimize" href="javascript:__doPostBack('dnn$ctr2753$dnnVISIBILITY$cmdVisibility','')"><img id="dnn_ctr2753_dnnVISIBILITY_imgVisibility" title="Minimize" src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/images/DNN-minus.gif" alt="Minimize"/></a>
+        </div>
+        <div class="clear_float">
+        </div>
+    </div>
+    <div class="c_content">
+        <div id="dnn_ctr2753_ContentPane" class="Normal c_contentpane">
+        <!-- Start_Module_2753 --><div id="dnn_ctr2753_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper2753" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper2753" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs2753156" class="mtop"><a name="LiveTabsContent2753156" href="#LiveTabsContent2753156">A. Predefined Functions</a></li><li id="LiveTabs2753635" class="mtop"><a name="LiveTabsContent2753635" href="#LiveTabsContent2753635">B. Simple Functions</a></li><li id="LiveTabs2753636" class="mtop"><a name="LiveTabsContent2753636" href="#LiveTabsContent2753636">C. Value Producing Functions</a></li><li id="LiveTabs2753158" class="mtop"><a name="LiveTabsContent2753158" href="#LiveTabsContent2753158">D. Scope Rules</a></li><li id="LiveTabs2753159" class="mtop"><a name="LiveTabsContent2753159" href="#LiveTabsContent2753159">D. Video Lecture</a></li><li id="LiveTabs2753655" class="mtop"><a name="LiveTabsContent2753655" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;/SelfEvaluation-Functions.aspx" class="NavigateUrl">Self Evaluation</a></li>
+			</ul><div id="LiveTabsContent2753156" class="mtop">
+				<div id="dnn_ctr2753_View_ctl00_ctl00_LiveTabsiMod2754"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2754"><a name="2754"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl00_ctr2754_ContentPane">
+		
+    <!-- Start_Module_2754 --><div id="dnn_ctr2753_View_ctl00_ctl00_ctr2754_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl00_ctr2754_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Predefined Functions</span><hr/>
+</p>
+<p>In an earlier lesson, we said that C++ provides some functionality that you can use to make writing programs much easier. You may not realize it but you have already used some of these functions; Remember cin and cout? These are functions that are part of the standard library that give you the ability to read and write to the console. These two functions are a little odd because they are not called in the same way as most functions. This will become very clear to you in the advanced C++ class. </p>
+<p><strong>Some function basics</strong></p>
+<p>You should think of a function as a black box. I say this because you really don't need to know how the function works to use it. This is called <em><strong>encapsulation, </strong></em>which really is a term that means hiding the details from the user and it is a key concept in object oriented programming (Objects will be discussed down the road). Think of a function as a black box that does some work for you. There are many types of functions. Some of these function need to be supplied information before they can perform their job, some functions return a value back to, and finally some functions need some information and then will return an answer back to you. Lets look at one</p>
+<img width="283" height="76" alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/sqrt.png"/>
+<p>In the above example, a double variable named root is declared, then the sqrt function is called with the value of 25 being passed to it. The sqrt function will then return 5 (which is the square root of 25) and assign it to the variable root. </p>
+<p>When you want a function to perform a task you <em><strong>call</strong></em> it. You will also see the term referred to as <em><strong>invoke</strong></em>. In either case they mean the same thing; control of the program branches to where the function resides in memory, the function performs its task and returns back to where it was called from. </p>
+<p class="NormalRed"><strong>Important Point</strong> </p>
+<p>It is important that you know how a function is called. A function like everything in a C++ program sits somewhere in memory. Where that is is unimportant. In fact, it is one of the great things about high level programming languages; we don't need to know where it is. To refer to the spot in memory you would just say <strong>sqrt </strong>(refers to the address)<strong>. </strong>To have your program branch to where the function is you put the parentheses <strong>sqrt()</strong>. If the function requires information, it gets put in the parentheses <strong>sqrt(25) </strong>Some functions will need more than one piece of information and in that case you separate the values by a comma. When a function completes, it returns right back to where it was called from. In the sqrt example, it brings a value back with it. You can get the value that is returned by using the equal sign. In the above example, the program returned from the sqrt function with the value of 5 which was assigned to the variable root through the use of the = sign. </p>
+<p><strong>The cmath library </strong></p>
+<p>The sqrt function is part of the cmath library, and it must be included before you can call any of the functions that are part of it. The inclusion of cmath gives the compiler all of the definitions it needs for math functionality. You should know that the compiler needs to see a definition of a function before it can be called. It needs the definition so that it knows at compile time that you are calling a function correctly. </p>
+<p>Lets look at another function that is part of cmath. The pow function will return the value of the first value raised to the value of the second. For example, lets say you want to square a value. You could do it this way:</p>
+<img width="249" height="128" alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/Square1.png"/>
+<p>Or you could use the pow function:</p>
+<img width="282" height="122" alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/Square2.png"/>
+<p>What if you wanted to cube x?</p>
+<p class="style1"><img width="359" height="77" alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/cube.png"/></p>
+<p>Lets look at program that uses these functions: <br/>
+<br/>
+</p>
+</div>
+
+				</div><!-- End_Module_2754 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl00_LiveTabsiMod2755"><div class="DnnModule DnnModule-LiveContent DnnModule-2755"><a name="2755"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl00_ctr2755_ContentPane">
+		
+    <!-- Start_Module_2755 --><div id="dnn_ctr2753_View_ctl00_ctl00_ctr2755_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2755"></a> <div id="dnn_ctr2753_View_ctl00_ctl00_ctr2755_View_LC2755"><table id="dnn_ctr2753_View_ctl00_ctl00_ctr2755_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27550" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27550Content',allowWidthReduction: true,headingId: 'LC27550Heading',headingOverlay: {fade: 1},captionId: 'LC27550Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2755',width: 800}, {TabId: '531',ModuleId: '2755',PortalId: '16',ElementId: '0'}); "> <img alt="0" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2755&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27550Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27550Inject"> <p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;iostream&gt;</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;cmath&gt; </span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">using</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: blue;">namespace</span> std;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> numLoop;<br/>
+<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"Enter the number of iterations "</span>;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cin &gt;&gt; numLoop;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; <span style="color: blue;">for</span>(<span style="color: blue;">int</span> i = 0; i &lt; numLoop; i++)<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; {<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The square of "</span> &lt;&lt; i &lt;&lt; <span style="color: #a31515;">"is "</span> &lt;&lt; pow(i, 2.0) &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The cube of "</span> &lt;&lt; i &lt;&lt; <span style="color: #a31515;">" is "</span> &lt;&lt; pow(i, 3.0) &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The sqrt of "</span> &lt;&lt; i &lt;&lt; <span style="color: #a31515;">" is "</span> &lt;&lt; sqrt(<span style="color: blue;">static_cast</span>&lt;<span style="color: blue;">double</span>&gt;(i)) &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; }</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; <span style="color: blue;">return</span> 0;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">}</span></p> </div><div class="highslide-footer"></div></div></td><td><div class="highslide-heading" id="LC27551Heading">Example Run From Code On Left</div><a id="LC27551" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2755/Images/MathExampleOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2755&amp;eid=1&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27551Heading',headingOverlay: {fade: 1},captionId: 'LC27551Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2755'}, {TabId: '531',ModuleId: '2755',PortalId: '16',ElementId: '1'});"> <img title="Example Run From Code On Left" alt="Example Run From Code On Left" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2755&amp;eid=1&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2755 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl00_LiveTabsiMod2756"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2756"><a name="2756"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl00_ctr2756_ContentPane">
+		
+    <!-- Start_Module_2756 --><div id="dnn_ctr2753_View_ctl00_ctl00_ctr2756_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl00_ctr2756_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span> </p>
+<hr/>
+<p>&nbsp;</p>
+<p>The above program is really a simple example of how to use the sqrt and pow functions. You will notice that the program includes cmath which is needed to use any of the math functions that are a part of the standard library. The program asks the user for the number of times to loop which it stores in the variable numLoop. The loop of the program goes from 0 to the number that the user typed in and within the body of the loop, the square, cube, and square root of i is printed out.<br/>
+<br/>
+<span class="SubHead">What about static_cast?<span class="SubHead"></span></span><span class="SubHead"><span class="Normal"></span><br/>
+</span></p>
+<p>The pow function is really an overloaded function. As an overloaded function not properly specifying the parameters can lead to ambiguity meaning the compiler cannot figure out which parameters to promote or demote. As it turns out, one of the overloads for pow take 2 doubles so by casting one of them the compiler can figure out to promote the other parameter. Remember, casting means to tell the compiler to treat the variable to the type is was casted to for the duration of the statement. This may not seem clear to you but hopefully you will gain an understanding in the section on overloaded functions.&nbsp; In the meantime, you can simply use a double for the parameters of the pow function. <br/>
+<br/>
+Here is a list of useful math functions that are part of the standard library <br/>
+<br/>
+<table style="width: 733px;" class="telerik-reTable-1" border="1" align="center">
+    <thead>
+    </thead>
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1" valign="top" bgcolor="#ff0000">
+            <td style="width: 48px;" class="telerik-reTableHeaderEvenCol-1"><strong>Name</strong></td>
+            <td style="width: 227px;" class="telerik-reTableHeaderOddCol-1"><strong>Description</strong></td>
+            <td style="width: 78px;" class="telerik-reTableHeaderEvenCol-1"><strong>Arg Type </strong></td>
+            <td style="width: 91px;" class="telerik-reTableHeaderOddCol-1"><strong>Return Type </strong></td>
+            <td style="width: 138px;" class="telerik-reTableHeaderEvenCol-1"><strong>Example</strong></td>
+            <td style="width: 46px;" class="telerik-reTableHeaderOddCol-1"><strong>Value</strong></td>
+            <td style="width: 59px;" class="telerik-reTableHeaderEvenCol-1"><strong>include</strong></td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" valign="top" bgcolor="#ccffff">
+            <td class="telerik-reTableEvenCol-1">sqrt</td>
+            <td class="telerik-reTableOddCol-1">Square Root </td>
+            <td class="telerik-reTableEvenCol-1">double</td>
+            <td class="telerik-reTableOddCol-1">double</td>
+            <td class="telerik-reTableEvenCol-1">sqrt(9.0)</td>
+            <td class="telerik-reTableOddCol-1">3.0</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" valign="top">
+            <td style="height: 24px;" class="telerik-reTableEvenCol-1">pow</td>
+            <td class="telerik-reTableOddCol-1">Powers</td>
+            <td class="telerik-reTableEvenCol-1">double</td>
+            <td class="telerik-reTableOddCol-1">double</td>
+            <td class="telerik-reTableEvenCol-1">pow(2.0, 3.0) <br/>
+            </td>
+            <td class="telerik-reTableOddCol-1">8.0</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" valign="top" bgcolor="#ccffff">
+            <td class="telerik-reTableEvenCol-1">abs</td>
+            <td class="telerik-reTableOddCol-1">Absolute value of int </td>
+            <td class="telerik-reTableEvenCol-1">int</td>
+            <td class="telerik-reTableOddCol-1">int</td>
+            <td class="telerik-reTableEvenCol-1">abs(-2)<br/>
+            abs(2)</td>
+            <td class="telerik-reTableOddCol-1">
+            <p>2<br/>
+            2 </p>
+            </td>
+            <td class="telerik-reTableEvenCol-1">cstdlib</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" valign="top">
+            <td class="telerik-reTableEvenCol-1">labs</td>
+            <td class="telerik-reTableOddCol-1">Absolute value of long </td>
+            <td class="telerik-reTableEvenCol-1">long</td>
+            <td class="telerik-reTableOddCol-1">long </td>
+            <td class="telerik-reTableEvenCol-1">labs(-70000)<br/>
+            labs(70000)</td>
+            <td class="telerik-reTableOddCol-1">70000<br/>
+            70000</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" valign="top" bgcolor="#ccffff">
+            <td class="telerik-reTableEvenCol-1">fabs</td>
+            <td class="telerik-reTableOddCol-1">Absolute value of float </td>
+            <td class="telerik-reTableEvenCol-1">double</td>
+            <td class="telerik-reTableOddCol-1">double</td>
+            <td class="telerik-reTableEvenCol-1">fabs(-5.2)<br/>
+            fabs(5.2)</td>
+            <td class="telerik-reTableOddCol-1">5.2<br/>
+            5.2</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" valign="top">
+            <td class="telerik-reTableEvenCol-1">ceil</td>
+            <td class="telerik-reTableOddCol-1">Ceiling (round up) </td>
+            <td class="telerik-reTableEvenCol-1">double</td>
+            <td class="telerik-reTableOddCol-1">double</td>
+            <td class="telerik-reTableEvenCol-1">ceil(3.4)<br/>
+            ceil(3.8)</td>
+            <td class="telerik-reTableOddCol-1">4.0<br/>
+            4.0</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" valign="top" bgcolor="#ccffff">
+            <td class="telerik-reTableEvenCol-1">floor</td>
+            <td class="telerik-reTableOddCol-1">Floor (round down) </td>
+            <td class="telerik-reTableEvenCol-1">double</td>
+            <td class="telerik-reTableOddCol-1">double</td>
+            <td class="telerik-reTableEvenCol-1">floor(3.4)<br/>
+            floor(3.8)</td>
+            <td class="telerik-reTableOddCol-1">3.0<br/>
+            3.0</td>
+            <td class="telerik-reTableEvenCol-1">cmath</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" valign="top">
+            <td class="telerik-reTableEvenCol-1">exit</td>
+            <td class="telerik-reTableOddCol-1">End Program</td>
+            <td class="telerik-reTableEvenCol-1">int</td>
+            <td class="telerik-reTableOddCol-1">void</td>
+            <td class="telerik-reTableEvenCol-1">exit(1)</td>
+            <td class="telerik-reTableOddCol-1">None</td>
+            <td class="telerik-reTableEvenCol-1">cstdlib</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" valign="top" bgcolor="#ccffff">
+            <td class="telerik-reTableEvenCol-1">rand</td>
+            <td class="telerik-reTableOddCol-1">Random Number </td>
+            <td class="telerik-reTableEvenCol-1">none</td>
+            <td class="telerik-reTableOddCol-1">int </td>
+            <td class="telerik-reTableEvenCol-1">rand()</td>
+            <td class="telerik-reTableOddCol-1">Varies</td>
+            <td class="telerik-reTableEvenCol-1">cstdlib</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" valign="top">
+            <td class="telerik-reTableEvenCol-1">srand</td>
+            <td class="telerik-reTableOddCol-1">Seed Random Number Generator </td>
+            <td class="telerik-reTableEvenCol-1">unsigned int </td>
+            <td class="telerik-reTableOddCol-1">void</td>
+            <td class="telerik-reTableEvenCol-1">srand(42)</td>
+            <td class="telerik-reTableOddCol-1">None</td>
+            <td class="telerik-reTableEvenCol-1">cstdlib</td>
+        </tr>
+    </tbody>
+</table>
+<style id="telerik-reTable-1" type="text/css">
+    .telerik-reTable-1 {
+    BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-COLLAPSE: collapse; FONT-FAMILY: Tahoma; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+    }
+    .telerik-reTable-1 TR.telerik-reTableHeaderRow-1 {
+    TEXT-ALIGN: left; PADDING-BOTTOM: 10px; LINE-HEIGHT: 14pt; TEXT-TRANSFORM: capitalize; FONT-STYLE: normal; MARGIN: 10px; PADDING-LEFT: 10px; BORDER-SPACING: 10px; PADDING-RIGHT: 10px; FONT-FAMILY: Tahoma; BACKGROUND: #d6e8ff; COLOR: #3f4d6b; FONT-SIZE: 10pt; VERTICAL-ALIGN: top; FONT-WEIGHT: bold; PADDING-TOP: 10px
+    }
+    .telerik-reTable-1 TD.telerik-reTableHeaderFirstCol-1 {
+    PADDING-BOTTOM: 0in; LINE-HEIGHT: 14pt; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; COLOR: #3a4663; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableHeaderLastCol-1 {
+    PADDING-BOTTOM: 0in; LINE-HEIGHT: 14pt; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; COLOR: #3a4663; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableHeaderOddCol-1 {
+    PADDING-BOTTOM: 0in; LINE-HEIGHT: 14pt; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; COLOR: #3a4663; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableHeaderEvenCol-1 {
+    PADDING-BOTTOM: 0in; LINE-HEIGHT: 14pt; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; COLOR: #3a4663; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TR.telerik-reTableOddRow-1 {
+    BACKGROUND-COLOR: #f2f3f4; COLOR: #666666; FONT-SIZE: 10pt; VERTICAL-ALIGN: top
+    }
+    .telerik-reTable-1 TR.telerik-reTableEvenRow-1 {
+    BACKGROUND-COLOR: #e7ebf7; COLOR: #666666; FONT-SIZE: 10pt; VERTICAL-ALIGN: top
+    }
+    .telerik-reTable-1 TD.telerik-reTableFirstCol-1 {
+    PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableLastCol-1 {
+    PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableOddCol-1 {
+    PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableEvenCol-1 {
+    PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TR.telerik-reTableFooterRow-1 {
+    LINE-HEIGHT: 11pt; BACKGROUND-COLOR: #d6e8ff; FONT-FAMILY: Tahoma; COLOR: #4a5a80; FONT-SIZE: 10pt; FONT-WEIGHT: 500
+    }
+    .telerik-reTable-1 TD.telerik-reTableFooterFirstCol-1 {
+    TEXT-ALIGN: left; PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: gray 1pt solid; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableFooterLastCol-1 {
+    TEXT-ALIGN: left; PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: gray 1pt solid; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableFooterOddCol-1 {
+    TEXT-ALIGN: left; PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: gray 1pt solid; PADDING-TOP: 0in
+    }
+    .telerik-reTable-1 TD.telerik-reTableFooterEvenCol-1 {
+    TEXT-ALIGN: left; PADDING-BOTTOM: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: gray 1pt solid; PADDING-TOP: 0in
+    }
+</style>
+</p>
+<br/>
+<span class="Head">Function Arguments</span><br/>
+<hr/>
+<p>Data passed to functions are called the functions arguments. You may also see arguments called functions parameters. Either way they refer to the same thing. Arguments or parameters that you use when you are calling a function are called the functions <em><strong>actual arguments</strong></em> (or <strong>actual parameters</strong>). Each of the arguments that are passed to a function must have a type. In the table above you will note that the fabs function has one actual argument and it must be of type double. The pow function has two arguments and they both must be of type double. You can pass parameters as either a literal or as a variable. In the examples in the table above, almost all arguments are doubles, in fact the pow function takes two doubles as parameters. You will see in the future that some functions will have mixed parameters, for instance a function could take as parameters, an int, a double, and a float, or just about any other combination you can think of. You will discover this better when writing your own functions. </p>
+<p><strong>What is this void thing? </strong></p>
+<p>Some functions don't return anything, an example from the table above is the exit function. Notice that the return type is void. void is a type in C++ and it is used to indicate nothing. In a face to face class I taught, I had a student really struggle with the concept of void. His question was; why do you need it if it means nothing? Well that is a tough question. It all comes down to the fact that the compiler needs a definition of the function before you can use it. To make all functions similar (meaning they all have a return type) void is used to indicate the function returns nothing. </p>
+<p>In the coming lessons, we will discuss return types and parameters in much greater detail. This section was meant just to give you an idea of how to invoke functions that are part of the standard library. </p>
+<p>Typically students ask how do I know what functions are out there for me to use? That is another difficult question and I can only tell you that it might be in your best interest to get a C++ complete reference. There have been several written that can be found at most bookstores.</p>
+<p>In the future, I hope to have a page or two that is devoted to C++ functions for now, you are going to have to do a little research. My suggestion is, look at the standard library before you go off and try to write a function to do a task (that is unless you have specifically been told to do so in an assignment). <br/>
+<br/>
+<span class="Head">Practice Problem</span></p>
+<hr/>
+<p>Using the functions from the table above can you ask the user of your program to input a double, use the floor and ceil functions to round up and down, then raise the value that was rounded to the power of a random number between 1 and 10? <br/>
+<br/>
+Try it for yourself before you view the solution video.</p>
+</div>
+
+				</div><!-- End_Module_2756 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl00_LiveTabsiMod2757"><div class="DnnModule DnnModule-LiveContent DnnModule-2757"><a name="2757"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl00_ctr2757_ContentPane">
+		
+    <!-- Start_Module_2757 --><div id="dnn_ctr2753_View_ctl00_ctl00_ctr2757_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2757"></a> <div id="dnn_ctr2753_View_ctl00_ctl00_ctr2757_View_LC2757"><table id="dnn_ctr2753_View_ctl00_ctl00_ctr2757_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27571Heading">The pow function from the std namespace</div><a id="LC27571" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/lecture5/pow/pow.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27571eVideo',allowWidthReduction: true,headingId: 'LC27571Heading',headingOverlay: {fade: 1},captionId: 'LC27571Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2757',width: 800,height: 640}, {TabId: '531',ModuleId: '2757',PortalId: '16',ElementId: '1'}); "> <img title="The pow function from the std namespace" alt="The pow function from the std namespace" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2757&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27571eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27571Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2757 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl00_LiveTabsiMod2758"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2758"><a name="2758"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl00_ctr2758_ContentPane">
+		
+    <!-- Start_Module_2758 --><div id="dnn_ctr2753_View_ctl00_ctl00_ctr2758_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl00_ctr2758_HtmlModule_lblContent" class="Normal">
+	<p class="Head">One More Thing<hr/>
+</p>
+<p>&nbsp;One final thing I would like to point out and that is there are hundreds of built in functions that you can use. The trick is to finding them. A good place to start is on the <a href="https://web.archive.org/web/20150219202908/http://www.cplusplus.com/reference/" target="_blank">cplusplus.com reference page</a>. You also may find it worth while to buy the complete reference.</p>
+</div>
+
+				</div><!-- End_Module_2758 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2753635" class="mtop">
+				<div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod2759"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2759"><a name="2759"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr2759_ContentPane">
+		
+    <!-- Start_Module_2759 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr2759_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl01_ctr2759_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Programmer Defined Functions</span></p>
+<hr/>
+<p>The concept of functions can be found in other programming languages. &nbsp;They are called methods, procedures, sub-routines just to name few but they all mean the same thing. You can think of functions as sub programs that allow you to organize your code in a logical fashion.&nbsp; <span style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;"><span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span>As a matter of fact, some languages call functions '</span><strong style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">sub procedures</strong><span style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">'.</span> </p>
+<p>What are you really doing when you write a piece of software? The answer is that you are solving some sort of problem. The easiest way to tackle the problem is to break the large problem into several smaller problems and then tackle the smaller problems one at a time. In computer science, this is called <em><strong>stepwise refinement</strong></em>.&nbsp;&nbsp;</p>
+<p>After you have written a function and would like to use it, all you have to do is call (or invoke) it! The mechanics of this will become more clear in a little while but first there are a couple of things that you should know about functions. First, some functions need to be supplied some additional information before they can be used. &nbsp;Other types of functions don't need any information, they just supply some information back to you. &nbsp;Some functions do both. They need information to process and return some kind of value back to you. Finally, you should know that the most simple function doesn't take any additional information, and it doesn't produce any any value. It just performs a task. </p>
+<p>A function is C++ basically consists of two sections</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/Function%20Header%20_Body.fw.png" style="width: 504px; height: 288px; border: 2px solid #002060;"/><br/>
+</div>
+<br/>
+<p>&nbsp;</p>
+<p>The function header consist of the return type, name of the function, parentheses, and optionally information that goes inside the parentheses.&nbsp;</p>
+<p>
+<ul>
+    <li><strong>Return Type</strong> - All functions declarations must have a return type. If the function doesn't return anything then you need to use the keyword void. You can return any valid C++ type from a function. Later on you will learn that you can return you own custom made types.</li>
+    <li><strong>Function Name</strong> - You can name a function anything that you like but you must also follow the same rules for naming variables.</li>
+    <li><strong>Formal Parameters</strong> -  <span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">The formal parameters (formal arguments) must be enclosed inside the parentheses following the function name. If you write a function that doesn't need any parameters then you just leave the parentheses empty. If you need multiple parameters sent to your function they must be separated by commas. Parameters are additional information that the function &nbsp;needs to do it's task. For example, the&nbsp;&nbsp;</span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">srand </strong><span style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">function </span><span style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">use</span><span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">s<strong> </strong>a parameter as additional information to seed the random number generator. &nbsp;A formal parameter then is the additional information needed by the function to allow it &nbsp;to perform it's task.&nbsp;</span> </li>
+    <li><strong>Curly Braces</strong> - The body of the function is always surrounded by open and closed curly braces. If you omit one or all of the braces then you will get a big syntax error.</li>
+    <li><strong>Function Body</strong> - All of the code you want executed when the function is called (invoked) goes between the open and closed curly braces.</li>
+</ul>
+</p>
+<span class="Head">Simple Function<br/>
+</span><hr/>
+<br/>
+<p>Lets take a look at a simple function. In lesson one we created our first program called 'hello world'. Lets take that same example and create function out of it.</p>
+</div>
+
+				</div><!-- End_Module_2759 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod2760"><div class="DnnModule DnnModule-LiveContent DnnModule-2760"><a name="2760"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr2760_ContentPane">
+		
+    <!-- Start_Module_2760 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr2760_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2760"></a> <div id="dnn_ctr2753_View_ctl00_ctl01_ctr2760_View_LC2760"><table id="dnn_ctr2753_View_ctl00_ctl01_ctr2760_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27600" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27600Content',allowWidthReduction: true,headingId: 'LC27600Heading',headingOverlay: {fade: 1},captionId: 'LC27600Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2760',width: 800}, {TabId: '531',ModuleId: '2760',PortalId: '16',ElementId: '0'}); "> <img alt="0" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2760&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27600Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27600Inject"> <p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;iostream&gt; </span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">using</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: blue;">namespace</span> std;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">void</span><span style="font-family: consolas; font-size: 15.5pt;"> helloWorld();</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; helloWorld();<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: blue;">return</span> 0;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">void</span><span style="font-family: consolas; font-size: 15.5pt;"> helloWorld()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"Hello World"</span> &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">}</span></p> </div><div class="highslide-footer"></div></div></td><td><a id="LC27602" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2760/Images/simpleFunctionOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2760&amp;eid=2&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27602Heading',headingOverlay: {fade: 1},captionId: 'LC27602Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2760'}, {TabId: '531',ModuleId: '2760',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2760&amp;eid=2&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2760 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod2761"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2761"><a name="2761"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr2761_ContentPane">
+		
+    <!-- Start_Module_2761 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr2761_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl01_ctr2761_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Code Review</p>
+<hr/>
+<p>&nbsp;As in almost all programs we write, we have to include iostream and the std namespace. Notice that the next line of code looks just like the function header for the function helloWorld. This is called a <strong><em>function prototype</em></strong>, it is required or you will get a compilation error. Remember I said that the compiler needs to see a definition of any function before it can be used. Remember, this is why we include things like <strong>&lt;iostream&gt;</strong> and <strong>&lt;cstdlib&gt;</strong>. Since we have not gotten to the point where we create our own header files yet, we will just put the prototype above main. The compiler always goes through the file starting at the top and working down. This is why we putting the <strong>prototype</strong> (function definition ) first allows the compiler to see the definition before the function is used.</p>
+<p>The first line of code in main is the call to the function called helloWorld. We can also say here that the function helloWorld is being invoked. Once the code reaches the function call control branches to the first line of code in the body of the &nbsp;helloWorld function. The next line of code simply prints 'Hello World' to the screen. When the code reaches the last brace, control of the program branches back to where the function was called from (the first line of code within main in this case). </p>
+<p class="NormalRed"><strong>Common Mistake</strong></p>
+<p>A common mistake when creating the function prototype is forgetting to put the the semicolon at the end of it. If you leave the semicolon off of the prototype, the compiler will not know what it is you are trying to define because there are no curly braces to indicate the opening and closing of the function body. </p>
+<p><strong>The return statement</strong></p>
+<p>There are two ways that program can branch back to where it came from. The first is as you have already seen, when the closing brace of the function is reached. In this case the flow of the program will branch back to where it was called from. The second way is through the use of the return statement. You can place the <em><strong>return</strong></em> statement anywhere you want within a function and the program will branch back to where it came from. </p>
+<p>Lets look at the same example from above, this time lets use the return statement to make the program return back to where it was called from.<br/>
+<br/>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/simpleFunctionReturn.png" style="width: 650px; height: 434px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="margin: 0px; padding: 0px; border: 0px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px;"><span style="font-size: 22px; font-weight: bold; font-family: Times;"><br/>
+</span></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px;"><span style="font-size: 22px; font-weight: bold; font-family: Times;">Code Review</span></p>
+</div>
+<hr/>
+Notice that the only thing that has changed is that the return statement has been added. In the above example, nothing is gained by adding the return statement. The code still runs the same way but there may be times when we want to return early. &nbsp;We will see the power of the return statement in the next example.&nbsp;
+<div><br/>
+</div>
+<div>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal;"><strong style="margin: 0px; padding: 0px; border: 0px;"><span style="font-size: 16px;">Clarification of &nbsp;Definitions</span></strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal;">It is going to&nbsp;be said throughout this material&nbsp;that a function prototype is a&nbsp;definition. Someone<span class="Apple-converted-space">&nbsp;</span>may say and &nbsp;has said that a function&nbsp;prototype&nbsp;is not a function definition. A function&nbsp;definition&nbsp;is the body of the function itself. &nbsp;I would not disagree with that but when I say that a&nbsp;prototype&nbsp;is a&nbsp;definition&nbsp;I mean that a&nbsp;prototype&nbsp;defines the inputs and outputs to a function and this information must be seen by the compiler before the function can be used. &nbsp;&nbsp;</p>
+<div style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal;">Put another way, a&nbsp;prototype is&nbsp;a&nbsp;definition&nbsp;to the compiler to give it information about the function. This is also true with structs and classes (which will be seen soon). A class or a struct &nbsp;for that matter is a blueprint for what gets built in memory. In other words, it defines &nbsp;the number of bytes among other things that gets built in memory when an instance of it is created.&nbsp;</div>
+<div style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal;">&nbsp;&nbsp;
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px;">What is important is that these definitions do not occupy space in memory. It is hoped that my use of the word&nbsp;definition&nbsp;when used in this context is clear. Of course I could go to the a thesaurus and find a different word to be used for definition. Maybe the term "statement of meaning" would be more appropriate.&nbsp;</p>
+</div>
+<br/>
+<br/>
+<span class="Head">Video - Simple Functions</span><hr/>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<br/>
+</div>
+</div>
+
+				</div><!-- End_Module_2761 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod2762"><div class="DnnModule DnnModule-LiveContent DnnModule-2762"><a name="2762"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr2762_ContentPane">
+		
+    <!-- Start_Module_2762 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr2762_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2762"></a> <div id="dnn_ctr2753_View_ctl00_ctl01_ctr2762_View_LC2762"><table id="dnn_ctr2753_View_ctl00_ctl01_ctr2762_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27621Heading">Simple Functions</div><a id="LC27621" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/lecture5/simpleFunction/simpleFunction.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27621eVideo',allowWidthReduction: true,headingId: 'LC27621Heading',headingOverlay: {fade: 1},captionId: 'LC27621Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2762',width: 800,height: 640}, {TabId: '531',ModuleId: '2762',PortalId: '16',ElementId: '1'}); "> <img title="Simple Functions" alt="Simple Functions" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2762&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27621eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27621Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2762 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod6385"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6385"><a name="6385"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr6385_ContentPane">
+		
+    <!-- Start_Module_6385 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr6385_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl01_ctr6385_HtmlModule_lblContent" class="Normal">
+	<div>
+<p class="Head">&nbsp;</p>
+</div>
+<p class="Head">Practice Problem</p>
+<p><hr/>
+Write a function called squareInput that&nbsp; <span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">will take a whole number from the keyboard then output the value squared. Invoke the function from main. Once you have it working create another function called gotoSquareInput that will simply call squareInput. Invoke this function from main.&nbsp;</span></p>
+</div>
+
+				</div><!-- End_Module_6385 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod6388"><div class="DnnModule DnnModule-LiveContent DnnModule-6388"><a name="6388"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr6388_ContentPane">
+		
+    <!-- Start_Module_6388 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr6388_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent6388"></a> <div id="dnn_ctr2753_View_ctl00_ctl01_ctr6388_View_LC6388"><table id="dnn_ctr2753_View_ctl00_ctl01_ctr6388_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC63881Heading">Simple Function</div><a id="LC63881" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/6388/Videos/PracticeSimpleFunciton.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC63881eVideo',allowHeightReduction: false,headingId: 'LC63881Heading',headingOverlay: {fade: 1},captionId: 'LC63881Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '6388',width: 800,height: 640}, {TabId: '531',ModuleId: '6388',PortalId: '16',ElementId: '1'}); "> <img title="Simple Function" alt="Simple Function" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=6388&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC63881eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC63881Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC63881Caption">Shows how to create and invoke a simple function</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_6388 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl01_LiveTabsiMod6389"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6389"><a name="6389"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl01_ctr6389_ContentPane">
+		
+    <!-- Start_Module_6389 --><div id="dnn_ctr2753_View_ctl00_ctl01_ctr6389_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl01_ctr6389_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Still Not Sure?</p>
+<p>&nbsp;</p>
+<hr/>
+<a href="https://web.archive.org/web/20150219202908/http://xoax.net/cpp/crs/console/lessons/Lesson12/" target="_blank"><span style="font-size: 16px;">See what XoaX.net says about programmer defined functions</span></a>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_6389 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2753636" class="mtop">
+				<div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6386"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6386"><a name="6386"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6386_ContentPane">
+		
+    <!-- Start_Module_6386 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6386_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr6386_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Value Producing Functions</p>
+<p>&nbsp;</p>
+<hr/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">As the name implies a value producing function is a function that produces a value. Typically this is the answer to a specific problem. For instance, if you create a function called square the value produced is the square of the number given to it.&nbsp;</span>
+<p>&nbsp;</p>
+<p>Here is what the pieces of the square function look like. At this point it doesn't do anything but it is best to understand what each piece is.</p>
+<p style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/functionBasic.fw.png" style="border: 2px solid #002060;"/></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">If you recall the function header is the first line in the function. It consists of:</p>
+<p style="text-align: left;">
+</p>
+<ul>
+    <li><strong>Return type </strong>- The type of data the function produces (int, char, float, double, bool, etc).&nbsp;</li>
+    <li><strong>Function Name</strong> - This can be almost anything but it should be descriptive. The name square indicates that this function will square something.&nbsp;</li>
+    <li><strong>Formal Parameters</strong> - This is the additional information the function needs to perform it's task. &nbsp;The number to square in this case. These are called formal because they are formally stated. In other words the type of data to work on goes in front of the variable name. This really is a variable declaration.&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<p style="text-align: left;">As with simple functions that function body is surrounded by curly braces. All of the code needed to perform the function's task go inside the open an closed curly brace.&nbsp;</p>
+<p style="text-align: left;"> <span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">Before getting into passing information to a function we first need to look at the mechanism by which values are produced by functions. This mechanism is actually quite simple. In the function header you need to specify the type of data the method is producing and then in the method body simply return the value.</span></p>
+<p style="text-align: center;"><span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">&nbsp;<img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/ReturningValues.fw.png" style="width: 550px; height: 300px; border: 2px solid #002060;"/></span> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">Let's take a look at a method called getValue that will get input from the keyboard and then return that value back to wherever the method was invoked from.</p>
+<br class="Apple-interchange-newline"/>
+</div>
+
+				</div><!-- End_Module_6386 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2764"><div class="DnnModule DnnModule-LiveContent DnnModule-2764"><a name="2764"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2764_ContentPane">
+		
+    <!-- Start_Module_2764 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2764_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2764"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2764_View_LC2764"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2764_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27640" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27640Content',allowWidthReduction: true,headingId: 'LC27640Heading',headingOverlay: {fade: 1},captionId: 'LC27640Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2764',width: 800}, {TabId: '531',ModuleId: '2764',PortalId: '16',ElementId: '0'}); "> <img alt="0" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2764&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27640Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27640Inject"> <p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;iostream&gt; </span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">using</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: #0000ff;">namespace</span> std;</span>&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> getValue();</span>&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> someValue;</span>&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; someValue = getValue();<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The value entered was "</span> &lt;&lt; someValue &lt;&lt; endl;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;return</span><span style="font-family: consolas; font-size: 15.5pt;"> 0;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> getValue()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; color: #0000ff; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> val;</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"Please Enter an Integer "</span> &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cin &gt;&gt; val;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: #0000ff;">return</span> val;</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="margin: 0in 0in 10pt;"><span style="font-family: calibri;">&nbsp;</span></p> </div><div class="highslide-footer"></div></div></td><td><a id="LC27641" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2764/Images/ValueProducingOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2764&amp;eid=1&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27641Heading',headingOverlay: {fade: 1},captionId: 'LC27641Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2764'}, {TabId: '531',ModuleId: '2764',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2764&amp;eid=1&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2764 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2765"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2765"><a name="2765"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2765_ContentPane">
+		
+    <!-- Start_Module_2765 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2765_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2765_HtmlModule_lblContent" class="Normal">
+	<p>&nbsp;</p>
+<p>In main an int variable called someValue is created. What gets assigned to someValue is the value that is being returned from the function getValue. &nbsp;What you should note is that this is consistent with the way we assign anything to a variable. You want to put a value of 30 into a variable called x:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">int x = 30;</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">The assignment operator is used in the same way it is used to assign the value returned from the function.&nbsp;</p>
+<p>The value being produced from a function can be treated like any other variable. It can be sent to another function or to the console like in the following example:</p>
+</div>
+
+				</div><!-- End_Module_2765 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2767"><div class="DnnModule DnnModule-LiveContent DnnModule-2767"><a name="2767"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2767_ContentPane">
+		
+    <!-- Start_Module_2767 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2767_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2767"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2767_View_LC2767"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2767_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27671" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2767/Images/ValueProducingOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2767&amp;eid=1&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27671Heading',headingOverlay: {fade: 1},captionId: 'LC27671Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2767'}, {TabId: '531',ModuleId: '2767',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2767&amp;eid=1&amp;PortalId=16"/></a></td><td><a id="LC27672" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27672Content',allowWidthReduction: true,headingId: 'LC27672Heading',headingOverlay: {fade: 1},captionId: 'LC27672Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2767',width: 500}, {TabId: '531',ModuleId: '2767',PortalId: '16',ElementId: '2'}); "> <img alt="2" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2767&amp;eid=2&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27672Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27672Inject"> <p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">#include</span><span style="color: #a31515; font-family: consolas; font-size: 15.5pt;"> &lt;iostream&gt; </span></p>
+<p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">using</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: #0000ff;">namespace</span> std;</span> </p>
+<p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> getValue();</span> </p>
+<p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The value entered was "</span> &lt;&lt; getValue();&nbsp;&lt;&lt; &nbsp;someValue &lt;&lt; endl;</span></p>
+<p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; return</span><span style="font-family: consolas; font-size: 15.5pt;"> 0;</span></p>
+<p> </p>
+<p><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p> </p>
+<p><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> getValue()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="color: #0000ff; font-family: consolas; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> val;</span></p>
+<p><span style="font-family: consolas; font-size: 15.5pt;"> cout &lt;&lt; <span style="color: #a31515;">"Please Enter an Integer "</span> &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;"> cin &gt;&gt; val;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: #0000ff;">return</span> val;</span></p>
+<p><span style="font-family: consolas; font-size: 15.5pt;">}</span></p> </div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2767 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2768"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2768"><a name="2768"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2768_ContentPane">
+		
+    <!-- Start_Module_2768 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2768_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2768_HtmlModule_lblContent" class="Normal">
+	<p>&nbsp;</p>
+<p><span style="font-family: Times; font-size: 22px; font-weight: bold; line-height: 18px;">Video - Value Producing Functions</span></p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2768 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2769"><div class="DnnModule DnnModule-LiveContent DnnModule-2769"><a name="2769"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2769_ContentPane">
+		
+    <!-- Start_Module_2769 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2769_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2769"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2769_View_LC2769"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2769_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27691Heading">Value Producing Functions</div><a id="LC27691" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/Lecture5/returnFunction/returnFunction.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27691eVideo',allowWidthReduction: true,headingId: 'LC27691Heading',headingOverlay: {fade: 1},captionId: 'LC27691Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2769',width: 800,height: 640}, {TabId: '531',ModuleId: '2769',PortalId: '16',ElementId: '1'}); "> <img title="Value Producing Functions" alt="Value Producing Functions" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2769&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27691eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27691Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2769 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6387"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6387"><a name="6387"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6387_ContentPane">
+		
+    <!-- Start_Module_6387 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6387_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr6387_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Practice Problem</p>
+<p><hr/>
+<span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">Earlier you saw how to generate random numbers. Let's see how much of that you remember. For this practice problem create a method called getEvenRand that will produce an even random number in the range of 0 to 100. &nbsp;Many of your will want to add or subtract 1 off of an odd number to make it even. Try using a loop instead.</span></p>
+<p><span style="color: #000000; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;" class="Head">Video - Solution To The Practice Problem</span></p>
+<p><span style="color: #000000; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><hr/>
+&nbsp;</span>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_6387 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6390"><div class="DnnModule DnnModule-LiveContent DnnModule-6390"><a name="6390"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6390_ContentPane">
+		
+    <!-- Start_Module_6390 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6390_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent6390"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr6390_View_LC6390"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr6390_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC63901Heading">Value Producing Funciton</div><a id="LC63901" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/6390/Videos/PracticeValueProducing.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC63901eVideo',allowHeightReduction: false,headingId: 'LC63901Heading',headingOverlay: {fade: 1},captionId: 'LC63901Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '6390',width: 800,height: 640}, {TabId: '531',ModuleId: '6390',PortalId: '16',ElementId: '1'}); "> <img title="Value Producing Funciton" alt="Value Producing Funciton" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=6390&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC63901eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC63901Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC63901Caption">How to return a value from a function.</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_6390 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6391"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6391"><a name="6391"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6391_ContentPane">
+		
+    <!-- Start_Module_6391 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6391_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr6391_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Passing Parameters</p>
+<p>&nbsp;</p>
+<hr/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">For the most part when you create functions you will need to provide additional information to the function so that it can perform it's task. For instance, if you were to create a function to square a number you will &nbsp;probably want to provide the number to be squared.&nbsp;</span>
+<p><span style="color: #000000;"><br/>
+</span></p>
+<p><span style="color: #000000;">Information passed to functions is called&nbsp;</span><strong style="color: #000000;">arguments&nbsp;</strong><span style="color: #000000;">or</span><span style="color: #000000;">&nbsp;</span><strong style="color: #000000;">parameters</strong><span style="color: #000000;">. You will often see these names used interchangeably but note that they both mean passing information to a function. Here, I will primarily use the word parameters.</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Parameters as it turns out can be classified as two types:</p>
+<p>
+</p>
+<ol style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;"><strong>Formal Parameters</strong></li>
+    <li style="margin: 0px; padding: 0px; border: 0px;"><strong>Actual Parameters</strong></li>
+</ol>
+<p><span style="color: #000000;">Formal parameters are called formal because they are formally stated. This means that you need to specify the data type the parameter will hold. Formal parameters are found in the function header inside the parentheses.</span></p>
+<p> </p>
+<p style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/FormalParameters.fw.png" style="width: 550px; height: 292px; border: 2px solid #002060;"/></p>
+<p style="text-align: center;"><span style="text-align: left; color: #000000;">The actual parameters are placed inside the parentheses when you invoke the method. Because they are not formal you do not need to provide a data type. You simply need to place the variable, value, or expression inside the parentheses.&nbsp;</span></p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/ActualParametersA.png" style="width: 550px; height: 414px; border: 2px solid #002060;"/><br/>
+</div>
+<p>&nbsp;</p>
+<p> Here is an example of a function called squareOrCube. It produces the square of any value that is greater than 5 and the cube of any number that has a value of 5 or less:</p>
+</div>
+
+				</div><!-- End_Module_6391 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2770"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2770"><a name="2770"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2770_ContentPane">
+		
+    <!-- Start_Module_2770 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2770_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2770_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Passing Arguments<hr/>
+</p>
+Lets take a look at another function that shows the advantage of the return statement
+</div>
+
+				</div><!-- End_Module_2770 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2771"><div class="DnnModule DnnModule-LiveContent DnnModule-2771"><a name="2771"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2771_ContentPane">
+		
+    <!-- Start_Module_2771 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2771_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2771"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2771_View_LC2771"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2771_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27710" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27710Content',allowWidthReduction: true,headingId: 'LC27710Heading',headingOverlay: {fade: 1},captionId: 'LC27710Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2771',width: 800}, {TabId: '531',ModuleId: '2771',PortalId: '16',ElementId: '0'}); "> <img alt="0" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2771&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27710Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27710Inject"> <p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;iostream&gt;</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">#include</span><span style="font-family: consolas; color: #a31515; font-size: 15.5pt;"> &lt;cmath&gt; </span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">using</span><span style="font-family: consolas; font-size: 15.5pt;"> <span style="color: blue;">namespace</span> std;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> squareOrCube(<span style="color: blue;">int</span> x); <span style="color: green;">//Function prototype </span></span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> someValue;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"Enter a value "</span> &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cin &gt;&gt; someValue;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; someValue = squareOrCube(someValue);<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The value calculated is "</span> &lt;&lt; someValue &lt;&lt; endl;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: blue;">return</span> 0;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> squareOrCube(<span style="color: blue;">int</span> x)<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; <span style="color: blue;">if</span>(x &gt; 5)<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;">return</span> pow(x, 2.0);<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: blue;">else<br/>
+</span></span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;">return</span> pow(x,3.0);<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="margin: 0in 0in 10pt;"><span style="font-family: calibri;">&nbsp;</span></p> </div><div class="highslide-footer"></div></div></td><td><a id="LC27711" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2771/Images/squareOrCubeOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2771&amp;eid=1&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27711Heading',headingOverlay: {fade: 1},captionId: 'LC27711Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2771'}, {TabId: '531',ModuleId: '2771',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2771&amp;eid=1&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2771 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2772"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2772"><a name="2772"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2772_ContentPane">
+		
+    <!-- Start_Module_2772 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2772_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2772_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span></p>
+<hr/>
+<p>
+This simple function simply checks to see what value was passed to it. If x is greater than 5 then the function returns the value of x squared. If is less than 5, it returns the value of x cubed. The key thing here is to notice the use of the return statement.</p>
+<p>&nbsp;</p>
+<p class="style3"><strong class="NormalRed"><strong>Important Point</strong> </strong></p>
+<p>This function also takes as a formal parameter an integer value called x. This is actually like declaring an int variable inside the body of the function. In this case, it takes on a special meaning because it receives a copy of a value from where it was called. In the main function a variable called someValue is declared. It gets a value stored in it from whatever is typed in at the keyboard. When the function squareOrCube is called, a copy of the value that is stored at someValue gets sent to the function squareOrCube and stored in the newly created variable called x. Then, depending on whether the value of x is greater than 5 or not the square or the cube of the value of x is returned back to where the function was called from. Notice also that the return value is being stored back in the variable someValue. This is perfectly legal and sometimes preferred because it allows you to reuse a variable. This means that you will use less memory because you are declaring less variables.</p>
+<p>&nbsp;</p>
+<p>
+<span class="Head">How Parameters Are Passed</span></p>
+<hr/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">Parameters in C++ are passed by value. What passing by value means is that a copy of what is in the variable that is the actual parameter is<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">pushed<span class="Apple-converted-space">&nbsp;</span></strong>onto the<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">stack.</strong>&nbsp;The code branches to the function where the copied values are then<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">popped&nbsp;<span class="Apple-converted-space">&nbsp;</span></strong>off the<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">stack<span class="Apple-converted-space">&nbsp;</span></strong>and into the variables that are the formal parameters. Some beginning students tend to think that the names of the parameters both formal and actual need to be the same. What you need to realize is that the variable names really have very little to do with things. What is important to note is that a copy of what is in the actual parameter is taken and placed into the variables that are the formal parameters.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">This process is depicted in the following animation. Click on the image to display it.&nbsp;</p>
+<br/>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2772 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6392"><div class="DnnModule DnnModule-LiveContent DnnModule-6392"><a name="6392"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6392_ContentPane">
+		
+    <!-- Start_Module_6392 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6392_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent6392"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr6392_View_LC6392"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr6392_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC63921Heading">How Parameters Are Passed</div><a id="LC63921" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/animations/cppparameters.gif" onclick="return hs.htmlExpand(this, {src: 'https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/animations/cppparameters.gif', contentId: 'LC63921Frame',allowHeightReduction: false,headingId: 'LC63921Heading',headingOverlay: {fade: 1},captionId: 'LC63921Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '6392', objectType: 'iframe',width: 800,height: 600,objectWidth: 800,objectHeight: 600,objectLoadTime: 'after',preserveContent: false, scrolling: 'yes'}, {TabId: '531',ModuleId: '6392',PortalId: '16',ElementId: '1'}); "> <img title="How Parameters Are Passed" alt="How Parameters Are Passed" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=6392&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC63921Frame"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC63921Inject"> </div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC63921Caption">Parameters are passed by value through the stack.</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_6392 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod6393"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6393"><a name="6393"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr6393_ContentPane">
+		
+    <!-- Start_Module_6393 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr6393_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr6393_HtmlModule_lblContent" class="Normal">
+	<p>&nbsp;</p>
+<p>Let's take a look at another example of a function called addEmUp that takes three parameters</p>
+</div>
+
+				</div><!-- End_Module_6393 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2773"><div class="DnnModule DnnModule-LiveContent DnnModule-2773"><a name="2773"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2773_ContentPane">
+		
+    <!-- Start_Module_2773 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2773_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2773"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2773_View_LC2773"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2773_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC27730" class="highslide" href="#" onclick="return hs.htmlExpand(this, {contentId: 'LC27730Content',allowWidthReduction: true,headingId: 'LC27730Heading',headingOverlay: {fade: 1},captionId: 'LC27730Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2773',width: 800}, {TabId: '531',ModuleId: '2773',PortalId: '16',ElementId: '0'}); "> <img alt="0" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2773&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27730Content"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC27730Inject"> <p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> addEmUp(<span style="color: blue;">double</span> a, <span style="color: blue;">double</span> b, <span style="color: blue;">int</span> c);</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> main()<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; color: blue; font-size: 15.5pt;">double</span><span style="font-family: consolas; font-size: 15.5pt;"> x = 3.3;<br/>
+</span><span style="font-family: consolas; color: blue; font-size: 15.5pt;">double</span><span style="font-family: consolas; font-size: 15.5pt;"> y = 2.1;<br/>
+</span><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> z = 5;<br/>
+</span><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> sum;</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; sum = addEmUp(x, y, z);<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp;&nbsp; cout &lt;&lt; <span style="color: #a31515;">"The sum of the values is "</span> &lt;&lt; sum &lt;&lt; endl;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: blue;">return</span> 0;</span></p>
+<p style="text-autospace: ;"><span style="font-family: consolas; font-size: 15.5pt;">}</span></p>
+<p style="text-autospace: ;">&nbsp;</p>
+<p style="text-autospace: ;"><span style="font-family: consolas; color: blue; font-size: 15.5pt;">int</span><span style="font-family: consolas; font-size: 15.5pt;"> addEmUp(<span style="color: blue;">double</span> a, <span style="color: blue;">double</span> b, <span style="color: blue;">int</span> c)<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">{<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">&nbsp;&nbsp; <span style="color: blue;">return</span> <span style="color: blue;">static_cast</span>&lt;<span style="color: blue;">int</span>&gt;(a) + <span style="color: blue;">static_cast</span>&lt;<span style="color: blue;">int</span>&gt;(b) + c;<br/>
+</span><span style="font-family: consolas; font-size: 15.5pt;">}</span></p> </div><div class="highslide-footer"></div></div></td><td><a id="LC27731" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2773/Images/addEmUPOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2773&amp;eid=1&amp;Type=View&amp;PortalId=16',allowWidthReduction: true,headingId: 'LC27731Heading',headingOverlay: {fade: 1},captionId: 'LC27731Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2773'}, {TabId: '531',ModuleId: '2773',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2773&amp;eid=1&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2773 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2774"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2774"><a name="2774"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2774_ContentPane">
+		
+    <!-- Start_Module_2774 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2774_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2774_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span> </p>
+<hr/>
+&nbsp;The function addEmUp takes as formal parameters two doubles and an int. It is a simple function that just adds the 3 parameters together and returns the sum.
+<p>&nbsp;</p>
+<p><span class="Head">Formal and Actual Parameters (AKA arguments)</span><strong> </strong></p>
+<hr/>
+<strong>
+</strong>&nbsp;As stated above the formal arguments of a function are the arguments that are defined in the function header. The actual arguments are the ones that are used when the function is called.<br/>
+<br/>
+<span style="font-size: 16px;"><strong>Formal Arguments</strong></span><strong>
+</strong>
+<p>&nbsp;</p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/FormalArgs.png" style="width: 600px; height: 64px; border: 2px solid #002060;"/></div>
+<br/>
+<br/>
+<span style="font-size: 16px;"><strong>Actual Arguments</strong></span>
+<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp;<img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/ActualArgs.png" style="width: 600px; height: 51px; border: 2px solid #002060;"/></p>
+<p><span class="Head"><br/>
+</span></p>
+<p><span class="Head">Coupling And Cohesion<br/>
+</span></p>
+<strong><hr/>
+</strong>
+<p>When writing functions there are two things you should strive to achieve.&nbsp;</p>
+<ol>
+    <li>Your function should be loosely coupled </li>
+    <li>You function should be highly cohesive </li>
+</ol>
+<p>Coupling refers to how tightly integrated your code is into your program. Ideally you want your code to be as portable as possible so that you can use it in other programs. If a function is too dependant on the program it was written in it can not easily be used else where.<br/>
+<br/>
+Cohesion has to do with how many things your code does. Ideally you want your functions to do one thing and one thing only. Here is a simple example:<br/>
+<br/>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/squareCoupling.png" style="width: 550px; height: 406px; border: 2px solid #002060;"/></div>
+<br/>
+Consider cohesion here. This function not only calculates the square of a number but it also gets input and produces output. This is not a cohesive function because it is doing three things not one.&nbsp;<br/>
+<br/>
+As for&nbsp;coupling, this&nbsp;code depends on cin and cout to do much of the work. This makes it highly dependant on your program. You could only use this code in another program that want to ask for the input and show the output. Basically, the function is not much use.<br/>
+<br/>
+Here is a revised square function that corrects the coupling and cohesion problems;<br/>
+<br/>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/squareCoupling2.png" style="width: 550px; height: 351px; border: 2px solid #002060;"/></div>
+<br/>
+Many beginning students struggle with passing parameters and then write functions that are useless outside of their program. You should always ask yourself how many things does the function perform. If your answer is more than one you should maybe rethink things. Of course there are time when a function may have to perform multiple tasks but you should do your best&nbsp; to protect against it.<br/>
+<br/>
+<span class="Head">A Common Mistake</span>
+<hr/>
+<p>Here is an example of a mistake that beginning students sometimes make:</p>
+<p>&nbsp;</p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/badReturn.png" style="width: 384px; height: 176px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>It is important to note that functions in C++ can only return <strong>one thing</strong>. The function above does not produce an error but it is not correct. What happens is that variables b and c are ignored and the variable a gets returned.&nbsp;<br/>
+<br/>
+<strong>Some Final Thoughts?</strong></p>
+<p>The actual arguments of a function can be either literals, variables, or a combination of the two. You can even use a C++ expression as long as it produces the correct type. </p>
+<p>Functions can have almost as many arguments as you could possibly want. It has been said that if you need more than five arguments then maybe you should find another way of doing things.</p>
+<p>Even though functions can have many arguments, they can only return one value. You may think that this is a limitation but actually you can get around it by passing your arguments by reference. This will be covered in a later unit.<br/>
+<br/>
+<span class="Head">Video - Passing Parameters</span></p>
+<hr/>
+<p>&nbsp;</p>
+<br/>
+</div>
+
+				</div><!-- End_Module_2774 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2775"><div class="DnnModule DnnModule-LiveContent DnnModule-2775"><a name="2775"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2775_ContentPane">
+		
+    <!-- Start_Module_2775 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2775_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2775"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2775_View_LC2775"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2775_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27751Heading">Passing Parameters to Functions</div><a id="LC27751" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/Portals/16/LiveContent/2775/Videos/paramfunctions.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27751eVideo',allowWidthReduction: true,headingId: 'LC27751Heading',headingOverlay: {fade: 1},captionId: 'LC27751Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2775',width: 800,height: 640}, {TabId: '531',ModuleId: '2775',PortalId: '16',ElementId: '1'}); "> <img title="Passing Parameters to Functions" alt="Passing Parameters to Functions" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2775&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27751eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27751Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2775 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2776"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2776"><a name="2776"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2776_ContentPane">
+		
+    <!-- Start_Module_2776 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2776_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr2776_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Practice Problem</span></p>
+<hr/>
+Here are two practice problems for you. See if you can solve them before looking at the solution.<br/>
+<br/>
+<ol>
+    <li>You have seen the pow function but can you write your own? To do this you will need a for loop.</li>
+    <li>The math library also has an abs funciton. Can you write your own version of it.</li>
+</ol>
+&nbsp;<br/>
+<br/>
+<span class="Head">Practice Solution</span><br/>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2776 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod2777"><div class="DnnModule DnnModule-LiveContent DnnModule-2777"><a name="2777"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr2777_ContentPane">
+		
+    <!-- Start_Module_2777 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr2777_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2777"></a> <div id="dnn_ctr2753_View_ctl00_ctl02_ctr2777_View_LC2777"><table id="dnn_ctr2753_View_ctl00_ctl02_ctr2777_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27771Heading">The Pow Function</div><a id="LC27771" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/lecture5/myPow/myPow.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27771eVideo',allowWidthReduction: true,headingId: 'LC27771Heading',headingOverlay: {fade: 1},captionId: 'LC27771Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2777',width: 800,height: 640}, {TabId: '531',ModuleId: '2777',PortalId: '16',ElementId: '1'}); "> <img title="The Pow Function" alt="The Pow Function" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2777&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27771eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27771Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2777 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl02_LiveTabsiMod4610"><div class="DnnModule DnnModule-DNN_HTML DnnModule-4610"><a name="4610"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl02_ctr4610_ContentPane">
+		
+    <!-- Start_Module_4610 --><div id="dnn_ctr2753_View_ctl00_ctl02_ctr4610_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl02_ctr4610_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Still Not Sure?</span><br/>
+<hr/>
+<br/>
+<span class="Head"><a href="https://web.archive.org/web/20150219202908/http://xoax.net/cpp/crs/console/lessons/Lesson18/" target="_blank">See what XoaX.net says about arguments and return values</a></span>
+</div>
+
+				</div><!-- End_Module_4610 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2753158" class="mtop">
+				<div id="dnn_ctr2753_View_ctl00_ctl03_LiveTabsiMod2778"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2778"><a name="2778"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl03_ctr2778_ContentPane">
+		
+    <!-- Start_Module_2778 --><div id="dnn_ctr2753_View_ctl00_ctl03_ctr2778_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl03_ctr2778_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head"><span class="NormalRed"></span>Scope Rules</span> </p>
+<hr/>
+<br/>
+<p>
+When you write functions, you should try to make them as portable as possible. What I mean by portable is that you should be able to copy them from one program to another or put them in a library so that they can be used in any future program that you may write. Some of the functions in the previous section violated this rule but those functions were mainly meant to be examples.&nbsp;</p>
+<p>A function should be a self contained unit, kind of like a separate program that lies within a big program .This means that all of the variables that are declared within a function belong to that function.</p>
+<p><strong>Local Variables </strong></p>
+<p>A local variable is a variable that is defined in the body of a function. This means that the variable can only be accessed within that function. Look at this example:<br/>
+<br/>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/scope1.png" style="width: 700px; height: 424px; border: 2px solid #002060;"/></div>
+&nbsp;&nbsp;
+<p>&nbsp;</p>
+<p><span style="color: #000000;">As you can see attempting this causes a compile error. This is because main is trying access a variable that has not been defined in the proper scope. &nbsp;The variable aVariable is a local variable to the function foo and cannot be accessed directly by main.</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Let's consider a different example:</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/scope2.png" style="width: 700px; height: 479px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+<p><strong class="Head"></strong></p>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">Now variables called aVariable have been defined in both functions. What prints out in main is 0 and what prints out in foois 3. While these two variables have the same name, they are not the same. Each one sits in it's own memory location. You could think of it as two guys names Joe. They share the same name but they are not the same person.</span>
+<div><span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">&nbsp;</span>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/scope3a.png" style="width: 625px; height: 461px; border: 2px solid #002060;"/></div>
+<br/>
+<br/>
+<span class="Head"><br/>
+</span></div>
+<div><span class="Head">Global Variables</span></div>
+<div><span style="font-family: Times; font-size: 22px;"><strong><hr/>
+</strong></span>
+<div>
+<p>&nbsp;</p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/global1.png" style="width: 650px; height: 488px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+<p>So what prints out at each cout statement now? In the function foo, a local variable called aVariable gets declared. Although it has the same name as the global variable, it will take precedence over the global variable with the same name. So in foo the value of 3 gets printed. In main a call to foo is made, foo sets the value of aVariable to 3 but it actually sets the value of the local variable to 3. When the flow of the code returns back to main, aVariable is printed out. Here, 2 is printed because that is the current value of the the global variable aVariable. The global Variable aVariable then gets set to 25 and printed to the screen.</p>
+<p>It is important to realize that variables residing in different scope can have the same name. It is also important to know which one you are accessing. The inside variable will always have precedence (the local variable has precedence over the global of the same name). </p>
+<p><strong class="Head">Block Scope </strong></p>
+<strong><hr/>
+</strong><br/>
+Variables that are defined within a block of code have their own scope. You can say that a local variable actually has block scope because is it lies between the braces of a function. Lets look at an example
+<div><br/>
+&nbsp;
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/Block1.png" style="width: 500px; height: 548px; border: 2px solid #002060;"/></div>
+<span class="Head"><br/>
+</span>
+<p>The above code is just an example. I can't imagine that you would ever write code this way but it is perfectly legal. Just inside main, the variable x is declared and initialized to 20. Next, a block is created with the open and closed brace. A new instance of x is created within the block. Even though it has the same name as the x variable declared just inside main, it is a new variable and can only be accessed within the block that it was declared. The second block simply prints out the value of x. In this case because there is no x variable declared within the last block, it will print the out the x variable just inside main. You can say that the variable x just inside main is a global variable to the function main. That is, it can be accessed by all blocks defined within the function main (except where a new local variable of the same name takes precedence).</p>
+<p>Lets look at one last example:. </p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/block2.png" style="width: 500px; height: 489px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+In the above code, the variable i is declared within the block of the for loop, making it only accessible within the for loop body. After the loop, the i variable is set to 20 but this is an error because i cannot be accessed outside of the block in which it was declared.</div>
+<div>&nbsp;&nbsp;
+<p class="NormalRed"><strong>NOTE</strong>:<br/>
+<span style="color: #444444;">If you are using a version of VisualStudio before 2010, you will probably disagree with the code review. In reality, this is a bug in the Microsoft compiler prior to Visual Studio 2010. &nbsp;If you try it with GNU or Borland, or Visual Studio 2010&nbsp;you will see that the code above will produce an error</span></p>
+<p><strong>The Stack and the Heap </strong></p>
+<p>When your program gets built, the compiler will set aside some memory called the stack The stack is a data structure that is like a stack of plates having basically two functions, push and pop. Values are pushed on to (added), and popped (removed) from the top of the stack. This kind of data structure is known as a LIFO (Last In First Out) data structure. The reason this is important, is because this is where local variables live. When a function is a called and variables are declared in the function, they are declared on the stack. When a function returns, the variables for the function are popped off the stack. This means that they are destroyed. In this way, C++ memory is like an accordion ( at least for local variables) it grows as variables are declared and it shrinks as they are discarded. </p>
+<p>Global variables on the other hand are declared in a memory location called the heap. This is where all global and dynamic memory is stored. Global variable exist for the life of the program so they will consume your programs resources until your program stops running. </p>
+<p><strong>Avoid Use Of Global Variables </strong></p>
+<p>Looking at things, most beginning programmers fall in love with global variables. Why pass variables to functions as arguments if you don't have to? Well global variables are bad for several reasons. As mentioned above, global variables sit around eating up program resources. They also make it impossible to have your functions be loosely <strong>coupled</strong>.</p>
+<p>The concept of <strong>coupling </strong>is how tightly integrated a function is to the project. Ideally you want functions to be loosely coupled. This way the can easily be ported to other projects. When you use global variables now you must take them with you when you want to port your code.&nbsp;</p>
+<p>&nbsp;In addition, when variables are global, they can be seen and modified by any function anywhere anytime making it impossible to ensure the value of &nbsp;the variable at any given time.&nbsp;</p>
+<p><span class="Head">Practice Problem</span> </p>
+<hr/>
+<br/>
+This is not a practice problem like you have seen to this point but I think it is worth seeing. How much of the following code is legal and why:<br/>
+<br/>
+<div style="text-align: center;"><img alt="" src="/web/20150219202908im_/http://programming.msjc.edu/portals/16/Images/scope3.png" style="width: 500px; height: 477px; border: 2px solid #002060;"/></div>
+<br/>
+<strong><span class="Head">Video - Variable Scope</span></strong> <hr/>
+<p>&nbsp;</p>
+<br/>
+</div>
+<br/>
+</div>
+<br/>
+</div>
+</div>
+
+				</div><!-- End_Module_2778 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl03_LiveTabsiMod2781"><div class="DnnModule DnnModule-LiveContent DnnModule-2781"><a name="2781"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl03_ctr2781_ContentPane">
+		
+    <!-- Start_Module_2781 --><div id="dnn_ctr2753_View_ctl00_ctl03_ctr2781_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2781"></a> <div id="dnn_ctr2753_View_ctl00_ctl03_ctr2781_View_LC2781"><table id="dnn_ctr2753_View_ctl00_ctl03_ctr2781_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC27811Heading">Scope Rules</div><a id="LC27811" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/lecture5/scope/scope.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC27811eVideo',allowWidthReduction: true,headingId: 'LC27811Heading',headingOverlay: {fade: 1},captionId: 'LC27811Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2781',width: 800,height: 640}, {TabId: '531',ModuleId: '2781',PortalId: '16',ElementId: '1'}); "> <img title="Scope Rules" alt="Scope Rules" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2781&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC27811eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC27811Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2781 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2753_View_ctl00_ctl03_LiveTabsiMod4611"><div class="DnnModule DnnModule-DNN_HTML DnnModule-4611"><a name="4611"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl03_ctr4611_ContentPane">
+		
+    <!-- Start_Module_4611 --><div id="dnn_ctr2753_View_ctl00_ctl03_ctr4611_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2753_View_ctl00_ctl03_ctr4611_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Still Not Sure?<br/>
+</span><hr/>
+<br/>
+<span class="Head"><a href="https://web.archive.org/web/20150219202908/http://xoax.net/cpp/crs/console/lessons/Lesson11/" target="_blank">See what XoaX.net says about scope</a></span>
+</div>
+
+				</div><!-- End_Module_4611 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2753159" class="mtop">
+				<div id="dnn_ctr2753_View_ctl00_ctl04_LiveTabsiMod2895"><div class="DnnModule DnnModule-LiveContent DnnModule-2895"><a name="2895"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2753_View_ctl00_ctl04_ctr2895_ContentPane">
+		
+    <!-- Start_Module_2895 --><div id="dnn_ctr2753_View_ctl00_ctl04_ctr2895_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2895"></a> <div id="dnn_ctr2753_View_ctl00_ctl04_ctr2895_View_LC2895"><table id="dnn_ctr2753_View_ctl00_ctl04_ctr2895_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28952Heading">Functions</div><a id="LC28952" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/Lecture5/VideoLecture/Lecture5.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28952eVideo',allowWidthReduction: true,headingId: 'LC28952Heading',headingOverlay: {fade: 1},captionId: 'LC28952Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2895',width: 800,height: 640}, {TabId: '531',ModuleId: '2895',PortalId: '16',ElementId: '2'}); "> <img title="Functions" alt="Functions" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2895&amp;eid=2&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28952eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28952Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td><div class="highslide-heading" id="LC28953Heading">Scope Rules</div><a id="LC28953" class="highslide" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/videos/Lecture5/ScopeLecture/ScopeRules.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28953eVideo',allowWidthReduction: true,headingId: 'LC28953Heading',headingOverlay: {fade: 1},captionId: 'LC28953Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2895',width: 800,height: 640}, {TabId: '531',ModuleId: '2895',PortalId: '16',ElementId: '3'}); "> <img title="Scope Rules" alt="Scope Rules" src="/web/20150219202908im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2895&amp;eid=3&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28953eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28953Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2895 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_2753 --></div>
+    </div>
+    <div class="c_footer">
+        
+        
+        
+    </div>
+</div>
+</div></td>
+
+                    
+                  </tr>
+                  <tr>
+                    
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="page_bottom" height="79" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" width="100%"><span id="dnn_dnnCOPYRIGHT_lblCopyright" class="Footer">2010 By Glenn Stevenson</span>
+
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnPRIVACY_hypPrivacy" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/privacy.aspx">Privacy Statement</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnTERMS_hypTerms" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/cpp/terms.aspx">Terms Of Use</a></td>
+        <td align="center" class="page_bottom_right" valign="top"><table width="323" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+             <td align="center" style="padding-top:14px"><a style="color:#4771D1;font-weight:bold;" href="https://web.archive.org/web/20150219202908/http://programming.msjc.edu/">MSJC Programming</a></td>
+            </tr>
+        </table></td>
+        <td align="right"><img src="/web/20150219202908im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="42" height="79"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`}"/>
+        
+    
+<script type="text/javascript" src="/web/20150219202908js_/http://programming.msjc.edu/Resources/Shared/scripts/initWidgets.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=16'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|pow|jwplayer|LC27571Html5eVideo|videos|cpp|lecture5|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2757|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|simpleFunction|jwplayer|LC27621Html5eVideo|videos|cpp|lecture5|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2762|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|6388|LC63881Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|PracticeSimpleFunciton|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|PracticeSimpleFunciton_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|returnFunction|jwplayer|LC27691Html5eVideo|videos|cpp|Lecture5|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2769|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|6390|LC63901Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|PracticeValueProducing|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|PracticeValueProducing_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(7(\'9\')!=n){7(\'9\').o({l:\'0://1.2.3/i.j?d=k-u-v-w-s&p;t=q\',r:\'0://1.2.3/5/6/4/8/a/c.b\',h:e,f:g,x:\'N\',O:P,K:\'0://1.2.3/5/6//4/8/L/M.Q\',U:\'T R\',S:\'0://B.C.D/y/z-A/H-I.J\',\'E.F\':\'G\'})}',57,57,'http|programming|msjc|edu|LiveContent|Portals|16|jwplayer|2775|LC27751Html5eVideo|Videos|mp4|paramfunctions||600|width|800|height|WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|flashplayer|if|null|setup|amp|634957464340000000|file|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1||ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|provider|products|dotnetnuke|modules|www|mandeeps|com|controlbar|position|bottom|live|content|aspx|image|Images|FirstFrame1|video|autostart|true|png|Content|aboutlink|Live|abouttext'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|myPow|jwplayer|LC27771Html5eVideo|videos|cpp|lecture5|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2777|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|scope|jwplayer|LC27811Html5eVideo|videos|cpp|lecture5|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2781|true|image|Portals|autostart|Live|Images|png|abouttext|scopeVideo1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(4(\'l\')!=n){4(\'l\').h({i:\'0://3.1.2/j.s?d=u-v-r-o-p&q;t=7\',9:\'0://3.1.2/8/6/5/Y/5.e\',f:g,a:b,c:\'w\',M:P,Q:\'0://3.1.2/R/O//L/N/V/X.S\',T:\'U B\',C:\'0://D.A.x/y/z-I/J-K.H\',\'E.F\':\'G\'})}m(4(\'k\')!=n){4(\'k\').h({i:\'0://3.1.2/j.s?d=u-v-r-o-p&q;t=7\',9:\'0://3.1.2/8/6/5/Z/W.e\',f:g,a:b,c:\'w\',M:P,Q:\'0://3.1.2/R/O//L/N/V/W.S\',T:\'U B\',C:\'0://D.A.x/y/z-I/J-K.H\',\'E.F\':\'G\'})}',62,62,'http|msjc|edu|programming|jwplayer|Lecture5|videos|634957464340000000|cpp|file|width|800|provider||mp4|height|600|setup|flashplayer|WebResource|LC28953Html5eVideo|LC28952Html5eVideo|if|null|TBHneb4|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|axd||5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|video|com|products|dotnetnuke|mandeeps|Content|aboutlink|www|controlbar|position|bottom|aspx|modules|live|content|LiveContent|autostart|2895|16|true|image|Portals|png|abouttext|Live|Images|ScopeRules|functionVideo1|VideoLecture|ScopeLecture'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper2753").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper2753').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2753') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2753').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper2753').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2753') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2753').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper2753").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper2753') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});jQuery("#LiveTabsWrapper2753").bind("tabsselect",function(event,ui) { if ($(ui.tab).hasClass('NavigateUrl')) {var url = jQuery.data(ui.tab, 'load.tabs'); if(!url) { url = ui.tab.href;} location.href = url; return false;} return true; });//]]>
+</script>
+</form>
+    
+    
+</body>
+</html><!--
+     FILE ARCHIVED ON 20:29:08 Feb 19, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:21:16 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.813
+  PetaboxLoader3.resolve: 51.836
+  load_resource: 101.153
+  captures_list: 55.136
+  LoadShardBlock: 36.821 (3)
+  CDXLines.iter: 13.103 (3)
+  PetaboxLoader3.datanode: 61.953 (4)
+  RedisCDXSource: 0.793
+  esindex: 0.017
+  exclusion.robots.policy: 0.795
+-->

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app42.us.archive.org';v.server_ms=466;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170517092543", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	C++ Programming Level 2 &gt; 7. Exceptions
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="This is the main page for the C++ Level II class"/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170517092543cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170517092543cs_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170517092543cs_/http://programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170517092543js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170517092543js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="Exceptions" content="Error Handling"/>
+<link rel="stylesheet" href="/web/20170517092543cs_/http://programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170517092543js_/http://programming.msjc.edu/cppii/prism.js" type="text/javascript"></script><link href="https://web.archive.org/web/20170517092543/http://www.programming.msjc.edu/cppii/7Exceptions.aspx" rel="canonical"/><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170517092543cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170517092543cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cppii/7Exceptions.aspx', '20170517092543')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170517092543/http://web.archive.org/screenshot/http://programming.msjc.edu/cppii/7Exceptions.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170517092543/http://programming.msjc.edu:80/cppii/7Exceptions.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170517092543/http://programming.msjc.edu:80/cppii/7Exceptions.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cppii/7Exceptions.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170517092543" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170330161245/http://programming.msjc.edu:80/cppii/7Exceptions.aspx" title="30 Mar 2017"><strong>Mar</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 09:25:43 May 17, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170721025700/http://programming.msjc.edu:80/cppii/7Exceptions.aspx" title="21 Jul 2017"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170515135436/http://programming.msjc.edu:80/cppii/7Exceptions.aspx" title="13:54:36 May 15, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 09:25:43 May 17, 2017">17</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170721025700/http://programming.msjc.edu:80/cppii/7Exceptions.aspx" title="02:57:00 Jul 21, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 09:25:43 May 17, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180720070614/http://programming.msjc.edu:80/cppii/7Exceptions.aspx" title="20 Jul 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170517092543*/http://programming.msjc.edu/cppii/7Exceptions.aspx" title="See a list of every capture for this URL">17 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 06 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170517092543/http%3A//programming.msjc.edu/cppii/7Exceptions.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cppii/7Exceptions.aspx","2017-05-17",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cppii/7Exceptions.aspx", '20170517092543');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170517092543/http://programming.msjc.edu/cppii/7Exceptions.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7229_SelectedIndex" id="LiveTabsWrapper7229_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFMFRoaXMgaXMgdGhlIG1haW4gcGFnZSBmb3IgdGhlIEMrKyBMZXZlbCBJSSBjbGFzc2QCCA8WAh8CBR9DKyssIFByb2dyYW1taW5nLERvdE5ldE51a2UsRE5OZAIJDxYCHwIFIUNvcHlyaWdodCAyMDEwIEJ5IEdsZW5uIFN0ZXZlbnNvbmQCCg8WAh8CBQtEb3ROZXROdWtlIGQCCw8WAh8CBRdDKysgUHJvZ3JhbW1pbmcgTGV2ZWwgMmQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYqZg9kFgRmDw8WAh8BaGRkAgIPFgIfAWgWBgIBDxYCHwFoZAIDDxYCHwFoZAIHDxYCHwFoZAIBD2QWBGYPDxYMHghDc3NDbGFzcwUJTG9naW5MaW5rHwAFBUxvZ2luHgdUb29sVGlwBQVMb2dpbh4LTmF2aWdhdGVVcmwFUmh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjdFeGNlcHRpb25zLmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZQBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvN0V4Y2VwdGlvbnMuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg9kFgICAQ8PFgofAwUJTG9naW5MaW5rHwAFBUxvZ2luHwQFBUxvZ2luHwUFUmh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjdFeGNlcHRpb25zLmFzcHgfBgICFgIfBwWUAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzdFeGNlcHRpb25zLmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFK2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9Ib21lLmFzcHhkZAIGDxYCHwgFDEROTkVtcHR5UGFuZWQCBw8WAh8IBQxETk5FbXB0eVBhbmVkAggPFgIfCAUMRE5ORW1wdHlQYW5lZAIJDxYCHwgFDEROTkVtcHR5UGFuZWQCCg8WAh8IBQxETk5FbXB0eVBhbmVkAgsPZBYCAgEPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlVGFicyBEbm5Nb2R1bGUtNzIyORYCAgEPZBYEAgEPZBYCAgIPFgIfAWhkAgMPZBYCAgIPD2QWAh8IBR1ETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUYWJzQxYCAgEPZBYCAgEPFgIeEURpc2FibGVkVGFic0FycmF5ZBYEZg9kFgJmD2QWBmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MjA0FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MjM2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MjM3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg9kFgJmD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIzOBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIMDxYCHwgFDEROTkVtcHR5UGFuZWQCDQ8WAh8IBQxETk5FbXB0eVBhbmVkAg4PFgIfCAUMRE5ORW1wdHlQYW5lZAIPDxYCHwgFDEROTkVtcHR5UGFuZWQCEA8WAh8IBQxETk5FbXB0eVBhbmVkAhEPFgIfCAUMRE5ORW1wdHlQYW5lZAISDxYCHwgFDEROTkVtcHR5UGFuZWQCEw8WAh8IBQxETk5FbXB0eVBhbmVkAhQPFgIfCAUMRE5ORW1wdHlQYW5lZAIYDxYCHwgFDEROTkVtcHR5UGFuZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFFmRubiRjdHI3MjI5JFZpZXckY3RsMDAIC7DKEYri2nHgkCpUrvocVJUm9A=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170517092543js_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170517092543js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170517092543js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAPHbfTk+z+ELiW41hnL0AMmV8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0DbARXM3DRqxOcBhV6z9KxdxmUt5Q=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170517092543js_/http://programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170517092543js_/http://programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170517092543cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/7Exceptions.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f7Exceptions.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170517092543im_/http://programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane">
+                                            <div class="DnnModule DnnModule-LiveTabs DnnModule-7229"><a name="7229"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7229_dnnTITLE_titleLabel" class="title_h2">Live Tabs</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7229_ContentPane">
+    <!-- Start_Module_7229 --><div id="dnn_ctr7229_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7229" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7229" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7229702" class="mtop"><a name="LiveTabsContent7229702" href="#LiveTabsContent7229702">a. Exceptions</a></li><li id="LiveTabs7229703" class="mtop"><a name="LiveTabsContent7229703" href="#LiveTabsContent7229703">b. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7229702" class="mtop">
+				<div id="dnn_ctr7229_View_ctl00_ctl00_LiveTabsiMod7204"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7204"><a name="7204"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7229_View_ctl00_ctl00_ctr7204_ContentPane">
+		
+    <!-- Start_Module_7204 --><div id="dnn_ctr7229_View_ctl00_ctl00_ctr7204_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7229_View_ctl00_ctl00_ctr7204_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>There are basically two types of errors that can be generated by your program they are </p>
+<ol>
+    <li>Compile Time Errors</li>
+    <li>Runtime Errors</li>
+    <p>Compile Time errors should be the easy ones to fix because they are caught by the compiler. The compiler spits out a nice error message that  includes the line number that lets you know where the error was encountered and description of of what the error is. The trick is to understand the message the compiler generates.</p>
+    <p>Take a look at the following code. How many errors can you spot?</p>
+    <pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+using namespace std;
+
+int main(String agrs[])
+{
+ink num;
+num = 32;
+
+int var;
+    cout &lt;&lt; "var = " + var &lt;&lt; endl;
+    cout &lt;&lt; "New = " &lt;&lt; num;
+
+    return true;
+} </code></pre>
+    <p>Do you think that you have found all of them? Let's take a look at what the compiler reported</p>
+</ol>
+<p style="text-align: center;"><img alt="" src="/web/20170517092543im_/http://programming.msjc.edu/portals/11/Exceptions/ErrorMessages1.png" style="width: 500px; height: 198px; border: 2px solid #4f81bd; margin-bottom: 10px;"/></p>
+<p>The above is a snap shot taken from Visual Studio. As you can see it shows there are 7 errors. What you should notice is that the majority of the errors reported are located on lines 5 and 6. So we can say that this is an incomplete list of errors. In reality, some errors can mask the presence of other errors. If we fix the errors on lines 5 and 6 then the compiler will show us other errors. Have you ever been fixing errors and finally got it down to one and when you fix that error, another dozen or so pop up?</p>
+<p>The error descriptions in this case do not seem to be very helpful but if we examine the list we should note that error 1 on line 5 says undeclared identifier. There is actually two things wrong here. First, the String is an undeclared identifier because we have not included &lt;string&gt; which is part of the std namespace. The other thing is the main function does not take an array of strings as its argument. Lets fix that and see what happens:</p>
+<pre><code class="language-cpp line-numbers">#include&lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main(char **argv, int argc)
+{
+ink num;
+num = 32;
+
+int var;
+    cout &lt;&lt; "var = " + var &lt;&lt; endl;
+    cout &lt;&lt; "New = " &lt;&lt; num;
+
+    return true;
+} </code></pre>
+<p>Now if we compile the program we get the following errors:</p>
+<div style="text-align: center;"><img alt="" src="/web/20170517092543im_/http://programming.msjc.edu/portals/11/Exceptions/ErrorList2.png" style="font-size: 0.8em; line-height: 21.76px; width: 500px; height: 167px; vertical-align: middle; border: 2px solid #4f81bd; margin-bottom: 10px;"/></div>
+<p>Fixing that error certainly changed things. Now there are errors that were not reported in the first build. Again, this is because some errors can mask others.  Now if we change the variable declaration from ink to int we will be left with one warning:</p>
+<div style="text-align: center;"><img alt="" src="https://web.archive.org/web/20170517092543im_/http://programming.msjc.edu/Portals/11/Exceptions/errorWarning.png" style="font-size: 0.8em; line-height: 21.76px; text-align: -webkit-center; width: 500px; height: 81px; border: 2px solid #4f81bd; vertical-align: middle; margin-bottom: 10px;"/><span style="font-size: 0.8em; line-height: 21.76px;">&nbsp;</span></div>
+<p>In many cases warnings tell you that there is something wrong but not enough to cause the compiler to fail. You should not ignore warnings because in many cases, they can get you into trouble. The above code has a problem because it is trying to print out the value stored in var but var has not been initialized. So what is in var? You should know by now that it is some kind of garbage value that was left in the memory that var references.</p>
+<p class="Head">Types of Compiler Errors</p>
+<hr/>
+<p>There are basically four types of compiler errors:</p>
+<ol>
+    <li>Structural</li>
+    <li>Typographical</li>
+    <li>"Real"</li>
+    <li>Type Errors  </li>
+</ol>
+<p class="SubHead">Structural Errors:</p>
+<p>Structural errors are things like missing or unmatched parentheses, missing or unmatched quotes, and missing or unmatched braces. The first step to fixing compile time errors in your program should be to fix the structural errors first.</p>
+<p><strong>Three Steps To Avoiding Structural Errors</strong></p>
+<ol>
+    <li>Know what goes where - include statements must appear first, formal agruments must go inside parentheses, all statements must appear inside a function</li>
+    <li>Write structural statements in one piece - add the closing brace immediately after adding the opening brace etc.</li>
+    <li>Use a consistent and easily checked indenting style</li>
+</ol>
+<p class="SubHead">Real Syntax Errors</p>
+<p>The C++ compile divides your code into chunks. Having done this, it checks to make sure all of your chunks are in the right place. These are called "Real Syntax Errors". An example of  a "Real Syntax" error would be using a keyword in an inappropriate place:</p>
+<pre><code class="language-cpp line-numbers">int double a;   //which type is it?
+int a = 10, int b = 10;  //Can't declare types twice </code></pre>
+<p>Another example would be the omission of a necessary keyword</p>
+<pre><code class="language-cpp line-numbers">// Each formal parameter must have a type
+void foo(int x, y)
+{
+}
+</code></pre>
+<p>The only real solution to avoiding "Real" syntax errors is "MEMORIZATION" and paying attention to the details.</p>
+<p class="SubHead">Typographical Errors</p>
+<p>Typographical errors are ones you get when you misspell a word, forget a semicolon, or use the wrong case. Fortunately in this day and age code completion and intelli-sense  make avoiding these errors easy. You should learn to use your editors code completion and intelli-sense functionality</p>
+<p class="SubHead">Type Errors</p>
+<p>Type errors occur when you try to store a value of one type into a variable that is meant to hold another type. Here are three rules to help you avoid type errors:</p>
+<ol>
+    <li>Store little values in bigger data types. You can store a char in an int but you cannot store an int in a char variable without casting</li>
+    <li>Store less precise values in more precise data types. You can store a float in a double variable but you cannot store a double in a float without losing precision.</li>
+    <li>Store similar things. A bool data type cannot hold a numeric value or an object</li>
+</ol>
+<p class="Head">Exception Handling In C++</p>
+<hr/>
+<p>In the world of the 'C' programming language, error handling was done with completion codes. A completion code is a value that gets returned from a function. The programmer would call the function and then check the value that was returned. It was a typical convention for a function to return a value of 0 (zero) if the function completed successfully and non-zero if the function returned and error.  It was also typical to create constants for the completion code. This made the code much easier to read and understand</p>
+<p>Here is an example</p>
+<pre><code class="language-cpp line-numbers">const int FILE_OPEN_ERROR = 1;
+const in FILE_NOT_FOUND = 2;
+const int FILE_READ_ERROR = 3;
+const int FILE_WRITE_ERROR = 4;
+const int FILE_CLOSE_ERROR = 5;
+
+void someFileThing()
+{
+int status;
+
+    status = openFile();
+    if(status == FILE_OPEN_ERROR)
+        //Handle file open error
+    status = writeFile();
+    if(status == FILE_WRITE_ERROR)
+        //Handle file write error
+    status = closeFile();
+    if(status == FILE_CLOSE_ERROR)
+        //Handle file close error
+
+    return;
+}
+</code></pre>
+<p>For the sake of accuracy there was no const in the C programming language. This was all done using the preprocessor:
+</p>
+<pre><code class="language-cpp line-numbers">#define FILE_OPEN_ERROR 0
+</code></pre>
+<p>In addition, you would see quite a few switch statements that would switch on status then branch to the appropriate error</p>
+<p>The above example is very simplistic but it is indicative of how error handling was done. What you should notice is that the program is so consumed with concentrating on errors that the purpose of the code gets a little cloudy. </p>
+<p>A better solution is with the error handling triad try-throw-catch that was added to the C++ language. The following shows how the try catch can be used to separate the code that works from the exceptional code:</p>
+<pre><code class="language-cpp line-numbers">
+void someFileThing()
+{
+ 
+    try
+    {
+        openFile();   
+        writeFile();   
+        closeFile();
+    }  
+
+    return;
+}
+// If an error occurs in any of the above, handle it here
+</code></pre>
+<p>As you can see this makes the code much cleaner because it separates the working code from anything exceptional.</p>
+<p class="Head">Try Catch</p>
+<hr/>
+<p>C++ supplies a mechanism like the above that allows you to separate the error handling code from the code that is performing the task. This mechanism is in the form of a try / catch block.  The general syntax for the try / catch block in C++ is:</p>
+<pre><code class="language-cpp line-numbers">try
+{
+    // Code that could generate an exception goes here
+}
+catch(SomeException)
+{
+    // Handle the exceptional situation in this block
+}
+ </code></pre>
+<p>The above assumes that the code within the try block throws an exception. The main idea here is that you can place a try block around a function or other code that could possibly throw an exception.  When an exception is thrown, it branches to a particular catch block which handles the exceptional situation.&nbsp;</p>
+<p>The catch block looks like a function definition with one argument. It is really not a function but it does work similarly. The catch block can only have one argument. If you need to catch several different exceptions you need to place a separate catch block for each type that can be thrown.  </p>
+<p class="Head">Throwing An Exception</p>
+<hr/>
+<p>In C++ you can use the <strong>throw</strong> to throw an exception. This can be done from anywhere in the code. The following is an example of how to throw an exception from within a try block.</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+int noodles;
+int meatballs = 5;
+
+    try
+    {
+        cout &lt;&lt; "How many ounces of noodles? " &lt;&lt; endl;
+        cin &gt;&gt; noodles;
+        
+        if(noodles == 0)
+            throw meatballs;
+
+        cout &lt;&lt; "Spaghetti and meatballs are really good together" &lt;&lt; endl;
+    }
+    catch(int mb)
+    {
+        cout &lt;&lt; mb &lt;&lt; " Meatballs with no spaghetti. Time to make more noodles" &lt;&lt; endl;
+    }
+
+    return 0;
+}
+ </code></pre>
+<p>The above code asks the user for an amount of noodles. If noodles are 0 then the code throws meatballs. You should note that meatballs is an integer. This means that the try block throws an int as an argument to the exception. </p>
+<p>As was stated earlier you can throw as many exceptions as you need but you must supply a catch block for each type that can be thrown. The following example catches a String and a double</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    try
+    {
+        invest();
+        cout &lt;&lt; "You have made a wise investment " &lt;&lt; endl;
+    }
+    catch(string msg)
+    {
+        cout &lt;&lt; msg.c_str() &lt;&lt; endl;
+        exit(1);
+    }
+    catch(double amt)
+    {
+        cout &lt;&lt; "The unbelievable low price is only " &lt;&lt; amt &lt;&lt; endl;
+        return 1;
+    }
+    cout &lt;&lt; "I am not sure what you mean " &lt;&lt; endl;
+}
+void invest()
+{
+char ch;
+   
+    cout &lt;&lt; "Would you like to by beach front property in Nevada? (y/n)" &lt;&lt; endl;
+    cin  &gt;&gt; ch;
+    if(toupper(ch) == 'Y')
+        throw 'You have just been swindled";
+    else if (toupper(ch) == 'N')
+        throw 1095535.0;
+
+    cout &lt;&lt; "You said " &lt;&lt; ch &lt;&lt; endl;
+}
+
+ </code></pre>
+<p class="Head">Catch All</p>
+<hr/>
+<p>If you don't know what type of exception a function will throw or maybe you are just a little lazy and don't want to catch each different type, or maybe you would just like to have one catch block that will catch any error no matter what type it may be.  Well, you are in luck, you can use ellipses as the catch block argument and it will catch any error that is thrown. Of course, you have no way of knowing exactly what the type is but there are times when you may not care:</p>
+<pre><code class="language-cpp line-numbers">try
+{
+    //Code that generates the exception
+}
+catch(...)
+{
+    // Handle any exception here
+}
+ </code></pre>
+<p>The following example demonstrates the use of the elipses</p>
+<pre><code class="language-cpp line-numbers">int main()
+{
+    try
+    {
+        invest();
+        cout &lt;&lt; "You have made a wise investment " &lt;&lt; endl;
+    }
+    catch(string msg)
+    {
+        cout &lt;&lt; msg.c_str() &lt;&lt; endl;
+        exit(1);
+    }
+    catch(...)
+    {
+        cout &lt;&lt; "The unbelievable low price is only " &lt;&lt; amt &lt;&lt; endl;
+        return 1;
+    }
+    cout &lt;&lt; "I am not sure what you mean " &lt;&lt; endl;
+}
+void invest()
+{
+char ch;
+   
+    cout &lt;&lt; "Would you like to by beach front property in Nevada? (y/n)" &lt;&lt; endl;
+    cin  &gt;&gt; ch;
+    if(toupper(ch) == 'Y')
+        throw 'You have just been swindled";
+    else if (toupper(ch) == 'N')
+        throw 1095535.0;
+
+    cout &lt;&lt; "You said " &lt;&lt; ch &lt;&lt; endl;
+}
+
+ </code></pre>
+<p>In the above example the elipses is used to catch the double. You might consider using the elipses at the end of a long list of catch blocks as a safety to catch any error that you did not plan for.</p>
+<p class="Head">unexpected() and terminate()</p>
+<hr/>
+<p>Prior to version 11.0 of the C++ standard you could specify an exception list as part of the function header. This list had the following syntax:
+</p>
+<div style="margin-bottom: 10px; text-align: center;"><img alt="" src="/web/20170517092543im_/http://programming.msjc.edu/portals/11/Exceptions/throwList.png" style="font-size: 0.8em; line-height: 21.76px; border: 2px solid #1f497d;"/></div>
+<p>If your function threw an error that was not part of the throw list the function <strong>unexpected</strong> would be called. The unexpected function in turn would call the terminate function which would force your program to exit.</p>
+<p>One of the nice things about the unexpected function is that you could call <strong>set_unexpected</strong> and provide a pointer to a void function as a parameter. This function would now be called instead of unexpected.</p>
+<p>If you have written a function that throws an error that is not caught properly the terminate function will be called. This could include either not having a catch block at all or simply not having a catch block wit the appropriate data type as a parameter</p>
+<p>The exception list has been known to be problematic. For this reason it has been deprecated in the version 11 of the C++ standard. You can still use it but you will probably get an ugly compiler warning.</p>
+<p class="Head">Built In Errors</p>
+<hr/>
+<p>In C++ you can  throw any data type as an error. This includes complex types. C++ has many built in classes that you can use to catch a variety of exceptions. All built in exceptions are derived from exception. In order to use one of these classes in your code you must first include <strong>exception</strong>. The following is a brief hierarchy of t he exception classes in C++</p>
+<p style="text-align: center;"><img alt="" src="/web/20170517092543im_/http://programming.msjc.edu/portals/11/Exceptions/exceptionHierarchy.fw.png" style="width: 650px; height: 255px;"/></p>
+<p>Many of these exception classes are self explanatory. If you need further explanation you should go to the online <a href="https://web.archive.org/web/20170517092543/http://en.cppreference.com/w/cpp/error/exception" target="_blank">C++ reference</a> </p>
+<p>The base class exception has a virtual function called what that provides a CString that contains information about the exception. All of the derived classes override this exception to provide their own error message. </p>
+<p>The following example shows how to use the built in error bad_alloc to test allocation with the new operator to create space for an array.</p>
+<pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;
+#include &lt;exception&gt;
+
+using namespace std;
+
+int main()
+{
+    char *p1 = 0;
+    try
+    {
+        p1 = new char[1000000000000];
+        cout &lt;&lt; "p1 allocated successfully" &lt;&lt; endl;
+    }
+    catch (bad_alloc&amp; e)
+    {
+        cout &lt;&lt; "Failed to allocate p1" &lt;&lt; endl;
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    }
+    
+    return 0;
+} </code></pre>
+<p class="Head">Creating Custom Error Objects</p>
+<hr/>
+<p>There may be times when the built in exception classes do not have any descriptive details to handle the exception that can be thrown from you class. In cases like these you may want to create your own exception class. The following code demonstrates the creation of a custom exception class that is derived from exception </p>
+<pre><code class="language-cpp line-numbers">class SomeMath
+{
+private:
+	double num1, num2;
+public:
+	SomeMath() : num1(1.0), num2(1.0) {}
+	SomeMath(double n1, double n2) : num1(n1), num2(n2) {}
+	double divide();
+};
+
+class MathException : public exception
+{
+private:
+	string message;
+public:
+	MathException(string msg) : message(msg) {}
+	virtual const char *what() { return message.c_str(); }
+};
+double SomeMath::divide()
+{
+	if (this-&gt;num2 == 0)
+		throw MathException("Cannot Divide by 0");
+}
+</code></pre>
+<p>The following main function tests the custom exception class</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">int main()
+{
+	SomeMath sm(5.2, 0);
+	try
+	{
+		double quotient = sm.divide();
+		cout &lt;&lt; "The quotient is " &lt;&lt; quotient &lt;&lt; endl;
+	}
+	catch (MathException ex)
+	{
+		cout &lt;&lt; ex.what() &lt;&lt; endl;
+	}
+
+	return 0;
+}
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Cannot Divide by 0<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>The above code shows a typical exception handling solution. If the exception happens in the class then it is simply thrown. The try - catch block is wrapped around the code in main where the function that could generate the exception is called. A mistake is to put the try-catch block in the class. Doing this does not give the person using the class the flexibility to handle the exception in their own way. </p>
+<p class="SubHead">Re-throwing an error</p>
+<p>There may be times when you do not want to handle an error where it is caught. This might be the case in a class that calls a function from another class. In situations like this you can simply re-throw the error. This is done simply by placing the keyword <strong>throw</strong> when the exception is caught</p>
+<pre><code class="language-cpp line-numbers">try
+{
+     // Try code here
+}
+catch(SomeError)
+{
+     throw; // re-throw the same exception up  the chain
+}
+ </code></pre>
+<p>You can also throw a different exceptionup the chain</p>
+<pre><code class="language-cpp line-numbers">catch(SomeError)
+{
+     throw newExceptionUp; //throw a different exception up  the chain
+} </code></pre>
+<p class="Head">Video - Exception Handling</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7204 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7229_View_ctl00_ctl00_LiveTabsiMod7236"><div class="DnnModule DnnModule-LiveContent DnnModule-7236"><a name="7236"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7229_View_ctl00_ctl00_ctr7236_ContentPane">
+		
+    <!-- Start_Module_7236 --><div id="dnn_ctr7229_View_ctl00_ctl00_ctr7236_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7236"></a> <div id="dnn_ctr7229_View_ctl00_ctl00_ctr7236_View_LC7236"><table id="dnn_ctr7229_View_ctl00_ctl00_ctr7236_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72361Heading">Exceptions</div><a id="LC72361" class="highslide" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/Portals/11/LiveContent/7236/Videos/Exceptions.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72361eVideo',allowHeightReduction: false,headingId: 'LC72361Heading',headingOverlay: {fade: 1},captionId: 'LC72361Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7236',width: 800,height: 640}, {TabId: '1939',ModuleId: '7236',PortalId: '11',ElementId: '1'}); "> <img title="Exceptions" alt="Exceptions" src="/web/20170517092543im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7236&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72361eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72361Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7236 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7229_View_ctl00_ctl00_LiveTabsiMod7237"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7237"><a name="7237"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7229_View_ctl00_ctl00_ctr7237_ContentPane">
+		
+    <!-- Start_Module_7237 --><div id="dnn_ctr7229_View_ctl00_ctl00_ctr7237_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7229_View_ctl00_ctl00_ctr7237_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170517092543/http://www.learncpp.com/cpp-tutorial/152-basic-exception-handling/" target="_blank">See what LearnCPP has to say about basic exception handling</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170517092543/http://www.learncpp.com/cpp-tutorial/155-exceptions-classes-and-inheritance/" target="_blank" title="Exception Classes">See what LearnCPP has to say about Exception classes and Inheritance</a></p>
+</div>
+
+				</div><!-- End_Module_7237 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7229703" class="mtop">
+				<div id="dnn_ctr7229_View_ctl00_ctl01_LiveTabsiMod7238"><div class="DnnModule DnnModule-LiveContent DnnModule-7238"><a name="7238"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7229_View_ctl00_ctl01_ctr7238_ContentPane">
+		
+    <!-- Start_Module_7238 --><div id="dnn_ctr7229_View_ctl00_ctl01_ctr7238_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7238"></a> <div id="dnn_ctr7229_View_ctl00_ctl01_ctr7238_View_LC7238"><table id="dnn_ctr7229_View_ctl00_ctl01_ctr7238_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72381Heading">Exceptions</div><a id="LC72381" class="highslide" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/Portals/11/LiveContent/7238/Videos/Lecture 7 Exceptions.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72381eVideo',allowHeightReduction: false,headingId: 'LC72381Heading',headingOverlay: {fade: 1},captionId: 'LC72381Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7238',width: 800,height: 640}, {TabId: '1939',ModuleId: '7238',PortalId: '11',ElementId: '1'}); "> <img title="Exceptions" alt="Exceptions" src="/web/20170517092543im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7238&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72381eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72381Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7238 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7229 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170517092543/http://programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170517092543im_/http://programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|7236|LC72361Html5eVideo|jwplayer|11|LiveContent|width|height|600||mp4|Videos|Exceptions|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|Exceptions_First_Frame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(8(\'6\')!=n){8(\'6\').o({j:\'0://1.3.2/k.l?d=p-u-v-w-q&r;t=s\',i:\'0://1.3.2/4/9/a/5/g/h 7 f.c\',e:b,x:N,O:\'P\',K:L,M:\'0://1.3.2/4/9//a/5/T/Q.R\',S:\'B C\',D:\'0://y.z.A/H/I-J/E-F.G\'})}',56,56,'http|programming|edu|msjc|Portals|7238|LC72381Html5eVideo||jwplayer|11|LiveContent|600|mp4||height|Exceptions|Videos|Lecture|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000||ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|autostart|true|image|800|provider|video|Lecture_7_Exceptions_First_Frame|png|abouttext|Images'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7229").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7229').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7229') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7229').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7229').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7229') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7229').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7229").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7229') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 09:25:43 May 17, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:29:33 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  PetaboxLoader3.datanode: 157.067 (4)
+  exclusion.robots.policy: 0.489
+  LoadShardBlock: 193.372 (3)
+  RedisCDXSource: 0.88
+  CDXLines.iter: 15.887 (3)
+  PetaboxLoader3.resolve: 196.489 (2)
+  esindex: 0.022
+  exclusion.robots: 0.512
+  load_resource: 230.064
+  captures_list: 215.267
+-->

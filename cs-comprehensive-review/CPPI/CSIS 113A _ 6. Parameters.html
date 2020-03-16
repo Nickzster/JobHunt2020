@@ -1,0 +1,1024 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app56.us.archive.org';v.server_ms=336;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20150219161303", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+<title>
+	CSIS 113A &gt; 6. Parameters
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="C++ Programming Level 1"/><meta id="MetaCopyright" name="COPYRIGHT" content="2010 By Glenn Stevenson"/><meta id="MetaAuthor" name="AUTHOR" content="CSIS 113A"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20150219161303cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161303cs_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/skin.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161303cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/container.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161303cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/Title_Grey.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161303cs_/http://programming.msjc.edu/Portals/16/portal.css?cdv=109" type="text/css" rel="stylesheet"/><script src="/web/20150219161303js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=109" type="text/javascript"></script><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219161303cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219161303cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Media Gallery/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219161303cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=znp6pkQZlpF_uSIya7FVqe1UQ6L4C0ftAfFqUpnMNrQpFK3o1z4ime0972wo3BFCMqG6WREqZ1U5AmYsQIiM4K0zzdchMno4mSrX0oaPB3Zg83PPvSZ2TthgZkK-kaEz-Vb5yrPYsk9P9yq5ByNojo2WBSt3u82qqXGLrA2&amp;t=634969582000000000" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=TKrWBk8fd5-ZZfMoIxmbvxbBGySHUGOMgqdi4DCaWlpORE2l2vA4yWHnlA5rZuf-zEITssELItRMUo-Jf2MwTuqhN-5-4wNnnV1X88iDdt5x63EeC0DwwxiepVYcXJStQDxLaZc-OdUSz2pTrd4ymENTAR5nGuLuWoJ7jY8bf9w7SXw00&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cpp/6Parameters.aspx', '20150219161303')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20150219161303/http://web.archive.org/screenshot/http://programming.msjc.edu/cpp/6Parameters.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20150219161303/http://programming.msjc.edu:80/cpp/6Parameters.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20150219161303/http://programming.msjc.edu:80/cpp/6Parameters.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cpp/6Parameters.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20150219161303" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141201002939/http://programming.msjc.edu:80/cpp/6Parameters.aspx" title="01 Dec 2014"><strong>Dec</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 16:13:03 Feb 19, 2015">FEB</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150323053621/http://programming.msjc.edu:80/cpp/6Parameters.aspx" title="23 Mar 2015"><strong>Mar</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141201002939/http://programming.msjc.edu:80/cpp/6Parameters.aspx" title="00:29:39 Dec 01, 2014"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 16:13:03 Feb 19, 2015">19</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150323053621/http://programming.msjc.edu:80/cpp/6Parameters.aspx" title="05:36:21 Mar 23, 2015"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20120128231651/http://www.programming.msjc.edu:80/cpp/6Parameters.aspx" title="28 Jan 2012"><strong>2012</strong></a></td>
+		  <td class="c" id="displayYearEl" title="You are here: 16:13:03 Feb 19, 2015">2015</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20160224071208/http://programming.msjc.edu:80/cpp/6Parameters.aspx" title="24 Feb 2016"><strong>2016</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20150219161303*/http://programming.msjc.edu/cpp/6Parameters.aspx" title="See a list of every capture for this URL">20 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">16 Jan 2012 - 27 Jun 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20150219161303/http%3A//programming.msjc.edu/cpp/6Parameters.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cpp/6Parameters.aspx","2015-02-19",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cpp/6Parameters.aspx", '20150219161303');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    
+    <form method="post" action="/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper2782_SelectedIndex" id="LiveTabsWrapper2782_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMwNzQ0NDU3D2QWCGYPFgIeBFRleHQFeTwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4wIFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1sMS10cmFuc2l0aW9uYWwuZHRkIj5kAgIPFgIfAAVDIHhtbDpsYW5nPSJlbi1VUyIgbGFuZz0iZW4tVVMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAxZAIIDxYEHwJkHwFoZAIJDxYCHwIFFzIwMTAgQnkgR2xlbm4gU3RldmVuc29uZAIKDxYEHwJkHwFoZAILDxYCHwIFCUNTSVMgMTEzQWQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYWZg9kFgJmDw8WBB4HVG9vbFRpcAUJQ1NJUyAxMTNBHgtOYXZpZ2F0ZVVybAUpaHR0cDovL3Byb2dyYW1taW5nLm1zamMuZWR1L2NwcC9Ib21lLmFzcHhkZAIBDxYCHgVjbGFzcwUXaGVhZGVycGFuZSBETk5FbXB0eVBhbmVkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDD2QWBGYPZBYGAgEPEA8WCB4IQ3NzQ2xhc3MFBlNlYXJjaB8ABQNXZWIfAwURR29vZ2xlIFdlYiBTZWFyY2geBF8hU0ICAmRkZGQCAw8QDxYIHwYFBlNlYXJjaB8ABQRTaXRlHwMFC1NpdGUgU2VhcmNoHwcCAmRkZGQCBw8PFgYfBgUGU2VhcmNoHwAFYzxpbWcgc3JjPSIvUG9ydGFscy9fZGVmYXVsdC9Ta2lucy9QaW9uZWVyLUJsdWUvaW1hZ2VzL0JsdWVTZWFyY2guanBnIiBhbGlnbj0iYWJzTWlkZGxlIiBib3JkZXI9IjAiPh8HAgJkZAICD2QWAgICDw8WBh8GBQZTZWFyY2gfAAVjPGltZyBzcmM9Ii9Qb3J0YWxzL19kZWZhdWx0L1NraW5zL1Bpb25lZXItQmx1ZS9pbWFnZXMvQmx1ZVNlYXJjaC5qcGciIGFsaWduPSJhYnNNaWRkbGUiIGJvcmRlcj0iMCI+HwcCAmRkAgYPZBYEZg8PFgYfBgUEVXNlch8HAgIfAWhkZAICDxYCHwFoFggCAQ8WAh8BaGQCAw8WAh8BaGQCBQ8PFgQfBgUEVXNlch8HAgJkZAIHDxYCHwFoZAIHD2QWBGYPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFTmh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmNlBhcmFtZXRlcnMuYXNweB8HAgIWAh4Hb25jbGljawWQAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPS9jcHAvNlBhcmFtZXRlcnMuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg8WAh8BaBYCAgEPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFTmh0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmNlBhcmFtZXRlcnMuYXNweB8HAgIWAh8IBZABcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcC82UGFyYW1ldGVycy5hc3B4JnBvcFVwPXRydWUnLC8qc2hvd1JldHVybiovdHJ1ZSwzMDAsNjUwLHRydWUsJycpZAIJDxYCHwUFFHRvcHBhbmUgRE5ORW1wdHlQYW5lZAIKDxYCHwUFFWxlZnRwYW5lIEROTkVtcHR5UGFuZWQCCw8WAh8BZxYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVUYWJzIERubk1vZHVsZS0yNzgyFgICAQ9kFhACAw8PFgIfAWhkZAIFD2QWAgICDxYCHwFoZAIHD2QWAmYPDxYCHwFoZGQCCQ9kFgJmDw8WAh8DBQhNaW5pbWl6ZWQWAmYPDxYGHghJbWFnZVVybAVAL1BvcnRhbHMvX2RlZmF1bHQvQ29udGFpbmVycy9NaW5pbWFsRXh0cm9weS9pbWFnZXMvRE5OLW1pbnVzLmdpZh4NQWx0ZXJuYXRlVGV4dAUITWluaW1pemUfAwUITWluaW1pemVkZAILD2QWAgICDw9kFgIfBQUdRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlVGFic0MWAgIBD2QWAgIBDxYCHhFEaXNhYmxlZFRhYnNBcnJheWQWCmYPZBYCZg9kFgwCAQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3ODMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTYzOTQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAw9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTYzOTYWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBA9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUwOTcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3ODUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUwOTkWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAQ9kFgJmD2QWEGYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzg3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS02Mzk3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS02NDA2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MTAwFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudENkAgQPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzg5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgUPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MTAxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yNzkxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgcPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MTAyFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg9kFgRmD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjc5MxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNTEwMxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIDD2QWAmYPZBYMZg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3OTUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUxMDQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3OTcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAw9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUxMDUWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBA9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI3OTkWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTUxMDcWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBA9kFgJmD2QWAmYPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS01MTA4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAg0PZBYCZg8PFgIfAWhkZAIPD2QWAmYPDxYCHwFoZGQCEQ9kFgJmDw8WAh8BaGRkAgwPFgIfBQUWcmlnaHRwYW5lIEROTkVtcHR5UGFuZWQCDQ8WAh8FBRdib3R0b21wYW5lIEROTkVtcHR5UGFuZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgQFFmRubiRjdHIyNzgyJFZpZXckY3RsMDAFHGRubiRkbm5TRUFSQ0gkV2ViUmFkaW9CdXR0b24FHWRubiRkbm5TRUFSQ0gkU2l0ZVJhZGlvQnV0dG9uBRRkbm4kZG5uTkFWJGN0bGRubk5BVvkcwocymDBJ7LpTj+zSPK0X7Hly"/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            <script type="text/javascript" src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.f="/g/e/c/d/";0.1.k=\'l...\';0.1.j=\'3 2 h 2 i\';0.1.5=\'6 2 a b\';0.1.9=\'7\';0.1.8=\'x\';0.1.y=\'v\';0.1.w=\'B\';0.1.C=\'3 2 z A, u 4 o 2 p. m n s t q 4 r.\';',39,39,'hs|lang|to|Click|and|fullExpandTitle|Expand|Prev|nextText|previousText|actual|size|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|bring|front|focusTitle|loadingText|Loading|Use|arrow|drag|move|next|previous|keys|for|click|Move|closeText|Next|moveText|close|image|Close|restoreTitle'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+
+<script src="/web/20150219161303js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3af319b152-218f-4c14-829d-050a68bb1a61%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/web/20150219161303js_/http://programming.msjc.edu/js/dnn.js" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/WebResource.axd?d=pLEtCHd74pDoQjTQzNKAyLIhCrbOEY3dBllxyab44UpzsAUMm1hE1u9hNGRtyeSsG_iKsKNs9cURUULaFvgn3P4gYbROlJGchFKS-F7bSLOBuE6K7VxI6lzVhCX-LBlNEA9lEviUM8oCPMX0pUjv55QKQlUp55d99WCDq_CjYTUdgkEM-MjnZl2soK81&amp;t=635024910000000000" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {LiveContentComment.Initialize(16, 5100, "1,2", "None","False", "/DesktopModules/LiveContent/Handlers/Ajax.ashx", "Please specify name.", "Please specify valid email.", "Please specify comments.", "Please specify valid captcha code.", "Thank you for the feedback. The comment is now awaiting moderation" );});//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAgxp3iBwcNGK6X2X9T49E58//c7PsqmuTnEFQI7odDR3WwwN58EmkZeYVfe5uNDEljiNx9aiHsyVt43JPA19HY69g7WIPfzT65Doh/GL2XrAIt30FgW7C/zSwOVSKJBoZlXyfNnC2LjR4Gt1Zo90L2sIJWE4Jsg+tfguQrQbLlbQAe/sdrZZbv7P371mDAVEYTsJ2cj"/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20150219161303js_/http://programming.msjc.edu/js/Debug/dnn.modalpopup.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/Resources/Shared/Scripts/dnn.jquery.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161303js_/http://programming.msjc.edu/js/Debug/dnncore.js?cdv=109" type="text/javascript"></script>
+        
+        
+
+<table border="0" cellspacing="0" cellpadding="0" class="menu_bgcolor skin-1024">
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="page_top_bgcolor"><table class="page_top_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td rowspan="2" class="logo_style"><a id="dnn_dnnLOGO_hypLogo" title="CSIS 113A" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Home.aspx"><img id="dnn_dnnLOGO_imgLogo" src="/web/20150219161303im_/http://programming.msjc.edu/Portals/16/cpplogo2.png" alt="CSIS 113A" style="border-width:0px;"/></a></td>
+              
+              <td class="language_style" nowrap="nowrap"><div class="language-object">
+
+
+</div></td>
+              <td align="right" class="page_top_right"><img src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+            <tr>
+              <td class="search_style" nowrap="nowrap"><span id="dnn_dnnSEARCH_ClassicSearch">
+    <span class="Search" title="Google Web Search"><input id="dnn_dnnSEARCH_WebRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="WebRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_WebRadioButton">Web</label></span>
+    <span class="Search" title="Site Search"><input id="dnn_dnnSEARCH_SiteRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="SiteRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_SiteRadioButton">Site</label></span>
+    <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" onkeydown="return __dnn_KeyDown('13', 'javascript:__doPostBack(%27dnn$dnnSEARCH$cmdSearch%27,%27%27)', event);"/>
+	<a id="dnn_dnnSEARCH_cmdSearch" class="Search" href="javascript:__doPostBack('dnn$dnnSEARCH$cmdSearch','')"><img src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/BlueSearch.jpg" align="absMiddle" border="0"></a>
+</span>
+
+
+</td>
+              <td align="right" class="page_top_right02"></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="user_left_bg" nowrap="nowrap"><table width="244" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" class="date_style"><span id="dnn_dnnCURRENTDATE_lblDate" class="CurrentDate">Thursday, February 19, 2015</span>
+</td>
+                </tr>
+              </table></td>
+              <td class="user_bg" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left">
+                      <span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters.aspx" class="Breadcrumb">6. Parameters</a></span>
+</td>
+                    <td align="right">
+<!--close registerGroup--><a id="dnn_dnnLOGIN_loginLink" title="Login" class="Login" onclick="return dnnModal.show('https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=/cpp/6Parameters.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=%2fcpp%2f6Parameters.aspx">Login</a>
+<!--close loginGroup--></td>
+                  </tr>
+              </table></td>
+              <td align="right" class="user_right_bg"><img src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><table class="menu_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" height="10"><img src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="190" height="10"/></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><div>
+	<ul class="" id="dnn_dnnNAV_ctldnnNAV">
+		<li id="dnn_dnnNAV_ctldnnNAVctr354"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Home.aspx"><span>Home</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr527"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/1Introduction.aspx"><span>1.    Introduction</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr528"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/2DataTypesnbsp;nbsp;.aspx"><span>2. Data Types &nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr529"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/3Decisionsnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>3. Decisions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr530"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx"><span>4. Repetition &nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr531"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx"><span>5. Functions &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr532"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters.aspx"><span>6. Parameters</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr534"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/7Arraysnbsp;nbsp;nbsp;nbsp;nbsp;nbsp;nbsp.aspx"><span>7. Arrays&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr535"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx"><span>8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr536"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/9Classesnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>9. Classes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr606"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus.aspx"><span>Syllabus</span></a><ul id="dnn_dnnNAV_ctldnnNAVsub606">
+			<li id="dnn_dnnNAV_ctldnnNAVctr1698"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus/4046.aspx"><span>4046</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1673"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus/3482.aspx"><span>3482</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr842"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus/4623.aspx"><span>4623</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1571"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus/4626.aspx"><span>4626</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr607"><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Syllabus/4589.aspx"><span>4589</span></a></li>
+		</ul></li>
+	</ul>
+</div></td>
+                  </tr>
+              </table></td>
+              <td width="100%" class="content_style" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                  <tr>
+                    
+                  </tr>
+                  <tr>
+                    
+                    <td id="dnn_ContentPane" valign="top" class="contentpane"><div class="DnnModule DnnModule-LiveTabs DnnModule-2782"><a name="2782"></a>
+<div class="c_container c_head_grey">
+    <div class="head_title">
+        <div class="c_actions">
+			
+        </div>
+        <div class="c_icon">			
+			
+			<h2 class="c_title">
+				<span id="dnn_ctr2782_dnnTITLE_titleLabel" class="TitleHead">Parameters</span>
+
+
+				
+			</h2>
+            </div>
+        <div class="title_vis">
+        
+            <a id="dnn_ctr2782_dnnVISIBILITY_cmdVisibility" title="Minimize" href="javascript:__doPostBack('dnn$ctr2782$dnnVISIBILITY$cmdVisibility','')"><img id="dnn_ctr2782_dnnVISIBILITY_imgVisibility" title="Minimize" src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/images/DNN-minus.gif" alt="Minimize"/></a>
+        </div>
+        <div class="clear_float">
+        </div>
+    </div>
+    <div class="c_content">
+        <div id="dnn_ctr2782_ContentPane" class="Normal c_contentpane">
+        <!-- Start_Module_2782 --><div id="dnn_ctr2782_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper2782" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper2782" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs2782160" class="mtop"><a name="LiveTabsContent2782160" href="#LiveTabsContent2782160">A. Pass By Value</a></li><li id="LiveTabs2782161" class="mtop"><a name="LiveTabsContent2782161" href="#LiveTabsContent2782161">B. Pass By Reference</a></li><li id="LiveTabs2782162" class="mtop"><a name="LiveTabsContent2782162" href="#LiveTabsContent2782162">C. Default Parameters</a></li><li id="LiveTabs2782163" class="mtop"><a name="LiveTabsContent2782163" href="#LiveTabsContent2782163">D. Function Overloading</a></li><li id="LiveTabs2782164" class="mtop"><a name="LiveTabsContent2782164" href="#LiveTabsContent2782164">E. Video Lectures</a></li><li id="LiveTabs2782656" class="mtop"><a name="LiveTabsContent2782656" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters/SelfEvaluation-Parameters.aspx" class="NavigateUrl">Self Evaluation</a></li>
+			</ul><div id="LiveTabsContent2782160" class="mtop">
+				<p>&nbsp;</p><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod2783"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2783"><a name="2783"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr2783_ContentPane">
+		
+    <!-- Start_Module_2783 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr2783_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl00_ctr2783_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Pass By Value</span></p>
+<hr/>
+<p>By default parameters in C++ are passed to functions by value. What this means is that when you pass a parameter, you are actually passing a copy of the value. Lets look at an example:</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/PassByValue.png" style="width: 532px; height: 478px; border: 2px solid #002060;"/><br/>
+</div>
+<p>&nbsp;</p>
+<p>In the above example the variable x is declared and initialized with a value of 3. The program calls the function foo and takes with it, a copy of the value that is contained within the variable x (3 in this case). When the flow of the program reaches the function foo, a new local variable is declared. It is called z and has a type of int. This local variable is somewhat special in that it gets initialized with the copy of the value that was passed to it (3) in this case.&nbsp;</p>
+<p>In the section on functions you saw that the stack was used to pass parameters. While that animation is somewhat accurate it doesn't tell all of the details. Here, a little more detail will be given. Of course this is not an assembly language class but sometimes seeing the details will give you a better understanding of things. The stack if you do not know it is a piece of memory that gets created when your program runs. It is used to hold local variables and information that &nbsp;allow a function to return back to where it came from. The stack has basically two operations, <strong>push </strong>and <strong>pop</strong>. The <strong>push</strong> operation is used to put things on the top of the stack. The <strong>pop </strong>operation is used to remove things from the top of the stack. The stack then is called a <strong>LIFO </strong>(Last In First Out) structure in that data is always added and removed from the top of the stack. This type of data structure is quite efficient because it can contain no gaps, meaning that the next piece of information is always in the next memory location.&nbsp;</p>
+<p>Some of this might be beyond the scope of this class but I believe it is important to get an idea of how the stack is used so that you can truly understand how parameters are passed. If you take the assembly language class you will learn that the CPU consists of several registers. Some of these registers are used for specific things and others are used for general purpose. &nbsp;</p>
+<p>The first register we need to get a feel for is called the <strong>ESP </strong>(Extended Stack Pointer) and it holds the address of the top of the stack. This address is used so that data can be pushed and popped at the right location. The <strong>EBP</strong> register (Extended Base Pointer) is used to hold a reference to the bottom of the stack.&nbsp;</p>
+<p>One other register needs to be mentioned here and that is the <strong>EIP </strong>(Extended Instruction Pointer) which holds the address of the next instruction to be executed.&nbsp;</p>
+<p>When a function is called a few things need to happen:</p>
+<p>
+</p>
+<ul>
+    <li>The function parameters are pushed on to the stack. In the above example the value in the variable x is pushed onto the stack (3 in this case)</li>
+    <li>The functions return address is pushed onto the stack (This is the address of where the function needs to come back to) This is also the contents of the <strong>EIP</strong>.</li>
+    <li>The frame pointer or previous value of the <strong>EBP &nbsp;</strong>is pushed onto the stack</li>
+    <li>The address of the function is placed into the <strong>EIP </strong>(Instruction Pointer) and the code jumps to the function.</li>
+</ul>
+<p>&nbsp;</p>
+<p>This process can be depicted in the following animation. Click the image to open</p>
+<p style="text-align: left;">&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2783 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod6394"><div class="DnnModule DnnModule-LiveContent DnnModule-6394"><a name="6394"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr6394_ContentPane">
+		
+    <!-- Start_Module_6394 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr6394_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent6394"></a> <div id="dnn_ctr2782_View_ctl00_ctl00_ctr6394_View_LC6394"><table id="dnn_ctr2782_View_ctl00_ctl00_ctr6394_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC63941Heading">Passing By Value</div><a id="LC63941" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/animations/ParametersStack.gif" onclick="return hs.htmlExpand(this, {src: 'https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/animations/ParametersStack.gif', contentId: 'LC63941Frame',allowHeightReduction: false,align: 'center',headingId: 'LC63941Heading',headingOverlay: {fade: 1},captionId: 'LC63941Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '6394', objectType: 'iframe',width: 750,height: 550,objectWidth: 750,objectHeight: 550,objectLoadTime: 'after',preserveContent: false, scrolling: 'yes'}, {TabId: '532',ModuleId: '6394',PortalId: '16',ElementId: '1'}); "> <img title="Passing By Value" alt="Passing By Value" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=6394&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC63941Frame"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC63941Inject"> </div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC63941Caption">How parameters are passed by value in C++</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_6394 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod6396"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6396"><a name="6396"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr6396_ContentPane">
+		
+    <!-- Start_Module_6396 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr6396_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl00_ctr6396_HtmlModule_lblContent" class="Normal">
+	<div><br/>
+</div>
+<p>In order for the function to return back to where it came from some of the information placed on the stack needs to be restored. The first thing that needs to be copied back is the EBP. In order to do this though the variable z needs to be popped off the stack. In other words this variable gets destroyed. Once the EBP is copied back the return address needs to be popped into the EIP so that the code can branch back to where it came from. In the animation what is left at the top of the stack is the variable x. This makes sense because the context of the program is back in the function main and it needs to be able to have access to the variable x.&nbsp;</p>
+<p>In this class you really don't need to know how the stack works to get by. What is important is that you understand that when a variable is passed by value a copy of it gets sent to the function where it is placed in the formal parameter.&nbsp;</p>
+<p>You should also note that since the formal parameter is created on the stack it must also be removed from the stack in order for the function to return back to where it came from. Remember, the return address and the EBP were all placed on the stack before the variable was created. What this means is that local variables are <strong>destroyed </strong>when the function returns. In other words they no longer exist.&nbsp;</p>
+<p class="Head">Video - Pass By Value</p>
+<hr/>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_6396 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod5097"><div class="DnnModule DnnModule-LiveContent DnnModule-5097"><a name="5097"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr5097_ContentPane">
+		
+    <!-- Start_Module_5097 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr5097_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5097"></a> <div id="dnn_ctr2782_View_ctl00_ctl00_ctr5097_View_LC5097"><table id="dnn_ctr2782_View_ctl00_ctl00_ctr5097_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC50971Heading">Greatest Common Factor</div><a id="LC50971" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5097/Videos/GCF.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC50971eVideo',allowHeightReduction: false,align: 'center',headingId: 'LC50971Heading',headingOverlay: {fade: 1},captionId: 'LC50971Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5097',width: 800,height: 640}, {TabId: '532',ModuleId: '5097',PortalId: '16',ElementId: '1'}); "> <img title="Greatest Common Factor" alt="Greatest Common Factor" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5097&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC50971eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC50971Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5097 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod2785"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2785"><a name="2785"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr2785_ContentPane">
+		
+    <!-- Start_Module_2785 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr2785_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl00_ctr2785_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head"><br/>
+</span></p>
+<p><span class="Head">Practice Problem</span></p>
+<hr/>
+<p>Before you peek at the solution see if you can create a function that will compute the sum of the squares between two values. For example, if 1 and 4 were input as the two values you would calcluate the sqaure of the values 1 to 4:</p>
+<table>
+    <tbody>
+        <tr>
+            <td>Value&nbsp;</td>
+            <td>Square&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;1</td>
+            <td>&nbsp;1</td>
+        </tr>
+        <tr>
+            <td>&nbsp;2</td>
+            <td>&nbsp;4</td>
+        </tr>
+        <tr>
+            <td>&nbsp;3</td>
+            <td>&nbsp;9</td>
+        </tr>
+        <tr>
+            <td>&nbsp;4</td>
+            <td>16&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;Sum</td>
+            <td>30</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<span class="Head">Practice Solution</span><hr/>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2785 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl00_LiveTabsiMod5099"><div class="DnnModule DnnModule-LiveContent DnnModule-5099"><a name="5099"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl00_ctr5099_ContentPane">
+		
+    <!-- Start_Module_5099 --><div id="dnn_ctr2782_View_ctl00_ctl00_ctr5099_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5099"></a> <div id="dnn_ctr2782_View_ctl00_ctl00_ctr5099_View_LC5099"><table id="dnn_ctr2782_View_ctl00_ctl00_ctr5099_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC50991Heading">Practice Problem Solution</div><a id="LC50991" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5099/Videos/SumSq.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC50991eVideo',allowHeightReduction: false,align: 'center',headingId: 'LC50991Heading',headingOverlay: {fade: 1},captionId: 'LC50991Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5099',width: 800,height: 640}, {TabId: '532',ModuleId: '5099',PortalId: '16',ElementId: '1'}); "> <img title="Practice Problem Solution" alt="Practice Problem Solution" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5099&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC50991eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC50991Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC50991Caption">Solves the problem of summing the squares</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5099 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2782161" class="mtop">
+				<div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod2787"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2787"><a name="2787"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr2787_ContentPane">
+		
+    <!-- Start_Module_2787 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr2787_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl01_ctr2787_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Pass By Reference</p>
+<hr/>
+<p>There are times when you may want a function to produce more than one value. This may seem impossible or at least problematic because, as &nbsp;you may have noticed functions can only return one value. The way to get around this limitation is to pass the values by reference. &nbsp;When you pass parameters by reference what is passed is the address of where the variable sits in memory. &nbsp;Parameters are still passed to the function by <strong>value </strong>but when passing by reference, a <strong>copy of the address </strong>of where the variable is located in memory gets passed. Passing values by reference is really an easy thing to do. &nbsp;All you have to do is put an <strong>&amp; </strong>in front of the formal parameter that you wish to pass by reference:</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/PassByReference.fw.png" style="width: 550px; height: 316px; border: 2px solid #002060;"/></div>
+<p>&nbsp;</p>
+<p style="text-align: left;">The parameters are passed the same way as they would be with pass by value. When the parameter in the function gets declared, it now refers to the memory location that was passed to it.</p>
+<p>The following animation depict how parameters are passed by reference. Notice that this animation is very similar to the one that shows pass by value. The only difference here is that a copy of a memory address is pushed on to the stack not the copy of a variable.&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2787 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod6397"><div class="DnnModule DnnModule-LiveContent DnnModule-6397"><a name="6397"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr6397_ContentPane">
+		
+    <!-- Start_Module_6397 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr6397_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent6397"></a> <div id="dnn_ctr2782_View_ctl00_ctl01_ctr6397_View_LC6397"><table id="dnn_ctr2782_View_ctl00_ctl01_ctr6397_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC63971Heading">Passing Parameters By Reference</div><a id="LC63971" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Animations/AnimationByReference.gif" onclick="return hs.htmlExpand(this, {src: 'https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/Animations/AnimationByReference.gif', contentId: 'LC63971Frame',allowHeightReduction: false,align: 'center',headingId: 'LC63971Heading',headingOverlay: {fade: 1},captionId: 'LC63971Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '6397', objectType: 'iframe',width: 750,height: 550,objectWidth: 750,objectHeight: 550,objectLoadTime: 'after',preserveContent: false, scrolling: 'yes'}, {TabId: '532',ModuleId: '6397',PortalId: '16',ElementId: '1'}); "> <img title="Passing Parameters By Reference" alt="Passing Parameters By Reference" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=6397&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC63971Frame"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body" id="LC63971Inject"> </div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC63971Caption">A copy of the address of a variable is passed when passing by references</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_6397 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod6406"><div class="DnnModule DnnModule-DNN_HTML DnnModule-6406"><a name="6406"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr6406_ContentPane">
+		
+    <!-- Start_Module_6406 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr6406_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl01_ctr6406_HtmlModule_lblContent" class="Normal">
+	<br/>
+<p>The following code shows the swap function. In this example the parameters are passed by reference. This allows the function to swap the values within the formal parameters which essentially swaps the values in main. Again this is due to the fact that a copy of the addresses of the values in main are passed to the function not a copy of the values.&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_6406 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod5100"><div class="DnnModule DnnModule-LiveContent DnnModule-5100"><a name="5100"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr5100_ContentPane">
+		
+    <!-- Start_Module_5100 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr5100_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="mediagallery">
+    <div class="sortby">
+        <span>Sort:</span><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters/tabid/532/LCmid/5100/sort-desc/datecreated/Default.aspx">Recent</a><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters/tabid/532/LCmid/5100/sort-desc/views/Default.aspx">Most Viewed</a><a href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/6Parameters/tabid/532/LCmid/5100/sort-desc/rating/Default.aspx">Highest Rated</a>
+    </div>
+    <div class="mwidget search"><div id="dnn_ctr2782_View_ctl00_ctl01_ctr5100_View_LCSearchToolbar5100" class="LCSearchToolbar5100 msearch-toolbar"><input class="textbox" type="text" width="100"/><input class="search-button" value="Search" width="70" onclick="mJSToolkit.GetResults('.LCSearchToolbar5100', '#LCSearchResult5100', '/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&amp;ModuleId=5100&amp;TabId=532', 'Text', '10', 'Please Specify a keyword', 'No Results', 'Close', 'Search Results', '10', 1); return false;" type="button" style="cursor:pointer"/></div></div> 
+    <div class="msearch-result" id="LCSearchResult5100" style="display: none">
+    </div>
+    <a name="LiveContent5100"></a> <div id="dnn_ctr2782_View_ctl00_ctl01_ctr5100_View_LC5100"><div id="LCElementsWrapper5100" class="elements_wrapper">
+<ul><li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC51001Heading"></div><a id="LC51001" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5100/Images/swap.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5100&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC51001Heading',headingOverlay: {fade: 1},captionId: 'LC51001Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5100'}, {TabId: '532',ModuleId: '5100',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5100&amp;eid=1&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC51001Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div><div class="comment-overlay" id="LC51001CommentOverlay"><div class="CommentData51001 CommentData"><div class="heading">Showing <span class="count">0</span> Comment</div></div></div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC51001').click(); return false;">Comment</a> 490 views
+    </p>
+     </li>
+<li class="lc_element_item">
+    <div class="element_thumb">
+        <div class="highslide-heading" id="LC51002Heading"></div><a id="LC51002" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5100/Images/swapOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5100&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC51002Heading',headingOverlay: {fade: 1},captionId: 'LC51002Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'mediagallery',slideshowGroup: '5100'}, {TabId: '532',ModuleId: '5100',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5100&amp;eid=2&amp;PortalId=16" width="270" height="165"/></a><div class="highslide-caption" id="LC51002Caption">
+<p class="tags">
+     
+</p>
+<p class="categories">
+     </p>
+
+<div class="social_network">
+    
+</div>
+</div><div class="comment-overlay" id="LC51002CommentOverlay"><div class="CommentData51002 CommentData"><div class="heading">Showing <span class="count">0</span> Comment</div></div></div>
+    </div>
+    <p class="title">
+        
+    </p>
+    <p class="stats">
+        0 <a href="#" onclick="jQuery('#LC51002').click(); return false;">Comment</a> 174 views
+    </p>
+     </li>
+</ul>
+</div></div>
+    <div style="clear: both">
+    </div>
+      
+    <div style="clear: both">
+    </div>
+</div>
+
+				</div><!-- End_Module_5100 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod2789"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2789"><a name="2789"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr2789_ContentPane">
+		
+    <!-- Start_Module_2789 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr2789_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl01_ctr2789_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span></p>
+<hr/>
+<p>As you can see, The values of the variables actually do get swapped. Again, this is because using pass by reference the variables x and y of the formal parameters in the function swap actually refer to the same memory locations as the variables a and b that were declared in main. It may be easier to think of x and y as aliases or nicknames for the variables a and b. It is like being able to refer to the same value with two different names. In the function swap, you would use the nickname and in main, you would use the given name.</p>
+<p>One other thing to note is that like passing parameters by value the stack must be popped so that the return address can be popped into the EIP.&nbsp;</p>
+<p>&nbsp;</p>
+<span class="Head">Video - Passing Parameters</span><br/>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2789 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod5101"><div class="DnnModule DnnModule-LiveContent DnnModule-5101"><a name="5101"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr5101_ContentPane">
+		
+    <!-- Start_Module_5101 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr5101_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5101"></a> <div id="dnn_ctr2782_View_ctl00_ctl01_ctr5101_View_LC5101"><table id="dnn_ctr2782_View_ctl00_ctl01_ctr5101_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51011Heading">Parameters</div><a id="LC51011" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5101/Videos/Parameters.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51011eVideo',allowHeightReduction: false,align: 'center',headingId: 'LC51011Heading',headingOverlay: {fade: 1},captionId: 'LC51011Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5101',width: 800,height: 640}, {TabId: '532',ModuleId: '5101',PortalId: '16',ElementId: '1'}); "> <img title="Parameters" alt="Parameters" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5101&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51011eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51011Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51011Caption">Miles per gallon program</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5101 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod2791"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2791"><a name="2791"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr2791_ContentPane">
+		
+    <!-- Start_Module_2791 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr2791_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl01_ctr2791_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Downside</span><hr/>
+</p>
+<p style="text-align: left;">Many people feel that passing by reference can be a bit on the confusing side. Suppose that you are a member of a team of programmers working on a project and you have to use a function someone else wrote. If they don't give you the exact details, you would not know by looking at a call to the function that the parameters are actually being passed by reference. So, you would have no idea that a function may actually modify your copy of the variables. In my opinion this is somewhat of a weak argument but it exists none the less. Of course, this can always be remedied through the use of pointers which we will go into in great detail in a future lesson. </p>
+<br/>
+<span class="Head">Practice Problem</span><br/>
+<hr/>
+Can you write a function that will sort three integers in ascending order? Your function should take three integers by reference and sort them. <br/>
+<br/>
+<br/>
+<span class="Head">Practice Solution</span><br/>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2791 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl01_LiveTabsiMod5102"><div class="DnnModule DnnModule-LiveContent DnnModule-5102"><a name="5102"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl01_ctr5102_ContentPane">
+		
+    <!-- Start_Module_5102 --><div id="dnn_ctr2782_View_ctl00_ctl01_ctr5102_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5102"></a> <div id="dnn_ctr2782_View_ctl00_ctl01_ctr5102_View_LC5102"><table id="dnn_ctr2782_View_ctl00_ctl01_ctr5102_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51021Heading">Practice Problem Solution</div><a id="LC51021" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5102/Videos/SortAsend.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51021eVideo',allowHeightReduction: false,align: 'center',headingId: 'LC51021Heading',headingOverlay: {fade: 1},captionId: 'LC51021Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5102',width: 800,height: 640}, {TabId: '532',ModuleId: '5102',PortalId: '16',ElementId: '1'}); "> <img title="Practice Problem Solution" alt="Practice Problem Solution" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5102&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51021eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51021Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51021Caption">Sort Ascending</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5102 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2782162" class="mtop">
+				<div id="dnn_ctr2782_View_ctl00_ctl02_LiveTabsiMod2793"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2793"><a name="2793"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl02_ctr2793_ContentPane">
+		
+    <!-- Start_Module_2793 --><div id="dnn_ctr2782_View_ctl00_ctl02_ctr2793_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl02_ctr2793_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Default Arguments</span></p>
+<hr/>
+<p>&nbsp;</p>
+Default arguments allow you to set a value that will serve as a default value if you don't supply a parameter.
+<div><br/>
+<div style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/defaultArgs.png" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; width: 550px; height: 428px; border: 2px solid #002060;"/></div>
+<br/>
+<br/>
+<p>In the above code the default argument (width) is set to 2. The first call to calcArea supplies values for both parameters. The function calcArea will return 10 in this instance. The second call to calcArea only supplies one argument. This means that the width value is set to 2 by default; calcArea will return 6. </p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/DefaultArgsA.fw.png" style="width: 550px; height: 315px; border: 2px solid #002060;"/></div>
+<br/>
+Default arguments are always defined in the function prototype. This is because the compiler needs to see the definition of what you are doing before a call to the function can be made.
+<p>If you are going to write functions that have some of the arguments defaulted and others not, you have to make sure that the default arguments always appear last. You could not do the following:</p>
+<p class="style1" style="text-align: center;"><img alt="" width="503" height="42" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/calcArea_001.png"/></p>
+<p>If you think about it for a minute you will see that it makes sense that the default arguments have to show up last. </p>
+<br/>
+<span class="Head">Video - Using Default Arguments<br/>
+</span><hr/>
+<br/>
+<br/>
+</div>
+</div>
+
+				</div><!-- End_Module_2793 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl02_LiveTabsiMod5103"><div class="DnnModule DnnModule-LiveContent DnnModule-5103"><a name="5103"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl02_ctr5103_ContentPane">
+		
+    <!-- Start_Module_5103 --><div id="dnn_ctr2782_View_ctl00_ctl02_ctr5103_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5103"></a> <div id="dnn_ctr2782_View_ctl00_ctl02_ctr5103_View_LC5103"><table id="dnn_ctr2782_View_ctl00_ctl02_ctr5103_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51031Heading">Default Arguments</div><a id="LC51031" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5103/Videos/default.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51031eVideo',allowHeightReduction: false,align: 'center',headingId: 'LC51031Heading',headingOverlay: {fade: 1},captionId: 'LC51031Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5103',width: 800,height: 640}, {TabId: '532',ModuleId: '5103',PortalId: '16',ElementId: '1'}); "> <img title="Default Arguments" alt="Default Arguments" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5103&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51031eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51031Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51031Caption">Shows how to use default arguments</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5103 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2782163" class="mtop">
+				<div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod2795"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2795"><a name="2795"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr2795_ContentPane">
+		
+    <!-- Start_Module_2795 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr2795_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl03_ctr2795_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Overloading Functions</span><hr/>
+</p>
+<p>Before object oriented programming hit the scene, if you had a function that you wanted to one time work with doubles and the next time work with chars, or maybe one time you needed to pass 2 ints and a double one time but the next time you only needed to pass two ints to function then you were forced to create a different function for each version that you needed. Through <em><strong>overloaded</strong></em> functions, you can almost achieve this. You still have to write the function bodies but all of the functions have the same name. Lets look at an example:</p>
+</div>
+
+				</div><!-- End_Module_2795 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod5104"><div class="DnnModule DnnModule-LiveContent DnnModule-5104"><a name="5104"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr5104_ContentPane">
+		
+    <!-- Start_Module_5104 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr5104_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5104"></a> <div id="dnn_ctr2782_View_ctl00_ctl03_ctr5104_View_LC5104"><table id="dnn_ctr2782_View_ctl00_ctl03_ctr5104_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC51041" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5104/Images/overload1.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5104&amp;eid=1&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC51041Heading',headingOverlay: {fade: 1},captionId: 'LC51041Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5104'}, {TabId: '532',ModuleId: '5104',PortalId: '16',ElementId: '1'});"> <img alt="1" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5104&amp;eid=1&amp;PortalId=16"/></a></td><td><a id="LC51042" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5104/Images/overload1Output.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5104&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC51042Heading',headingOverlay: {fade: 1},captionId: 'LC51042Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5104'}, {TabId: '532',ModuleId: '5104',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5104&amp;eid=2&amp;PortalId=16"/></a></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5104 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod2797"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2797"><a name="2797"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr2797_ContentPane">
+		
+    <!-- Start_Module_2797 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr2797_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl03_ctr2797_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Code Review</span></p>
+<hr/>
+<p>Notice that there are two addEm functions defined and that they are only different by their function header. In main the first call to addEm has only two actual arguments while the second call has three actual arguments. The compiler will sort out which function to call by matching arguments.</p>
+<p class="NormalRed">NOTE: </p>
+<p>The compiler will always try to match arguments in the best way it can. For example, lets say that you have a function that takes two doubles but you pass it two ints; the compiler will convert the ints to doubles automatically. This type of conversion is called <strong>automatic type conversion.<br/>
+<br/>
+</strong></p>
+<div style="text-align: center;"><strong><strong><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/swapRevisited.png" style="width: 719px; height: 716px; border: 2px solid #002060;"/></strong></strong></div>
+<strong>
+<br/>
+</strong><span class="Head">Code Review<br/>
+</span>
+<p>&nbsp;</p>
+<strong><hr/>
+</strong>
+<p>In the above code example, the call to the swap function takes two doubles but main is passing it two int.The compiler will automatically convert the ints to doubles. You should always take care to provide function bodies for all argument types that you intend to use. </p>
+<p class="Head">Automatic Type Conversion Rules:</p>
+<hr/>
+<p>&nbsp;</p>
+<p>The compiler will try to resolve overloaded parameters in the following order</p>
+<ol>
+    <li>Exact match </li>
+    <li>Matches using promotion within integer types (short to int, int to long, etc), or floating point types (float to double). Note: char to int and bool to int are considered promotions also </li>
+    <li>Matches using other conversions of predefined types, such as int to double </li>
+    <li>Matches using user defined types (Discussed later) </li>
+</ol>
+<p class="NormalRed">Note: </p>
+<p>Be careful for ambiguous overloading</p>
+<p style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/badOverload.png" style="width: 390px; height: 338px; border: 2px solid #002060;"/></p>
+<p>The declarations of the functions (although confusing) are perfectly legal. It is the call to the function from main that will force an error because the compiler cannot figure out which version of the function should be invoked.</p>
+<p>&nbsp;</p>
+<p><strong class="Head">One Last Note:</strong></p>
+<hr/>
+<p>Overloaded function must differ in more than their return type. The following will not work</p>
+<p>&nbsp;</p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161303im_/http://programming.msjc.edu/portals/16/Images/badOverload1.png" style="width: 423px; height: 655px; border: 2px solid #002060;"/></div>
+<br/>
+<span class="Head">Video - Overloading Functions</span>
+<p>&nbsp;</p>
+<hr/>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2797 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod5105"><div class="DnnModule DnnModule-LiveContent DnnModule-5105"><a name="5105"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr5105_ContentPane">
+		
+    <!-- Start_Module_5105 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr5105_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5105"></a> <div id="dnn_ctr2782_View_ctl00_ctl03_ctr5105_View_LC5105"><table id="dnn_ctr2782_View_ctl00_ctl03_ctr5105_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51051Heading">Function Overloading</div><a id="LC51051" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5105/Videos/FunctionOverloading final.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51051eVideo',allowHeightReduction: false,headingId: 'LC51051Heading',headingOverlay: {fade: 1},captionId: 'LC51051Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5105',width: 800,height: 640}, {TabId: '532',ModuleId: '5105',PortalId: '16',ElementId: '1'}); "> <img title="Function Overloading" alt="Function Overloading" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5105&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51051eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51051Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51051Caption">How to write function overloads.</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5105 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod2799"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2799"><a name="2799"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr2799_ContentPane">
+		
+    <!-- Start_Module_2799 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr2799_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2782_View_ctl00_ctl03_ctr2799_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Practice Problem</span></p>
+<hr/>
+<p>&nbsp;</p>
+Can you create overloaded avg functions that will return the average of two and three doubles? Once you have finished compare your solution to the one in the video below.<br/>
+<br/>
+<span class="Head">Practice Problem Solution</span><br/>
+<hr/>
+</div>
+
+				</div><!-- End_Module_2799 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2782_View_ctl00_ctl03_LiveTabsiMod5107"><div class="DnnModule DnnModule-LiveContent DnnModule-5107"><a name="5107"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl03_ctr5107_ContentPane">
+		
+    <!-- Start_Module_5107 --><div id="dnn_ctr2782_View_ctl00_ctl03_ctr5107_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5107"></a> <div id="dnn_ctr2782_View_ctl00_ctl03_ctr5107_View_LC5107"><table id="dnn_ctr2782_View_ctl00_ctl03_ctr5107_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51071Heading">Practice Problem Solution</div><a id="LC51071" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5107/Videos/OverloadSolution.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51071eVideo',allowHeightReduction: false,headingId: 'LC51071Heading',headingOverlay: {fade: 1},captionId: 'LC51071Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5107',width: 800,height: 640}, {TabId: '532',ModuleId: '5107',PortalId: '16',ElementId: '1'}); "> <img title="Practice Problem Solution" alt="Practice Problem Solution" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5107&amp;eid=1&amp;PortalId=16" width="500" height="500"/></a><div class="highslide-html-content" id="LC51071eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51071Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51071Caption">The solution to the practice problem for function overloading</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5107 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2782164" class="mtop">
+				<div id="dnn_ctr2782_View_ctl00_ctl04_LiveTabsiMod5108"><div class="DnnModule DnnModule-LiveContent DnnModule-5108"><a name="5108"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2782_View_ctl00_ctl04_ctr5108_ContentPane">
+		
+    <!-- Start_Module_5108 --><div id="dnn_ctr2782_View_ctl00_ctl04_ctr5108_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent5108"></a> <div id="dnn_ctr2782_View_ctl00_ctl04_ctr5108_View_LC5108"><table id="dnn_ctr2782_View_ctl00_ctl04_ctr5108_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC51081Heading">Parameters</div><a id="LC51081" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5108/Videos/Lecture8.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51081eVideo',allowHeightReduction: false,headingId: 'LC51081Heading',headingOverlay: {fade: 1},captionId: 'LC51081Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5108',width: 800,height: 640}, {TabId: '532',ModuleId: '5108',PortalId: '16',ElementId: '1'}); "> <img title="Parameters" alt="Parameters" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5108&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51081eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51081Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC51081Caption">Lecture 8 Parameters</div></td><td><a id="LC51082" class="highslide" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/Portals/16/LiveContent/5108/Videos/Lecture9.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC51082eVideo',allowHeightReduction: false,headingId: 'LC51082Heading',headingOverlay: {fade: 1},captionId: 'LC51082Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '5108',width: 800,height: 640}, {TabId: '532',ModuleId: '5108',PortalId: '16',ElementId: '2'}); "> <img alt="2" src="/web/20150219161303im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=5108&amp;eid=2&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC51082eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC51082Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_5108 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_2782 --></div>
+    </div>
+    <div class="c_footer">
+        
+        
+        
+    </div>
+</div>
+</div></td>
+
+                    
+                  </tr>
+                  <tr>
+                    
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="page_bottom" height="79" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" width="100%"><span id="dnn_dnnCOPYRIGHT_lblCopyright" class="Footer">2010 By Glenn Stevenson</span>
+
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnPRIVACY_hypPrivacy" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/privacy.aspx">Privacy Statement</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnTERMS_hypTerms" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/cpp/terms.aspx">Terms Of Use</a></td>
+        <td align="center" class="page_bottom_right" valign="top"><table width="323" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+             <td align="center" style="padding-top:14px"><a style="color:#4771D1;font-weight:bold;" href="https://web.archive.org/web/20150219161303/http://programming.msjc.edu/">MSJC Programming</a></td>
+            </tr>
+        </table></td>
+        <td align="right"><img src="/web/20150219161303im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="42" height="79"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`}"/>
+        
+    
+<script type="text/javascript" src="/web/20150219161303js_/http://programming.msjc.edu/Resources/Shared/scripts/initWidgets.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=16'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5097|LC50971Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|GCF|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame3'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5099|LC50991Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|SumSq|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+hs.Expander.prototype.onBeforeExpand = function (sender) { sender.createOverlay( {overlayId:'LC' + sender.custom.ModuleId + sender.custom.ElementId + 'CommentOverlay',position: 'rightpanel',fade: 1,width: '400px'} );};eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5101|LC51011Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|Parameters|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5102|LC51021Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|SortAsend|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5103|LC51031Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|default|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g e.b\',c:a,w:M,N:\'O\',J:K,L:\'0://1.3.2/4/8//9/5/R/S.Q\',P:\'I A\',B:\'0://z.x.y/C/G-H/F-D.E\'})}',55,55,'http|programming|edu|msjc|Portals|5105|LC51051Html5eVideo|jwplayer|16|LiveContent|600|mp4|height||final|Videos|FunctionOverloading|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(7(\'6\')!=m){7(\'6\').n({i:\'0://1.3.2/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.3.2/4/8/9/5/f/g.e\',b:c,a:L,M:\'N\',I:J,K:\'0://1.3.2/4/8//9/5/Q/R.P\',O:\'H z\',A:\'0://y.w.x/B/F-G/E-C.D\'})}',54,54,'http|programming|edu|msjc|Portals|5107|LC51071Html5eVideo|jwplayer|16|LiveContent|width|height|600||mp4|Videos|OverloadSolution|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|mandeeps|com|www|Content|aboutlink|products|content|aspx|live|dotnetnuke|modules|Live|autostart|true|image|800|provider|video|abouttext|png|Images|FirstFrame'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(7(\'l\')!=n){7(\'l\').h({i:\'0://1.3.2/j.s?d=u-v-r-o-p&q;t=9\',f:\'0://1.3.2/6/8/5/4/g/S.a\',b:c,e:L,M:\'N\',I:J,K:\'0://1.3.2/6/8//5/4/Q/R.P\',O:\'z A\',B:\'0://w.x.y/F/G-H/C-D.E\'})}m(7(\'k\')!=n){7(\'k\').h({i:\'0://1.3.2/j.s?d=u-v-r-o-p&q;t=9\',f:\'0://1.3.2/6/8/5/4/g/U.a\',b:c,e:L,M:\'N\',I:J,K:\'0://1.3.2/6/8//5/4/Q/T.P\',O:\'z A\',B:\'0://w.x.y/F/G-H/C-D.E\'})}',57,57,'http|programming|edu|msjc|5108|LiveContent|Portals|jwplayer|16|634957464340000000|mp4|height|600||width|file|Videos|setup|flashplayer|WebResource|LC51082Html5eVideo|LC51081Html5eVideo|if|null|TBHneb4|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|axd||5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|www|mandeeps|com|Live|Content|aboutlink|live|content|aspx|products|dotnetnuke|modules|autostart|true|image|800|provider|video|abouttext|png|Images|ParameterVideo|Lecture8|overloadVideo|Lecture9'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper2782").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper2782').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2782') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2782').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper2782').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2782') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2782').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper2782").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper2782') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});jQuery("#LiveTabsWrapper2782").bind("tabsselect",function(event,ui) { if ($(ui.tab).hasClass('NavigateUrl')) {var url = jQuery.data(ui.tab, 'load.tabs'); if(!url) { url = ui.tab.href;} location.href = url; return false;} return true; });var LCSearchResult5100 = new mJSToolkit.Initialize('.LCSearchToolbar5100','#LCSearchResult5100','/DesktopModules/LiveContent/Handlers/Search.ashx?PortalId=16&ModuleId=5100&TabId=532','Text',10,'Please Specify a keyword','No Results','Close','Search Results',10);//]]>
+</script>
+</form>
+    
+    
+</body>
+</html><!--
+     FILE ARCHIVED ON 16:13:03 Feb 19, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:21:33 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.397
+  captures_list: 208.431
+  RedisCDXSource: 103.249
+  CDXLines.iter: 13.399 (3)
+  load_resource: 109.149
+  LoadShardBlock: 88.171 (3)
+  PetaboxLoader3.resolve: 28.386
+  exclusion.robots.policy: 0.38
+  esindex: 0.011
+  PetaboxLoader3.datanode: 129.491 (4)
+-->

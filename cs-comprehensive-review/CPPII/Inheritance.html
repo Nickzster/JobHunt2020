@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app31.us.archive.org';v.server_ms=778;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20170525080233", "www.programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+<!--**********************************************************************************-->
+<!-- DotNetNuke - http://www.dotnetnuke.com                                          -->
+<!-- Copyright (c) 2002-2013                                                          -->
+<!-- by DotNetNuke Corporation                                                        -->
+<!--**********************************************************************************-->
+<title>
+	Inheritance
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="The page handles content for inheritance and polymorphism."/><meta id="MetaKeywords" name="KEYWORDS" content="C++, Programming,DotNetNuke,DNN"/><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright 2010 By Glenn Stevenson"/><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke "/><meta id="MetaAuthor" name="AUTHOR" content="C++ Programming Level 2"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta id="GBots" name="googlebot" content="noindex"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20170525080233cs_/http://www.programming.msjc.edu/Portals/_default/default.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170525080233cs_/http://www.programming.msjc.edu/Portals/_default/Skins/Dixit/skin.css?cdv=135" type="text/css" rel="stylesheet"/><link href="/web/20170525080233cs_/http://www.programming.msjc.edu/Portals/11/portal.css?cdv=135" type="text/css" rel="stylesheet"/><script src="/web/20170525080233js_/http://www.programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=135" type="text/javascript"></script><script src="/web/20170525080233js_/http://www.programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=135" type="text/javascript"></script><meta name="Inheritance" content="class relationships"/>
+<link rel="stylesheet" href="/web/20170525080233cs_/http://www.programming.msjc.edu/cppii/prism.css" type="text/css"/>
+<script src="/web/20170525080233js_/http://www.programming.msjc.edu/cppii/prism.js" type="text/javascript"></script><meta id="Dixit_Viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170525080233cs_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20170525080233cs_/http://www.programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://www.programming.msjc.edu/cppii/6Inheritance.aspx', '20170525080233')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20170525080233/http://web.archive.org/screenshot/http://www.programming.msjc.edu/cppii/6Inheritance.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu:80/cppii/6Inheritance.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu:80/cppii/6Inheritance.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.programming.msjc.edu/cppii/6Inheritance.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20170525080233" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170424070151/http://www.programming.msjc.edu:80/cppii/6Inheritance.aspx" title="24 Apr 2017"><strong>Apr</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 08:02:33 May 25, 2017">MAY</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170725225745/http://www.programming.msjc.edu:80/cppii/6Inheritance.aspx" title="25 Jul 2017"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20170501235033/http://programming.msjc.edu:80/cppii/6Inheritance.aspx" title="23:50:33 May 01, 2017"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 08:02:33 May 25, 2017">25</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20170609042700/http://programming.msjc.edu:80/cppii/6Inheritance.aspx" title="04:27:00 Jun 09, 2017"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap">2016</td>
+		  <td class="c" id="displayYearEl" title="You are here: 08:02:33 May 25, 2017">2017</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20180610130416/http://www.programming.msjc.edu:80/cppii/6Inheritance.aspx" title="10 Jun 2018"><strong>2018</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20170525080233*/http://www.programming.msjc.edu/cppii/6Inheritance.aspx" title="See a list of every capture for this URL">39 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">06 Oct 2016 - 06 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20170525080233/http%3A//www.programming.msjc.edu/cppii/6Inheritance.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://www.programming.msjc.edu/cppii/6Inheritance.aspx","2017-05-25",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://www.programming.msjc.edu/cppii/6Inheritance.aspx", '20170525080233');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    <form method="post" action="/web/20170525080233/http://www.programming.msjc.edu/cppii/6Inheritance.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper7216_SelectedIndex" id="LiveTabsWrapper7216_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2OTM3MzkxNw9kFghmDxYCHgRUZXh0BQ88IURPQ1RZUEUgaHRtbD5kAgIPFgIfAAUNIGxhbmc9ImVuLVVTImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFOlRoZSBwYWdlIGhhbmRsZXMgY29udGVudCBmb3IgaW5oZXJpdGFuY2UgYW5kIHBvbHltb3JwaGlzbS5kAggPFgIfAgUfQysrLCBQcm9ncmFtbWluZyxEb3ROZXROdWtlLEROTmQCCQ8WAh8CBSFDb3B5cmlnaHQgMjAxMCBCeSBHbGVubiBTdGV2ZW5zb25kAgoPFgIfAgULRG90TmV0TnVrZSBkAgsPFgIfAgUXQysrIFByb2dyYW1taW5nIExldmVsIDJkAg4PFgIfAgUNSU5ERVgsIEZPTExPV2QCBg9kFgICAQ9kFgICBw9kFgJmD2QWKmYPZBYEZg8PFgIfAWhkZAICDxYCHwFoFgYCAQ8WAh8BaGQCAw8WAh8BaGQCBw8WAh8BaGQCAQ9kFgRmDw8WDB4IQ3NzQ2xhc3MFCUxvZ2luTGluax8ABQVMb2dpbh4HVG9vbFRpcAUFTG9naW4eC05hdmlnYXRlVXJsBVdodHRwOi8vd3d3LnByb2dyYW1taW5nLm1zamMuZWR1L2NwcGlpL2xvZ2luLmFzcHg/UmV0dXJuVXJsPSUyZmNwcGlpJTJmNkluaGVyaXRhbmNlLmFzcHgeBF8hU0ICAh8BaBYCHgdvbmNsaWNrBZkBcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly93d3cucHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcGlpLzZJbmhlcml0YW5jZS5hc3B4JnBvcFVwPXRydWUnLC8qc2hvd1JldHVybiovdHJ1ZSwzMDAsNjUwLHRydWUsJycpZAICD2QWAgIBDw8WCh8DBQlMb2dpbkxpbmsfAAUFTG9naW4fBAUFTG9naW4fBQVXaHR0cDovL3d3dy5wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0lMmZjcHBpaSUyZjZJbmhlcml0YW5jZS5hc3B4HwYCAhYCHwcFmQFyZXR1cm4gZG5uTW9kYWwuc2hvdygnaHR0cDovL3d3dy5wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHBpaS9sb2dpbi5hc3B4P1JldHVyblVybD0vY3BwaWkvNkluaGVyaXRhbmNlLmFzcHgmcG9wVXA9dHJ1ZScsLypzaG93UmV0dXJuKi90cnVlLDMwMCw2NTAsdHJ1ZSwnJylkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDDxYCHgVjbGFzcwUMRE5ORW1wdHlQYW5lZAIED2QWAmYPDxYEHwQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAyHwUFL2h0dHA6Ly93d3cucHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwaWkvSG9tZS5hc3B4ZGQCBg8WAh8IBQxETk5FbXB0eVBhbmVkAgcPFgIfCAUMRE5ORW1wdHlQYW5lZAIIDxYCHwgFDEROTkVtcHR5UGFuZWQCCQ8WAh8IBQxETk5FbXB0eVBhbmVkAgoPFgIfCAUMRE5ORW1wdHlQYW5lZAILD2QWAgIBDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZVRhYnMgRG5uTW9kdWxlLTcyMTYWAgIBD2QWBAIBD2QWAgICDxYCHwFoZAIDD2QWAgICDw9kFgIfCAUdRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlVGFic0MWAgIBD2QWAgIBDxYCHhFEaXNhYmxlZFRhYnNBcnJheWQWCGYPZBYCZg9kFgZmD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzEzNRYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIxNxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAICD2QWAmYPFgIfCAUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtNzIxOBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTEMWAgIBD2QWAgICDxYCHwFoZAIBD2QWAmYPZBYMZg9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcyMTkWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAQ9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZVRvb2x0aXAgRG5uTW9kdWxlLTcyMjAWAgIBD2QWAmYPZBYCAgEPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVUb29sdGlwQ2QCAg9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTcyMjEWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAw9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcyMjIWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCBA9kFgJmDxYCHwgFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTcyMjMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBQ9kFgJmDxYCHwgFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTcyMjQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8IBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDFgICAQ9kFgICAg8WAh8BaGQCAg9kFgJmD2QWBmYPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MjI1FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgEPZBYCZg8WAh8IBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS03MjI2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8IBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS03MjI3FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfCAUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQxYCAgEPZBYCAgIPFgIfAWhkAgMPZBYCZg9kFgJmD2QWAmYPFgIfCAUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtNzIyOBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwgFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIMDxYCHwgFDEROTkVtcHR5UGFuZWQCDQ8WAh8IBQxETk5FbXB0eVBhbmVkAg4PFgIfCAUMRE5ORW1wdHlQYW5lZAIPDxYCHwgFDEROTkVtcHR5UGFuZWQCEA8WAh8IBQxETk5FbXB0eVBhbmVkAhEPFgIfCAUMRE5ORW1wdHlQYW5lZAISDxYCHwgFDEROTkVtcHR5UGFuZWQCEw8WAh8IBQxETk5FbXB0eVBhbmVkAhQPFgIfCAUMRE5ORW1wdHlQYW5lZAIYDxYCHwgFDEROTkVtcHR5UGFuZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFFmRubiRjdHI3MjE2JFZpZXckY3RsMDBd4gBuetnMPolIynjZpPahr+1FSA=="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            
+<script src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=utZ5s_lQpMhuAeL8A4nIHCxQE3Iu0JUYN2HDGjj5yF8nv_EYQ1KSny75p-1C0DWOWWSW0JLE34FKHNT3wE907kHKxWx0v6I3nGFz0Ye5g-Q5T8mS8S2NcObY7u6swN1nsD0HuLyTTKr2xnjmQKpETG9BYmxyVfPjJCXxsQ2&amp;t=635306798880000000" type="text/javascript"></script><script type="text/javascript" src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.i="/j/h/f/g/";0.3.k=\'o...\';0.3.p=\'5 4 n 4 l\';0.3.m=\'7 4 9 d\';0.3.e=\'c\';0.3.a=\'b\';0.3.8=\'q\';0.3.C=\'D\';0.3.E=\'B %1 H %2\';0.3.F=\'5 4 G A, t 6 u 4 r. s v y z w 6 x.\';',44,44,'hs|||lang|to|Click|and|Expand|moveText|actual|nextText|Next|Prev|size|previousText|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|loadingText|front|fullExpandTitle|bring|Loading|focusTitle|Move|move|Use|click|drag|arrow|next|previous|keys|for|image|Element|closeText|Close|number|restoreTitle|close|Of'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('o X=y x();2 C(r){g{H.I(r).D()}s(e){}}2 E(d){o m={};F d&&m.G.J(d)==\'[A z]\'}6.f.4(2(0){B.V(0.1.8,0.1.5,0.1.7)});6.f.4(2(0){3(0.1.l==\'9\'){c.j(0.1.k,0.1.5,0.1.8,0.1.7,\'W\',0.a.q)}b{c.T(0.1.5,0.1.8,0.1.7)}});6.U.4(2(0){3(0.1.l==\'9\'){c.j(0.1.k,0.1.5,0.1.8,0.1.7,\'Z\',0.a.q)}});6.f.4(2(0){3(0.1.Y==\'9\'){g{3(i(h)!=\'n\'){h.t(0.1.v,0.1.w,0.1.p)}b 3(i(u)!=\'n\'){u.4([\'t\',0.1.v,0.1.w,0.1.p])}b 3(S){M(\'N K: L Q R O P\')}}s(e){}}});',62,62,'sender|custom|function|if|push|ModuleId|hs|ElementId|PortalId|TRUE||else|LiveContentClient|functionToCheck||onAfterExpandCollection|try|pageTracker|typeof|StateChange|TabId|ViewState|getType|undefined|var|GTrackLabel|id|elementid|catch|_trackEvent|_gaq|GTrackCategory|GTrackAction|Array|new|Function|object|LiveContentComment|LCSlideShowCallBack|onclick|isFunction|return|toString|document|getElementById|call|Content|Google|alert|Live|not|found|Analytics|Code|false|IncrementView|onAfterCloseCollection|BindCommentButton|ON|LiveContentCallTags|GAnalytics|OFF'.split('|'),0,{}))
+ //]]> 
+ </script> 
+<script type="text/javascript" src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=Dgsgx5cGBzPkD4nrXn0Y6B0A_I7CZH7LXh7Mg7UouLgc4JD2DRmH6w_irlXhae7_oT0qNyjfrgKXQh1y6_0zP-XCtPxWdPmLb_Nmlm_qdac_ecxGZSOmNRdxlMrVCa1VjW2w-FTq22geDdnZCtKitRevwcPSP1RBt8pc_JHV_3QT2Gtu0&amp;t=634472553443280714"></script> <script type="text/javascript"> var LiveTooltipClientScripts = new Array(); </script><link type="text/css" rel="stylesheet" href="/web/20170525080233cs_/http://www.programming.msjc.edu/DesktopModules/LiveTooltip/Styles/LiveTooltip.css"/><link type="text/css" rel="stylesheet" href="/web/20170525080233cs_/http://www.programming.msjc.edu/DesktopModules/LiveTooltip/Styles/Custom.css"/>
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('9[\'8\']={7:{f:1(){g 0(\'#c\').e()}},d:{h:\'b 2\',a:\'2 i\'},r:{4:1(5){0(3).q(6)}},p:{4:1(5){0(3).u(6)}},t:{s:\'l-k-j\',o:{n:m}}};',31,31,'jQuery|function|left|this|effect|offset|500|content|Overload|LiveTooltipClientScripts|at|bottom|LiveTooltip722076|position|html|text|return|my|center|wide|tooltip|ui|true|corner|tip|hide|fadeIn|show|classes|style|fadeOut'.split('|'),0,{}))
+//]]>
+</script>
+<script type="text/javascript" src="/web/20170525080233js_/http://www.programming.msjc.edu/Portals/_default/Skins/Dixit/Resources/Menu/menu.min.js"></script>
+<script src="/web/20170525080233js_/http://www.programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a4bd8faf8-554d-46be-b2ff-c9d57adb612c%3aea597d4b%3ab25378d2" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script><script src="/web/20170525080233js_/http://www.programming.msjc.edu/WebResource.axd?d=pLEtCHd74pDoQjTQzNKAyLIhCrbOEY3dBllxyab44UpzsAUMm1hE1u9hNGRtyeSsG_iKsKNs9cURUULaFvgn3P4gYbROlJGchFKS-F7bSLOBuE6K7VxI6lzVhCX-LBlNEA9lEviUM8oCPMX0pUjv55QKQlUp55d99WCDq_CjYTUdgkEM-MjnZl2soK81&amp;t=635024910000000000" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {LiveContentComment.Initialize(11, 7217, "1", "None","False", "/DesktopModules/LiveContent/Handlers/Ajax.ashx", "Please specify name.", "Please specify valid email.", "Please specify comments.", "Please specify valid captcha code.", "Thank you for the feedback. The comment is now awaiting moderation" );});//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAANxfdljgmYe/HMEWxKK2sw+V8nzZwti40eBrdWaPdC9rCCVhOCbIPrX4LkK0Gy5W0BQzs3PxzPJJ1I2WimvorFM78VQFA=="/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20170525080233js_/http://www.programming.msjc.edu/js/dnn.modalpopup.js?cdv=135" type="text/javascript"></script><script src="/web/20170525080233js_/http://www.programming.msjc.edu/js/dnncore.js?cdv=135" type="text/javascript"></script>
+        
+        
+<link href="https://web.archive.org/web/20170525080233cs_/http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+<!--[if IE 7 ]><script type="text/javascript">jQuery("html").addClass("ie ie7");</script><![endif]-->
+<!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script type="text/javascript">    jQuery("html").addClass("ie ie9");</script>
+<!--<![endif]-->
+<!--[if (lte IE 8) ]><script type="text/javascript">
+    var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
+    for (var i = 0; i < e.length; i++) {
+        document.createElement(e[i]);
+    }  
+</script><![endif]-->
+<header>
+    	<div class="top_line">
+        	<div class="container">
+            <div id="login">
+               
+<!--close registerGroup-->
+
+<div id="dnn_dnnLogin_loginGroup" class="loginGroup">
+    <a id="dnn_dnnLogin_enhancedLoginLink" title="Login" class="LoginLink" onclick="return dnnModal.show('https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/login.aspx?ReturnUrl=/cppii/6Inheritance.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/login.aspx?ReturnUrl=%2fcppii%2f6Inheritance.aspx">Login</a>
+</div><!--close loginGroup-->
+</div>
+<div class="language">
+					<div class="language-object">
+
+
+</div>
+				</div>
+                <div class="socials"> 
+                    <div id="dnn_TopSocialPane" class="DNNEmptyPane">             
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header_wrapper container">
+        
+        <div class="logo">
+            <a id="dnn_LOGO1_hypLogo" title="C++ Programming Level 2" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/Home.aspx"><img id="dnn_LOGO1_imgLogo" src="/web/20170525080233im_/http://www.programming.msjc.edu/Portals/11/cpp2logo.fw.png" alt="C++ Programming Level 2" style="border-width:0px;"/></a>
+            </div>
+            <!-- DDRmenu v02.00.01 - Resources/Menu template --><nav class="mega-menu"><ul class="menu" id="dnn_pnav">
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/Home.aspx">Home</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/1Classes.aspx">1. Classes</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/2OperatorOverloading.aspx">2. Operator Overloading</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/3DynamicMemory.aspx">3. Dynamic Memory</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/4Streams.aspx">4. Streams</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/5Recursion.aspx">5. Recursion</a><div class="rgt-cont" style="display:none;">This page has content for recursion and exception handling</div>
+    </li>
+    <li class="current-menu-item"><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/6Inheritance.aspx">6. Inheritance</a><div class="rgt-cont" style="display:none;">The page handles content for inheritance and polymorphism.</div>
+    </li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/7Exceptions.aspx">7. Exceptions</a></li>
+    <li><a href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/8Templates.aspx">8. Templates</a><div class="rgt-cont" style="display:none;">This page has content for Templates and the STL</div>
+    </li>
+  </ul></nav>
+</div>            
+</header>
+<div class="main_wrapper">
+    <div class="content_wrapper">
+        <div class="container">
+            <div class="content_block no-sidebar row">
+                <div class="fl-container span12">
+                    <div class="row">
+                        <div class="posts-block span12">
+                            <div class="contentarea">
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_TopPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopLeftInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightInner" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div id="dnn_TopRightOuter" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_medium" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_contentPane">
+                                            <div class="DnnModule DnnModule-LiveTabs DnnModule-7216"><a name="7216"></a>
+<div class="module_cont">
+    <div class="bg_title">
+        <h2>
+            <span id="dnn_ctr7216_dnnTITLE_titleLabel" class="title_h2">Live Tabs</span>
+
+
+</h2>
+    </div>
+    <div id="dnn_ctr7216_ContentPane">
+    <!-- Start_Module_7216 --><div id="dnn_ctr7216_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper7216" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper7216" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs7216698" class="mtop"><a name="LiveTabsContent7216698" href="#LiveTabsContent7216698">a. Inheritance</a></li><li id="LiveTabs7216699" class="mtop"><a name="LiveTabsContent7216699" href="#LiveTabsContent7216699">b. Polymorphism</a></li><li id="LiveTabs7216700" class="mtop"><a name="LiveTabsContent7216700" href="#LiveTabsContent7216700">c. Copy Constructor</a></li><li id="LiveTabs7216701" class="mtop"><a name="LiveTabsContent7216701" href="#LiveTabsContent7216701">d. Video Lecture</a></li>
+			</ul><div id="LiveTabsContent7216698" class="mtop">
+				<div id="dnn_ctr7216_View_ctl00_ctl00_LiveTabsiMod7135"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7135"><a name="7135"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl00_ctr7135_ContentPane">
+		
+    <!-- Start_Module_7135 --><div id="dnn_ctr7216_View_ctl00_ctl00_ctr7135_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl00_ctr7135_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>The development of Object Oriented programming has greatly improved software development. In the early days of software there really weren't any formal techniques used for solving software solutions. At one time in the history of Computer Science the development of hardware far outpaced that of software development practices. The result of this was that there was a bunch of poorly engineered software. So much in fact that this time in history of software development has been termed the software crisis.</p>
+<p>Up  to this point we have been talking about how we can bundle data along with functions that operate on that data to create an efficient object. What we haven't discussed to this point is program organization through different object relationships.</p>
+<p>We need to have a system of organization in software development because we humans are complexity challenged. Many people may not realize it but software solutions tend to hang around for many years. One of the reasons for this is the high cost of development. Once a program is up and running it is much cheaper to maintain it than develop a new system. Highly organized code is much easier to modify and maintain than code that is thrown together is a sloppy fashion. </p>
+<p>The first breakthrough in software organization was through functional decomposition also know as step wise refinement. With this methodology problems were broken down into functions. Each function then solved a problem. If the function had a sub problem another function would be created and called. This type of programming is still used in many places today. In fact this is primarily what was done in the level one class.  Of course as we have seen the problem with this type of organization is that it does not allow a means to bundle data and operations. It also is not extremely efficient in terms of code reuse.</p>
+<p>The following depicts functional decomposition. The program would consist of five functions.  printPaychecks calls getEmployeeInfo, calcPay, and printPaychecks. The calcPay function calls computeDeductions:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170525080233im_/http://www.programming.msjc.edu/portals/11/cpp2/Inheritance/stepWiseRefine.fw.png" style="width: 450px; height: 281px; border: 2px solid #4f81bd;"/></p>
+<p class="Head">OOP Types Of Organization</p>
+<hr/>
+<p>There are really three main types of organization found in Object Oriented programming</p>
+<p>
+</p>
+<ol>
+    <li>Communities - Also called a "uses" relationship</li>
+    <li>Composition - Also called a "hasa" relationship</li>
+    <li>Inheritance - Also known as an "isa" relatioship</li>
+</ol>
+<p class="SubHead">Communities</p>
+<p>In community based programming objects offer their services and request the services of other objects. You can think of this as a client / server type relationship where one object acts as the director and sends and receives requests from other objects.  In other words an object "uses" the services of another object.</p>
+<p>Very large programs have been built using this type of organization. The C# and Visual Basic languages employ this type of model. A form gets created and filled with components such as buttons and text boxes. Each of these components communicates with other by requesting that an action be performed to change one of their attributes </p>
+<p class="SubHead">Composition</p>
+<p>You have been using composition for sometime now. This is nothing more than one object being composed from at least one other. In other words an instance of another object is declared inside the data section of another class. Here is a simple example:</p>
+<p>
+</p>
+<pre><code class="language-cpp line-numbers">struct Person
+{
+string first;
+string last;
+string address;
+};
+class People
+{
+private:
+   vector&lt;Person&gt; people;
+public:
+    void addPerson(string first, string last, string address);
+    string getFirst();
+    string getLast();
+    string getAddress();
+}; </code></pre>
+<p>In this example the People class is composed of a vector. In other words you can say that the People class "hasa" vector within in. </p>
+<p class="SubHead">Inheritance</p>
+<p>Inheritance allows you to create a specialized version of an object. A crazy example of this might be that of a flying car. If you were to tackle such a project you probably wouldn't first go out and try to build a car. Instead you would probably start with a car the has already been manufacture and then attempt to figure out how to make it fly. As you can see the general case is a simple car. The specialized case is making it fly.</p>
+<p>This kind of relationship really promotes the idea of code reuse. Before OOP you would simply have to build the car first or borrow parts from an existing car to build your own. The idea here is that by simply using inheritance you get all of the functionality of one object into another. </p>
+<p>The class that is the general case is typically called the base class. The specialized class is typically called the derived class. You can think of this in many different ways like parent / child of super / sub class. Using inheritance then allows your class to become a specialized version of another class. We can say then that a flying car "isa" car. </p>
+<p class="Head">Inheritance In C++</p>
+<hr/>
+Inheritance allows you to create classes which are derived from other classes. This means that they automatically include some of their parent's members along with their own. One of the classic examples of inheritance is that of shapes. Most shapes as we will see have common features. These common features would be extracted and put in the parent class. The idea of extracting the common features is called generalization because you are defining the attributes that will be the general case for all derived classes.  In the case of shapes the general class is going to be called Polygon because a rectangle "isa" Polygon and a Triangle "isa" polygon also. The common traits are that shapes can be described in terms of two sides,  the height and base.  Through generalization then we see that the common properties should be grouped and put into a class of their own.
+<p style="text-align: center;"><img alt="" src="/web/20170525080233im_/http://www.programming.msjc.edu/portals/11/cpp2/Inheritance/Inheritance1.fw.png" style="border: 2px solid #1f497d;"/></p>
+<p class="SubHead">Subclasses</p>
+<p>From polygon, Rectangle and Triangle are derived. Rectangle and Triangle then are both children of Polygon. This parent / child relationship is also called super class and subclass.  That is, Rectangle and Triangle are subclasses of polygon. </p>
+<p>You should note that anything the parent can do the child can do also. This is accomplished through the <a href="https://web.archive.org/web/20170525080233/https://en.wikipedia.org/wiki/Liskov_substitution_principle" target="_blank">principle of substitutability</a> . That is to say that a Rectangle or a Triangle is also a Polygon but not the other way around. A polygon is not necessarily a Triangle or a Rectangle. </p>
+<p>Creating a derived class in C++ is quite easy. You simply use a colon to designate the parent class:</p>
+<p style="text-align: center;"><img alt="" src="/web/20170525080233im_/http://www.programming.msjc.edu/portals/11/cpp2/Inheritance/inheritance2.fw.png" style="font-size: 0.8em; line-height: 21.76px; border: 2px solid #1f497d;"/></p>
+<p>In this example derived_class_name is publicly derived from base_class_name. Or to put it another way, base_class_name is the parent of derived_class_name.</p>
+<p>Classes that are derived from other classes inherit all of the accessible member functions and variables of the base class. That means if we have a base class which includes a member A and we derive another class from A with a member called B , the derived class will contain both members A and B . </p>
+<p>This might be explained easier with an example</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">
+ #include &lt;iostream&gt;<iostream>
+
+using namespace std; 
+
+class Polygon 
+{
+protected: 
+    int width; 
+    int height; 
+
+public: 
+    void setValues(int height, int width);  
+};
+
+class Rectangle : public Polygon 
+{
+public: 
+    int area();  
+};
+void Polygon::setValues(int height, int width) 
+{
+    this-&gt;height = height; 
+    this-&gt;width = width; 
+}
+int Rectangle::area() 
+{
+    return this-&gt;height * this-&gt;width; 
+}
+int main() 
+{
+int length, width; 
+
+    cout &lt;&lt; "Enter the length and width" &lt;&lt; endl; 
+    cin &gt;&gt; length &gt;&gt; width;
+ 
+   Rectangle r;
+   r.setValues(length, width);
+
+   cout &lt;&lt; "The area is " &lt;&lt; r.area() &lt;&lt; endl; 
+   return 0;
+}            </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Enter the length and width<br/>
+            5 6<br/>
+            The area is 30<br/>
+            Press any key to continue . . .
+            </dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Notice that in main an instance of Rectangle has been created and the setValues function was called. This function is not in the Rectangle class. It is actually defined in the parent class Polygon. Because Rectangle is derived from Polygon it can access it's members directly. </p>
+<p class="Head">Protected</p>
+<hr/>
+<p>As was discussed earlier any data that is placed in the private section of a class can only be accessed by members of that class. This is still true in the case of inheritance. Class Rectangle cannot access the private members width and height of the Polygon class. This is where the <strong>protected</strong>&nbsp;section comes in to play. <strong>Protected </strong>is very similar to private in that it restricts access to anything outside of the class. Derived classes though are allowed access to the members of this section. &nbsp;The classes Rectangle and Triangle each contain members inherited from Polygon (width, height and set_values()). &nbsp;Since we want width and height to be accessible from members of the derived classes Rectangle and Triangle we have use protected access instead of private. </p>
+<p>The different access types can be summarized in the following way</p>
+<table class="telerik-reTable-1" align="center" border="1" bordercolor="#000000" style="width: 50%; margin-bottom: 10px;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1" bgcolor="#66ccff">
+            <td class="telerik-reTableHeaderFirstCol-1">Access</td>
+            <td class="telerik-reTableHeaderOddCol-1" style="text-align: left;">public</td>
+            <td class="telerik-reTableHeaderEvenCol-1" style="text-align: left;">protected</td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;">private</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-1">Members of the same class</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">yes</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" bgcolor="#66ffff">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Members of derived classes</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">no</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Non members</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">no</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">no</td>
+        </tr>
+    </tbody>
+</table>
+<style type="text/css" id="telerik-reTable-1">
+    .telerik-reTable-1
+    {
+    border-width: 0px;
+    border-style: none;
+    border-collapse: collapse;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-1 tr.telerik-reTableHeaderRow-1
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3F4D6B;
+    background: #D6E8FF;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Tahoma;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-spacing: 10px;
+    line-height: 14pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableOddRow-1
+    {
+    color: #666666;
+    background-color: #F2F3F4;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 tr.telerik-reTableEvenRow-1
+    {
+    color: #666666;
+    background-color: #E7EBF7;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableFooterRow-1
+    {
+    background-color: #D6E8FF;
+    color: #4A5A80;
+    font-weight: 500;
+    font-size: 10pt;
+    font-family: Tahoma;
+    line-height: 11pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+</style>
+<p>Where "non members" represent any access from outside the class, such as from main() , another class or from a function. </p>
+<p>In the example, the members inherited by Rectangle and Triangle have the same access permissions as they had in their base class Polygon :  </p>
+<table class="telerik-reTable-1" align="center" border="1" bordercolor="#000000" style="width: 50%;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1" style="text-align: left;">Member&nbsp;</td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;">Access&nbsp;</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">&nbsp;Polygon::width</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">protected</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">&nbsp;Rectangle::width</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">protected</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Polygon::set_values()</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">public</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">&nbsp;Rectangle::set_values()</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">public</td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head">Inheritance Relationships</p>
+<hr/>
+<p>We have seen that each class can have sections with different access specifiers. The inheritance relationship can specify access also:</p>
+<pre><code class="language-cpp line-numbers">class Rectangle::public Polygon
+{
+}; </code></pre>
+<p>The above specifies that the Rectangle class is publicly derived from the Polygon class. As with the class access specifiers the inheritance can also be public, private or protected. The following table explains the effect each access specifier has on the inheritance relationship: </p>
+<table class="telerik-reTable-1" align="center" border="1" bordercolor="#000000" style="width: 50%; margin-bottom: 10px;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1" bgcolor="#66ccff">
+            <td class="telerik-reTableHeaderFirstCol-1">Access</td>
+            <td class="telerik-reTableHeaderOddCol-1" style="text-align: left;">public</td>
+            <td class="telerik-reTableHeaderEvenCol-1" style="text-align: left;">protected</td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;">private</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-1">Members of the same class</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">yes</td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1" bgcolor="#66ffff">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Members of derived classes</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">no</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1" bgcolor="#ccffff">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">Non members</td>
+            <td class="telerik-reTableOddCol-1" style="text-align: left;">yes</td>
+            <td class="telerik-reTableEvenCol-1" style="text-align: left;">no</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;">no</td>
+        </tr>
+    </tbody>
+</table>
+<style type="text/css" id="telerik-reTable-1">
+    .telerik-reTable-1
+    {
+    border-width: 0px;
+    border-style: none;
+    border-collapse: collapse;
+    font-family: Tahoma;
+    }
+    .telerik-reTable-1 tr.telerik-reTableHeaderRow-1
+    {
+    margin: 10px;
+    padding: 10px;
+    color: #3F4D6B;
+    background: #D6E8FF;
+    text-align: left;
+    font-size: 10pt;
+    font-style: normal;
+    font-family: Tahoma;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-spacing: 10px;
+    line-height: 14pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableHeaderEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    color: #3a4663;
+    line-height: 14pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableOddRow-1
+    {
+    color: #666666;
+    background-color: #F2F3F4;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 tr.telerik-reTableEvenRow-1
+    {
+    color: #666666;
+    background-color: #E7EBF7;
+    font-size: 10pt;
+    vertical-align: top;
+    }
+    .telerik-reTable-1 td.telerik-reTableFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    }
+    .telerik-reTable-1 tr.telerik-reTableFooterRow-1
+    {
+    background-color: #D6E8FF;
+    color: #4A5A80;
+    font-weight: 500;
+    font-size: 10pt;
+    font-family: Tahoma;
+    line-height: 11pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterFirstCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterLastCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    border-top: solid gray 1.0pt;
+    text-align: left;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterOddCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+    .telerik-reTable-1 td.telerik-reTableFooterEvenCol-1
+    {
+    padding: 0in 5.4pt 0in 5.4pt;
+    text-align: left;
+    border-top: solid gray 1.0pt;
+    }
+</style>
+<p>Where "non members" represent any access from outside the class, such as from main() , another class or from a function. </p>
+<p>In the example, the members inherited by Rectangle and Triangle have the same access permissions as they had in their base class Polygon :  </p>
+<table class="telerik-reTable-1" align="center" border="1" bordercolor="#000000" style="width: 50%; margin-bottom: 10px;">
+    <tbody>
+        <tr class="telerik-reTableHeaderRow-1">
+            <td class="telerik-reTableHeaderFirstCol-1" style="text-align: left;">Access&nbsp;</td>
+            <td class="telerik-reTableHeaderLastCol-1" style="text-align: left;">Description</td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">public</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;"> The derived class will inherit all the members from the base&nbsp; class maintaining their access levels </td>
+        </tr>
+        <tr class="telerik-reTableEvenRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">protected</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;"> All public members in base are inherited as protected in derived class. <br/>
+            </td>
+        </tr>
+        <tr class="telerik-reTableOddRow-1">
+            <td class="telerik-reTableFirstCol-1" style="text-align: left;">private</td>
+            <td class="telerik-reTableLastCol-1" style="text-align: left;"> All public members in base are inherited as private in derived class. </td>
+        </tr>
+    </tbody>
+</table>
+<p>The public keyword after the colon ( : ) denotes the minimum access level for all the members inherited from the class that follows it (in this case Polygon ). Since public is the most accessible level, by specifying this keyword the derived class will inherit all the members with the same levels they had in the base class. </p>
+<p>If we specify a more restrictive access level like protected , all public members of the base class are inherited as protected in the derived class. Whereas if we specify the most restricting of all access levels: private , all the base class members are inherited as private. </p>
+<p>For example, if daughter was a class derived from mother that we defined as: </p>
+<pre><code class="language-cpp line-numbers">class Rectangle : protected Polygon{...} </code></pre>
+<p>This would set protected as the maximum access level for the members of Rectangle that it inherited from Polygon . That is, all members that were public in Polygon would become protected in Rectangle. Of course, this would not restrict Rectangle to declare its own public members. The maximum access level is only set for the members inherited from Polygon.</p>
+<a href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/115-inheritance-and-access-specifiers/" target="_blank" class="learn-more">See what LearnCpp has to say about Inheritance access specifiers.</a>
+<p class="Head">What is Inherited?</p>
+<hr/>
+<p>In principle, a derived class inherits every member of a base class except: </p>
+<p>
+</p>
+<ul>
+    <li>constructor and destructor</li>
+    <li>operator=() members</li>
+    <li>friends</li>
+</ul>
+<p>&nbsp;</p>
+<p>Although the constructors and destructors of the base class are not inherited themselves, its default constructor (i.e., its constructor with no parameters) and its destructor are always called when a new object of a derived class is created or destroyed. </p>
+<p>If the base class has no default constructor or if an overloaded constructor is called when a new derived object is created, you can specify it in each constructor definition of the derived class: </p>
+<pre><code class="language-cpp line-numbers">derivedContructor(parameters) :    baseConstructor(parameters){...} 
+</code></pre>
+<p>To gain a better understanding it might be best to see an example:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include &lt;iostream&gt;<iostream>
+using namespace std; 
+
+class mother 
+{
+public : 
+    mother () { cout &lt;&lt; "mother: no parameters\n"; }
+    mother(int a) { cout &lt;&lt; "mother: int parameter\n"; } 
+}; 
+class daughter : public mother 
+{
+public: 
+     daughter (int a) { cout &lt;&lt; "daughter: int parameter\n\n"; } 
+};
+class son : public mother 
+{
+public: 
+    son (int a) : mother (a) { cout &lt;&lt; "son: int parameter\n\n"; } 
+};
+int main () 
+{
+ daughter cynthia (0);
+ son daniel(0);
+ return 0; 
+} 
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">mother: no parameters<br/>
+            daughter: int parameter<br/>
+            <br/>
+            mother: int parameter<br/>
+            son: int parameter<br/>
+            <br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p> Notice the difference between which mother 's constructor is called when a new daughter object is created and which when it is a son object. The difference is in the constructor declaration of daughter and son :   </p>
+<pre><code class="language-cpp line-numbers">daughter(int a) // call mother default constructor
+son(int a) : mother(a) // call mother overloaded  constructor passing a
+ </code></pre>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://xoax.net/cpp/crs/console/lessons/Lesson38/" target="_blank">See what XoaX.net says about simple inheritance</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/112-basic-inheritance-in-c/" target="_blank">Also check out what LearnCPP has to say about simple inheritance</a></p>
+<p>&nbsp;</p>
+<p class="Head">Multiple Inheritance</p>
+<hr/>
+<p>Up front I am going to tell you that I am not a big proponent of multiple inheritance. It kind of violates most of the principles of object oriented programming. The C++ language came along before any real OOP principles were agreed upon.  if you look at any OOP language that has come along since C++ (Java, C#) you will notice that multiple inheritance is not part of the language.  From my point of view, it also can lead to a bit of confusion and cluttered code.  I am not one who would tell you to never use it. If you find yourself in a situation where using it leads to an elegant solution then you should by all means use it. </p>
+<p>Multiple inheritance in C++ is done by simply separating the different base classes with commas in the derived class declaration. For example, if we had a specific class to print on screen ( Output ) and we wanted our classes Rectangle and Triangle to also inherit its members in addition to those of Polygon we could write: </p>
+<pre><code class="language-cpp line-numbers">class Rectangle : public Polygon, public Output;
+ class Triangle : public Polygon, public Output; </code></pre>
+<p>The following is an example of multiple inheritance. Fours classes are created, Output, Polygon, Rectangle, and Triangle. Rectangle and Triangle have two bases classes Polygon and Output.</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+
+using namespace std;
+
+class Polygon
+{
+protected:
+    int width, height; 
+
+public:
+    void set_values (int a, int b) { width=a; height=b;}
+
+};
+
+class Output
+{
+public:
+    void output (int i);
+};
+
+void Output::output (int i)
+{
+   cout &lt;&lt; i &lt;&lt; endl;
+}
+
+class Rectangle: public Polygon, public Output 
+{
+public:
+   int area () { return (width * height); }
+};
+
+class Triangle: public Polygon, public Output
+{
+public:
+   int area () { return (width * height / 2); }
+
+}; 
+
+int main ()
+{
+Rectangle rect;
+Triangle trgl;  
+
+   rect.set_values (4,5);
+   trgl.set_values (4,5);
+   rect.output (rect.area());
+   trgl.output (trgl.area());
+
+   return 0; 
+
+}  
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">20<br/>
+            10<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Is there anything gained by having a derived class from two base classes instead of having a linear line of inheritance? For instance having Polygon derived from Output and Rectangle then derived from Polygon. It does make for a nice philosophical debate.</p>
+<p class="Head">Need More</p>
+<hr/>
+<p> <a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/117-multiple-inheritance/">See what LearnCPP has to say about Multiple inheritance</a> </p>
+<p class="Head">Video - Inheritance</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7135 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl00_LiveTabsiMod7217"><div class="DnnModule DnnModule-LiveContent DnnModule-7217"><a name="7217"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl00_ctr7217_ContentPane">
+		
+    <!-- Start_Module_7217 --><div id="dnn_ctr7216_View_ctl00_ctl00_ctr7217_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7217"></a> <div id="dnn_ctr7216_View_ctl00_ctl00_ctr7217_View_LC7217"><table id="dnn_ctr7216_View_ctl00_ctl00_ctr7217_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72171Heading">Inheritance</div><a id="LC72171" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7217/Videos/simpleInheritance.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72171eVideo',allowHeightReduction: false,headingId: 'LC72171Heading',headingOverlay: {fade: 1},captionId: 'LC72171Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7217',width: 800,height: 640}, {TabId: '1927',ModuleId: '7217',PortalId: '11',ElementId: '1'}); "> <img title="Inheritance" alt="Inheritance" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7217&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72171eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72171Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="comment-overlay" id="LC72171CommentOverlay"><div class="CommentData72171 CommentData"><div class="heading">Showing <span class="count">0</span> Comment</div></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7217 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl00_LiveTabsiMod7218"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7218"><a name="7218"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl00_ctr7218_ContentPane">
+		
+    <!-- Start_Module_7218 --><div id="dnn_ctr7216_View_ctl00_ctl00_ctr7218_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl00_ctr7218_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/113-order-of-construction-of-derived-classes/" target="_blank">See what LearnCpp has to say about order of construction</a>  </p>
+<p> <a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/114-constructors-and-initialization-of-derived-classes/" target="_blank">And constructors and initialization of derived classes.&nbsp;</a> </p>
+</div>
+
+				</div><!-- End_Module_7218 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7216699" class="mtop">
+				<div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7219"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7219"><a name="7219"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl01_ctr7219_ContentPane">
+		
+    <!-- Start_Module_7219 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7219_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl01_ctr7219_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>The word Polymorphism means that one object can have many different meanings. To understand what this means to us in programming let's consider shapes again. The examples seen so far have a base class called Polygon and two classes Rectangle and Triangle derived from Polygon. When we create classes we want to generalize things. This means that we want to remove the redundant (common) code and place it in the base class. This keeps us from having a bunch of duplicate code.</p>
+<p>In Polygon we want to place a function called center which will draw the object in the center of the screen. The problem here is that each shape needs to be drawn differently. This means that each shape must have it's own draw function. This can be depicted as follows</p>
+<pre><code class="language-cpp line-numbers">class Polygon
+{
+protected:
+	int width, height;
+public:
+	
+	void center();
+};
+void Polygon::center()
+{
+	...
+		draw();
+	...
+}
+class Rectangle : public Polygon
+{
+public:
+	void draw();
+};
+class Triangle : public Polygon
+{
+public:
+	void draw();
+}; 
+</code></pre>
+<p>When you create an instance of Rectangle or Triangle and want to center the object on the screen you would call the center function that is defined in Polygon. The center function in turns calls the draw function. The question is how does it know which draw function to call? Does it call the draw function in Rectangle or the draw function in Triangle? Also, what happens if later on a new shape is created say Circle? The center function was created long before the Circle class was thought of. This is where polymorphism comes in to play</p>
+<p>Polymorphism is achieved through the use of virtual and pure virtual functions. Before getting into that we need to look a few other concepts first.</p>
+<p class="Head">Overloading Revisited</p>
+<hr/>
+<p>To review, an overloaded function is multiple functions that have same name but differ by their argument list in some way. It could be the number of parameters, the data types of the parameters or both. One thing to remember is that an overloaded function cannot simply have a different return type. It must differ by the parameter list.</p>
+<p>The following example shows two functions called addem. One takes two int parameters and the other takes three int parameters</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+
+using namespace std; 
+
+int main()
+{
+int x,y,z; 
+
+   cout &lt;&lt; "Enter 3 integers " &lt;&lt; endl;
+   cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;
+
+   cout &lt;&lt; "The sum of the first two is " &lt;&lt; addEm(x, y) &lt;&lt; endl;
+   cout &lt;&lt; "The sum of all Three is " &lt;&lt; addEm(x, y, z) &lt;&lt; endl;  
+
+}
+
+int addEm(int a, int b)
+{
+    return a + b;
+}
+int addEm(int a, int b, int c)
+{
+   return addEm(addEm(a,b), c);
+}           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Enter 3 integers<br/>
+            1 2 3<br/>
+            The sum of the first two is 3<br/>
+            The sum of all three is 6<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Because of the "isa" relationship it is possible to have overloaded functions where some appear in the base class and others appear in the derived class.</p>
+<pre><code class="language-cpp line-numbers">class father
+{
+public:
+    void saySomething();    // Base class saySomething function
+};
+class son : public father
+{
+public:
+    void saySomething(string sentence);
+};
+</code></pre>
+<p>In the above example both the base and derived classes have a function called saySomething. The only difference between the two is that they have different argument lists.</p>
+<p class="Head">Overridden Functions</p>
+<hr/>
+<p>Overridden functions are similar to overloaded functions. The differences are that they both have the same parameter list and overridden functions cannot appear in the same class. They must be in base / derived classes.  When you override a function you are redefining it's behavior in the derived class. This allows you to write a function that has the same name but is specific to the specialize version of the class.</p>
+<pre><code class="language-cpp line-numbers">class father
+{
+public:
+    void saySomething();   // Base class saySomething
+};
+class son : public father
+{
+public:
+    void saySomething(); // redefined in the derived class
+};
+ </code></pre>
+<p>In the above example the functions defined in the base and derived classes have the same name and signatures. The function in the derived class overrides the function in the base class. In other words it redefines the  function saySomething specifically for the son class. </p>
+<p>When a function is overridden the version that is in the created object is the one that will execute:</p>
+<pre><code class="language-cpp line-numbers">son s;
+s.saySomething();  // Calls the derived class function
+</code></pre>
+<p class="SubHead">Calling the Parent</p>
+<p>To call the base class version of the function from the derived class you need to use the scope resolution operator to specify which class the function is defined in. </p>
+<pre><code class="language-cpp line-numbers">class son : public father
+{
+public:
+    void saySomething();
+    void speak();
+};
+void son::speak()
+{
+    //Call the son class version of saySomething
+    this-&gt;saySomething();
+
+    //Call the father class version of saySomething
+    father::saySomething();
+} 
+</code></pre>
+<p class="SubHead">How To Determine</p>
+<p><a href="/web/20170525080233/http://www.programming.msjc.edu/cppii/Units9TO12/10Polymorphism.aspx#LiveTooltip[Overload]" style="color: red;"><strong><em>Overloaded</em></strong></a> functions - Functions that have the same name but different parameter lists. They can be found together in the derived or the base class. Or, they can be separated one in base class and the other in the derived class. </p>
+<p><a href="/web/20170525080233/http://www.programming.msjc.edu/cppii/Units9TO12/10Polymorphism.aspx#LiveTooltip[Overload]" style="color: red;"><strong><em>Overridden</em></strong></a> function are functions that have same name and parameter list. one function is in the base class, the other in the derived.</p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/116-adding-changing-and-hiding-members-in-a-derived-class/" target="_blank">See what LearnCPP has to say about how to add, change, and hide members in a derived class.&nbsp;</a></p>
+<p class="Head"> Virtual Functions</p>
+<hr/>
+<p>The introduction to this section discussed the Shape class and the problem with writing a center function in the base class and calling the correct draw function in a derived class. This problem is solved by using virtual functions. A virtual function is a class member function declared using the "virtual" keyword. Because of the "isa" relationship a pointer to a derived class object can be assigned to a base class instance. A virtual function then can be called through the base class pointer. If the function is virtual and overridden in the derived class the correct function will be called based on what the base class pointer "really" points at.  </p>
+<pre><code class="language-cpp line-numbers">Shape *p= new Line(0.1, 0.1, blue,0.4,0.4);
+p-&gt;draw();
+ </code></pre>
+<p>The draw() function for a Line is called, not the draw() function for Shape. This is called <strong>polymorphism </strong>which gives a type the ability to appear and behave as another type.</p>
+<p>Now that you have an idea as to what a virtual function is you may be asking yourself how does this really help me solve the problem of centering a shape?  The answer is that you would create the center function which will call a virtual function called draw. This way each shape that is created will have to implement it&rsquo;s own draw function.;Let&rsquo;s look at some example code:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 50%;">
+            <pre><code class="language-cpp line-numbers">class Shape
+{
+protected:
+    int width;
+    int height;
+
+public:
+    void setValues(int height, int width);
+    void center():
+    virtual void draw();
+};
+void Shape::setValues(int height, int width)
+{
+    this-&gt;height = height;
+    this-&gt;width = width;
+}
+void Shape::center()
+{
+    cout &lt;&lt; "Move to x, y" &lt;&lt; endl;
+    draw();
+}
+void Shape::draw()
+{
+    cout &lt;&lt; "Draw a Shape" &lt;&lt; endl;
+}
+
+// The Rectangle class
+class Rectangle : public Shape
+{
+public:
+    void draw();
+}
+void Rectangle::draw()
+{
+    cout &lt;&lt; "Drawing a Rectangle" &lt;&lt; endl;
+}
+
+int main()
+{
+    Rectangle r;
+    r.center();
+ 
+    return 0;
+}
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Move to x, y<br/>
+            Drawing a Rectangle<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In the above example the base class Shape has a center function which in turn calls a virtual draw function.  If you were to create an instance of shape and then call the center function, the draw function in Shape would be called. In this example though we have create a Rectangle class that is derived from Shape. The Rectangle class overrides the draw function (redefines it) and when the center function is called (in the base class) the draw function in the Rectangle (derived) class gets called. The use of the virtual function makes this polymorphic.  </p>
+<p>To examine this concept a little further, let's take a look at an example where a base class is assigned to the derived class pointer</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">int main()
+{
+    Rectangle *r = new Rectangle();
+    Shape *s = r;
+    s-&gt;draw(); 
+           </code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Drawing a Rectangle<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="Head"> Video - Virtual Functions
+</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7219 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7220"><div class="DnnModule DnnModule-LiveTooltip DnnModule-7220"><a name="7220"></a><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7220_ContentPane"><!-- Start_Module_7220 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7220_ModuleContent" class="DNNModuleContent ModLiveTooltipC">
+					<div id="LiveTooltip722076" style="display:none; position:absolute"><img alt="" src="https://web.archive.org/web/20170525080233im_/http://www.programming.msjc.edu/Portals/11/cpp2/OverloadSmall.png" height="406" width="542" style="height: 355px; width: 492px;"/></div>
+
+				</div><!-- End_Module_7220 --></div>
+</div></div><div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7221"><div class="DnnModule DnnModule-LiveContent DnnModule-7221"><a name="7221"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl01_ctr7221_ContentPane">
+		
+    <!-- Start_Module_7221 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7221_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7221"></a> <div id="dnn_ctr7216_View_ctl00_ctl01_ctr7221_View_LC7221"><table id="dnn_ctr7216_View_ctl00_ctl01_ctr7221_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72211Heading">Virtual Functions</div><a id="LC72211" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7221/Videos/Virtual.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72211eVideo',allowHeightReduction: false,headingId: 'LC72211Heading',headingOverlay: {fade: 1},captionId: 'LC72211Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7221',width: 800,height: 640}, {TabId: '1927',ModuleId: '7221',PortalId: '11',ElementId: '1'}); "> <img title="Virtual Functions" alt="Virtual Functions" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7221&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72211eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72211Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7221 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7222"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7222"><a name="7222"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl01_ctr7222_ContentPane">
+		
+    <!-- Start_Module_7222 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7222_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl01_ctr7222_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Pure Virtual Functions</p>
+<hr/>
+<p>Before talking about pure virtual functions there is a some terminology that needs to be understood</p>
+<ul>
+    <li><strong>Abstract Classes</strong> - Abstract classes are classes that you cannot create an instance of. This means that the are used for inheritance purposes only.</li>
+    <li><strong>Concrete Classes </strong>- Concrete classes are class that you can create instances of. These are the types of classes you have been using up to this point</li>
+</ul>
+<p>Pure virtual functions work similar to virtual functions except they make a class abstract. Because they are abstract they are used for inheritance only. When you create a pure virtual function you do not create a function body to go with it. In other words you are simply creating a prototype in the class definition. This means that the derived class <strong>MUST</strong> implement the function. If the derived class does not implement the function then  that class becomes abstract also and the compiler will generate an error.
+</p>
+<p>
+Pure virtual functions force the user of the class to implement the function. The reasoning is this, when you created the shape class you knew that whoever used it was going to need to create their own version of the draw function because the Shape class has no idea what shapes will be added and how to draw them. This is like a contract that says it is OK for you to derive your classes from me but there is a function that you must implement to do it. Here is the Shape example again using pure virtual functions:
+</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+
+ 
+
+using namespace std;
+
+ 
+
+class Shape
+
+{
+
+public:
+    virtual void draw()=0;
+};
+
+class Rectangle : public Shape
+{
+private:
+    int length, width;
+
+public:
+    virtual void draw();
+};
+void Rectangle::draw()
+{
+    cout &lt;&lt; "I am a rectangle" &lt;&lt; endl;
+}
+int main()
+{
+
+    Rectangle *r = new Rectangle;  
+    Shape *s = r;
+    s-&gt;draw();
+
+   return 0;
+}
+</iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">I am a rectangle<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>When declaring a pure virtual function you create a prototype and then set it equal to NULL (0):</p>
+<pre><code class="language-cpp line-numbers">virtual void draw() = 0;
+</code></pre>
+<p>Placing the 0 says that this is a pure virtual function. Notice also that the Shape class does not create a body for this function. If you were to try to create an instance of the Shape class, you would get a compile error because a pure virtual function is an abstract class and abstract classes cannot have instances.  </p>
+<p>The following example takes closer look at polymorphism:</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 50%;">
+            <pre><code class="language-cpp line-numbers">#ifndef PET_H_
+#define PET_H_
+
+#include &lt;string&gt; 
+
+class Pet
+{
+protected:
+    std::string name;
+
+public:
+    Pet(std::string name);
+    virtual std::string Speak() = 0; //This is called a pure virtual function
+    std::string GetName();
+};
+class Dog : public Pet
+{
+public:
+    Dog(std::string name);
+    virtual std::string Speak();
+};
+class Cat : public Pet
+{
+public:
+    Cat(std::string name);
+    virtual std::string Speak();
+};
+class Horse : public Pet
+{
+public:
+    Horse(std::string name);
+    virtual std::string Speak();
+
+};
+#endif
+           </code></pre>
+            </td>
+            <td valign="top">
+            <pre><code class="language-cpp line-numbers"> #include "Pet.h"
+Pet::Pet(std::string name) : name(name)
+{
+}
+std::string Pet::GetName()
+{
+    return name;
+}
+Dog::Dog(std::string name)
+     : Pet(name)
+{
+}
+std::string Dog::Speak()
+{
+    return "Arf Arf";
+}
+Cat::Cat(std::string name)
+     : Pet(name)
+{
+}
+std::string Cat::Speak()
+{
+    return "Meow";
+}
+Horse::Horse(std::string name)
+    : Pet(name)
+{
+}
+std::string Horse::Speak()
+{
+    return "Whinny";
+}
+           </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In the example above, two files: Pet.h and Pet.cpp have been created. Pet.h stores the definitions of the four classes: Pet, Dog, Cat, and Horse with Pet being the parent class of the other three. Since pet has a pure virtual function it cannot be instantiated. The speak function is called a pure virtual function, which means that it cannot be implemented by the pet class but all derived classes must implement it if they want to become concrete classes.</p>
+<p>Below is a main function for the Pet Example:</p>
+<p>In Pet.cpp file of the project, an implementation of the four classes is created. The Pet has a constructor and a GetName function. Since the GetName function is defined in pet, the other class don't have to redefine it. It's the beauty of inheritance -- code reuse. The rest of the file includes the constructors for all three classes and the implementations of each speak method. Since a dog doesn't sound the same as a cat, they each have their own individual implementations. Because it is unique it is not something that can be borrowed from the base class.</p>
+<p>Main.cpp is pretty interesting to look at as well. The main function starts out by creating an array of pets, one dog, one cat, and one horse. Then, their speak methods are accessed inside a loop. Although the pets speak method is being used, the compiler knows precisely which method to call. What's beautiful about polymorphism is that the pet array could potentially contain any combination of pets, and still the individual speak method for each pet would be called. In fact, the number and type of pets wouldn't have to be determined at compile time. The user could decide which type of pet to create.</p>
+<p>Now let's look at an example that creates the pet types at runtime instead of compile time.</p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+#include <vector>
+#include "Pet.h" 
+
+using namespace std;
+
+enum {DOG, CAT, HORSE};
+
+const int OFFSET = 1; 
+
+int main()
+{
+     int howManyPets;
+     int typeOfPet;
+
+     vector<pet> pets;
+     string tmpName;
+ 
+
+     cout &lt;&lt; "How many pets do you have?" &lt;&lt; std::endl;
+     cin &gt;&gt; howManyPets;
+     cout &lt;&lt; std::endl; 
+
+     for (int i = 0; i &lt; howManyPets; ++i)
+     {
+           std::cout &lt;&lt; "What type of pet do you have?" &lt;&lt; std::endl
+                &lt;&lt; "1. Dog" &lt;&lt; endl
+                &lt;&lt; "2. Cat" &lt;&lt; endl
+                &lt;&lt; "3. Horse" &lt;&lt; endl;
+
+           cin &gt;&gt; typeOfPet;
+           cout &lt;&lt; endl; 
+           cout &lt;&lt; "What is that pet's name?" &lt;&lt;endl;&gt;&gt; tmpName;
+           cout &lt;&lt; endl; 
+
+           if (typeOfPet - OFFSET == DOG)
+                pets.push_back(new Dog(tmpName));
+           else if(typeOfPet - OFFSET == CAT)
+                pets.push_back(new Cat(tmpName));
+           else
+                pets.push_back(new Horse(tmpName));
+     } 
+
+     cout &lt;&lt; endl; 
+
+     for (int i = 0; i &lt; (signed) pets.size(); ++i)
+     {
+           cout &lt;&lt; pets[i]-&gt;GetName() &lt;&lt; " says, " &lt;&lt; pets[i]-&gt;Speak() &lt;&lt; std::endl;
+     } 
+
+     for (int i = 0; i &lt; (signed) pets.size(); ++i)
+           delete pets[i]; 
+
+     cout &lt;&lt; std::endl;
+     return 0
+} 
+           &lt;/endl;&gt;</pet></vector></iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 700px;">How many pets do you have?<br/>
+            3<br/>
+            <br/>
+            1. Dog<br/>
+            2. Cat<br/>
+            3. Horse<br/>
+            1<br/>
+            <br/>
+            What is that pet's name?<br/>
+            Nicky<br/>
+            <br/>
+            What type of pet do you have <br/>
+            1. Dog <br/>
+            2. Cat <br/>
+            3. Horse <br/>
+            1<br/>
+            <br/>
+            What is that pet's name?<br/>
+            Rex<br/>
+            <br/>
+            What type of pet do you have?<br/>
+            1. Dog<br/>
+            2. Cat<br/>
+            3. Horse<br/>
+            2<br/>
+            <br/>
+            What is that pet's name?<br/>
+            Sassy<br/>
+            <br/>
+            Nicky says, Arf Arf<br/>
+            Rex says, Arf Arf<br/>
+            Sassy says, Meow<br/>
+            <br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In the above example Pet.cpp and Pet.h have been reused. This time the objects are created dynamically. The number of pets and their type is determined by the user. To break it down line by line, the program starts off by asking the user how many pets they own, then it asks for each pet's type and name. The rest of the code is the same as the last example; each pet speaks and the memory is released.</p>
+<p class="Head">Video Pure Virtual Functions</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7222 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7223"><div class="DnnModule DnnModule-LiveContent DnnModule-7223"><a name="7223"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl01_ctr7223_ContentPane">
+		
+    <!-- Start_Module_7223 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7223_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7223"></a> <div id="dnn_ctr7216_View_ctl00_ctl01_ctr7223_View_LC7223"><table id="dnn_ctr7216_View_ctl00_ctl01_ctr7223_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72231Heading">Pure Virtual Functions</div><a id="LC72231" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7223/Videos/PureVirtual.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72231eVideo',allowHeightReduction: false,headingId: 'LC72231Heading',headingOverlay: {fade: 1},captionId: 'LC72231Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7223',width: 800,height: 640}, {TabId: '1927',ModuleId: '7223',PortalId: '11',ElementId: '1'}); "> <img title="Pure Virtual Functions" alt="Pure Virtual Functions" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7223&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72231eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72231Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7223 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl01_LiveTabsiMod7224"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7224"><a name="7224"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl01_ctr7224_ContentPane">
+		
+    <!-- Start_Module_7224 --><div id="dnn_ctr7216_View_ctl00_ctl01_ctr7224_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl01_ctr7224_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<br/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://xoax.net/cpp/crs/console/lessons/Lesson42/" target="_blank">See what XoaX.net says about virtual and pure virtual functions</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/126-pure-virtual-functions-abstract-base-classes-and-interface-classes/" target="_blank">Also see what LearnCPP has to say about pure virtual functions</a></p>
+</div>
+
+				</div><!-- End_Module_7224 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7216700" class="mtop">
+				<div id="dnn_ctr7216_View_ctl00_ctl02_LiveTabsiMod7225"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7225"><a name="7225"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl02_ctr7225_ContentPane">
+		
+    <!-- Start_Module_7225 --><div id="dnn_ctr7216_View_ctl00_ctl02_ctr7225_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl02_ctr7225_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Introduction</p>
+<hr/>
+<p>Before getting into the nitty gritty of copy constructors I think it is best to review a little bit about pointers. Examine the following code snippet:</p>
+<pre><code class="language-cpp line-numbers">char str[] = "Hello World";
+char *p1 = str;
+char *p2 = p1;
+ </code></pre>
+<p>In this example two pointers have been created. The pointer p1 is set to the address of the first element of the string str. The pointer p2 is set equal to p1. In this case what is assigned is the address. This means that both p1 and p2 refer to the same memory location that contains str. This type of copy is called a <strong>shallow copy</strong>. If you were to use cout and print what each pointer refers to they would both print "Hello World". It is important to remember that both pointers refer to the same memory location. What if we simply want a copy of what p1 is pointing at? We could do the following:</p>
+<pre><code class="language-cpp line-numbers">char str[]= "Hello World";
+char *p1 = str;
+char *p2 = new char[strlen(str) + 1];
+strcpy(p2, p1);
+</code></pre>
+<p>In this example the pointer p2 gets newly allocated memory and the data that p1 is pointing at is copied into the new memory referred to by p2. This kind of copy is called a <strong>deep copy</strong>. Now each pointer is pointing at identicaly strings stored in separate memory locations. </p>
+<p>Making sure you have a <strong>deep copy</strong> is the idea behind creating a <strong>copy constructor</strong>.</p>
+<p class="Head">Copy Constructor</p>
+<hr/>
+<p>A copy constructor is a special constructor that takes as its argument a reference to an object of the same class and creates a new object that is a copy. By default, the compiler provides a copy constructor that performs a member-by-member copy from the original object to the one being created. This is called a <strong>member wise or shallow copy</strong>. Although it may seem to be the desired behavior, in many cases a shallow copy is not satisfactory. To see why let's look at a Person class. We will store the name in a c_string rather than store the name using the string class from the standard C++ library  </p>
+<table width="100%">
+    <tbody>
+        <tr>
+            <td valign="top" style="width: 55%;">
+            <pre><code class="language-cpp line-numbers">#include <iostream>
+
+using namespace std;
+
+class Person
+{
+public:
+	Person(const Person &amp;p);
+	Person(char *name, int age);
+	~Person();
+	char *getName()const { return name; }
+
+	//Other Accessor methods 
+
+private:
+	char *name;
+	int age;
+};
+Person::Person(char *name, int age)
+{
+	// Allocate memory for the pointer
+	this-&gt;name = new char[strlen(name)];
+		
+	// create the deep copy
+	strcpy_s(this-&gt;name, strlen(name) + 1, name);
+	this-&gt;age = age;
+
+}
+Person::Person(const Person &amp;p)
+{
+	// Allocate memory for the pointer
+	this-&gt;name = new char[strlen(p.name)];
+
+	// create the deep copy
+	strcpy_s(this-&gt;name, strlen(name) + 1, p.name);
+	this-&gt;age = p.age;
+
+}
+Person::~Person()
+{	
+	delete[] name;
+}
+int main()
+{
+	Person pn("Glenn Stevenson", 21);
+	Person programmer(pn);
+	cout &lt;&lt; programmer.getName() &lt;&lt; endl;
+	return 0;
+}
+ 
+           </iostream></code></pre>
+            </td>
+            <td valign="top">
+            <p><dos style="margin-top: 30px; height: 300px;">Glenn Stevenson<br/>
+            Press any key to continue . . .</dos></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>In the above code the function strlen_s returns the length of the string passed into the constructor. Notice that the Person name is now stored in a dynamically allocated character array. Notice that the destructor frees the memory used to hold the employee name. This is needed to avoid a memory leak.</p>
+<p class="Head">Video - Copy Constructor</p>
+<hr/>
+</div>
+
+				</div><!-- End_Module_7225 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl02_LiveTabsiMod7226"><div class="DnnModule DnnModule-LiveContent DnnModule-7226"><a name="7226"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl02_ctr7226_ContentPane">
+		
+    <!-- Start_Module_7226 --><div id="dnn_ctr7216_View_ctl00_ctl02_ctr7226_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7226"></a> <div id="dnn_ctr7216_View_ctl00_ctl02_ctr7226_View_LC7226"><table id="dnn_ctr7216_View_ctl00_ctl02_ctr7226_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72261Heading">Copy Constructor</div><a id="LC72261" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7226/Videos/copyConst.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72261eVideo',allowHeightReduction: false,headingId: 'LC72261Heading',headingOverlay: {fade: 1},captionId: 'LC72261Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7226',width: 800,height: 640}, {TabId: '1927',ModuleId: '7226',PortalId: '11',ElementId: '1'}); "> <img title="Copy Constructor" alt="Copy Constructor" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7226&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72261eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72261Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7226 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr7216_View_ctl00_ctl02_LiveTabsiMod7227"><div class="DnnModule DnnModule-DNN_HTML DnnModule-7227"><a name="7227"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl02_ctr7227_ContentPane">
+		
+    <!-- Start_Module_7227 --><div id="dnn_ctr7216_View_ctl00_ctl02_ctr7227_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr7216_View_ctl00_ctl02_ctr7227_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Need More?</p>
+<hr/>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/911-the-copy-constructor-and-overloading-the-assignment-operator/" target="_blank">See what LearnCPP has to say about the copy constructor</a></p>
+<p><a class="learn-more" href="https://web.archive.org/web/20170525080233/http://www.learncpp.com/cpp-tutorial/912-shallow-vs-deep-copying/" target="_blank">Also check out their take on shallow and deep copy.</a></p>
+</div>
+
+				</div><!-- End_Module_7227 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent7216701" class="mtop">
+				<div id="dnn_ctr7216_View_ctl00_ctl03_LiveTabsiMod7228"><div class="DnnModule DnnModule-LiveContent DnnModule-7228"><a name="7228"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr7216_View_ctl00_ctl03_ctr7228_ContentPane">
+		
+    <!-- Start_Module_7228 --><div id="dnn_ctr7216_View_ctl00_ctl03_ctr7228_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div> <a name="LiveContent7228"></a> <div id="dnn_ctr7216_View_ctl00_ctl03_ctr7228_View_LC7228"><table id="dnn_ctr7216_View_ctl00_ctl03_ctr7228_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC72281Heading">Inheritance</div><a id="LC72281" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7228/Videos/Lecture9.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72281eVideo',allowHeightReduction: false,headingId: 'LC72281Heading',headingOverlay: {fade: 1},captionId: 'LC72281Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7228',width: 800,height: 640}, {TabId: '1927',ModuleId: '7228',PortalId: '11',ElementId: '1'}); "> <img title="Inheritance" alt="Inheritance" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7228&amp;eid=1&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72281eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72281Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td><div class="highslide-heading" id="LC72282Heading">Polymorphism</div><a id="LC72282" class="highslide" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/Portals/11/LiveContent/7228/Videos/Lecture13.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC72282eVideo',allowHeightReduction: false,headingId: 'LC72282Heading',headingOverlay: {fade: 1},captionId: 'LC72282Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '7228',width: 800,height: 640}, {TabId: '1927',ModuleId: '7228',PortalId: '11',ElementId: '2'}); "> <img title="Polymorphism" alt="Polymorphism" src="/web/20170525080233im_/http://www.programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=7228&amp;eid=2&amp;PortalId=11"/></a><div class="highslide-html-content" id="LC72282eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC72282Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div> </div>
+				</div><!-- End_Module_7228 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_7216 --></div>
+    <div class="clear">
+    </div>
+</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div id="dnn_LeftPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div id="dnn_RightPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="module_line_trigger" data-option="hasShadow" data-background="#ffff url(/Portals/_default/Skins/Dixit/img/bg_pattern1.png) repeat 0 0" data-top-padding="top_padding_normal" data-bottom-padding="module_normal_padding">
+                                    <div class="row-fluid">
+                                        <div class="span12">
+                                            <div id="dnn_ContentLowerPane" class="DNNEmptyPane">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="dnn_BottomPane" class="DNNEmptyPane">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_twitter">
+    <div class="container">
+        <div id="dnn_FooterPane" class="DNNEmptyPane">
+        </div>
+    </div>
+</div>
+<div class="pre_footer">
+    <div class="container">
+        <aside class="row" id="footer_bar">
+                <div class="span3">
+                <div id="dnn_FooterLeftOuter" class="DNNEmptyPane">                    
+                </div>  
+                </div>              
+                <div class="span3">
+                <div id="dnn_FooterLeftInner" class="DNNEmptyPane">
+                    </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightInner" class="DNNEmptyPane">
+                </div>
+                </div>
+                <div class="span3">
+                <div id="dnn_FooterRightOuter" class="DNNEmptyPane">
+                </div>  
+                </div>              
+            </aside>
+    </div>
+</div>
+<footer>
+        <div class="footer_line container">
+        	<div class="copyright">&copy; <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">Copyright 2010 By Glenn Stevenson</span>
+ | <a id="dnn_dnnTerms_hypTerms" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/terms.aspx">Terms Of Use</a> | <a id="dnn_dnnPrivacy_hypPrivacy" class="SkinObject" rel="nofollow" href="https://web.archive.org/web/20170525080233/http://www.programming.msjc.edu/cppii/privacy.aspx">Privacy Statement</a></div>
+            <div class="socials">
+            	<div id="dnn_BottomSocialPane" class="DNNEmptyPane">             
+                    </div>            
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:void(0)" class="btn2top"></a>            
+        </div>
+        <div class="footer_border"></div>
+    </footer>
+<header class="fixed-menu"></header>
+<div class="layout_trigger image_bg_cont" style="background-color: #5796d1; background-image: url(/web/20170525080233im_/http://www.programming.msjc.edu/Portals/_default/Skins/Dixit/img/ContBG.png);
+    background-repeat: no-repeat;">
+</div>
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off"/>
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3(\'a,g\').c(8(i){5 4=3(6).b(\'4\');5 0=/(.*)#9\\[([^\\,]+)(\\,.+)?\\]/.7(4);d(0!=h&&0.j>1){3(6).e(f[0[2]])}});',20,20,'match|||jQuery|href|var|this|exec|function|LiveTooltip||attr|each|if|qtip|LiveTooltipClientScripts|area|null||length'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}hs.Expander.prototype.onBeforeExpand = function (sender) { sender.createOverlay( {overlayId:'LC' + sender.custom.ModuleId + sender.custom.ElementId + 'CommentOverlay',position: 'rightpanel',fade: 1,width: '400px'} );};jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=11'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(9(\'a\')!=m){9(\'a\').n({i:\'0://1.2.3.4/j.k?d=o-s-u-v-p&q;t=r\',f:\'0://1.2.3.4/5/6/7/8/e/h.g\',c:b,w:L,M:\'N\',I:J,K:\'0://1.2.3.4/5/6//7/8/R/O.P\',Q:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}',54,54,'http|www|programming|msjc|edu|Portals|11|LiveContent|7217|jwplayer|LC72171Html5eVideo|600|height||Videos|file|mp4|simpleInheritance|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|aboutlink|Live|Content|products|content|aspx|live|dotnetnuke|modules|autostart|true|image|800|provider|video|firstFrame|png|abouttext|Images'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(9(\'a\')!=m){9(\'a\').n({i:\'0://1.2.3.4/j.k?d=o-s-u-v-p&q;t=r\',f:\'0://1.2.3.4/5/6/7/8/e/h.g\',c:b,w:L,M:\'N\',I:J,K:\'0://1.2.3.4/5/6//7/8/R/O.P\',Q:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}',54,54,'http|www|programming|msjc|edu|Portals|11|LiveContent|7221|jwplayer|LC72211Html5eVideo|600|height||Videos|file|mp4|Virtual|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|aboutlink|Live|Content|products|content|aspx|live|dotnetnuke|modules|autostart|true|image|800|provider|video|FirstFrame|png|abouttext|Images'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(9(\'a\')!=m){9(\'a\').n({i:\'0://1.2.3.4/j.k?d=o-s-u-v-p&q;t=r\',f:\'0://1.2.3.4/5/6/7/8/e/h.g\',c:b,w:L,M:\'N\',I:J,K:\'0://1.2.3.4/5/6//7/8/R/O.P\',Q:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}',54,54,'http|www|programming|msjc|edu|Portals|11|LiveContent|7223|jwplayer|LC72231Html5eVideo|600|height||Videos|file|mp4|PureVirtual|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|aboutlink|Live|Content|products|content|aspx|live|dotnetnuke|modules|autostart|true|image|800|provider|video|firstFrame|png|abouttext|Images'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(9(\'a\')!=m){9(\'a\').n({i:\'0://1.2.3.4/j.k?d=o-s-u-v-p&q;t=r\',f:\'0://1.2.3.4/5/6/7/8/e/h.g\',c:b,w:L,M:\'N\',I:J,K:\'0://1.2.3.4/5/6//7/8/R/O.P\',Q:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}',54,54,'http|www|programming|msjc|edu|Portals|11|LiveContent|7226|jwplayer|LC72261Html5eVideo|600|height||Videos|file|mp4|copyConst|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|width|mandeeps|com|aboutlink|Live|Content|products|content|aspx|live|dotnetnuke|modules|autostart|true|image|800|provider|video|FirstFrame|png|abouttext|Images'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(8(\'l\')!=n){8(\'l\').j({k:\'0://1.4.3.2/o.s?d=u-v-p-q-r&h;t=e\',f:\'0://1.4.3.2/5/7/6/9/g/U.b\',a:c,w:M,N:\'L\',J:K,O:\'0://1.4.3.2/5/7//6/9/P/S.Q\',I:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}m(8(\'i\')!=n){8(\'i\').j({k:\'0://1.4.3.2/o.s?d=u-v-p-q-r&h;t=e\',f:\'0://1.4.3.2/5/7/6/9/g/T.b\',a:c,w:M,N:\'L\',J:K,O:\'0://1.4.3.2/5/7//6/9/P/R.Q\',I:\'A B\',z:\'0://1.x.y/C/G-H/F-D.E\'})}',57,57,'http|www|edu|msjc|programming|Portals|LiveContent|11|jwplayer|7228|height|mp4|600||634957464340000000|file|Videos|amp|LC72282Html5eVideo|setup|flashplayer|LC72281Html5eVideo|if|null|WebResource|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|axd||5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|width|mandeeps|com|aboutlink|Live|Content|products|content|aspx|live|dotnetnuke|modules|abouttext|autostart|true|video|800|provider|image|Images|png|FirstFrame2|FirstFrame1|Lecture13|Lecture9'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper7216").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper7216').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7216') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7216').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper7216').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('7216') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper7216').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper7216").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper7216') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});//]]>
+</script>
+</form>
+
+    
+    
+</body>
+</html>
+
+<!--
+     FILE ARCHIVED ON 08:02:33 May 25, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:29:19 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  PetaboxLoader3.datanode: 442.106 (4)
+  exclusion.robots: 0.339
+  RedisCDXSource: 24.236
+  CDXLines.iter: 14.332 (3)
+  esindex: 0.017
+  captures_list: 177.566
+  PetaboxLoader3.resolve: 63.231
+  LoadShardBlock: 134.892 (3)
+  exclusion.robots.policy: 0.324
+  load_resource: 585.352
+-->

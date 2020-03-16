@@ -1,0 +1,1223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app22.us.archive.org';v.server_ms=339;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20150219161947", "programming.msjc.edu:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+<title>
+	CSIS 113A &gt; 4. Repetition &nbsp;&nbsp;&nbsp;
+</title><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta content="text/javascript" http-equiv="Content-Script-Type"/><meta content="text/css" http-equiv="Content-Style-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta id="MetaDescription" name="DESCRIPTION" content="C++ Programming Level 1"/><meta id="MetaCopyright" name="COPYRIGHT" content="2010 By Glenn Stevenson"/><meta id="MetaAuthor" name="AUTHOR" content="CSIS 113A"/><meta name="RESOURCE-TYPE" content="DOCUMENT"/><meta name="DISTRIBUTION" content="GLOBAL"/><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW"/><meta name="REVISIT-AFTER" content="1 DAYS"/><meta name="RATING" content="GENERAL"/><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)"/><style id="StylePlaceholder" type="text/css"></style><link href="/web/20150219161947cs_/http://programming.msjc.edu/Portals/_default/default.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161947cs_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/skin.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161947cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/container.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161947cs_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/Title_Grey.css?cdv=109" type="text/css" rel="stylesheet"/><link href="/web/20150219161947cs_/http://programming.msjc.edu/Portals/16/portal.css?cdv=109" type="text/css" rel="stylesheet"/><script src="/web/20150219161947js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161947js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery-ui.min.js?cdv=109" type="text/javascript"></script><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219161947cs_/http://programming.msjc.edu/DesktopModules/LiveContent/Themes/Default/Style/Style.css" type="text/css" media="screen"/><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><style type="text/css">.MNormal{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalBold{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;}.MNormalRed{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: bold;color: #ff0000;}.MHead{font-family: Tahoma, Arial, Helvetica;font-size: 20px;font-weight: normal;color: #333333;}.MSubHead{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: bold;color: #003366;}.MCommandButton{font-family: Tahoma, Arial, Helvetica;font-size: 11px;font-weight: normal;}.MNormalTextBox{font-family: Tahoma, Arial, Helvetica;font-size: 12px;font-weight: normal;}</style><link rel="stylesheet" href="/web/20150219161947cs_/http://programming.msjc.edu/desktopmodules/LiveTabs/Themes/Default/Default.css" type="text/css" media="all"/><script src="/web/20150219161947js_/http://programming.msjc.edu/WebResource.axd?d=PR3oTLkYCZKLrG8V2jyE1AUeiSdswhAjs5In1IT6qiCxArRPi8ZH86ul0xJNRjD7FURAyVxF_SpXRuwN7PWrnBNqXqIzc6KIm5slfVQXkOq3Tkpf_Bp69auHFATRBJf_bRi5IxIjP8MCejjUx3Z2ECeDXRubz5nt9QP0pyWjWfO4H8H30&amp;t=634969582000000000" type="text/javascript"></script></head>
+<body id="Body"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx', '20150219161947')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share">
+          <a href="/web/20150219161947/http://web.archive.org/screenshot/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx"
+             id="wm-screenshot"
+             title="screenshot">
+              <span class="wm-icon-screen-shot"></span>
+          </a>
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20150219161947/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20150219161947/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20150219161947" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141214190959/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="14 Dec 2014"><strong>Dec</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 16:19:47 Feb 19, 2015">FEB</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150323053025/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="23 Mar 2015"><strong>Mar</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20141214190959/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="19:09:59 Dec 14, 2014"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 16:19:47 Feb 19, 2015">19</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150323053025/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="05:30:25 Mar 23, 2015"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20130930094524/http://www.programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="30 Sep 2013"><strong>2013</strong></a></td>
+		  <td class="c" id="displayYearEl" title="You are here: 16:19:47 Feb 19, 2015">2015</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20160301014035/http://programming.msjc.edu:80/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="01 Mar 2016"><strong>2016</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20150219161947*/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" title="See a list of every capture for this URL">25 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">29 Jul 2013 - 27 Jun 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="625" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;transpiled=0&amp;referer=https%3A//web.archive.org/web/20150219161947/http%3A//programming.msjc.edu/cpp/4Repetitionnbsp%253Bnbsp%253Bnbsp%253B.aspx"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(625,27,25,2,"web","http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx","2015-02-19",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+__wm.checkScreenShot("http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx", '20150219161947');
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+    
+    <form method="post" action="/web/20150219161947/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value=""/>
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value=""/>
+<input type="hidden" name="LiveTabsWrapper2875_SelectedIndex" id="LiveTabsWrapper2875_SelectedIndex" value="0"/>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMwNzQ0NDU3D2QWCGYPFgIeBFRleHQFeTwhRE9DVFlQRSBodG1sIFBVQkxJQyAiLS8vVzNDLy9EVEQgWEhUTUwgMS4wIFRyYW5zaXRpb25hbC8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDEvRFREL3hodG1sMS10cmFuc2l0aW9uYWwuZHRkIj5kAgIPFgIfAAVDIHhtbDpsYW5nPSJlbi1VUyIgbGFuZz0iZW4tVVMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sImQCBA9kFg4CBg8WAh4HVmlzaWJsZWhkAgcPFgIeB2NvbnRlbnQFF0MrKyBQcm9ncmFtbWluZyBMZXZlbCAxZAIIDxYEHwJkHwFoZAIJDxYCHwIFFzIwMTAgQnkgR2xlbm4gU3RldmVuc29uZAIKDxYEHwJkHwFoZAILDxYCHwIFCUNTSVMgMTEzQWQCDg8WAh8CBQ1JTkRFWCwgRk9MTE9XZAIGD2QWAgIBD2QWAgIHD2QWAmYPZBYWZg9kFgJmDw8WBB4HVG9vbFRpcAUJQ1NJUyAxMTNBHgtOYXZpZ2F0ZVVybAUpaHR0cDovL3Byb2dyYW1taW5nLm1zamMuZWR1L2NwcC9Ib21lLmFzcHhkZAIBDxYCHgVjbGFzcwUXaGVhZGVycGFuZSBETk5FbXB0eVBhbmVkAgIPZBYIZg8WAh8ABR48ZGl2IGNsYXNzPSJsYW5ndWFnZS1vYmplY3QiID5kAgIPEA8WAh8BaGRkFgBkAgQPFgIfAWhkAgYPFgIfAAUGPC9kaXY+ZAIDD2QWBGYPZBYGAgEPEA8WCB4IQ3NzQ2xhc3MFBlNlYXJjaB8ABQNXZWIfAwURR29vZ2xlIFdlYiBTZWFyY2geBF8hU0ICAmRkZGQCAw8QDxYIHwYFBlNlYXJjaB8ABQRTaXRlHwMFC1NpdGUgU2VhcmNoHwcCAmRkZGQCBw8PFgYfBgUGU2VhcmNoHwAFYzxpbWcgc3JjPSIvUG9ydGFscy9fZGVmYXVsdC9Ta2lucy9QaW9uZWVyLUJsdWUvaW1hZ2VzL0JsdWVTZWFyY2guanBnIiBhbGlnbj0iYWJzTWlkZGxlIiBib3JkZXI9IjAiPh8HAgJkZAICD2QWAgICDw8WBh8GBQZTZWFyY2gfAAVjPGltZyBzcmM9Ii9Qb3J0YWxzL19kZWZhdWx0L1NraW5zL1Bpb25lZXItQmx1ZS9pbWFnZXMvQmx1ZVNlYXJjaC5qcGciIGFsaWduPSJhYnNNaWRkbGUiIGJvcmRlcj0iMCI+HwcCAmRkAgYPZBYEZg8PFgYfBgUEVXNlch8HAgIfAWhkZAICDxYCHwFoFggCAQ8WAh8BaGQCAw8WAh8BaGQCBQ8PFgQfBgUEVXNlch8HAgJkZAIHDxYCHwFoZAIHD2QWBGYPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFY2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmNFJlcGV0aXRpb25uYnNwJTNibmJzcCUzYm5ic3AlM2IuYXNweB8HAgIWAh4Hb25jbGljawWfAXJldHVybiBkbm5Nb2RhbC5zaG93KCdodHRwOi8vcHJvZ3JhbW1pbmcubXNqYy5lZHUvY3BwL2xvZ2luLmFzcHg/UmV0dXJuVXJsPS9jcHAvNFJlcGV0aXRpb25uYnNwO25ic3A7bmJzcDsuYXNweCZwb3BVcD10cnVlJywvKnNob3dSZXR1cm4qL3RydWUsMzAwLDY1MCx0cnVlLCcnKWQCAg8WAh8BaBYCAgEPDxYKHwYFBUxvZ2luHwAFBUxvZ2luHwMFBUxvZ2luHwQFY2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9JTJmY3BwJTJmNFJlcGV0aXRpb25uYnNwJTNibmJzcCUzYm5ic3AlM2IuYXNweB8HAgIWAh8IBZ8BcmV0dXJuIGRubk1vZGFsLnNob3coJ2h0dHA6Ly9wcm9ncmFtbWluZy5tc2pjLmVkdS9jcHAvbG9naW4uYXNweD9SZXR1cm5Vcmw9L2NwcC80UmVwZXRpdGlvbm5ic3A7bmJzcDtuYnNwOy5hc3B4JnBvcFVwPXRydWUnLC8qc2hvd1JldHVybiovdHJ1ZSwzMDAsNjUwLHRydWUsJycpZAIJDxYCHwUFFHRvcHBhbmUgRE5ORW1wdHlQYW5lZAIKDxYCHwUFFWxlZnRwYW5lIEROTkVtcHR5UGFuZWQCCw8WAh8BZxYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVUYWJzIERubk1vZHVsZS0yODc1FgICAQ9kFhACAw8PFgIfAWhkZAIFD2QWAgICDxYCHwFoZAIHD2QWAmYPDxYCHwFoZGQCCQ9kFgJmDw8WAh8DBQhNaW5pbWl6ZWQWAmYPDxYGHghJbWFnZVVybAVAL1BvcnRhbHMvX2RlZmF1bHQvQ29udGFpbmVycy9NaW5pbWFsRXh0cm9weS9pbWFnZXMvRE5OLW1pbnVzLmdpZh4NQWx0ZXJuYXRlVGV4dAUITWluaW1pemUfAwUITWluaW1pemVkZAILD2QWAgICDw9kFgIfBQUdRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlVGFic0MWAgIBD2QWAgIBDxYCHhFEaXNhYmxlZFRhYnNBcnJheWQWCmYPZBYCZg9kFgJmD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjg3NhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTENkAgEPZBYCZg9kFhBmD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjg3NxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTENkAgEPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS0yODc4FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgIPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yODc5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQ2QCAw9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI4ODAWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCBA9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4ODEWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDZAIFD2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjg4MxYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTENkAgYPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS0yODg0FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgcPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yODg1FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQ2QCAg9kFgJmD2QWDmYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yODg2FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQ2QCAQ9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI4ODIWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCAg9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI4ODgWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDZAIDD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtMjg4ORYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIED2QWAmYPFgIfBQUrRG5uTW9kdWxlIERubk1vZHVsZS1ETk5fSFRNTCBEbm5Nb2R1bGUtMjg5MBYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFHEROTk1vZHVsZUNvbnRlbnQgTW9kRE5OSFRNTENkAgUPZBYCZg8WAh8FBS5Ebm5Nb2R1bGUgRG5uTW9kdWxlLUxpdmVDb250ZW50IERubk1vZHVsZS00NjQxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUgRE5OTW9kdWxlQ29udGVudCBNb2RMaXZlQ29udGVudEMWAgIBD2QWAgICD2QWAgIBD2QWAmYPPCsACQBkAgYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS00NjA5FgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQ2QCAw9kFgJmD2QWBmYPZBYCZg8WAh8FBStEbm5Nb2R1bGUgRG5uTW9kdWxlLUROTl9IVE1MIERubk1vZHVsZS0yOTAxFgICAQ9kFgICAQ9kFgQCAQ8PFgIfAWhkZAIEDw9kFgIfBQUcRE5OTW9kdWxlQ29udGVudCBNb2RETk5IVE1MQ2QCAQ9kFgJmDxYCHwUFK0Rubk1vZHVsZSBEbm5Nb2R1bGUtRE5OX0hUTUwgRG5uTW9kdWxlLTI5MDMWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBRxETk5Nb2R1bGVDb250ZW50IE1vZEROTkhUTUxDZAICD2QWAmYPFgIfBQUuRG5uTW9kdWxlIERubk1vZHVsZS1MaXZlQ29udGVudCBEbm5Nb2R1bGUtMjkwNhYCAgEPZBYCAgEPZBYEAgEPDxYCHwFoZGQCBA8PZBYCHwUFIEROTk1vZHVsZUNvbnRlbnQgTW9kTGl2ZUNvbnRlbnRDFgICAQ9kFgICAg9kFgICAQ9kFgJmDzwrAAkAZAIED2QWAmYPZBYCZg9kFgJmDxYCHwUFLkRubk1vZHVsZSBEbm5Nb2R1bGUtTGl2ZUNvbnRlbnQgRG5uTW9kdWxlLTI4OTQWAgIBD2QWAgIBD2QWBAIBDw8WAh8BaGRkAgQPD2QWAh8FBSBETk5Nb2R1bGVDb250ZW50IE1vZExpdmVDb250ZW50QxYCAgEPZBYCAgIPZBYCAgEPZBYCZg88KwAJAGQCDQ9kFgJmDw8WAh8BaGRkAg8PZBYCZg8PFgIfAWhkZAIRD2QWAmYPDxYCHwFoZGQCDA8WAh8FBRZyaWdodHBhbmUgRE5ORW1wdHlQYW5lZAINDxYCHwUFF2JvdHRvbXBhbmUgRE5ORW1wdHlQYW5lZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUWZG5uJGN0cjI4NzUkVmlldyRjdGwwMAUcZG5uJGRublNFQVJDSCRXZWJSYWRpb0J1dHRvbgUdZG5uJGRublNFQVJDSCRTaXRlUmFkaW9CdXR0b24FFGRubiRkbm5OQVYkY3RsZG5uTkFW3tLDaZNRkxSyERJA/2Ubvae5ux4="/>
+</div>
+
+
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                var notifyPanel = $("td.dnnRibbonBarCol2");
+                                if(notifyPanel != null) {
+                                    notifyPanel.append('<a href="/Host/DnnAutoUpgrade.aspx"><img src="/DesktopModules/Papayas.DnnAutoUpgrade/Images/autoUpgradeModule.png" style="padding: 0 0 0 4px;" alt=""/></a>');
+                                }
+                            });
+                            </script>
+                            <script type="text/javascript" src="/web/20150219161947js_/http://programming.msjc.edu/WebResource.axd?d=L0fX0Oh82FTAjTwvCSvovcuLFldUIRtcRK51oEr_Ho-Z7exODLkYItCObAAhjYPmrtzWq3ODbd8XHBxVD-uI4eZ0p9kojQi8GF-DTK2lYbmSHBDVVQiamy6mdH5o00DwtwwngnO6Rhay1fJEoODSmTrjx6TGPhKqV5Yl1CfjExGDa0BMG73mGs-dH8s1&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219161947js_/http://programming.msjc.edu/WebResource.axd?d=VqxbL-liG6X0Pnuxgds3TRf3GAVRfYGyPbTf5oQoWFibI1kVrEcgNQO6XmJ3rTQKhHtRsD5tmcRt3qGUg0UHYyeM5cnDzS7EEGfvaTxjbQ9Ff1Pa-9yatkTBezlMr2LJ9q8ajH0GVxHDiJQCR229Or62ESrUVA3prS1UKTxMklBaENevqrNvpxgStm41&amp;t=634957464340000000"></script>
+<script type="text/javascript" src="/web/20150219161947js_/http://programming.msjc.edu/WebResource.axd?d=yMlhPwgzT15hMpD7kysR3i_jKwf7MTcXfs1nTZ4AObh3nQrLbisEjJKrgsAF3OQDAaQxLFijavigPwl9xHtTQ8y1kNLIDp3aIxtKHWsBEBibDCuHHNLrJMl12n849XNEsCSfHHHAae3Ono4tieU1vcXJlRjcoHSSYsF8OmQp5yRicpyrUlXwjg4xG_w0KpZnlXolPQ2&amp;t=634957464340000000"></script>
+<script type="text/javascript"> 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('0.f="/g/e/c/d/";0.1.k=\'l...\';0.1.j=\'3 2 h 2 i\';0.1.5=\'6 2 a b\';0.1.9=\'7\';0.1.8=\'x\';0.1.y=\'v\';0.1.w=\'B\';0.1.C=\'3 2 z A, u 4 o 2 p. m n s t q 4 r.\';',39,39,'hs|lang|to|Click|and|fullExpandTitle|Expand|Prev|nextText|previousText|actual|size|Resources|Graphics|LiveContent|graphicsDir|DesktopModules|bring|front|focusTitle|loadingText|Loading|Use|arrow|drag|move|next|previous|keys|for|click|Move|closeText|Next|moveText|close|image|Close|restoreTitle'.split('|'),0,{}))
+ 
+ //]]> 
+  </script>
+<div id="LCABSBASE" style="position:absolute; top:0; left:0"></div> 
+
+ <script type="text/javascript">
+ 
+ //<![CDATA[ 
+ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('q W=B x();3 y(r){f{C.G(r).H()}s(e){}}3 E(c){q m={};F c&&m.D.I(c)==\'[z A]\'}6.l.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'T\',0.a.n)}7{b.U(0.1.9,0.1.d,0.1.8)}});6.R.4(3(0){2(0.1.k==\'5\'){b.j(0.1.i,0.1.9,0.1.d,0.1.8,\'S\',0.a.n)}});6.l.4(3(0){2(0.1.X==\'5\'){f{2(g(h)!=\'u\'){h.t(0.1.w,0.1.p,0.1.o)}7 2(g(v)!=\'u\'){v.4([\'t\',0.1.w,0.1.p,0.1.o])}7 2(V){L(\'M J: K P Q N O\')}}s(e){}}});',60,60,'sender|custom|if|function|push|TRUE|hs|else|ElementId|ModuleId||LiveContentClient|functionToCheck|PortalId||try|typeof|pageTracker|TabId|StateChange|ViewState|onAfterExpandCollection|getType|id|GTrackLabel|GTrackAction|var|elementid|catch|_trackEvent|undefined|_gaq|GTrackCategory|Array|LCSlideShowCallBack|object|Function|new|document|toString|isFunction|return|getElementById|onclick|call|Content|Google|alert|Live|not|found|Analytics|Code|onAfterCloseCollection|OFF|ON|IncrementView|false|LiveContentCallTags|GAnalytics'.split('|'),0,{}))
+ //]]> 
+ </script> 
+
+<script src="/web/20150219161947js_/http://programming.msjc.edu/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3af319b152-218f-4c14-829d-050a68bb1a61%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/web/20150219161947js_/http://programming.msjc.edu/js/dnn.js" type="text/javascript"></script><style type="text/css">.livetabsdefault .ui-tabs .ui-tabs-hide { display: none !important; }.livetabsdefault .ui-tabs .ui-tabs-panel { border-width: 0; background: none; }.livetabsdefault .ui-tabs .ui-tabs-nav li { margin: 0 0.2em -1px 0;}.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }.livetabsdefault .ui-tabs .ui-tabs-nav li.ui-tabs-selected a { cursor: text; }.livetabsdefault .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }.livetabsdefault .ui-tabs .ui-tabs-nav li a { padding: 0.5em 2em; }</style><script src="/web/20150219161947js_/http://programming.msjc.edu/WebResource.axd?d=r--mqSQc_tZlpImylLlW2aMGwbSeQ0j-c_qJlv8KSLFG_BMOm66tY3r9w3p5N7_6oBJce-746kM4A1533Ib1PdLIK21NZUD0rrRIQHiJjc38OnIKS2-InlAYNcvZjQ67TUxfjFo9HysGFmlk5SW3YbhR846fhEoXCCPuOkrUNhhM1vqruflOLpH3uJA1&amp;t=635024910000000000" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"/>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAgTc0a5UV6cAu0wG8ZE9veZ//c7PsqmuTnEFQI7odDR3WwwN58EmkZeYVfe5uNDEljiNx9aiHsyVt43JPA19HY69g7WIPfzT65Doh/GL2XrAMmSEv4bSkfzyeahGOXBWCRXyfNnC2LjR4Gt1Zo90L2sIJWE4Jsg+tfguQrQbLlbQNHMoZOJ0WR9e5FGHSPqfNQ2Eejl"/>
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 90, '');
+//]]>
+</script>
+
+        <script src="/web/20150219161947js_/http://programming.msjc.edu/js/Debug/dnn.modalpopup.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161947js_/http://programming.msjc.edu/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161947js_/http://programming.msjc.edu/Resources/Shared/Scripts/dnn.jquery.js?cdv=109" type="text/javascript"></script><script src="/web/20150219161947js_/http://programming.msjc.edu/js/Debug/dnncore.js?cdv=109" type="text/javascript"></script>
+        
+        
+
+<table border="0" cellspacing="0" cellpadding="0" class="menu_bgcolor skin-1024">
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="page_top_bgcolor"><table class="page_top_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td rowspan="2" class="logo_style"><a id="dnn_dnnLOGO_hypLogo" title="CSIS 113A" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Home.aspx"><img id="dnn_dnnLOGO_imgLogo" src="/web/20150219161947im_/http://programming.msjc.edu/Portals/16/cpplogo2.png" alt="CSIS 113A" style="border-width:0px;"/></a></td>
+              
+              <td class="language_style" nowrap="nowrap"><div class="language-object">
+
+
+</div></td>
+              <td align="right" class="page_top_right"><img src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+            <tr>
+              <td class="search_style" nowrap="nowrap"><span id="dnn_dnnSEARCH_ClassicSearch">
+    <span class="Search" title="Google Web Search"><input id="dnn_dnnSEARCH_WebRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="WebRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_WebRadioButton">Web</label></span>
+    <span class="Search" title="Site Search"><input id="dnn_dnnSEARCH_SiteRadioButton" type="radio" name="dnn$dnnSEARCH$Search" value="SiteRadioButton" checked="checked"/><label for="dnn_dnnSEARCH_SiteRadioButton">Site</label></span>
+    <input name="dnn$dnnSEARCH$txtSearch" type="text" maxlength="255" size="20" id="dnn_dnnSEARCH_txtSearch" class="NormalTextBox" onkeydown="return __dnn_KeyDown('13', 'javascript:__doPostBack(%27dnn$dnnSEARCH$cmdSearch%27,%27%27)', event);"/>
+	<a id="dnn_dnnSEARCH_cmdSearch" class="Search" href="javascript:__doPostBack('dnn$dnnSEARCH$cmdSearch','')"><img src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/BlueSearch.jpg" align="absMiddle" border="0"></a>
+</span>
+
+
+</td>
+              <td align="right" class="page_top_right02"></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="user_left_bg" nowrap="nowrap"><table width="244" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" class="date_style"><span id="dnn_dnnCURRENTDATE_lblDate" class="CurrentDate">Thursday, February 19, 2015</span>
+</td>
+                </tr>
+              </table></td>
+              <td class="user_bg" width="100%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="left">
+                      <span id="dnn_dnnBREADCRUMB_lblBreadCrumb"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx" class="Breadcrumb">4. Repetition &nbsp;&nbsp;&nbsp;</a></span>
+</td>
+                    <td align="right">
+<!--close registerGroup--><a id="dnn_dnnLOGIN_loginLink" title="Login" class="Login" onclick="return dnnModal.show('https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx&amp;popUp=true',/*showReturn*/true,300,650,true,'')" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/login.aspx?ReturnUrl=%2fcpp%2f4Repetitionnbsp%3bnbsp%3bnbsp%3b.aspx">Login</a>
+<!--close loginGroup--></td>
+                  </tr>
+              </table></td>
+              <td align="right" class="user_right_bg"><img src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="45" height="10"/></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><table class="menu_bg" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td valign="top" height="10"><img src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="190" height="10"/></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><div>
+	<ul class="" id="dnn_dnnNAV_ctldnnNAV">
+		<li id="dnn_dnnNAV_ctldnnNAVctr354"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Home.aspx"><span>Home</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr527"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/1Introduction.aspx"><span>1.    Introduction</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr528"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/2DataTypesnbsp;nbsp;.aspx"><span>2. Data Types &nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr529"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/3Decisionsnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>3. Decisions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr530"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;.aspx"><span>4. Repetition &nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr531"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/5Functionsnbsp;nbsp;nbsp;nbsp;.aspx"><span>5. Functions &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr532"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/6Parameters.aspx"><span>6. Parameters</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr534"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/7Arraysnbsp;nbsp;nbsp;nbsp;nbsp;nbsp;nbsp.aspx"><span>7. Arrays&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr535"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/8Pointersnbsp;nbsp;nbsp;nbsp;.aspx"><span>8. Pointers &nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr536"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/9Classesnbsp;nbsp;nbsp;nbsp;nbsp;.aspx"><span>9. Classes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr606"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus.aspx"><span>Syllabus</span></a><ul id="dnn_dnnNAV_ctldnnNAVsub606">
+			<li id="dnn_dnnNAV_ctldnnNAVctr1698"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus/4046.aspx"><span>4046</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1673"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus/3482.aspx"><span>3482</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr842"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus/4623.aspx"><span>4623</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr1571"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus/4626.aspx"><span>4626</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr607"><a href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/Syllabus/4589.aspx"><span>4589</span></a></li>
+		</ul></li>
+	</ul>
+</div></td>
+                  </tr>
+              </table></td>
+              <td width="100%" class="content_style" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                  <tr>
+                    
+                  </tr>
+                  <tr>
+                    
+                    <td id="dnn_ContentPane" valign="top" class="contentpane"><div class="DnnModule DnnModule-LiveTabs DnnModule-2875"><a name="2875"></a>
+<div class="c_container c_head_grey">
+    <div class="head_title">
+        <div class="c_actions">
+			
+        </div>
+        <div class="c_icon">			
+			
+			<h2 class="c_title">
+				<span id="dnn_ctr2875_dnnTITLE_titleLabel" class="TitleHead">Repetition</span>
+
+
+				
+			</h2>
+            </div>
+        <div class="title_vis">
+        
+            <a id="dnn_ctr2875_dnnVISIBILITY_cmdVisibility" title="Minimize" href="javascript:__doPostBack('dnn$ctr2875$dnnVISIBILITY$cmdVisibility','')"><img id="dnn_ctr2875_dnnVISIBILITY_imgVisibility" title="Minimize" src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Containers/MinimalExtropy/images/DNN-minus.gif" alt="Minimize"/></a>
+        </div>
+        <div class="clear_float">
+        </div>
+    </div>
+    <div class="c_content">
+        <div id="dnn_ctr2875_ContentPane" class="Normal c_contentpane">
+        <!-- Start_Module_2875 --><div id="dnn_ctr2875_ModuleContent" class="DNNModuleContent ModLiveTabsC">
+	
+<style type="text/css">
+    .MNormal
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalBold
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .MNormalRed
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .MHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 20px;
+        font-weight: normal;
+        color: #333333;
+    }
+    .MSubHead
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        color: #003366;
+    }
+    .MCommandButton
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 11px;
+        font-weight: normal;
+    }
+    .MNormalTextBox
+    {
+        font-family: Tahoma, Arial, Helvetica;
+        font-size: 12px;
+        font-weight: normal;
+    }
+</style><div id="TWLiveTabsWrapper2875" class="livetabsdefault mtop">
+		<div id="LiveTabsWrapper2875" class="mtop" style="width:100%;">
+			<ul class="mtop">
+				<li id="LiveTabs2875151" class="mtop"><a name="LiveTabsContent2875151" href="#LiveTabsContent2875151">A. Introduction</a></li><li id="LiveTabs2875152" class="mtop"><a name="LiveTabsContent2875152" href="#LiveTabsContent2875152">B. The for Loop</a></li><li id="LiveTabs2875153" class="mtop"><a name="LiveTabsContent2875153" href="#LiveTabsContent2875153">C. The while Loop</a></li><li id="LiveTabs2875154" class="mtop"><a name="LiveTabsContent2875154" href="#LiveTabsContent2875154">D. C++ Jumps</a></li><li id="LiveTabs2875155" class="mtop"><a name="LiveTabsContent2875155" href="#LiveTabsContent2875155">E. Video Lectures</a></li><li id="LiveTabs2875640" class="mtop"><a name="LiveTabsContent2875640" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/4Repetitionnbsp;nbsp;nbsp;/SelfEvaluation-Loops.aspx" class="NavigateUrl">Self Evaluation</a></li>
+			</ul><div id="LiveTabsContent2875151" class="mtop">
+				<div id="dnn_ctr2875_View_ctl00_ctl00_LiveTabsiMod2876"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2876"><a name="2876"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl00_ctr2876_ContentPane">
+		
+    <!-- Start_Module_2876 --><div id="dnn_ctr2875_View_ctl00_ctl00_ctr2876_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl00_ctr2876_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Introducing Loops</span> <hr/>
+<p><span style="color: #000000;">You will see looping in Computer Science called by many different names: repetition, iteration, and looping. What all of this really means is to repeat a set of statements until a certain condition is met.&nbsp;</span></p>
+<strong style="color: #000000; margin: 0px; padding: 0px; border: 0px currentcolor; text-align: left; letter-spacing: normal; background: #ffffff;">Looping and Decisions<br/>
+<br/>
+</strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">In some ways looping and decision structures are similar. They both use relational operators to evaluate a boolean test condition and they both alter the flow of control of the program execution. &nbsp;How they differ is that decision structures execute statements if the test condition yields a true result and the looping structures repeats a set of action while the test condition yields a true result.&nbsp;<br/>
+</span>
+<div style="color: #000000; margin: 0px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px; letter-spacing: normal; color: #000000; background: #ffffff;"><br/>
+</span></div>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">It doesn't seem likely but many times beginning students will use looping structures where they want decisions and decisions where they want looping structures. Understanding the difference between the two is an important concept to grasp because you need to know which construct to you before you can solve particular problems.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/decision.fw.png" style="height: 306px; width: 300px; margin: 0px; padding: 0px; border: 0px;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The above depicts how the flow of control of the selection structure works. In the example if you are at then of the file then it is time to close the file. If you are not at the end of the file then control branches to the next statement following the close file statement.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">As stated iteration (looping) is similar in that a boolean condition is used to control the flow of the program. The difference is that instead of executing a block of code if the condition is true, iteration executes the statements repeatedly until the condition becomes false:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/iteration.fw.png" style="height: 296px; width: 300px; margin: 0px; padding: 0px; border: 0px;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">In the above illustration a boolean check is made to see if the end of the file has been encountered. If the program is not at the end of the file the next line of the file is read. The process of checking for end of file and reading the next line will continue until the end of the file is found. At this point the loop exits and the statements following the loop are executed.</p>
+<br/>
+<span class="Head">C++ and Iteration (Looping)</span><br/>
+<hr/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">There are basically three loop constructs that are part of the C++ programming language. They are the while loop, the do while loop, and the for loop. While each of these loops can be used interchangeably to perform the same task they were each designed specifically to solve certain types of problems more efficiently.&nbsp;</span>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Like the if statement, looping structure rely on a boolean test condition to control the loop. One of the things that distinguishes the loops from each other is where the test condition occurs. One loop, the do-while loop has the test condition last where another loop, the while loop has the test condition first:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/LoopTypes.fw.png" style="height: 215px; width: 400px; margin: 0px; padding: 0px; border: 0px;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">As you can see the major difference between the two loops is where the test condition occurs. With a bottom tested loop the code in the body of the loop will always execute at least one time. Remember, the code flows from top to bottom so the test condition is not checked until after the body of the loop has executed once.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">New programmers tend to gravitate towards the do-while bottom tested loop. This is probably because using this loop avoids having to setup any preconditions to get the loop going. You should know though that using this type of loop should not be your first choice because it is like "leaping before you look". &nbsp;Think of it this way, would you add seasoning to something you are cooking before tasting it first?</p>
+<br/>
+<p><strong><span style="font-size: 22px; font-family: Times;">Loop Classification</span>
+</strong></p>
+<strong><hr/>
+</strong>
+<p><span style="font-size: 12px; line-height: 18px; font-family: Arial, Helvetica, sans-serif;">In C++ &nbsp;there are two types of loops:</span></p>
+<ol style="color: #444444; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">Counted Loops</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Indefinite loops</li>
+</ol>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">Counted Loops</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">You employ counted loops when you know how many times you want something to repeat. For instance, output your name to the screen 10 times. Of course it is not always possible to know how many times you want the loop to run before hand. Consider reading lines from a file or counting the number of characters that appear in a string.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">The counted loop in my mind is the simplest loop to learn in C++ because every statement needed to initialize, control, and update the loop appears on one line.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">Indefinite loops&nbsp;</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Indefinite loops are called indefinite because you can not determine how many iterations the loop will need to execute to perform the task at hand. &nbsp;Here is an example problem of an indefinite loop:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><em style="margin: 0px; padding: 0px; border: 0px;"><strong style="margin: 0px; padding: 0px; border: 0px;">Generate random numbers until a prime number is produced</strong></em></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Because the numbers are being generated are random there is no way to tell how many numbers will need to be generated before a prime number is one of the numbers produced.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Indefinite loops can be further broken down into the following three categories</p>
+<ol style="color: #444444; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">Data Loops - keep reading until there is no more data left to process. This type of loop might be employed when reading the contents of a file or a web page</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Sentinel Loops- Keeping iterating until a specific value or piece of data is found. The example of the indefinite loop given above is an example of a sentinel loop. The sentinel in this case would any prime number. Of course this is not just one sentinel. This is a sentinel range.&nbsp;</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Limit Loops - This loop will iterate until the answer is close enough. These loops are best employed in scientific applications and graphing.</li>
+</ol>
+<ul>
+</ul>
+<span style="font-size: 22px; font-family: Times;"><strong>Writing Loops Correctly</strong></span><br/>
+<hr/>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">You will find that when you start writing loops that it is an easy thing to do to have a logic error in your code that will produce a loop that will never end. Loops have always been a source of errors in programs so it is important to understand how to write them correctly the first time. In a book written by Doug Cooper called Oh Pascal, the author defines a strategy for building loops correctly.</p>
+<table style="color: #444444; text-align: left; letter-spacing: normal;">
+    <tbody>
+        <tr>
+            <td style="padding: 3px; border: 1px dotted #bbbbbb; text-align: left;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/OhPascal.jpg" style="height: 137px; width: 100px; margin: 0px; padding: 0px; border: 0px;"/></td>
+            <td style="padding: 3px; border: 1px dotted #bbbbbb; text-align: left;"><em style="color: #000000; margin: 0px; padding: 0px; border: 0px; letter-spacing: normal; background: #ffffff;">Author: Doug Cooper<br/>
+            Publisher: W.W. Norton &amp; Company, New York and London, 1993<br/>
+            ISBN:<strong style="margin: 0px; padding: 0px; border: 0px;">0-393-96399-3</strong>,<strong style="margin: 0px; padding: 0px; border: 0px;">0-393-96398-5</strong></em></td>
+        </tr>
+    </tbody>
+</table>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Included in this strategy is that loops consist of preconditions, actions the loop performs, post conditions, and a bounds and goal. &nbsp;We will look at all of these concepts as we move along but in order to write loops correctly the first time we need to get an understanding of what the bounds an goal are and how to identify them.</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">The Loop Bounds</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">In my opinion knowing what the bounds for your loop is and how to make your loop move towards that bounds is the most important thing to learn when writing loops. The bounds is what is needed to make your loops stop and since infinite loops are one the most common errors in programming, learning the bounds first is most important.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">To understand the bounds consider the following problem:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;"><em style="margin: 0px; padding: 0px; border: 0px;">Count all of the vowels that are present in a String</em></strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Understanding what the bounds is in this problem may not be entirely straight forward to you. Think about it in another way. You want to count all of the vowels until there is are no more characters left to examine. We could say then that the bounds would be that end of the String was encountered.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">It should seem obvious that we need examine the first character, then the second, and so on until there are no more characters left to examine. We could say then that examining each character in order is moving us towards our bounds (the end of the string).</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">Loop Goal</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">We know that we need to examine each character in order until there are no more characters left which moves us towards the bounds and stops the loop from executing but what is the goal of the problem?</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">The goal of the problem is more obvious. It is to count the number of vowels that appear in the string.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">So how would this loop be constructed? Let's consider some pseudo-code.&nbsp;</p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;"><span style="color: #00b050;">// Initialize variables</span><br/>
+A counter called<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #c00000;">count<span class="Apple-converted-space">&nbsp;</span></span>initialized to<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #c00000;">0</span><br/>
+</strong></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">A String called<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #c00000;">s</span><span class="Apple-converted-space" style="color: #444444;">&nbsp;</span>initialized from the keyboard</strong></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">A char called<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #c00000;">ch</span><span class="Apple-converted-space" style="color: #444444;">&nbsp;</span>set to first character of<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #c00000;">s</span></strong></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;"><span style="color: #0070c0;">while<span class="Apple-converted-space">&nbsp;</span></span>ch is not equal to end of string<br/>
+<span style="color: #0070c0;">{</span><br/>
+&nbsp; &nbsp; if(ch is equal to a vowel)<br/>
+</strong><strong style="color: #444444; margin: 0px; padding: 0px; border: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;increment counter;</strong></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">&nbsp; &nbsp; assign next char in s to ch<span class="Apple-converted-space" style="color: #444444;">&nbsp;</span><span style="color: #00b050;">// &nbsp;move towards bounds </span>&nbsp;</strong></p>
+<p style="margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;"><span style="color: #0070c0;">}</span></strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">It is important to note that this loop will execute until there are not more characters in the String. Assigning the next character in the string s to ch moves us towards the end of the string (the bounds). Without this statement ch never changes so the test condition will always remain the same.&nbsp;&nbsp;</p>
+<p> </p>
+<p><strong class="Head">Precondition / Post Condition
+</strong></p>
+<hr/>
+<strong class="Head">
+</strong>
+<span style="text-align: left; letter-spacing: normal; color: #444444; background: #ffffff;">Most loops will require some sort of preconditions to setup them up and get them going. In the above problem the following pre-conditions were necessary:</span>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">&nbsp;</p>
+<ul style="color: #444444; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">A counter variable was created to hold the number of vowels found.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">A String was declared and initialized to text taken from the keyboard.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">A character called ch was created and initialize with the first character from the String s</li>
+</ul>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">As for the<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">post condition</strong><span class="Apple-converted-space">&nbsp;</span>in this code there really isn't one. It is typical for loops to not &nbsp;have a post condition that needs to be taken care of. &nbsp;If the program was asking for an average then the post condition would be to test that the loop actually was entered. Otherwise you might have a divide by zero error.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;"><strong style="margin: 0px; padding: 0px; border: 0px;">Priming The Loop</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Assigning the first character to the char ch is called priming the loop. This is needed to start the loop. Priming will be covered in a later section but you should know that many times you need to initialize a variable with data before the loop then get more data at the bottom of the loop. Without these two statements the bounds would never be reached.</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left;">Now that you have an idea on the mechanics or writing loops properly it is time to look the loops that are specific to the C++ programming language. In the following sections you will see:</p>
+<ul style="color: #444444; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">for loops</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">while loops</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">do-while loops</li>
+</ul>
+<div>
+<div>
+<p>&nbsp;</p>
+<br/>
+</div>
+</div>
+</div>
+
+				</div><!-- End_Module_2876 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2875152" class="mtop">
+				<div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2877"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2877"><a name="2877"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2877_ContentPane">
+		
+    <!-- Start_Module_2877 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2877_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl01_ctr2877_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Counted Loops</span> <hr/>
+<p><strong></strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The for loop is the best loop to start with because it tends to be the easiest loop to comprehend. The reason it is the most simple loop to learn is that all of the statements that make up the loop are located on the same line. This makes it easy to identify any missing components.&nbsp;</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The for loop is a natural counting loop. You use this loop when you need to repeat a set of instructions a specific number of times. This could include printing your name to the screen 10 times or checking for all of the upper case characters in a string. You may be wondering how using a counted loop will help you count the uppercase characters in a string? The answer is that you can use the length method of the String to determine the number of characters. From that point you simply create a loop that counts from 0 up to the number of characters in the String.</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The for loop is a test at the top loop and it has the following syntax:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Counted%20Loops.fw.png" style="height: 350px; width: 517px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The six components that make up the for loop are as follows</p>
+<ol style="color: #444444; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: upper-alpha; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">The keyword for needed to specify that this is a for loop</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Initialization section. The variable used to count with is created and set to a reasonable value</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Boolean test expression. Like the if statement relational operators are used to make up the test.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Update expression. The counter variable is changed to move the loop towards it's bounds .This could mean incrementing or decrementing.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The loop body. This is where the statements to be repeated are placed</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Braces. The for loop is a block of code and is delineated by open an closed braces. Like the if statement the body of the for loop is between the open and closed curly brace.&nbsp;</li>
+</ol>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Notice that the initialization,<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">Boolean<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong>test, and<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">update<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong>expression are separated by a<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">semicolon</strong>? Like statements in C++ these are necessary to terminate each individual section.&nbsp;</p>
+<span style="margin: 0px; padding: 0px; border: 0px; text-align: -webkit-left; letter-spacing: normal; color: #444444; background: #ffffff;">The following<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: -webkit-left; letter-spacing: normal; background: #ffffff;">animation<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: -webkit-left; letter-spacing: normal; color: #444444; background: #ffffff;">depicts the steps of the<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #444444; margin: 0px; padding: 0px; border: 0px; text-align: -webkit-left; letter-spacing: normal; background: #ffffff;">for<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: -webkit-left; letter-spacing: normal; color: #444444; background: #ffffff;">loop:</span><span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;" class="Apple-converted-space">&nbsp;</span><br style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;"/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/CPPForLoop.gif" style="width: 299px; height: 275px; border: 2px solid #002060;"/></p>
+<div><br/>
+</div>
+<p class="Head">First Example</p>
+<div><span style="font-size: 22px; font-family: Times;"><strong><hr/>
+</strong></span>
+<p> <span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">Earlier an example was discussed to use a for loop to count all of the upper case characters in a String. At this point let's take a look at some code that will do this:</span> </p>
+<p style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/forLoop1.png" style="width: 650px; height: 450px; border: 2px solid #002060;"/></p>
+<p> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">In the initialization section notice that the variable i was created and set to 0. This variable is used for the counter to control the loop. In the test expression section the test checks to see if i is less than the length of the String. If the test is true the body of the loop executes. Finally, the update expression executes incrementing the variable i by one. This process continues until the variable i becomes equal to the number of characters in the string.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The flow of the for loop is depicted here:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forFlow%20B.png" style="height: 597px; width: 552px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p>
+</p>
+<ol style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">The initialization section executes one time once the loop enters</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The test expression executes. If the test expression is false the loop exits otherwise the body of the loop is entered and executed</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The update expression happens after the body of the loop has executed. Once the update expression has executed the flow goes back to the test expression.</li>
+</ol>
+<p>&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">This process continues until the bounds of the loop are met.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">The bounds -&nbsp;</strong>The bounds of this loop is when i becomes equal to the number of characters in the String.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">The Goal<span class="Apple-converted-space">&nbsp;</span></strong>- The goal of the loop is to count the number of upper case characters in the String.&nbsp;</p>
+<p> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">The Initialization Section<br/>
+</span></p>
+<hr/>
+<p><span style="color: #000000;">The initialization section is encountered first. It is the first clause that is part of the loop. This section will always be executed once at the time the loop in entered. It is typically used for variable creation to move the loop towards a bounds.&nbsp;</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/InitSection.fw.png" style="height: 160px; width: 250px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Variations</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You are not limited to the creation of only one variable in the initialization section. You can initialize as many variables as you would like. You simply need to separate each variable declaration by comma:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/InitSection1.fw.png" style="height: 160px; width: 400px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">It should also be noted that the variables all have to be of the same type. This means you<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">cannot<span class="Apple-converted-space">&nbsp;</span></strong>mix a double and an int for instance:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/InitSection2.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;"><br/>
+</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">The Test Expression<br/>
+</span></p>
+<hr/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The test expression happens right after the initialization section executes and subsequently after the update expression executes. If the test expression is true then the statements withing the loop body are executed. If the test expression is false the flow of the program continues after the end of the loop body.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The test expression is created just like you would create the test expression in an if statement. You use the relational operators to construct a Boolean test:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forTest.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You can also use the logical operators to construct a compound test expression:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forTestCompound.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">What you cannot do in the test expression is have multiple tests:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forTestBad.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Update Expression</span></p>
+<hr/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The update expression executes immediately after the loop body executes and just before the test expression. This section is designed to change the counter variable which will move the loop towards it's bounds:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forUpdate.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Like the other components of the for loop you can have multiple test expressions. You simply separate them by a comma:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forMultipleUpdatefw.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong class="Head" style="color: #000000; margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd;">Counting Variations</strong></p>
+<hr/>
+<br/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Counting Down</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You are not limited to counting up. You can count down also if you want to:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forCountDown.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The following code shows how to print out a string in reverse order</p>
+</div>
+</div>
+
+				</div><!-- End_Module_2877 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2878"><div class="DnnModule DnnModule-LiveContent DnnModule-2878"><a name="2878"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2878_ContentPane">
+		
+    <!-- Start_Module_2878 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2878_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2878"></a> <div id="dnn_ctr2875_View_ctl00_ctl01_ctr2878_View_LC2878"><table id="dnn_ctr2875_View_ctl00_ctl01_ctr2878_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><a id="LC28782" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/Portals/16/LiveContent/2878/Images/StringReveseCode.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2878&amp;eid=2&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC28782Heading',headingOverlay: {fade: 1},captionId: 'LC28782Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2878'}, {TabId: '530',ModuleId: '2878',PortalId: '16',ElementId: '2'});"> <img alt="2" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2878&amp;eid=2&amp;PortalId=16"/></a><div class="comment-overlay" id="LC28782CommentOverlay"></div></td><td><a id="LC28783" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/Portals/16/LiveContent/2878/Images/StringReverseOutput.png" onclick="return hs.expand(this, {src: '/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2878&amp;eid=3&amp;Type=View&amp;PortalId=16',allowHeightReduction: false,headingId: 'LC28783Heading',headingOverlay: {fade: 1},captionId: 'LC28783Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2878'}, {TabId: '530',ModuleId: '2878',PortalId: '16',ElementId: '3'});"> <img alt="3" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2878&amp;eid=3&amp;PortalId=16"/></a><div class="comment-overlay" id="LC28783CommentOverlay"></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2878 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2879"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2879"><a name="2879"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2879_ContentPane">
+		
+    <!-- Start_Module_2879 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2879_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl01_ctr2879_HtmlModule_lblContent" class="Normal">
+	<span class="Head"></span>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px;">One of the things that might not be clear about the above code is the initialization section:</span></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px;">int i = s.length() - 1;</span></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px;">We want to start outputting at the last character in the string. The length will give us the number of characters but this is one more than the last index. If there are 25 characters in the string the last index is 24. This is because we start counting a zero in Computer Science so, 0 - 24 is 25 characters.</span></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Counting By Steps</strong><br/>
+<br/>
+You can count by steps:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/Portals/34/Images/repetition/forCountBySteps.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 1px solid #c00000;"/></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">This loop executes 10 times because i is increased by 2 each time through the loop.</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Counting Exponentially</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You can also count exponentially if you want:</p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forCountExp.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 1px solid #c00000;"/></p>
+<br/>
+<p class="Head">Example Code - Sum Of All Characters</p>
+<p>&nbsp;</p>
+<hr/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">The following code shows how to use for loop to sum the ascii values of all of the characters in the String:</span>
+<p>&nbsp;</p>
+<br/>
+<div style="text-align: center;"><span style="font-size: 12px; line-height: 18px; font-family: Arial, Helvetica, sans-serif;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/sumCharsA.png" style="width: 650px; height: 344px; border: 2px solid #002060;"/>&nbsp;</span></div>
+<p> </p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;"><br/>
+</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Code Review</strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">In the above example the variable i is initialized to 0. The loops bounds then is when the value of i reaches becomes equal to the number of characters in the string. Each time through the loop i is incremented by one. In the body of the loop an <strong>accumulator </strong>(the sum variable) is incremented by the ascii value of the character each time through the loop. Notice the use of the cast<br/>
+<br/>
+&nbsp;<strong>static_case&lt;int&gt;(<span style="margin: 0px; padding: 0px; border: 0px;">str.at(i))</span></strong></p>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</strong>Because we are <strong>accumulating </strong>the variable sum which is an int it is appropriate to cast each char to an int. This means that for that statement treat the character as an int. This way we are adding int values to each other.&nbsp;</p>
+<p> </p>
+<div>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><span class="Head" style="color: #000000; margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd;">Omitting Expressions</span></p>
+<hr/>
+<br/>
+<span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">You can use as many or as little of the sections of the for loop as you would like. You simply need to make sure you have the semicolons in place.</span>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">Here is an example of removing the update expression:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forNoUpdate.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 1px solid #c00000;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">Finally here is an example of a for ever loop (A loop that never ends) :</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forEvers.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 1px solid #c00000;"/></p>
+</div>
+<div><br/>
+</div>
+<br/>
+<span class="Head">Video - for Loops</span> <hr/>
+<br/>
+</div>
+
+				</div><!-- End_Module_2879 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2880"><div class="DnnModule DnnModule-LiveContent DnnModule-2880"><a name="2880"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2880_ContentPane">
+		
+    <!-- Start_Module_2880 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2880_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2880"></a> <div id="dnn_ctr2875_View_ctl00_ctl01_ctr2880_View_LC2880"><table id="dnn_ctr2875_View_ctl00_ctl01_ctr2880_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28801Heading">The For loop</div><a id="LC28801" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/lecture4/for/for.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28801eVideo',allowWidthReduction: true,headingId: 'LC28801Heading',headingOverlay: {fade: 1},captionId: 'LC28801Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2880',width: 800,height: 640}, {TabId: '530',ModuleId: '2880',PortalId: '16',ElementId: '1'}); "> <img title="The For loop" alt="The For loop" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2880&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28801eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28801Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2880 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2881"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2881"><a name="2881"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2881_ContentPane">
+		
+    <!-- Start_Module_2881 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2881_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl01_ctr2881_HtmlModule_lblContent" class="Normal">
+	
+</div>
+
+				</div><!-- End_Module_2881 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2883"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2883"><a name="2883"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2883_ContentPane">
+		
+    <!-- Start_Module_2883 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2883_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl01_ctr2883_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Where To Now?</span> <hr/>
+After reading the preceding section, you might be wondering why anyone would bother with <strong>while </strong>at all. The <strong>for </strong>loop seems so much more capable.
+<p>That's true for counted loops; if you are going to write loops that are controlled by a counter, you should probably use the <strong>for </strong>loop. But, not all loops, or even most loops, are counter-controlled. Event controlled loops are much more common, and there, the <strong>while </strong>loop reigns. </p>
+<br/>
+<span class="Head">Practice Problem</span> <hr/>
+<p>A number is called a <b>perfect number</b> if by adding all the positive divisors of the number (except itself), the result is the number itself.</p>
+<p>Six is the first perfect number. Its divisors (other than the number itself: 6) are 1, 2, and 3 and 1 + 2 + 3 equals 6. Other perfect numbers include 28, 496 and 8128.<br/>
+<br/>
+Using a counted loop can you check to see if a number is a perfect number? Check your solution with the video below</p>
+</div>
+
+				</div><!-- End_Module_2883 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2884"><div class="DnnModule DnnModule-LiveContent DnnModule-2884"><a name="2884"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2884_ContentPane">
+		
+    <!-- Start_Module_2884 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2884_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2884"></a> <div id="dnn_ctr2875_View_ctl00_ctl01_ctr2884_View_LC2884"><table id="dnn_ctr2875_View_ctl00_ctl01_ctr2884_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28841Heading">Perfect Number</div><a id="LC28841" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/lecture4/perfectnumber/perfectnumber.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28841eVideo',allowWidthReduction: true,headingId: 'LC28841Heading',headingOverlay: {fade: 1},captionId: 'LC28841Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2884',width: 800,height: 640}, {TabId: '530',ModuleId: '2884',PortalId: '16',ElementId: '1'}); "> <img title="Perfect Number" alt="Perfect Number" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2884&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28841eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28841Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2884 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl01_LiveTabsiMod2885"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2885"><a name="2885"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl01_ctr2885_ContentPane">
+		
+    <!-- Start_Module_2885 --><div id="dnn_ctr2875_View_ctl00_ctl01_ctr2885_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl01_ctr2885_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Still Not Sure?</span> <hr/>
+<span style="font-size: 22px;"><a href="https://web.archive.org/web/20150219161947/http://xoax.net/cpp/crs/console/lessons/Lesson16/" target="_blank">See what XoaX.net says about the for loop</a></span>
+</div>
+
+				</div><!-- End_Module_2885 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2875153" class="mtop">
+				<div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod2886"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2886"><a name="2886"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr2886_ContentPane">
+		
+    <!-- Start_Module_2886 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr2886_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl02_ctr2886_HtmlModule_lblContent" class="Normal">
+	<p><span class="Head">Random Numbers<br/>
+</span></p>
+<hr/>
+<p> <span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">I know you were expecting to see information about the while loop here. Before we get to that I want to take a detour and go down the road of creating and using random numbers. We do that here because we will want to have an example or two using random numbers with the while loop.&nbsp;</span> </p>
+<p><span style="color: #000000;">The C++ programming language has many built in functions that you can use to help you with you coding tasks. There are two such functions dedicated to the creation of random numbers. These functions are&nbsp;</span></p>
+<p>
+</p>
+<ol>
+    <li><span style="color: #000000;"><strong>srand(</strong>) &nbsp;- &nbsp;seed the random number generator</span></li>
+    <li><span style="color: #000000;"><strong>rand()</strong>&nbsp; - &nbsp;generate a random number</span></li>
+</ol>
+<p><span style="color: #000000;">To generate a random number you simply call the rand function and assign what the function produces to a variable:</span></p>
+<p><span style="color: #000000;">int someNumber = rand();</span></p>
+<p>If you haven't deduced it by now, this is the way all assignment works in C++; even functions!</p>
+<p>The above will generate a value between 0 and a constant called RAND_MAX which is defined in the header cstdlib. The value of RAND_MAX is platform dependent but is guaranteed to be at least 32767 (16-bit value).&nbsp;</p>
+<p><strong><span style="font-size: 16px;">Getting a range</span></strong></p>
+<p>To get a random number within a range (scaling the value) you need to employ the modulus operator. Suppose you want to generate a random number in the range of 0 to 100. You would do the following:</p>
+<p><strong>int someNumber = rand() % 101;</strong></p>
+<p>You may be asking why a value of 101 when what you want is 100? &nbsp;The simple answer is that you want a range of 100 but we start counting at zero in computer science so if you did a modulus of 100 you would get a range of 100 values but they would be the numbers 0 to 99.&nbsp;</p>
+<p>This idea of scaling can be taken one step further. Suppose you want to generate a random number in the range of 1 - 100. This can be done simply by adding one to the result:</p>
+<p><strong>int someNumber = rand() % 100 + 1;</strong></p>
+<p>Here you get a value between 0 and 99 then simply add 1 to get a value in the range of 1 to 100.&nbsp;</p>
+<p>To get a more diverse range you can use a formula of modulus ((max - min) + 1) + min. &nbsp;Suppose you want to have numbers in the range of 10 to 25. The following code uses the formula to do just that:</p>
+<p style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/RandRangeA.png" style="width: 650px; height: 282px; border: 2px solid #002060;"/></p>
+<p style="text-align: center;">&nbsp;</p>
+<p><span style="font-size: 16px;"><strong>
+Pseudo- Random</strong></span></p>
+<p><span>As it turns out random numbers in C++ are not really random. If you were to run the above code several times what you would find is that the same random numbers would appear in the same order each time the program is run. This would not make for a very good Vegas game would it? To deal with this we can use the srand function. The srand function is a function that simply injects a value into the formula used to create a random number. The s in srand stands for seed. What you are doing with the function then is seeding the random number generator. You can provide any unsigned whole number to the function. For example:</span></p>
+<p><strong>srand(100);</strong></p>
+<p>The problem with doing this is that you have seeded the random number generator with a constant so you have the same problem. The numbers will repeat in the same order each time you run the program.&nbsp;</p>
+<p><strong><span style="font-size: 16px;">The Time Of Day Clock</span></strong></p>
+<p>To solve the seeding problem you can incorporate one of the time functions that is part of the standard library. &nbsp;In order to use any of the time functions though you must first&nbsp;</p>
+<p><strong>#include &lt;ctime&gt;</strong></p>
+<p>The function you want to use is simply time. The time function gets the current calendar time. You can pass this function a parameter of type <strong>time_t </strong>or you can pass <strong>NULL</strong>. In either case the function will return the time in milliseconds. For our purposes, we simply want to pass a value of <strong>NULL</strong>. &nbsp;Here is the above program using the time functions to seed the random number generator.&nbsp;</p>
+<p style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/RandomSeeding.png" style="width: 650px; height: 395px; border: 2px solid #002060;"/></p>
+<p>One of the things you might encounter when using the value produced by the time function to seed the random number generator and that is a warning from the compiler stating that the conversion from time_t to unsigned int could produce a possible loss of data. This warning is generated because the <strong>srand </strong>function takes a data type of unsigned int and the time function produces a data type of <strong>time_t </strong>which is defined inside the <strong>ctime </strong>header. For our purposes this warning really doesn't mean much but we can get rid of it by casting:</p>
+<p><strong>srand(static_cast&lt;unsigned int&gt;(time(0)));</strong></p>
+<p class="Head">The while Loop</p>
+<p>&nbsp;</p>
+<hr/>
+<p>&nbsp;</p>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">In the previous section you saw the for loop and discovered that it works very nicely to solve problems that involve counting. The while loop on the other hand is works very well for monitoring events.&nbsp;</span>
+<p><span style="color: #000000;"><br/>
+</span></p>
+<p><span style="color: #000000;">The while loop has the following syntax</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/Counted%20Loops%20with%20While.fw.png" style="height: 295px; width: 493px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">As you can see the while loop is constructed very similar to an if statement. The only visible difference is the use of the keyword while instead of if. Be careful though, you don't want to use a decision where you need to repeat statements and vice-versa.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The different loops have particular type problems that they work best for but you will see that they are very versatile also. For instance, you can use a while loop to solve a counting problem. You simply need to make sure that you have all of the components needed for counting initialized and in the right place.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Counting Loops With While</span></p>
+<hr/>
+<p><span style="color: #000000;">To create a counted loop using while you must have all of the components used in the for loop but they are going to have to be put in different locations. To recap, here is an example of a for loop that counts up to 10:</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/forExample.fw.png" style="height: 160px; width: 450px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">To create the same loop with while you must create the variable i as a precondition to the loop, the test expression goes inside the parentheses, and the update expression goes in the body of the loop:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/whileCount%20B.fw.png" style="margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="font-size: 22px; font-weight: bold; font-family: Times;">Example</span></p>
+<hr/>
+<p><span style="color: #000000;">Let's look one more time at the example of summing all of the ascii character in a String. This time written using a counted while loop:</span></p>
+<p>
+</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/sumCharWhile.png" style="width: 650px; height: 484px; border: 2px solid #002060;"/></div>
+<p><span style="color: #000000;"><br/>
+</span></p>
+<p><span style="color: #000000;">To use a while loop instead of a for loop three things needed to be done:</span></p>
+<ol style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">A counter variable created and initialized before the loop starts (initialized to 0 in this example). This is a precondition to the loop.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The counter is tested inside the while condition (between the parentheses)</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The counter updated inside the body of the loop. Typically done at the bottom of the loop. This moves the loop towards it's bounds.</li>
+</ol>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Common Sources Of Error</strong><br/>
+It is easy to introduce &nbsp;logic errors when using a while loop for counting. You should become aware of each of them so that you know how to write the loop correctly the first time. Or, at the very least know where to look and how to fix these problems &nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">1. Using an improperly initialized or expired counter. In the for loop the scope of the counter is restricted to the body of the for loop. This is not true for variables defined outside of the block of the loop. It is possible to have several loops that use the same variable. In this situation using an expired counter is an easy thing to do.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">One solution to this problem is to use unique variable names for each counter you create. Another solution and probable the best answer to get into the habit of creating and initializing your counter line directly before the while statement.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">2. Endless loops. Endless loops typically happen because there isn't any code within the body of the loop to move the loop towards it's bounds. In the case of a counted loop this is usually caused by forgetting to place or update the counter within the body of the loop.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The best solution to this problem is to build the loop first without any of the statements you want repeated. This would involve determining the bounds of the loop and creating and updating any variables that will move the loop towards the bounds. If you get into the habit of concentrating on the components of what makes the loop run you will have much better success.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">3. The phantom semicolon. The phantom semicolon is not particular to the while loop. It can be placed in any block of code. Here is an example:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/liftOff.fw.png" style="height: 146px; width: 531px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Because of the semicolon, the code inside the body of the loop may never happen. If it does happen it will only happen one time.</p>
+<ol style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px currentcolor; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px currentcolor;">If countDown was originally anything other than zero, you will have an endless loop. Because nothing in the body changes the value of countDown, it will remain at its initial value.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px currentcolor;">If countDown is equal to zero, you will not have an endless loop, but the statements that were intended to be executed as part of the loop body will be executed exactly once.</li>
+</ol>
+<p style="color: #444444; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start;"><span style="font-size: 22px; font-weight: bold; font-family: Times;">Video - Counted Loops</span></p>
+<hr/>
+<p>&nbsp;</p>
+</div>
+
+				</div><!-- End_Module_2886 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod2882"><div class="DnnModule DnnModule-LiveContent DnnModule-2882"><a name="2882"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr2882_ContentPane">
+		
+    <!-- Start_Module_2882 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr2882_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2882"></a> <div id="dnn_ctr2875_View_ctl00_ctl02_ctr2882_View_LC2882"><table id="dnn_ctr2875_View_ctl00_ctl02_ctr2882_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28821Heading">Counted Loops</div><a id="LC28821" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/Lecture4/countedLoops/countedLoops.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28821eVideo',allowWidthReduction: true,headingId: 'LC28821Heading',headingOverlay: {fade: 1},captionId: 'LC28821Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2882',width: 800,height: 640}, {TabId: '530',ModuleId: '2882',PortalId: '16',ElementId: '1'}); "> <img title="Counted Loops" alt="Counted Loops" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2882&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28821eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28821Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2882 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod2888"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2888"><a name="2888"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr2888_ContentPane">
+		
+    <!-- Start_Module_2888 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr2888_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl02_ctr2888_HtmlModule_lblContent" class="Normal">
+	<p class="Head">Indefinite Loops</p>
+<div><span style="font-family: Times; font-size: 22px;"><strong><hr/>
+<br/>
+</strong></span>
+<p>Examine the following code:</p>
+<p style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/Indefinite.png" style="width: 650px; height: 480px; border: 2px solid #002060;"/></p>
+<div><br/>
+</div>
+<div>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Can you determine what the bounds and the goal of the loop are?</p>
+<ul style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">The bounds of the loop is when the value 50 is found</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The goal of the loop is to output all of the random numbers until the value 50 is found</li>
+</ul>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Ok, I agree this is not much of an algorithm but it serves as a simple example. Here is another question, can you tell how many times this loop will execute? The answer should be no. Because the number tested for is being randomly generated there is no way to know for sure how many times the loop will execute. This kind of loop is called an<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">indefinite<span class="Apple-converted-space">&nbsp;</span></strong>loop because we cannot determine how many numbers will be generated before the value 50 comes up.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Sentinel Loop</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">A sentinel loop is a loop that looks for some particular value as a way of terminating the repetition. The above indefinite loop is also called a sentinel bounds loop because it is looking for the value of 50 to end the loop.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Sentinel loops are typically used in two different situations:</p>
+<ol style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: decimal; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">When searching through text to find a particular word or character.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">When looking for a value that marks the end of input, like the end of file character when reading a file.</li>
+</ol>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Sentinel Ranges</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Sentinels do not necessarily need to be one particular value. You can also have a range of values:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><em style="margin: 0px; padding: 0px; border: 0px;"><strong style="margin: 0px; padding: 0px; border: 0px;"><span style="margin: 0px; padding: 0px; border: 0px; color: #00b050;">"Read numbers from the keyboard until an even number is encountered. Output the sum and average of the odd numbers"</span></strong></em></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Given the above problem can you determine the bounds and the goal of the problem? In addition, can you determine any preconditions, and post conditions that are necessary?</p>
+<ul style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">&nbsp;Bounds - The bounds of the loop is that an even number is generated.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">&nbsp;Goal - The goal of the loop is to output the sum and average of the odd numbers.</li>
+</ul>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Let's take a look at the code for this problem:</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/SentinelRanges.png" style="width: 650px; height: 724px; border: 2px solid #002060;"/></div>
+</div>
+<p>&nbsp;</p>
+<p> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Code Review</span></p>
+<hr/>
+<br/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">The above loop takes in integers from the keyboard and sums all of the numbers until an even number in encountered. Once this happens the sum and average of the values are input. &nbsp;Notice though that if the first number input is an even number the loop never executes and control of the program branches to the if statement.</span>
+<p>&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">This loop has some pre and post conditions that should be identified discussed:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Preconditions</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; color: #444444; background: #ffffff;">Loop preconditions typically involve the creation of variable to be used for the bounds and the goal. Looking closely at the code you can see that there are some preconditions.&nbsp;</span></p>
+<ul style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">The variable count is created and initialized to keep track of the number of odd numbers input.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The variable value was created and initialized with input from the keyboard.</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">The variable sum was created to accumulate the sum of all of the odd numbers</li>
+</ul>
+<p><span style="color: #000000;">This problem also has a post condition</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><strong style="margin: 0px; padding: 0px; border: 0px;">Post Condition</strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Since one of the goals of the loop is to output the average of all of the odd numbers we must make sure that at least one odd number was entered. If not, the loop would not be entered and the count variable would be zero. &nbsp;This would present us with a divide by zero error. The if statement takes care of this problem by checking the value of count before any division takes place.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Primed Loops</span></p>
+<hr/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">The above loop is an example of a<span class="Apple-converted-space">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">primed loop</strong>
+<div><br/>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">. Priming the loop means setting up the first value before the loop is entered so that the loop works properly. Before the loop is entered the first value is taken from the keyboard. This allows the loop to start working with proper first value. Notice that these instructions are repeated at the bottom of the loop. You may be thinking that this is bad because code has been duplicated. In the case of primed loops this is required to move the loop towards it's<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">bounds</strong>.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Many beginning students will do something like this:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/BadPrime.png" style="width: 650px; height: 288px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Here the number 1 has been stored in the variable value. This is not correct because you will be counting the one as the first number entered.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You are going to find that in most cases you will need to prime the while loop in some way. This means getting the first value for the loop test then repeating it again inside the loop body to move the loop towards a bounds. &nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Here is an example of a simple game loop that will repeat until the user does not want to play:</p>
+<p> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/gameLoop.png" style="width: 650px; height: 386px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; font-family: inherit; color: #000000; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">Before the loop starts the user is asked if they want to play. The while loop is encountered and the boolean test checks to see if the answer is 'y'. This will make the loop repeat until the answer is anything other than 'y'. &nbsp;At the bottom of the loop body the code that asks the user if they want to play is repeated. &nbsp;Their answer is then taken from the keyboard. If this code is not in the body of the loop the loop will run forever. </span> <span style="font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; font-family: inherit; color: #444444; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">The reason this becomes an infinite loop is that the variable answer would &nbsp;never get changed so the loop would not move towards it's bounds in any way.&nbsp;</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="font-size: 22px; font-weight: bold; font-family: Times; color: #444444;">Video - Using Indefinite Loops</span></p>
+<hr/>
+<br/>
+</div>
+<br/>
+</div>
+</div>
+
+				</div><!-- End_Module_2888 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod2889"><div class="DnnModule DnnModule-LiveContent DnnModule-2889"><a name="2889"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr2889_ContentPane">
+		
+    <!-- Start_Module_2889 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr2889_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2889"></a> <div id="dnn_ctr2875_View_ctl00_ctl02_ctr2889_View_LC2889"><table id="dnn_ctr2875_View_ctl00_ctl02_ctr2889_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28891Heading">Indefinite Loops</div><a id="LC28891" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/Lecture4/IndefiniteLoops/IndefiniteLoops.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28891eVideo',allowWidthReduction: true,headingId: 'LC28891Heading',headingOverlay: {fade: 1},captionId: 'LC28891Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2889',width: 800,height: 640}, {TabId: '530',ModuleId: '2889',PortalId: '16',ElementId: '1'}); "> <img title="Indefinite Loops" alt="Indefinite Loops" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2889&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28891eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28891Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2889 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod2890"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2890"><a name="2890"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr2890_ContentPane">
+		
+    <!-- Start_Module_2890 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr2890_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl02_ctr2890_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Bottom Testing - The do-while Loop</span> <hr/>
+<p>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">The final loop we will look at is the</span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><span class="Apple-converted-space">&nbsp;</span>do-while</strong><span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;"><span class="Apple-converted-space">&nbsp;</span>loop. With this loop, the test is at the bottom meaning that the loop body will always be executed one time. Here is the syntax for the<span class="Apple-converted-space">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">do-while</strong><span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;"><span class="Apple-converted-space">&nbsp;</span>loop:</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/Bottom%20Testing.fw.png" style="height: 260px; width: 492px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">The<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">do<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">-<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">while<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">loop's<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">boolean<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">condition follows the<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">while<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">keyword. Just like all selection and iteration statements in C++. Notice that at the end of the condition statement there is a semicolon. This is needed or you will receive an error. This is an easy thing to forget an could be a headache for you.&nbsp;</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">do-while loop</strong><span class="Apple-converted-space">&nbsp;</span>is one that many beginning programmers gravitate towards. I believe this is because there is a lack if understanding on how to properly prime the while loop. It could be that this loop seems a little more natural. If you find yourself being one of the people who is using the<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">do-while</strong><span class="Apple-converted-space">&nbsp;</span>loop often you should probably rethink what you are doing. The majority of the time a for loop or a while loop will work just fine.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">You should know that this loop is typically not meant to be the best loop to choose because it is like putting the cart before the horse. Think of it this way, if you were cooking a big pot of soup wouldn't you taste it before adding any seasoning? &nbsp;With a<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">do-while</strong><span class="Apple-converted-space">&nbsp;</span>loop it is like seasoning the soup before tasting to see if it needs any seasoning.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">Here is an example to show you what I mean. This program asks the user to keep guessing a value between 1 and 10. The answer of course is 7, please don't tell anyone:</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/doWhile.png" style="width: 650px; height: 362px; border: 2px solid #002060;"/></p>
+<p>
+</p>
+<span class="Head">Practice Problem</span> <hr/>
+Below is the output of a simple puzzle that asks the user to guess the pattern. Can you recreate the code for this puzzle? What you should know is that the pattern never changes and the solution is -1. You should also limit the amount of guesses to 5. <br/>
+<br/>
+<img alt="" width="669" height="338" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/guessPattern.png"/><br/>
+<br/>
+Compare your answer with the solution shown in the video below.
+</div>
+
+				</div><!-- End_Module_2890 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod4641"><div class="DnnModule DnnModule-LiveContent DnnModule-4641"><a name="4641"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr4641_ContentPane">
+		
+    <!-- Start_Module_4641 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr4641_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent4641"></a> <div id="dnn_ctr2875_View_ctl00_ctl02_ctr4641_View_LC4641"><table id="dnn_ctr2875_View_ctl00_ctl02_ctr4641_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC46410Heading">Practice Problem</div><a id="LC46410" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/Portals/16/LiveContent/4641/Videos/pattern.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC46410eVideo',allowWidthReduction: true,headingId: 'LC46410Heading',headingOverlay: {fade: 1},captionId: 'LC46410Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '4641',width: 800,height: 640}, {TabId: '530',ModuleId: '4641',PortalId: '16',ElementId: '0'}); "> <img title="Practice Problem" alt="Practice Problem" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=4641&amp;eid=0&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC46410eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC46410Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC46410Caption">Solves the practice problem to use a sentinel loop to guess the pattern</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_4641 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl02_LiveTabsiMod4609"><div class="DnnModule DnnModule-DNN_HTML DnnModule-4609"><a name="4609"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl02_ctr4609_ContentPane">
+		
+    <!-- Start_Module_4609 --><div id="dnn_ctr2875_View_ctl00_ctl02_ctr4609_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl02_ctr4609_HtmlModule_lblContent" class="Normal">
+	<span class="Head">Still Not Sure?</span><br/>
+<hr/>
+<span class="Head"><br/>
+<a href="https://web.archive.org/web/20150219161947/http://xoax.net/cpp/crs/console/lessons/Lesson8/" target="_blank">See what XoaX.net says about the while and do while loop</a><br/>
+<br/>
+Also<br/>
+<br/>
+<a href="https://web.archive.org/web/20150219161947/http://xoax.net/cpp/crs/console/lessons/Lesson22/" target="_blank">See what they say about random numbers</a></span>
+</div>
+
+				</div><!-- End_Module_4609 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2875154" class="mtop">
+				<div id="dnn_ctr2875_View_ctl00_ctl03_LiveTabsiMod2901"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2901"><a name="2901"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl03_ctr2901_ContentPane">
+		
+    <!-- Start_Module_2901 --><div id="dnn_ctr2875_View_ctl00_ctl03_ctr2901_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl03_ctr2901_HtmlModule_lblContent" class="Normal">
+	<span class="Head">C++ Jumps</span> <hr/>
+<p><strong></strong></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><span style="color: #000000; margin: 0px; padding: 0px; border: 0px;">Repetition and selections statements in C++ alter the flow of control which is done by providing a method of conditionally executing or repeating blocks of code.</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">In the early days of programming before high level programming languages provided constructs for selection and iteration, programming languages used<span class="Apple-converted-space">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">jumps<span class="Apple-converted-space">&nbsp;</span></strong>as a way to have selection and looping statements.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">The C++ language has a jump statement built into it. This statement is called the goto statement and is frowned upon by most programmers. The reason for this is that when used too frequently the goto statement can produce "spaghetti code". That is code that can jump back and forth making the code path difficult to follow. &nbsp;In fact using goto statements are so frowned upon that this is the only place they are mentioned in this material.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">&nbsp;</p>
+<span class="Head">Break Statement</span> <hr/>
+<span style="color: #000000; text-align: left; letter-spacing: normal; background: #ffffff;">There are times when you are in a loop and you need to prematurely get out of it. In instances like this you would use the break statement:</span>
+<br/>
+<div><br/>
+</div>
+<div>
+<p style="text-align: center; color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; letter-spacing: normal; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Break%20Statement%20revised.fw.png" style="height: 280px; width: 280px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; text-align: left; letter-spacing: normal; background: #ffffff;">The break statement forces the flow of the code to jump past the closing brace of the loop it is contained within. This means that if you have a nested loop the break statement will only force the code to break out of the loop it is in. If the break is in an inner loop it will only break out of that inner loop.&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; text-align: left; letter-spacing: normal; background: #ffffff;"><span style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">Here's an example, that shows how the<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">break<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">statement can be used to simulate a sentinel loop that stops when the number 50 has been reached. Note that the loop bounds does not need to test for the sentinel value.</span></p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/breakStatement.png" style="width: 650px; height: 483px; border: 2px solid #002060;"/></div>
+<br/>
+<p style="text-align: left;">&nbsp;</p>
+<br/>
+</div>
+</div>
+
+				</div><!-- End_Module_2901 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl03_LiveTabsiMod2903"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2903"><a name="2903"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl03_ctr2903_ContentPane">
+		
+    <!-- Start_Module_2903 --><div id="dnn_ctr2875_View_ctl00_ctl03_ctr2903_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+					<div id="dnn_ctr2875_View_ctl00_ctl03_ctr2903_HtmlModule_lblContent" class="Normal">
+	<span class="Head">The continue Statements</span> <hr/>
+<br/>
+<span style="text-align: left; letter-spacing: normal; color: #000000; background: #ffffff;">The continue statement is used to force the flow of the program to branch back to the top of the loop. It has the following syntax:</span>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border-width: 0px; letter-spacing: normal; text-align: center; background: #ffffff;"><img alt="" src="https://web.archive.org/web/20150219161947im_/http://programming.msjc.edu/portals/34/Images/repetition/Continue%20Statement.fw.png" style="height: 390px; width: 390px; margin: 0px; padding: 0px; border: 2px solid #002060;"/></p>
+<ul style="color: #000000; margin: 0px 0px 18px 18px; padding: 0px; border: 0px; list-style-type: square; list-style-image: initial; text-align: left; letter-spacing: normal; background: #ffffff;">
+    <li style="margin: 0px; padding: 0px; border: 0px;">In the case of the while loop the continue statement will force the flow of the program to branch back to the top of the loop where the Boolean test condition will be immediately executed.&nbsp;</li>
+    <li style="margin: 0px; padding: 0px; border: 0px;">Using the continue statement within the body of the for loop force the flow of the program to branch back to the top of the loop where the update expression is executed. The will continue on as it normally would with the test expression being executed next.&nbsp;</li>
+</ul>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">The following code will demonstrate the use of the continue statement:</p>
+<div style="text-align: center;"><img alt="" src="/web/20150219161947im_/http://programming.msjc.edu/portals/16/Images/continueStatement.png" style="width: 650px; height: 481px; border: 2px solid #002060;"/><br/>
+</div>
+<p style="text-align: left;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Code Review</span></p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;"><span style="margin: 0px; padding: 0px; border: 0px; color: #000000;"></span></p>
+<hr/>
+The for loop in the above code will execute until an integer numbers is input. Each time a character is entered at the keyboard, it is checked to see if it is a digit. The check uses the <strong style="color: #000000; margin: 0px; padding: 0px; border: 0px;">isdigit()</strong>&nbsp;function&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; color: #000000;">which returns true if the character entered is between '0' and '9'. Remember that everything entered into the keyboard is a character, which is different from a number.</span>
+<p>&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">9 and '9' are different</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">The isdigit() function returns a bool true if the character is a digit, false otherwise.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">If the character entered is a digit then it gets converted to a number by subtracting the character '0' from the character entered. The character '0' has an ascii value of 48. So the above code is equivalent to subtracting 48 from the character entered. In any case, subtracting 48 from the digit will give us the actual binary value of the character representation.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">Once the character is converted, it gets added to the sum of the values. &nbsp;If what is entered at the keyboard is not a digit then the continue statement forces the path of the code back to the top of the loop.&nbsp;<span style="text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;"><span class="Apple-converted-space">&nbsp;</span>Notice that the update expression is missing. The update variable i in this case only gets updated if a digit character is entered. This forces the input of 10 digit characters.&nbsp;</span> </p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;"><span class="Head" style="margin: 0px 0px 6px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #dddddd; color: #000000;">Nested Loops</span></p>
+<span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;"><hr/>
+One of the problems with nested loops, is that the<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">break<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">and<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></span><strong style="color: #000000; margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; background: #ffffff;">continue<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong><span style="margin: 0px; padding: 0px; border: 0px; text-align: start; letter-spacing: normal; color: #000000; background: #ffffff;">statements stop "working." Actually, they don't stop working, exactly; they just don't work quite the way you'd like. Here's the problem.</span>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: left; background: #ffffff;">&nbsp;</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">Both<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">break<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong>and<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">continue<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong>work on the<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><em style="margin: 0px; padding: 0px; border: 0px;">current<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></em>loop. That means, when you are in an inner loop, a<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span><strong style="margin: 0px; padding: 0px; border: 0px;">break<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></strong>statement only exits the inner loop, it doesn't get you out of the outer loop.</p>
+<p style="color: #000000; margin: 0px 0px 18px; padding: 0px; border: 0px; letter-spacing: normal; text-align: start; background: #ffffff;">If you need to break out of both inner and outer loops, then you will have to write some logic to handle it.<span class="Apple-converted-space" style="margin: 0px; padding: 0px; border: 0px;">&nbsp;</span></p>
+<p class="Head">Video - The break Statement</p>
+<p><hr/>
+</p>
+</div>
+
+				</div><!-- End_Module_2903 --></td>
+				
+  </tr>
+</table></div></div><div id="dnn_ctr2875_View_ctl00_ctl03_LiveTabsiMod2906"><div class="DnnModule DnnModule-LiveContent DnnModule-2906"><a name="2906"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl03_ctr2906_ContentPane">
+		
+    <!-- Start_Module_2906 --><div id="dnn_ctr2875_View_ctl00_ctl03_ctr2906_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2906"></a> <div id="dnn_ctr2875_View_ctl00_ctl03_ctr2906_View_LC2906"><table id="dnn_ctr2875_View_ctl00_ctl03_ctr2906_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC29061Heading">break Statement</div><a id="LC29061" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/Portals/16/LiveContent/2906/Videos/break.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC29061eVideo',allowWidthReduction: true,headingId: 'LC29061Heading',headingOverlay: {fade: 1},captionId: 'LC29061Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2906',width: 800,height: 640}, {TabId: '530',ModuleId: '2906',PortalId: '16',ElementId: '1'}); "> <img title="break Statement" alt="break Statement" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2906&amp;eid=1&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC29061eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC29061Html5eVideo"> </div></div><div class="highslide-footer"></div></div><div class="highslide-caption" id="LC29061Caption">How to use the c++ break statement</div></td><td></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2906 --></td>
+				
+  </tr>
+</table></div></div>
+			</div><div id="LiveTabsContent2875155" class="mtop">
+				<div id="dnn_ctr2875_View_ctl00_ctl04_LiveTabsiMod2894"><div class="DnnModule DnnModule-LiveContent DnnModule-2894"><a name="2894"></a>
+<table cellpadding="0" cellspacing="0" summary="Module Design Table" width="98%">
+  <tr>
+    <td id="dnn_ctr2875_View_ctl00_ctl04_ctr2894_ContentPane">
+		
+    <!-- Start_Module_2894 --><div id="dnn_ctr2875_View_ctl00_ctl04_ctr2894_ModuleContent" class="DNNModuleContent ModLiveContentC">
+					                                            
+        
+        <div class="lcdefault"><div style="clear:both"></div><a name="LiveContent2894"></a> <div id="dnn_ctr2875_View_ctl00_ctl04_ctr2894_View_LC2894"><table id="dnn_ctr2875_View_ctl00_ctl04_ctr2894_View_ctl01" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;background:none;">
+						<tr>
+							<td><div class="highslide-heading" id="LC28942Heading">For Loop</div><a id="LC28942" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/Lecture4/Lecture4ForLoop/Lecture4ForLoop.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28942eVideo',allowWidthReduction: true,headingId: 'LC28942Heading',headingOverlay: {fade: 1},captionId: 'LC28942Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2894',width: 800,height: 640}, {TabId: '530',ModuleId: '2894',PortalId: '16',ElementId: '2'}); "> <img title="For Loop" alt="For Loop" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2894&amp;eid=2&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28942eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28942Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td><div class="highslide-heading" id="LC28943Heading">While Loop and Random Numbers</div><a id="LC28943" class="highslide" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/videos/Lecture4/Lecture4WhileRand/Lecture4WhileRand.mp4" onclick="return hs.htmlExpand(this, {contentId: 'LC28943eVideo',allowWidthReduction: true,headingId: 'LC28943Heading',headingOverlay: {fade: 1},captionId: 'LC28943Caption',captionOverlay: {fade: 1},preserveContent: false,transitions: ['expand','crossfade'],outlineType:'rounded-white',wrapperClassName: 'lcdefault',slideshowGroup: '2894',width: 800,height: 640}, {TabId: '530',ModuleId: '2894',PortalId: '16',ElementId: '3'}); "> <img title="While Loop and Random Numbers" alt="While Loop and Random Numbers" src="/web/20150219161947im_/http://programming.msjc.edu/DesktopModules/LiveContent/Handlers/GetImage.ashx?mid=2894&amp;eid=3&amp;PortalId=16"/></a><div class="highslide-html-content" id="LC28943eVideo" style="display:none"> <div class="highslide-header"> <ul> <li class="highslide-move"> <a href="#" onclick="return false">Move</a> </li> <li class="highslide-close"> <a href="#" onclick="return hs.close(this)">Close</a> </li> </ul> </div> <div class="highslide-body eVideo "><div id="LC28943Html5eVideo"> </div></div><div class="highslide-footer"></div></div></td><td></td><td></td>
+						</tr>
+					</table></div><div style="clear:both"></div></div>
+				</div><!-- End_Module_2894 --></td>
+				
+  </tr>
+</table></div></div>
+			</div>
+		</div>
+	</div>
+</div><!-- End_Module_2875 --></div>
+    </div>
+    <div class="c_footer">
+        
+        
+        
+    </div>
+</div>
+</div></td>
+
+                    
+                  </tr>
+                  <tr>
+                    
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td class="page_bottom" height="79" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" width="100%"><span id="dnn_dnnCOPYRIGHT_lblCopyright" class="Footer">2010 By Glenn Stevenson</span>
+
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnPRIVACY_hypPrivacy" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/privacy.aspx">Privacy Statement</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a id="dnn_dnnTERMS_hypTerms" class="Footer" rel="nofollow" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/cpp/terms.aspx">Terms Of Use</a></td>
+        <td align="center" class="page_bottom_right" valign="top"><table width="323" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+             <td align="center" style="padding-top:14px"><a style="color:#4771D1;font-weight:bold;" href="https://web.archive.org/web/20150219161947/http://programming.msjc.edu/">MSJC Programming</a></td>
+            </tr>
+        </table></td>
+        <td align="right"><img src="/web/20150219161947im_/http://programming.msjc.edu/Portals/_default/Skins/Pioneer-Blue/images/x.gif" width="42" height="79"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop"/>
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`}"/>
+        
+    
+<script type="text/javascript" src="/web/20150219161947js_/http://programming.msjc.edu/Resources/Shared/scripts/initWidgets.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('5(\'a,z\').x(D(i){p{f 6=5(g).d(\'6\');f 4=/(.*)#7\\[([^\\,]+)(\\,.+)?\\]/.y(6);9(4!=s&&4.r>1){5(g).t(\'k\').d(\'v\',4[2]);9(4[3]&&4[3]==\',u\'){5(g).q(8[4[2]])}n{9(w(8[4[2]])){5(\'#\'+4[2]).B(\'h\',8[4[2]])}n{5(\'#\'+4[2]).d(\'6\',8[4[2]]).C(\'k\')}}}}l(e){}});9(b.c.6.o(\'#7[\',0)>-1){p{f m=b.c.6.A(b.c.6.o(\'#7[\',0));5(\'#\'+m.j(\'#7[\',\'\').j(\']\',\'\')).h()}l(e){}}',40,40,'||||match|jQuery|href|LiveContent|LiveContentCallTags|if||window|location|attr||var|this|click||replace|highslide|catch|LCLaunchLink|else|indexOf|try|mouseover|length|null|addClass|onmouseover|id|isFunction|each|exec|area|substring|live|removeClass|function'.split('|'),0,{}))
+function CallSelf(Selector) {var LTElement = jQuery('#' + Selector).parent().closest('div[id^="LiveTabsContent"]').attr("id");var LAElement = jQuery('#' + Selector).parent().closest('div[id^="LiveAccordionContent"]').attr("id");if (typeof(LTElement) != 'undefined') {jQuery('a[name=' + LTElement + ']').click();CallSelf(LTElement); } else if (typeof(LAElement) != 'undefined'){jQuery('a[name=' + LAElement + ']').click();CallSelf(LAElement); }}hs.Expander.prototype.onBeforeExpand = function (sender) { sender.createOverlay( {overlayId:'LC' + sender.custom.ModuleId + sender.custom.ElementId + 'CommentOverlay',position: 'rightpanel',fade: 1,width: '400px'} );};jQuery(document).ready(function() { LiveContentClient.AjaxHandlerURL = '/DesktopModules/LiveContent/Handlers/Ajax.ashx?PortalId=16'; });eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|for|jwplayer|LC28801Html5eVideo|videos|cpp|lecture4|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2880|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame2'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|perfectnumber|jwplayer|LC28841Html5eVideo|videos|cpp|lecture4|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2884|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame2'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|countedLoops|jwplayer|LC28821Html5eVideo|videos|cpp|Lecture4|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2882|true|image|Portals|autostart|Live|Images|png|abouttext|FirstFrame1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l(5(\'6\')!=m){5(\'6\').n({i:\'0://1.2.3/j.k?d=o-s-u-v-p&q;t=r\',h:\'0://1.2.3/8/7/9/4/4.a\',f:g,b:c,e:\'w\',R:O,P:\'0://1.2.3/Q/L//M/N/T/W.U\',V:\'S K\',A:\'0://B.C.x/y/z-D/H-I.J\',\'E.F\':\'G\'})}',59,59,'http|programming|msjc|edu|IndefiniteLoops|jwplayer|LC28891Html5eVideo|videos|cpp|Lecture4|mp4|width|800||provider|height|600|file|flashplayer|WebResource|axd|if|null|setup|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|amp|634957464340000000|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|video|com|products|dotnetnuke|aboutlink|www|mandeeps|modules|controlbar|position|bottom|live|content|aspx|Content|16|LiveContent|2889|true|image|Portals|autostart|Live|Images|png|abouttext|IdefiniteVideo1'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(7(\'9\')!=n){7(\'9\').o({l:\'0://1.2.3/i.j?d=k-u-v-w-s&p;t=q\',r:\'0://1.2.3/5/6/4/8/a/c.b\',h:e,f:g,x:\'N\',O:P,K:\'0://1.2.3/5/6//4/8/L/M.Q\',U:\'T R\',S:\'0://B.C.D/y/z-A/H-I.J\',\'E.F\':\'G\'})}',57,57,'http|programming|msjc|edu|LiveContent|Portals|16|jwplayer|4641|LC46410Html5eVideo|Videos|mp4|pattern||600|width|800|height|WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|flashplayer|if|null|setup|amp|634957464340000000|file|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1||ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|provider|products|dotnetnuke|modules|www|mandeeps|com|controlbar|position|bottom|live|content|aspx|image|Images|FirstFrame|video|autostart|true|png|Content|aboutlink|Live|abouttext'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('m(7(\'9\')!=n){7(\'9\').o({l:\'0://1.2.3/i.j?d=k-u-v-w-s&p;t=q\',r:\'0://1.2.3/5/6/4/8/a/c.b\',h:e,f:g,x:\'N\',O:P,K:\'0://1.2.3/5/6//4/8/L/M.Q\',U:\'T R\',S:\'0://B.C.D/y/z-A/H-I.J\',\'E.F\':\'G\'})}',57,57,'http|programming|msjc|edu|LiveContent|Portals|16|jwplayer|2906|LC29061Html5eVideo|Videos|mp4|break||600|width|800|height|WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|flashplayer|if|null|setup|amp|634957464340000000|file|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1||ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|provider|products|dotnetnuke|modules|www|mandeeps|com|controlbar|position|bottom|live|content|aspx|image|Images|FirstFrame1|video|autostart|true|png|Content|aboutlink|Live|abouttext'.split('|'),0,{}))
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('o(4(\'m\')!=l){4(\'m\').j({k:\'0://1.2.3/u.v?d=w-s-p-q-r&h;t=7\',9:\'0://1.2.3/8/5/6/n/n.f\',a:b,c:g,x:\'Q\',R:S,P:\'0://1.2.3/M/N//O/T/X/Z.U\',V:\'W C\',D:\'0://E.B.y/z/A-J/K-L.I\',\'F.G\':\'H\'})}o(4(\'i\')!=l){4(\'i\').j({k:\'0://1.2.3/u.v?d=w-s-p-q-r&h;t=7\',9:\'0://1.2.3/8/5/6/e/e.f\',a:b,c:g,x:\'Q\',R:S,P:\'0://1.2.3/M/N//O/T/X/Y.U\',V:\'W C\',D:\'0://E.B.y/z/A-J/K-L.I\',\'F.G\':\'H\'})}',62,62,'http|programming|msjc|edu|jwplayer|videos|Lecture4|634957464340000000|cpp|file|height|600|width||Lecture4WhileRand|mp4|800|amp|LC28943Html5eVideo|setup|flashplayer|null|LC28942Html5eVideo|Lecture4ForLoop|if|GLr_BStVC5kYH5CcU4YSVcXIACt1_tVH|TBHneb4|ZB83UYBjBqwtKQ8WulUxytPyTWe3Jr_PLbWRfU0rqIC8iHQes4g1|ttgUQh7YjhAXJgdPVt3Uq0sgZWX8RV3f88nwUveUua||WebResource|axd|5__WbPcP_rvNONQJIbfv2sqhjo64v8KKDJYV63TrJR683BeQAwe|provider|com|products|dotnetnuke|mandeeps|Content|aboutlink|www|controlbar|position|bottom|aspx|modules|live|content|Portals|16|LiveContent|image|video|autostart|true|2894|png|abouttext|Live|Images|whileRandVideo1|forLoopVideo3'.split('|'),0,{}))
+if (typeof(jQuery("#LiveTabsWrapper2875").tabs) == 'undefined') { jQuery.getScript('/WebResource.axd?d=SmXNLLnxDgvZ9L1VuNYn7DU-Q3mXvEdmG2NZLGBb2dTLFO-GxmdBMf3hum-RtIsOD7F0Tny_shnjwSX4-8_CxQ2eYMBTmMJV4cn2AuhRV3_GB97wqvS1zlrS6RPJaNwj_4ZTf_XvKb4k9M74t55FnxyXHjs1&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=24psw1Qa3u7l-mQljQvylYJ3DYs2MhU1UlXSnP7Lrti822GyiuzvuorsBw9iiL2zZn9z07XxDga3y7ZSFhWwC3pTA1NMl3Cm2dXSq-V_nJetTmhZg-yRxW1D1_7b0bAyQEo1b6TrWFoZN0Kea0v149GgjtxmlURqZxw4iQ2&amp;t=634969582000000000', function(){ jQuery.getScript('/WebResource.axd?d=0T20QAHsQYzGrJ-QEv-DCYwR7Co-dp1ug4QfGU0ucHY0qANS9wMOWS_ve4qf1trbvwB8cIJS4YwISQ9ZxG8vrNtQp3mc2eJzXGTlxYwyQSKhYHnW2Mazulf675kGTf2Se-zZz676EmQ-5Mj8No0Gdp-LfmPxf_Mhlgs_RQ2&t=634969582000000000', function(){ jQuery(function() {jQuery('#LiveTabsWrapper2875').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2875') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2875').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});});}); }); }) } else { jQuery(function() {jQuery('#LiveTabsWrapper2875').tabs({create:function(event, ui) { var LTLaunchLink = window.location.href.indexOf('#LiveTabs',0);if (LTLaunchLink > -1) { try { LTLaunchLink = window.location.href.substring(window.location.href.indexOf('#LiveTabs',0)).substring(1); if (LTLaunchLink.indexOf('2875') != -1) { CallSelf(LTLaunchLink); var Index = jQuery('a[name=' + LTLaunchLink + ']').parent().index(); if(Index > -1) jQuery('#LiveTabsWrapper2875').tabs('select', Index); }} catch(e) {} } },select:function(event, ui) { var url = jQuery.data(ui.tab, 'load.tabs'); if(url) {window.location= url;}else{ window.location.hash = ui.tab.hash + '-lt'} }});}); }jQuery("#LiveTabsWrapper2875").bind("tabsshow", function(event, ui) { if ($(ui.panel).parent().attr('id') == 'LiveTabsWrapper2875') { jQuery('#'+ $(ui.panel).parent().attr('id') +'_SelectedIndex').val(jQuery(this).tabs('option','selected'));   }});jQuery("#LiveTabsWrapper2875").bind("tabsselect",function(event,ui) { if ($(ui.tab).hasClass('NavigateUrl')) {var url = jQuery.data(ui.tab, 'load.tabs'); if(!url) { url = ui.tab.href;} location.href = url; return false;} return true; });//]]>
+</script>
+</form>
+    
+    
+</body>
+</html><!--
+     FILE ARCHIVED ON 16:19:47 Feb 19, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:19:23 Mar 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 57.018 (3)
+  exclusion.robots: 0.267
+  exclusion.robots.policy: 0.255
+  RedisCDXSource: 1.505
+  PetaboxLoader3.resolve: 160.213
+  esindex: 0.011
+  load_resource: 242.216
+  PetaboxLoader3.datanode: 98.818 (4)
+  captures_list: 75.891
+  CDXLines.iter: 14.205 (3)
+-->
