@@ -26,6 +26,10 @@ What does this review cover?
 - Classes data type
 - Private, public, protected
 - Accessors (getters, setters)
+- Relationships
+  - Inheritance (is-a)
+  - Composition (part-of)
+  - Aggregation (has-a)
 - Inhertiance
 - Polymorphism
 - Interfaces
