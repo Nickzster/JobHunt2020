@@ -7,18 +7,19 @@ What does this review cover?
 - Variables
   - Typing (dynamic vs static)
 - Control Structures
-   - if/else
-   - switch
-   - for loops
-   - while loops
-   - do-while loops
+  - if/else
+  - switch
+  - for loops
+  - while loops
+  - do-while loops
 - Pointers / References
-- Arrays (Allocated VS Dynamic)
+- Arrays (Static VS Dynamic)
 - Struct / Object types
 - Operator Overloading
 - Recursion
 - Heap VS Runtime Stack
 - Exception Handling
+- Templating
 
 ## Object Oriented Concepts
 
@@ -29,6 +30,20 @@ What does this review cover?
 - Polymorphism
 - Interfaces
 - Abstract Class VS Concrete Class
+
+## Concurrency
+
+- Mutex Lock
+- Deadlock
+- Race Conditions
+- Semaphores
+
+## Testing
+
+- Unit Testing
+- Integration Testing
+- End 2 End Testing
+- Acceptance Testing
 
 ## Big Oh
 
@@ -56,19 +71,6 @@ What does this review cover?
 - Hash map
 
 ## Optimization Techniques
+
 - Dynamic Programming
 - Sliding Window
-
-## Concurrency
-
-- Mutex Lock
-- Deadlock
-- Race Conditions
-- Semaphores
-
-## Testing
-
-- Unit Testing
-- Integration Testing
-- End 2 End Testing
-- Acceptance Testing

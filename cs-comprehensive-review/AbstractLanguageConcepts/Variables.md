@@ -11,6 +11,25 @@
   - float
   - boolean
 
+Example in C++:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(){
+  char c = 'h';
+  int number = 42;
+  double anotherNumber = 4.0;
+  float decimal = 1.999999;
+  bool inMainScope = true;
+  anotherVariable = 42;
+
+}
+```
+
+As you can see, every variable is defined with an associated type above... However, compiling the above snippet will result in a compilation error, since `anotherVariable` does not have a type.
+
 ## Untyped languages
 
 - Generally not compiled
