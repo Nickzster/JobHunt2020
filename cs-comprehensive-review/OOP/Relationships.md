@@ -46,12 +46,11 @@ class Car {
 
 //Notice how the Ferrari is a car.
 class Ferrari : public Car {
-    //all protected methods are now available in this class
-
+    //Note: all protected methods are now available in this class
     //But not all cars can raise or lower spoilers... a good case where inheritance could be used.
     private bool spoilerIsRaised;
     public void raiseSpoiler(bool);
-}
+};
 ```
 
 ## Aggregation Example: C++
@@ -61,7 +60,7 @@ class Person{
     private std::string: name;
     public void setName(std::string);
     public void getName(std::string);
-}
+};
 
 class Course{
     private Person instructor;
@@ -72,7 +71,7 @@ class Course{
     public void enrollStudent(Person student);
     public void dropStudent(Person student);
     public void viewStudents(Person students[]);
-}
+};
 ```
 
 ## Composition Example: C++
@@ -83,7 +82,7 @@ class Engine{
     public void accelerate(int);
     public void decelerate(int);
     public void getCurrentSpeed(int);
-}
+};
 
 class Car {
     //Notice how the car has an engine.
