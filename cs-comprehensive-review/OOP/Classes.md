@@ -4,7 +4,7 @@
   - Classes can have values & functions (although, they vary language to language in how they work)
 - An instantiated class becomes an `object`
 
-(See this website for a good example)[https://www.javatpoint.com/difference-between-object-and-class]
+[See this website for a good example](https://www.javatpoint.com/difference-between-object-and-class)
 
 ### Some examples
 

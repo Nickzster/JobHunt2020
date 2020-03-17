@@ -26,14 +26,17 @@ What does this review cover?
 - Classes data type
 - Private, public, protected
 - Accessors (getters, setters)
-- Relationships
+- Relationships / Associations
   - Inheritance (is-a)
   - Composition (part-of)
   - Aggregation (has-a)
-- Inhertiance
+- Advanced Concepts
+  - Generalization VS Abstraction
+  - Abstract Class VS Concrete Class
+  - Realization
+  - Dependency
 - Polymorphism
 - Interfaces
-- Abstract Class VS Concrete Class
 
 ## Concurrency
 

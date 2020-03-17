@@ -6,10 +6,12 @@ function allocate() {
   }
 }
 
+//O(1)
 function addOne() {
   let sum = 1 + input[0];
 }
 
+//O(n)
 function addAll() {
   let sum = 0;
   for (let i = 0; i < input.length; i++) {
@@ -18,6 +20,7 @@ function addAll() {
   return sum;
 }
 
+//O(n^2)
 function findPairs() {
   let currentPair = [];
   for (let i = 0; i < input.length; i++) {
@@ -29,12 +32,12 @@ function findPairs() {
   return currentPair;
 }
 
-console.log('Assigning values to the array...');
+console.log("Assigning values to the array...");
 allocate();
-console.log('Adding One...');
+console.log("Adding One...");
 addOne();
-console.log('Adding all elements...');
+console.log("Adding all elements...");
 addAll();
-console.log('Finding all pairs...');
+console.log("Finding all pairs...");
 findPairs();
-console.log('Done!');
+console.log("Done!");
