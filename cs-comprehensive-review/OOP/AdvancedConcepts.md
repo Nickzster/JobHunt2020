@@ -9,8 +9,8 @@
 
 ## Abstract Class VS Concrete Class
 
-- An **abstract** class is a blueprint
-- A **concrete** class is a concrete object
+- An **abstract** class is a blueprint for children classes.
+- A **concrete** class is a more specific definition for an object.
 
 ### Abstract Class Example: C++
 
