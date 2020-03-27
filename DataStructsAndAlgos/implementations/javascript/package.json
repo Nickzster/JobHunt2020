@@ -1,0 +1,18 @@
+{
+  "name": "javascript",
+  "author": "Nick Zimmermann",
+  "description": "Data Structures and Algorithm Implementations in JS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "LinkedList": "yarn build && node dist/LinkedList/LinkedList.test.js",
+    "BST": "yarn build && node dist/Trees/BST.test.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0"
+  }
+}
