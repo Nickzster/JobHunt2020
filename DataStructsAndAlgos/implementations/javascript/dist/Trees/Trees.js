@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.BinaryTree = exports.Heap = exports.BST = void 0;
 
+var _Stack = require("../Stack/Stack");
+
+var _Queue = require("../Queue/Queue");
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -135,10 +139,22 @@ var BST = /*#__PURE__*/function () {
     }
   }, {
     key: "InOrderRecursive",
-    value: function InOrderRecursive(returnArray) {}
+    value: function InOrderRecursive(returnArray) {
+      var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.root;
+      if (!root) return;
+      this.InOrderRecursive(returnArray, root.left);
+      returnArray.push(root.elem);
+      this.InOrderRecursive(returnArray, root.right);
+    }
   }, {
     key: "PostOrderRecursive",
-    value: function PostOrderRecursive(returnArray) {}
+    value: function PostOrderRecursive(returnArray) {
+      var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.root;
+      if (!root) return;
+      this.PostOrderRecursive(returnArray, root.left);
+      this.PostOrderRecursive(returnArray, root.right);
+      returnArray.push(root.elem);
+    }
   }, {
     key: "PreOrderIterative",
     value: function PreOrderIterative() {}
@@ -148,22 +164,54 @@ var BST = /*#__PURE__*/function () {
 
   }, {
     key: "BinarySearchIterative",
-    value: function BinarySearchIterative(elem) {}
+    value: function BinarySearchIterative(elem) {
+      var root = this.root;
+
+      while (root !== null) {
+        if (root.elem === elem) return true;else if (elem >= root.elem) root = root.right;else root = root.left;
+      }
+    }
   }, {
     key: "BinarySearchRecursive",
-    value: function BinarySearchRecursive(elem) {}
+    value: function BinarySearchRecursive() {}
   }, {
     key: "BFSIterative",
-    value: function BFSIterative(elem) {}
+    value: function BFSIterative() {
+      var root = this.root;
+      var BFSQueue = new _Queue.Queue();
+      BFSQueue.push(root);
+      var BFSArray = [];
+
+      while (BFSQueue.length() > 0) {
+        BFSArray.push(BFSQueue.pop());
+        if (!!root.left) BFSQueue.push(root.left);
+        if (!!root.right) BFSQueue.push(root.right);
+      }
+
+      return BFSArray;
+    }
   }, {
     key: "BFSRecursive",
-    value: function BFSRecursive(elem) {}
+    value: function BFSRecursive() {}
   }, {
     key: "DFSIterative",
-    value: function DFSIterative(elem) {}
+    value: function DFSIterative() {
+      var root = this.root;
+      var DFSStack = new _Stack.Stack();
+      DFSStack.push(root);
+      var DFSArray = [];
+
+      while (DFSStack.length() > 0) {
+        DFSArray.push(DFSStack.pop());
+        if (!!root.left) DFSStack.push(root.left);
+        if (!!root.right) DFSStack.push(root.right);
+      }
+
+      return DFSArray;
+    }
   }, {
-    key: "DFSIterative",
-    value: function DFSIterative(elem) {}
+    key: "DFSRecursive",
+    value: function DFSRecursive() {}
   }]);
 
   return BST;
