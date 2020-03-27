@@ -8,10 +8,10 @@ class Error {
 
 export const ASSERT_ARRAY = (actual, expected) => {
   if (typeof expected !== typeof actual)
-    throw new Error('# # # ERROR: Types do not match! # # #', expected, actual);
+    throw new Error("# # # ERROR: Types do not match! # # #", expected, actual);
   if (expected.length !== actual.length)
     throw new Error(
-      '# # # ERROR: Not the same length! # # #',
+      "# # # ERROR: Not the same length! # # #",
       expected,
       actual
     );
@@ -24,3 +24,19 @@ export const ASSERT_ARRAY = (actual, expected) => {
       );
   }
 };
+
+export const ASSERT_DIRECT_COMPARE = (actual, expected) => {
+  if (actual !== expected)
+    throw new Error(
+      `# # # ERROR: actual(${actual}) does NOT match expected(${expected})`,
+      expected,
+      actual
+    );
+};
+
+export function logError(error, message) {
+  console.log("MESSAGE: ", error.message);
+  console.log("ACTUAL: ", error.actual);
+  console.log("EXPECTED", error.expected);
+  console.log(message);
+}

@@ -13,32 +13,30 @@ var _ASSERT = require("../util/ASSERT");
 //     `# # # Test # Failed`
 //   );
 // }
-function logError(error, message) {
-  console.log('MESSAGE: ', error.message);
-  console.log('ACTUAL: ', error.actual);
-  console.log('EXPECTED', error.expected);
-  console.log(message);
-}
-
 (function main() {
-  console.log('######################## BINARY SEARCH TREE ########################');
+  console.log("######################## BINARY SEARCH TREE ########################");
 
   try {
     //Write Test Code Here
     var myTree = new _Trees.BST();
     myTree.insert(5);
-    myTree.insert(3);
+    myTree.insert(2);
     myTree.insert(7);
     myTree.insert(1);
-    myTree.insert(2);
+    myTree.insert(3);
     myTree.insert(6);
     myTree.insert(8);
     var preOrderArr = [];
     myTree.PreOrderRecursive(preOrderArr);
-    (0, _ASSERT.ASSERT_ARRAY)(preOrderArr, [5, 3, 1, 2, 7, 6, 8]);
+    (0, _ASSERT.ASSERT_ARRAY)(preOrderArr, [5, 2, 1, 3, 7, 6, 8]);
+    (0, _ASSERT.ASSERT_ARRAY)(myTree.SearchIterative("BFS"), [5, 2, 7, 1, 3, 6, 8]);
+    (0, _ASSERT.ASSERT_ARRAY)(myTree.SearchIterative("DFS"), [5, 2, 1, 3, 7, 6, 8]);
+    (0, _ASSERT.ASSERT_ARRAY)(myTree.BinarySearchIterative(7), true);
+    (0, _ASSERT.ASSERT_ARRAY)(myTree.BinarySearchIterative(5), true);
+    (0, _ASSERT.ASSERT_ARRAY)(myTree.BinarySearchIterative(8), true);
     console.log("# # # Test 1 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 1 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 1 Failed");
   }
 
   try {
@@ -59,16 +57,20 @@ function logError(error, message) {
 
     _myTree.insert(8);
 
+    (0, _ASSERT.ASSERT_ARRAY)(_myTree.BinarySearchIterative(7), true);
+
     _myTree.removeByElem(7);
 
+    (0, _ASSERT.ASSERT_ARRAY)(_myTree.BinarySearchIterative(7), false);
     var _preOrderArr = [];
 
     _myTree.PreOrderRecursive(_preOrderArr);
 
     (0, _ASSERT.ASSERT_ARRAY)(_preOrderArr, [5, 3, 1, 2, 6, 8]);
+    (0, _ASSERT.ASSERT_ARRAY)(_myTree.SearchIterative("BFS"), [5, 3, 6, 1, 8, 2]);
     console.log("# # # Test 2 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 2 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 2 Failed");
   }
 
   try {
@@ -98,7 +100,7 @@ function logError(error, message) {
     (0, _ASSERT.ASSERT_ARRAY)(_preOrderArr2, [3, 1, 2, 7, 6, 8]);
     console.log("# # # Test 3 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 3 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 3 Failed");
   }
 
   try {
@@ -128,7 +130,7 @@ function logError(error, message) {
     (0, _ASSERT.ASSERT_ARRAY)(_preOrderArr3, [5, 3, 1, 7, 6, 8]);
     console.log("# # # Test 4 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 4 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 4 Failed");
   }
 
   try {
@@ -158,7 +160,7 @@ function logError(error, message) {
     (0, _ASSERT.ASSERT_ARRAY)(_preOrderArr4, [5, 1, 3, 7, 6, 8]);
     console.log("# # # Test 5 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 5 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 5 Failed");
   }
 
   try {
@@ -188,8 +190,6 @@ function logError(error, message) {
     (0, _ASSERT.ASSERT_ARRAY)(_preOrderArr5, [3, 2, 1, 7, 6, 8]);
     console.log("# # # Test 6 PASSED");
   } catch (error) {
-    logError(error, '# # # Test 6 Failed');
+    (0, _ASSERT.logError)(error, "# # # Test 6 Failed");
   }
-
-  console.log('################# TERMINATING BINARY SEARCH TREE ###################');
 })();

@@ -7,8 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
+    "Stack": "yarn build && node dist/Stack/Stack.test.js",
     "LinkedList": "yarn build && node dist/LinkedList/LinkedList.test.js",
-    "BST": "yarn build && node dist/Trees/BST.test.js"
+    "BST": "yarn build && node dist/Trees/BST.test.js",
+    "Queue": "yarn build && node dist/Queue/Queue.test.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

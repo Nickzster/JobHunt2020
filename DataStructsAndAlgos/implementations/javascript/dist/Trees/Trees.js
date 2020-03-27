@@ -170,45 +170,54 @@ var BST = /*#__PURE__*/function () {
       while (root !== null) {
         if (root.elem === elem) return true;else if (elem >= root.elem) root = root.right;else root = root.left;
       }
+
+      return false;
     }
   }, {
     key: "BinarySearchRecursive",
     value: function BinarySearchRecursive() {}
   }, {
-    key: "BFSIterative",
-    value: function BFSIterative() {
-      var root = this.root;
-      var BFSQueue = new _Queue.Queue();
-      BFSQueue.push(root);
-      var BFSArray = [];
+    key: "SearchIterative",
+    value: function SearchIterative(search) {
+      var output = [];
+      var SearchStructure;
 
-      while (BFSQueue.length() > 0) {
-        BFSArray.push(BFSQueue.pop());
-        if (!!root.left) BFSQueue.push(root.left);
-        if (!!root.right) BFSQueue.push(root.right);
+      switch (search.toUpperCase()) {
+        case "BFS":
+          SearchStructure = new _Queue.Queue();
+          break;
+
+        case "DFS":
+          SearchStructure = new _Stack.Stack();
+          break;
+
+        default:
+          return [];
       }
 
-      return BFSArray;
+      SearchStructure.push(this.root);
+
+      while (SearchStructure.length() > 0) {
+        var root = SearchStructure.pop();
+        output.push(root.elem);
+
+        if (search.toUpperCase() === "BFS") {
+          if (!!root.left) SearchStructure.push(root.left);
+          if (!!root.right) SearchStructure.push(root.right);
+        } else if (search.toUpperCase() === "DFS") {
+          if (!!root.right) SearchStructure.push(root.right);
+          if (!!root.left) SearchStructure.push(root.left);
+        }
+      }
+
+      return output;
     }
+  }, {
+    key: "BFSIterative",
+    value: function BFSIterative() {}
   }, {
     key: "BFSRecursive",
     value: function BFSRecursive() {}
-  }, {
-    key: "DFSIterative",
-    value: function DFSIterative() {
-      var root = this.root;
-      var DFSStack = new _Stack.Stack();
-      DFSStack.push(root);
-      var DFSArray = [];
-
-      while (DFSStack.length() > 0) {
-        DFSArray.push(DFSStack.pop());
-        if (!!root.left) DFSStack.push(root.left);
-        if (!!root.right) DFSStack.push(root.right);
-      }
-
-      return DFSArray;
-    }
   }, {
     key: "DFSRecursive",
     value: function DFSRecursive() {}

@@ -7,7 +7,8 @@ export class Queue {
   // @runtime: O(1)
   // @space: O(1)
   peek() {
-    return this.queue[this.queue.length - 1];
+    if (this.length() >= 1) return this.queue[0];
+    else return -1;
   }
   // Queue.pop()
   pop() {
@@ -21,7 +22,7 @@ export class Queue {
   }
   //Queue.push(elem)
   push(elem) {
-    this.queue.unshift(elem);
+    this.queue.push(elem);
   }
   //Queue.enqueue(elem)
   enqueue(elem) {
@@ -32,7 +33,7 @@ export class Queue {
   //@runtime: O(n)
   //@space: O(1)
   search(elem) {
-    for (let i = 0; i < queue.length; i++) {
+    for (let i = 0; i < this.length(); i++) {
       if (this.queue[i] === elem) return i;
     }
     return -1;
@@ -46,5 +47,8 @@ export class Queue {
   }
   length() {
     return this.queue.length;
+  }
+  displayQueue() {
+    return this.queue;
   }
 }

@@ -1,5 +1,5 @@
-import { Stack } from '../Stack/Stack';
-import { Queue } from '../Queue/Queue';
+import { Stack } from "../Stack/Stack";
+import { Queue } from "../Queue/Queue";
 
 class TreeNode {
   constructor(elem) {
@@ -138,33 +138,40 @@ export class BST {
       else if (elem >= root.elem) root = root.right;
       else root = root.left;
     }
+    return false;
   }
   BinarySearchRecursive() {}
-  BFSIterative() {
-    let root = this.root;
-    let BFSQueue = new Queue();
-    BFSQueue.push(root);
-    let BFSArray = [];
-    while (BFSQueue.length() > 0) {
-      BFSArray.push(BFSQueue.pop());
-      if (!!root.left) BFSQueue.push(root.left);
-      if (!!root.right) BFSQueue.push(root.right);
+  SearchIterative(search) {
+    let output = [];
+    let SearchStructure;
+    switch (search.toUpperCase()) {
+      case "BFS":
+        SearchStructure = new Queue();
+        break;
+      case "DFS":
+        SearchStructure = new Stack();
+        break;
+      default:
+        return [];
     }
-    return BFSArray;
+    SearchStructure.push(this.root);
+    while (SearchStructure.length() > 0) {
+      let root = SearchStructure.pop();
+      output.push(root.elem);
+      if (search.toUpperCase() === "BFS") {
+        if (!!root.left) SearchStructure.push(root.left);
+        if (!!root.right) SearchStructure.push(root.right);
+      } else if (search.toUpperCase() === "DFS") {
+        if (!!root.right) SearchStructure.push(root.right);
+        if (!!root.left) SearchStructure.push(root.left);
+      }
+    }
+    return output;
   }
+
+  BFSIterative() {}
   BFSRecursive() {}
-  DFSIterative() {
-    let root = this.root;
-    let DFSStack = new Stack();
-    DFSStack.push(root);
-    let DFSArray = [];
-    while (DFSStack.length() > 0) {
-      DFSArray.push(DFSStack.pop());
-      if (!!root.left) DFSStack.push(root.left);
-      if (!!root.right) DFSStack.push(root.right);
-    }
-    return DFSArray;
-  }
+
   DFSRecursive() {}
 }
 

@@ -34,7 +34,7 @@ var Stack = /*#__PURE__*/function () {
   }, {
     key: "pop",
     value: function pop() {
-      var elem = this.stack.peek();
+      var elem = this.peek();
       this.stack.pop();
       return elem;
     } // Stack.peek()
@@ -45,7 +45,7 @@ var Stack = /*#__PURE__*/function () {
   }, {
     key: "peek",
     value: function peek() {
-      return this.stack[this.stack.length - 1];
+      if (this.length() >= 1) return this.stack[this.length() - 1];else return -1;
     } //Stack.search(elem)
     //@desc: Searches for the specified elem in the stack.
     //@runtime: O(n)
@@ -54,7 +54,7 @@ var Stack = /*#__PURE__*/function () {
   }, {
     key: "search",
     value: function search(elem) {
-      for (var i = 0; i < stack.length; i++) {
+      for (var i = 0; i < this.length(); i++) {
         if (this.stack[i] === elem) return i;
       }
 
@@ -73,6 +73,11 @@ var Stack = /*#__PURE__*/function () {
     key: "length",
     value: function length() {
       return this.stack.length;
+    }
+  }, {
+    key: "displayStack",
+    value: function displayStack() {
+      return this.stack;
     }
   }]);
 

@@ -4,17 +4,8 @@ var _LinkedList = require("./LinkedList");
 
 var _ASSERT = require("../util/ASSERT");
 
-// try {
-//   //Write Test Code Here
-//   console.log(`# # # Test # PASSED`);
-// } catch (error) {
-//   console.log(error);
-//   console.log(
-//     `# # # Test # Failed`
-//   );
-// }
 (function main() {
-  console.log('######################## LINKED LIST ########################');
+  console.log("######################## LINKED LIST ########################");
 
   try {
     //Write Test Code Here
@@ -121,5 +112,5 @@ var _ASSERT = require("../util/ASSERT");
     console.log("# # # Test 6 FAILED");
   }
 
-  console.log('################# TERMINATING LINKED LIST ###################');
+  console.log("################# TERMINATING LINKED LIST ###################");
 })();

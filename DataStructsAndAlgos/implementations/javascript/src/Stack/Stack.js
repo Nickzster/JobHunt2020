@@ -14,7 +14,7 @@ export class Stack {
   // @runtime: O(1)
   // @space: O(1)
   pop() {
-    let elem = this.stack.peek();
+    let elem = this.peek();
     this.stack.pop();
     return elem;
   }
@@ -23,14 +23,15 @@ export class Stack {
   //@runtime: O(1)
   //@space: O(1)
   peek() {
-    return this.stack[this.stack.length - 1];
+    if (this.length() >= 1) return this.stack[this.length() - 1];
+    else return -1;
   }
   //Stack.search(elem)
   //@desc: Searches for the specified elem in the stack.
   //@runtime: O(n)
   //@space: O(1)
   search(elem) {
-    for (let i = 0; i < stack.length; i++) {
+    for (let i = 0; i < this.length(); i++) {
       if (this.stack[i] === elem) return i;
     }
     return -1;
@@ -44,5 +45,8 @@ export class Stack {
   }
   length() {
     return this.stack.length;
+  }
+  displayStack() {
+    return this.stack;
   }
 }

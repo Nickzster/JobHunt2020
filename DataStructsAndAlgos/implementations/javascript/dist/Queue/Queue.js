@@ -25,7 +25,7 @@ var Queue = /*#__PURE__*/function () {
   _createClass(Queue, [{
     key: "peek",
     value: function peek() {
-      return this.queue[this.queue.length - 1];
+      if (this.length() >= 1) return this.queue[0];else return -1;
     } // Queue.pop()
 
   }, {
@@ -45,7 +45,7 @@ var Queue = /*#__PURE__*/function () {
   }, {
     key: "push",
     value: function push(elem) {
-      this.queue.unshift(elem);
+      this.queue.push(elem);
     } //Queue.enqueue(elem)
 
   }, {
@@ -60,7 +60,7 @@ var Queue = /*#__PURE__*/function () {
   }, {
     key: "search",
     value: function search(elem) {
-      for (var i = 0; i < queue.length; i++) {
+      for (var i = 0; i < this.length(); i++) {
         if (this.queue[i] === elem) return i;
       }
 
@@ -79,6 +79,11 @@ var Queue = /*#__PURE__*/function () {
     key: "length",
     value: function length() {
       return this.queue.length;
+    }
+  }, {
+    key: "displayQueue",
+    value: function displayQueue() {
+      return this.queue;
     }
   }]);
 
