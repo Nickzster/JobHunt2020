@@ -1,3 +1,6 @@
+import { Stack } from '../Stack/Stack';
+import { Queue } from '../Queue/Queue';
+
 class TreeNode {
   constructor(elem) {
     this.elem = elem;
@@ -113,12 +116,29 @@ export class BST {
     this.PreOrderRecursive(returnArray, root.left);
     this.PreOrderRecursive(returnArray, root.right);
   }
-  InOrderRecursive(returnArray) {}
-  PostOrderRecursive(returnArray) {}
+  InOrderRecursive(returnArray, root = this.root) {
+    if (!root) return;
+    this.InOrderRecursive(returnArray, root.left);
+    returnArray.push(root.elem);
+    this.InOrderRecursive(returnArray, root.right);
+  }
+  PostOrderRecursive(returnArray, root = this.root) {
+    if (!root) return;
+    this.PostOrderRecursive(returnArray, root.left);
+    this.PostOrderRecursive(returnArray, root.right);
+    returnArray.push(root.elem);
+  }
   PreOrderIterative() {}
   InOrderIterative() {}
   //Searches
-  BinarySearchIterative(elem) {}
+  BinarySearchIterative(elem) {
+    let ptr = this.root;
+    while (ptr !== null) {
+      if (ptr.elem === elem) return true;
+      else if (elem >= ptr.elem) ptr = ptr.right;
+      else ptr = ptr.left;
+    }
+  }
   BinarySearchRecursive(elem) {}
   BFSIterative(elem) {}
   BFSRecursive(elem) {}
