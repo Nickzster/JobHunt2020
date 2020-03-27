@@ -42,4 +42,7 @@ export class Stack {
   access(elem) {
     return search(elem);
   }
+  length() {
+    return this.stack.length;
+  }
 }

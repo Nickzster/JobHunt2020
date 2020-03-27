@@ -132,18 +132,40 @@ export class BST {
   InOrderIterative() {}
   //Searches
   BinarySearchIterative(elem) {
-    let ptr = this.root;
-    while (ptr !== null) {
-      if (ptr.elem === elem) return true;
-      else if (elem >= ptr.elem) ptr = ptr.right;
-      else ptr = ptr.left;
+    let root = this.root;
+    while (root !== null) {
+      if (root.elem === elem) return true;
+      else if (elem >= root.elem) root = root.right;
+      else root = root.left;
     }
   }
-  BinarySearchRecursive(elem) {}
-  BFSIterative(elem) {}
-  BFSRecursive(elem) {}
-  DFSIterative(elem) {}
-  DFSIterative(elem) {}
+  BinarySearchRecursive() {}
+  BFSIterative() {
+    let root = this.root;
+    let BFSQueue = new Queue();
+    BFSQueue.push(root);
+    let BFSArray = [];
+    while (BFSQueue.length() > 0) {
+      BFSArray.push(BFSQueue.pop());
+      if (!!root.left) BFSQueue.push(root.left);
+      if (!!root.right) BFSQueue.push(root.right);
+    }
+    return BFSArray;
+  }
+  BFSRecursive() {}
+  DFSIterative() {
+    let root = this.root;
+    let DFSStack = new Stack();
+    DFSStack.push(root);
+    let DFSArray = [];
+    while (DFSStack.length() > 0) {
+      DFSArray.push(DFSStack.pop());
+      if (!!root.left) DFSStack.push(root.left);
+      if (!!root.right) DFSStack.push(root.right);
+    }
+    return DFSArray;
+  }
+  DFSRecursive() {}
 }
 
 export class Heap {}

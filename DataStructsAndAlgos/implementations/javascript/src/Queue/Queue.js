@@ -44,4 +44,7 @@ export class Queue {
   access(elem) {
     return search(elem);
   }
+  length() {
+    return this.queue.length;
+  }
 }
