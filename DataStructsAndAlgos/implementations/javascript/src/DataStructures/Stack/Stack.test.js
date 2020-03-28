@@ -1,5 +1,5 @@
 import { Stack } from "./Stack";
-import { ASSERT_DIRECT_COMPARE as ASSERT, logError } from "../util/ASSERT";
+import { ASSERT_DIRECT_COMPARE as ASSERT, logError } from "../../util/ASSERT";
 
 (function main() {
   console.log("##################### STACK ########################");

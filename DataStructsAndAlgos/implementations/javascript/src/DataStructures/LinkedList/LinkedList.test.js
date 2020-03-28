@@ -1,5 +1,5 @@
 import { LinkedList } from "./LinkedList";
-import { ASSERT_ARRAY as ASSERT } from "../util/ASSERT";
+import { ASSERT_ARRAY as ASSERT } from "../../util/ASSERT";
 
 (function main() {
   console.log("######################## LINKED LIST ########################");

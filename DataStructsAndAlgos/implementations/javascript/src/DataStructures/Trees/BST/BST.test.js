@@ -1,5 +1,5 @@
-import { BST } from "./Trees";
-import { ASSERT_ARRAY as ASSERT, logError } from "../util/ASSERT";
+import { BST } from "./BST";
+import { ASSERT_ARRAY as ASSERT, logError } from "../../../util/ASSERT";
 
 // try {
 //   //Write Test Code Here
