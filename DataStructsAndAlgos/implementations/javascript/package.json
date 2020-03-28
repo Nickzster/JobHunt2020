@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "Stack": "yarn build && node dist/Stack/Stack.test.js",
-    "LinkedList": "yarn build && node dist/LinkedList/LinkedList.test.js",
-    "BST": "yarn build && node dist/Trees/BST/BST.test.js",
-    "Queue": "yarn build && node dist/Queue/Queue.test.js",
-    "Heap": "yarn build && node dist/Trees/Heap/Heap.test.js"
+    "clean": "rm -r dist/",
+    "Stack": "yarn build && node dist/DataStructures/Stack/Stack.test.js",
+    "LinkedList": "yarn build && node dist/DataStructures/LinkedList/LinkedList.test.js",
+    "BST": "yarn build && node dist/DataStructures/Trees/BST/BST.test.js",
+    "Queue": "yarn build && node dist/DataStructures/Queue/Queue.test.js",
+    "Heap": "yarn build && node dist/DataStructures/Trees/Heap/Heap.test.js",
+    "Graph": "yarn build && node dist/DataStructures/Graphs/Graph/Graph.test.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

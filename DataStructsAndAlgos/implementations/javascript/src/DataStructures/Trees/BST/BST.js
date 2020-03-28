@@ -1,10 +1,11 @@
-import { Stack } from "../../Stack/Stack";
-import { Queue } from "../../Queue/Queue";
-import { TreeNode } from "../TreeNode";
+import { Stack } from '../../Stack/Stack';
+import { Queue } from '../../Queue/Queue';
+import { TreeNode } from '../TreeNode';
 
 export class BST {
-  constructor() {
+  constructor(elem) {
     this.root = null;
+    if (!!elem) this.init(new TreeNode(elem));
   }
 
   init(newNode) {
@@ -138,10 +139,10 @@ export class BST {
     let output = [];
     let SearchStructure;
     switch (search.toUpperCase()) {
-      case "BFS":
+      case 'BFS':
         SearchStructure = new Queue();
         break;
-      case "DFS":
+      case 'DFS':
         SearchStructure = new Stack();
         break;
       default:
@@ -151,10 +152,10 @@ export class BST {
     while (SearchStructure.length() > 0) {
       let root = SearchStructure.pop();
       output.push(root.elem);
-      if (search.toUpperCase() === "BFS") {
+      if (search.toUpperCase() === 'BFS') {
         if (!!root.left) SearchStructure.push(root.left);
         if (!!root.right) SearchStructure.push(root.right);
-      } else if (search.toUpperCase() === "DFS") {
+      } else if (search.toUpperCase() === 'DFS') {
         if (!!root.right) SearchStructure.push(root.right);
         if (!!root.left) SearchStructure.push(root.left);
       }
