@@ -1,4 +1,4 @@
-import { ASSERT_DIRECT_COMPARE as ASSERT, logError } from "../util/ASSERT";
+import { ASSERT_DIRECT_COMPARE as ASSERT, logError } from "../../util/ASSERT";
 import { Queue } from "./Queue";
 
 (function main() {
