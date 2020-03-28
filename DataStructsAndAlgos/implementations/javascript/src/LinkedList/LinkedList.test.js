@@ -1,8 +1,8 @@
-import { LinkedList } from "./LinkedList";
-import { ASSERT_ARRAY as ASSERT } from "../util/ASSERT";
+import { LinkedList } from './LinkedList';
+import { ASSERT_ARRAY as ASSERT } from '../util/ASSERT';
 
 (function main() {
-  console.log("######################## LINKED LIST ########################");
+  console.log('######################## LINKED LIST ########################');
 
   try {
     //Write Test Code Here
@@ -87,5 +87,5 @@ import { ASSERT_ARRAY as ASSERT } from "../util/ASSERT";
     console.log(error);
     console.log(`# # # Test 6 FAILED`);
   }
-  console.log("################# TERMINATING LINKED LIST ###################");
+  console.log('################# TERMINATING LINKED LIST ###################');
 })();
