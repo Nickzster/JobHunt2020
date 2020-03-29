@@ -75,6 +75,12 @@ export class LinkedList {
     if (!!ptr) return false;
     return true;
   }
+  peekFront() {
+    return this.head.elem;
+  }
+  peekRear() {
+    return this.tail.elem;
+  }
   displayLinkedList() {
     let displayArray = [];
     let ptr = this.head;

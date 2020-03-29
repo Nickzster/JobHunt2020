@@ -1,5 +1,29 @@
 import { Queue } from '../../Queue/Queue';
 import { Stack } from '../../Stack/Stack';
+import { LinkedList } from '../../LinkedList/LinkedList';
+
+class Path {
+  constructor(node, weight = 0) {
+    this.list = new LinkedList();
+    this.insertNode(node, Infinity);
+    this.weight = weight;
+  }
+  increment() {
+    this.weight += 1;
+  }
+  incrementBy(val) {
+    this.weight += val;
+  }
+  insertNode(node) {
+    this.list.insert(node, Infinity);
+  }
+  viewCurrent() {
+    return this.list.peekRear();
+  }
+  getWeight() {
+    return this.weight;
+  }
+}
 
 class Edge {
   constructor(child, weight = -1) {
@@ -107,5 +131,27 @@ export class Graph {
     let graphArr = this.traverse(true);
     this.unmarkAll();
     return graphArr.output;
+  }
+  shortestPathTo(elem) {
+    let queue = new Queue();
+    queue.push(new Path(this.root, 0));
+    this.updateNode(this.root, true);
+    while (queue.length() > 0) {
+      let currentPath = queue.pop();
+      let lastNodeInCurrentPath = currentPath.viewCurrent();
+      if (parseInt(lastNodeInCurrentPath.elem, 10) === parseInt(elem, 10))
+        return currentPath.getWeight() + 1;
+      for (let i = 0; i < lastNodeInCurrentPath.children.length; i++) {
+        let child = lastNodeInCurrentPath.children[i].child;
+        if (child.marked === false) {
+          this.updateNode(child, true);
+          let updatedPath = Object.create(currentPath);
+          updatedPath.insertNode(child);
+          updatedPath.increment();
+          queue.push(updatedPath);
+        }
+      }
+    }
+    return -1;
   }
 }
