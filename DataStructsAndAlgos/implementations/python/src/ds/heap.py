@@ -45,11 +45,7 @@ class Heap:
         leftChild = self.getLeftChildIndex(root)
         while not self.isNull(rightChild) and self.heap[rightChild] < self.heap[root] or not self.isNull(leftChild) and self.heap[leftChild] < self.heap[root]:
             newChild = -1
-            if self.isNull(rightChild) and not self.isNull(leftChild):
-                newChild = leftChild
-            elif not self.isNull(rightChild) and self.isNull(leftChild):
-                newChild = rightChild
-            elif self.heap[rightChild] > self.heap[leftChild]:
+            if self.isNull(rightChild) and not self.isNull(leftChild) or self.heap[rightChild] > self.heap[leftChild]:
                 newChild = leftChild
             else:
                 newChild = rightChild
