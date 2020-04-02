@@ -1,4 +1,4 @@
-import { TreeNode } from '../TreeNode';
+import { TreeNode } from "../TreeNode";
 
 export class MinHeap {}
 
@@ -40,11 +40,12 @@ export class ArrayMinHeap {
       (!this.isNull(rootLeft) && this.heap[root] > this.heap[rootLeft])
     ) {
       let newChild;
-      if (!this.isNull(rootLeft) && this.isNull(rootRight)) newChild = rootLeft;
-      else if (this.isNull(rootLeft) && !this.isNull(rootRight))
-        newChild = rootRight;
-      else if (this.heap[rootRight] < this.heap[rootLeft]) newChild = rootRight;
-      else newChild = rootLeft;
+      if (
+        (!this.isNull(rootLeft) && this.isNull(rootRight)) ||
+        this.heap[rootRight] > this.heap[rootLeft]
+      )
+        newChild = rootLeft;
+      else newChild = rootRight;
       this.swap(root, newChild);
       root = newChild;
       rootRight = this.right(root);
