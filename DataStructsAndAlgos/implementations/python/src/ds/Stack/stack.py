@@ -1,21 +1,24 @@
-class Stack:
+from ..util.liststructure import ListStructure
+
+
+class Stack(ListStructure):
     def __init__(self):
-        self.stack = []
-        self.length = 0
+        ListStructure.__init__(self)
+        super().__init__()
 
     def push(self, newElem):
-        self.stack.append(newElem)
+        self.list.append(newElem)
         self.length += 1
 
     def pop(self):
         if self.length > 0:
             self.length -= 1
-            return self.stack.pop()
+            return self.list.pop()
         else:
             return None
 
     def search(self, elemToFind):
-        for elem in self.stack:
+        for elem in self.list:
             if elem == elemToFind:
                 return True
         return False
@@ -23,7 +26,7 @@ class Stack:
     def peek(self):
         if self.length <= 0:
             return None
-        return self.stack[self.length-1]
+        return self.list[self.length-1]
 
     def getLength(self):
         return self.length

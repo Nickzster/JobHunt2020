@@ -1,5 +1,7 @@
 
 from .. LinkedList.linkedlist import LinkedList
+from ..Queue.queue import Queue
+from ..Stack.stack import Stack
 
 
 class Edge:
@@ -40,4 +42,16 @@ class Graph:
             self.root = GraphNode(elem)
 
     def build(self, schema):
+        pass
+
+    def BFS(self, elemToFind):
+        pass
+
+    def BFSTraverse(self):
+        pass
+
+    def DFS(self, elemToFind):
+        pass
+
+    def traverse(self):
         pass
