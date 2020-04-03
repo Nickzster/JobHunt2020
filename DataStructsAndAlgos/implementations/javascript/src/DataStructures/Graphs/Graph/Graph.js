@@ -1,6 +1,6 @@
-import { Queue } from '../../Queue/Queue';
-import { Stack } from '../../Stack/Stack';
-import { LinkedList } from '../../LinkedList/LinkedList';
+import { Queue } from "../../Queue/Queue";
+import { Stack } from "../../Stack/Stack";
+import { LinkedList } from "../../LinkedList/LinkedList";
 
 class Path {
   constructor(node, weight = 0) {
@@ -59,7 +59,7 @@ export class Graph {
     for (let elem in schema) {
       let newNode = new GraphNode(elem);
       if (!!schema[elem].root) this.root = newNode;
-      schema[elem]['ref'] = newNode;
+      schema[elem]["ref"] = newNode;
     }
     //append the children nodes, of each element in the schema, to the reference node.
     for (let elem in schema) {
@@ -70,7 +70,7 @@ export class Graph {
       ) {
         let edgeInformation = schema[elem].connections[childIndex];
         let existingNode = schema[edgeInformation.key].ref;
-        schema[elem]['ref'].children.push(
+        schema[elem]["ref"].children.push(
           new Edge(existingNode, edgeInformation.weight)
         );
       }

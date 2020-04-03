@@ -1,4 +1,4 @@
-from ds.linkedlist import LinkedList
+from ds.LinkedList.linkedlist import LinkedList
 from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 

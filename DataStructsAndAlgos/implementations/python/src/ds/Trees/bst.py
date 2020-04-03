@@ -1,12 +1,6 @@
-from . queue import Queue
-from . stack import Stack
-
-
-class TreeNode:
-    def __init__(self, elem):
-        self.elem = elem
-        self.left = None
-        self.right = None
+from .. Stack.stack import Stack
+from .. Queue.queue import Queue
+from .. util.trees import TreeNode
 
 
 class BST:

@@ -1,7 +1,5 @@
-class Node:
-    def __init__(self, elem):
-        self.elem = elem
-        self.next = None
+
+from .. util.linkedlist import SingleNode as Node
 
 
 class LinkedList:
@@ -127,3 +125,8 @@ class LinkedList:
 
     def getLength(self):
         return self.length
+
+    def peek(self):
+        if self.tail == None:
+            return None
+        return self.tail

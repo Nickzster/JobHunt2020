@@ -1,4 +1,4 @@
-from ds.bst import BST
+from ds.Trees.bst import BST
 from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 

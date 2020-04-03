@@ -1,17 +1,17 @@
-class GraphNode:
-    def __init__(self, elem):
-        self.root = elem
-        self.children = []
+from .. util.graph import GraphNode, Graph
 
 
-class Graph:
+class DGraph(Graph):
     def __init__(self, elem):
         self.root = GraphNode(elem)
 
-    def initalize(self, schema):
+    def build(self, schema):
         pass
 
     def BFS(self, elemToFind):
+        pass
+
+    def BFSTraverse(self):
         pass
 
     def DFS(self, elemToFind):
@@ -20,5 +20,5 @@ class Graph:
     def traverse(self):
         pass
 
-    def ShortestPath(self, elemToFind):
+    def shortestPath(self, elemToFind):
         pass

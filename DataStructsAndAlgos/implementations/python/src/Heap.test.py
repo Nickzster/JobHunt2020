@@ -1,4 +1,4 @@
-from ds.heap import Heap
+from ds.Trees.heap import Heap
 from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 

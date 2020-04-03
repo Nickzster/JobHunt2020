@@ -1,4 +1,4 @@
-from ds.stack import Stack
+from ds.Stack.stack import Stack
 from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 

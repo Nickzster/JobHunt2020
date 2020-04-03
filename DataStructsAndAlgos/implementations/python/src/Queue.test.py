@@ -1,4 +1,4 @@
-from ds.queue import Queue
+from ds.Queue.queue import Queue
 from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 
