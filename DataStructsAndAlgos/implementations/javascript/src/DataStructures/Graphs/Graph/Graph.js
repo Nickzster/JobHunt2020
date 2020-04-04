@@ -26,8 +26,8 @@ class Path {
 }
 
 class Edge {
-  constructor(child, weight = -1) {
-    this.child = child;
+  constructor(node, weight = -1) {
+    this.toNode = node;
     this.weight = weight;
   }
 }
@@ -90,7 +90,7 @@ export class Graph {
       let newRoot = queue.pop();
       output.push(parseInt(newRoot.elem, 10));
       for (let i = 0; i < newRoot.children.length; i++) {
-        let child = newRoot.children[i].child;
+        let child = newRoot.children[i].toNode;
         if (parseInt(child.elem, 10) === searchFor) found = true;
         if (child.marked !== needToMatch) {
           this.updateNode(child, needToMatch);
@@ -111,7 +111,7 @@ export class Graph {
     while (stack.length() > 0) {
       let newRoot = stack.pop();
       for (let i = 0; i < newRoot.children.length; i++) {
-        let child = newRoot.children[i].child;
+        let child = newRoot.children[i].toNode;
         if (parseInt(child.elem, 10) === elem) found = true;
         if (child.marked === false) {
           this.updateNode(child, true);
@@ -142,7 +142,7 @@ export class Graph {
       if (parseInt(lastNodeInCurrentPath.elem, 10) === parseInt(elem, 10))
         return currentPath.getWeight() + 1;
       for (let i = 0; i < lastNodeInCurrentPath.children.length; i++) {
-        let child = lastNodeInCurrentPath.children[i].child;
+        let child = lastNodeInCurrentPath.children[i].toNode;
         if (child.marked === false) {
           this.updateNode(child, true);
           let updatedPath = Object.create(currentPath);
