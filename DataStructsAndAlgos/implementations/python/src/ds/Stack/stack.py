@@ -2,9 +2,8 @@ from ..util.liststructure import ListStructure
 
 
 class Stack(ListStructure):
-    def __init__(self):
-        ListStructure.__init__(self)
-        super().__init__()
+    def __init__(self, startingElem=None):
+        super().__init__(startingElem)
 
     def push(self, newElem):
         self.list.append(newElem)
@@ -27,6 +26,3 @@ class Stack(ListStructure):
         if self.length <= 0:
             return None
         return self.list[self.length-1]
-
-    def getLength(self):
-        return self.length

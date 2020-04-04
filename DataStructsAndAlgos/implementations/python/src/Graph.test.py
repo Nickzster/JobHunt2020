@@ -5,9 +5,8 @@ from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 
 def testOne(schema):
     try:
-        schemaTwo = {}
-        graph = Graph(schemaTwo)
-        COMPARE_LISTS([1, 2, 4, 3], graph.BFSTraverse())
+        graph = Graph(schema)
+        COMPARE_LISTS([1, 2, 4, 3], graph.displayGraphInBFSOrder())
     except Exception as err:
         print(err)
         print('Test 1 FAILED!')
@@ -20,7 +19,7 @@ def testOne(schema):
 def testTwo(schema):
     try:
         graph = Graph(schema)
-        COMPARE_LISTS([1, 2, 3, 5, 6, 7, 4], graph.BFSTraverse())
+        COMPARE_LISTS([1, 2, 3, 5, 6, 7, 4], graph.displayGraphInBFSOrder())
     except Exception as err:
         print(err)
         print('Test 1 FAILED!')

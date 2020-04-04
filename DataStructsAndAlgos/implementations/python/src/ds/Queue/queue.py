@@ -1,18 +1,18 @@
-class Queue:
-    def __init__(self, newElem=None):
-        self.queue = []
-        self.length = 0
-        if newElem != None:
-            self.push(newElem)
+from ..util.liststructure import ListStructure
+
+
+class Queue(ListStructure):
+    def __init__(self, startingElem=None):
+        super().__init__(startingElem)
 
     def push(self, newElem):
-        self.queue.append(newElem)
+        self.list.append(newElem)
         self.length += 1
 
     def pop(self):
         if self.length > 0:
             self.length -= 1
-            return self.queue.pop(0)
+            return self.list.pop(0)
         else:
             return None
 
@@ -25,13 +25,10 @@ class Queue:
     def peek(self):
         if self.length <= 0:
             return None
-        return self.queue[0]
+        return self.list[0]
 
     def search(self, elemToFind):
-        for elem in self.queue:
+        for elem in self.list:
             if elemToFind == elem:
                 return True
         return False
-
-    def getLength(self):
-        return self.length

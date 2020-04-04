@@ -1,7 +1,9 @@
 class ListStructure:
-    def __init__(self):
+    def __init__(self, startingElem=None):
         self.list = []
         self.length = 0
+        if startingElem != None:
+            self.list.append(startingElem)
 
     def push(self):
         pass
@@ -11,3 +13,6 @@ class ListStructure:
 
     def peek(self):
         pass
+
+    def getLength(self):
+        return len(self.list)
