@@ -118,7 +118,6 @@ class Graph:
         self.traverse(False)
 
     def displayGraphInBFSOrder(self):
-        self.cleanUp()
         queue = Queue(self.root)
         self.root.mark()
         finalStruct = []
@@ -130,4 +129,5 @@ class Graph:
                 if child.marked == False:
                     child.mark()
                     queue.push(child)
+        self.cleanUp()
         return finalStruct

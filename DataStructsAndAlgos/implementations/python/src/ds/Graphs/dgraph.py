@@ -8,6 +8,7 @@ class DGraph(Graph):
         super().__init__(schema)
 
     def shortestPath(self, elemToFind):
+        self.cleanUp()
         queue = Queue(Path(self.root))
         while(queue.getLength() > 0):
             currentPath = queue.pop()
@@ -20,5 +21,4 @@ class DGraph(Graph):
                     newPath = copy.deepcopy(currentPath)
                     newPath.insertNode(child)
                     queue.push(newPath)
-        self.cleanUp()
         return None
