@@ -19,20 +19,30 @@ class UndirectedEdge:
 
 class Path:  # Represents a path, represented as a linked list, that has a weight to get from the beginning node to the end node
     def __init__(self, startingNode, weight=0):
+        startingNode.mark()
         self.list = LinkedList(startingNode)
         self.weight = weight
 
     def updateWeight(self, newWeight):
         self.weight += newWeight
 
-    def insertNode(self, newNode):
+    def insertNode(self, newNode, weight=1):
         self.list.insertAtRear(newNode)
+        self.updateWeight(weight)
 
     def currentLocOnPath(self):
-        return self.list.peek()
+        return self.list.peek().elem
 
     def getWeight(self):
         return self.weight
+
+    def printPath(self):
+        graphList = self.list.printList()
+        elementList = []
+        # TODO: Refactor this so that it is independent of ints
+        for currElem in graphList:
+            elementList.append(int(currElem.elem))
+        return elementList
 
 
 class GraphNode:
@@ -70,7 +80,6 @@ class Graph:
             for edge in connections:
                 props['obj'].push(DirectedEdge(
                     schema[edge['key']]['obj'], edge['weight']))
-        print('Graph built successfully!')
 
     def search(self, searchType, elemToFind):
         traverseStruct = False
@@ -99,7 +108,8 @@ class Graph:
         self.updateNode(self.root, needToMatch)
         while queue.getLength() > 0:
             newRoot = queue.pop()
-            for child in newRoot.children:
+            for edge in newRoot.children:
+                child = edge.toNode
                 if child.marked != needToMatch:
                     self.updateNode(child, needToMatch)
                     queue.push(child)
@@ -109,12 +119,13 @@ class Graph:
 
     def displayGraphInBFSOrder(self):
         queue = Queue(self.root)
+        self.root.mark()
         finalStruct = []
         while queue.getLength() > 0:
             newRoot = queue.pop()
-            print(newRoot.elem)
-            finalStruct.append(newRoot.elem)
-            for child in newRoot.children:
+            finalStruct.append(int(newRoot.elem))
+            for edge in newRoot.children:
+                child = edge.toNode
                 if child.marked == False:
                     child.mark()
                     queue.push(child)

@@ -6,7 +6,12 @@ from Testing.test import COMPARE_VALUES, COMPARE_LISTS
 def testOne(schema):
     try:
         graph = Graph(schema)
+        shortestPath = graph.shortestPath(3)
+        if shortestPath == None:
+            raise Exception('Shortest Path is None, but I expected a result!')
         COMPARE_LISTS([1, 2, 4, 3], graph.displayGraphInBFSOrder())
+        COMPARE_LISTS([1, 2, 3], shortestPath.printPath())
+        COMPARE_VALUES(2, shortestPath.getWeight())
     except Exception as err:
         print(err)
         print('Test 1 FAILED!')
@@ -19,14 +24,19 @@ def testOne(schema):
 def testTwo(schema):
     try:
         graph = Graph(schema)
+        shortestPath = graph.shortestPath(7)
+        if shortestPath == None:
+            raise Exception('Shortest path is None, but I expected a result!')
         COMPARE_LISTS([1, 2, 3, 5, 6, 7, 4], graph.displayGraphInBFSOrder())
+        COMPARE_LISTS([1, 2, 5, 7], shortestPath.printPath())
+        COMPARE_VALUES(3, shortestPath.getWeight())
     except Exception as err:
         print(err)
-        print('Test 1 FAILED!')
+        print('Test 2 FAILED!')
     else:
-        print('Test 1 Passed!')
+        print('Test 2 Passed!')
     finally:
-        print('Test 1 Complete.')
+        print('Test 2 Complete.')
 
 
 if __name__ == "__main__":

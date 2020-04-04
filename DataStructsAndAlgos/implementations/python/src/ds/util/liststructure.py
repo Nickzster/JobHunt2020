@@ -4,6 +4,7 @@ class ListStructure:
         self.length = 0
         if startingElem != None:
             self.list.append(startingElem)
+            self.length += 1
 
     def push(self):
         pass
@@ -15,4 +16,4 @@ class ListStructure:
         pass
 
     def getLength(self):
-        return len(self.list)
+        return self.length
